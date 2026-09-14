@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "1.0",
+  "publisher": "CreatorSafeZone",
+  "methodology": "https://creatorsafezone.com/methodology.html",
+  "lastReviewed": "2026-09-13",
+  "notice": "Observed interface measurements are configuration-specific working estimates, not permanent platform specifications.",
+  "records": [
+    {
+      "id": "tiktok-in-feed-2026-09",
+      "platform": "TikTok",
+      "surface": "In-Feed",
+      "canvas": "1080x1920",
+      "evidence": "Observed UI",
+      "classification": "Recommended Margin",
+      "reviewed": "2026-09",
+      "rangesPx": { "top": "140-160", "right": "160-180", "bottom": "380-420" },
+      "limitations": "UI can vary by device, app version, account state, captions, placement, and interface updates."
+    },
+    {
+      "id": "instagram-reels-2026-09",
+      "platform": "Instagram Reels",
+      "surface": "Dedicated Reels Feed",
+      "canvas": "1080x1920",
+      "evidence": "Observed UI",
+      "classification": "Recommended Margin",
+      "reviewed": "2026-09",
+      "testContext": "iPhone 16 Pro and Galaxy S25 Ultra; Instagram v340+",
+      "limitations": "Observed crop and overlay behavior is not a universal Instagram specification."
+    },
+    {
+      "id": "youtube-shorts-feed-2026-09",
+      "platform": "YouTube Shorts",
+      "surface": "Shorts Feed",
+      "canvas": "1080x1920",
+      "evidence": "Observed UI",
+      "classification": "Recommended Margin",
+      "reviewed": "2026-09",
+      "rangesPx": { "top": "120-140", "right": "140-160", "bottom": "340-380" },
+      "limitations": "UI can vary by device, app version, placement, account state, and interface updates."
+    },
+    {
+      "id": "paid-video-mixed-2026-09",
+      "platform": "Paid Video Ads",
+      "surface": "TikTok, Meta, and YouTube ad placements",
+      "canvas": "1080x1920",
+      "evidence": "Mixed",
+      "classification": "Official format requirements plus observed UI and recommended working areas",
+      "reviewed": "2026-09",
+      "limitations": "CTA and disclosure overlays vary by objective, format, placement, and platform changes."
+    }
+  ]
+}

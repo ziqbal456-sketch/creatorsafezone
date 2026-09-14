@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Human-First Title & Description (Part 5) -->
+  <title>Vertical Video Ad Safe Zone Checker — TikTok, Reels & Shorts Ads</title>
+  <meta name="title" content="Vertical Video Ad Safe Zone Checker — TikTok, Reels & Shorts Ads" />
+  <meta name="description" content="Preview vertical video ads against TikTok Spark Ads, Meta Reels Ads, and Shorts Ads call-to-action overlays. Compare official and observed safe margins." />
+  <link rel="canonical" href="https://creatorsafezone.com/vertical-video-ad-specs.html" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2306B6D4'/><text x='50%' y='58%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='44' font-weight='900' fill='%230B0F19'>CSZ</text></svg>" type="image/svg+xml" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://creatorsafezone.com/vertical-video-ad-specs.html" />
+  <meta property="og:title" content="Vertical Video Ad Safe Zone Checker — TikTok, Reels & Shorts Ads" />
+  <meta property="og:description" content="Preview vertical video ads against TikTok, Meta, and YouTube paid CTA overlays before launching campaigns." />
+  <meta property="og:image" content="https://creatorsafezone.com/og-adspecs.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Vertical Video Ad Safe Zone Checker" />
+  <meta name="twitter:description" content="Official and observed vertical ad specs for media buyers and performance marketers." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        screens: { 'xs': '375px', 'sm': '640px', 'md': '768px', 'lg': '1024px', 'xl': '1280px' },
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+          colors: { brand: { 500: '#06B6D4', 600: '#0891B2' }, danger: '#F43F5E', safe: '#10B981' }
+        }
+      }
+    }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://creatorsafezone.com/vertical-video-ad-specs.html#app",
+        "name": "Vertical Video Ad Safe Zone Checker",
+        "url": "https://creatorsafezone.com/vertical-video-ad-specs.html",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "All",
+        "description": "Interactive simulator to test commercial video ads against TikTok, Meta, and YouTube paid CTA overlays."
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://creatorsafezone.com/vertical-video-ad-specs.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why are paid ad safe zones different from organic video safe zones?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Commercial video ads feature interactive conversion overlays that do not exist on organic posts. These include full-width 'Shop Now' CTA buttons, Sponsored disclaimer badges, and product tags that consume the bottom 450px to 500px."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the safe zone dimensions for TikTok Spark Ads?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "TikTok recommends leaving approximately 160px clear at the top, 180px on the right margin, and 460px at the bottom. Ads violating these margins risk creative collision where key product benefits get covered by the CTA anchor."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .phone-aspect { aspect-ratio: 9 / 16; max-height: 75vh; }
+    @media (min-height: 800px) { .phone-aspect { max-height: 78vh; } }
+  </style>
+</head>
+<body class="bg-[#0B0F19] text-slate-100 font-sans antialiased flex flex-col min-h-screen overflow-x-hidden">
+
+  <!-- Universal Header -->
+  <header class="border-b border-slate-800/80 bg-[#0B0F19]/90 backdrop-blur sticky top-0 z-50 py-3 px-3 sm:px-6 md:px-8">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2.5 sm:gap-3">
+        <div class="h-8 w-8 sm:h-9 sm:w-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-rose-500 flex items-center justify-center font-extrabold text-white text-xs sm:text-sm">CSZ</div>
+        <div>
+          <span class="font-extrabold text-base sm:text-lg tracking-tight text-white block leading-none">CreatorSafeZone<span class="text-cyan-400">.com</span></span>
+          <span class="text-[9px] sm:text-[10px] text-rose-400 font-semibold tracking-wide">Paid Video Ad Simulator</span>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-1 text-[11px] lg:text-xs font-semibold text-slate-300">
+        <a href="/" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">Hub</a>
+        <a href="/tiktok-safe-zone.html" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">TikTok</a>
+        <a href="/instagram-reels-safe-zone.html" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">Reels</a>
+        <a href="/youtube-shorts-safe-zone.html" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">Shorts</a>
+        <a href="/capcut-safe-zone-template.html" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">CapCut</a>
+        <a href="/instagram-story-safe-zone.html" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">Stories</a>
+        <a href="/instagram-grid-crop-previewer.html" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">1:1 Crop</a>
+        <a href="/vertical-video-ad-specs.html" class="px-2.5 py-1.5 rounded-lg bg-slate-800 text-rose-400">Ad Specs</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center gap-1.5 text-[11px] sm:text-xs text-rose-400 bg-rose-500/10 border border-rose-500/20 px-2.5 sm:px-3 py-1 rounded-full font-semibold">
+          <span class="w-1.5 h-1.5 rounded-full bg-rose-400 animate-pulse"></span>
+          Paid Ad QA
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Simulator Main Grid -->
+  <main class="max-w-7xl mx-auto w-full p-3 sm:p-5 md:p-6 lg:p-8 flex-1 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+    
+    <!-- Controls Column (5 cols) -->
+    <div class="lg:col-span-5 space-y-5 sm:space-y-6 order-2 lg:order-1">
+      <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-4 sm:p-5 shadow-2xl">
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
+            <span class="text-rose-400">Step 1</span> Select Ad Creative
+          </h2>
+          <span class="text-[11px] text-slate-500 font-mono">1080 × 1920 (9:16)</span>
+        </div>
+        <div id="dropZone" class="border-2 border-dashed border-slate-700 hover:border-rose-400 rounded-xl p-5 sm:p-6 text-center cursor-pointer transition bg-slate-950/60 group">
+          <input type="file" id="fileInput" accept="image/*,video/*" class="hidden" />
+          <div class="w-11 h-11 mx-auto rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:text-rose-400 group-hover:scale-110 transition">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+          </div>
+          <p class="text-sm font-semibold text-slate-200 mt-3">Drop 9:16 Paid Video Ad File</p>
+          <p class="text-xs text-slate-500 mt-1">Simulates 'Shop Now' & Sponsored Call-to-Action Overlays</p>
+        </div>
+        <button id="sampleMediaBtn" class="w-full mt-3 py-2 px-3 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-xs font-semibold transition border border-slate-700 flex items-center justify-center gap-2">
+          <span>⚡ Load E-Commerce Ad Demo</span>
+        </button>
+      </div>
+
+      <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-4 sm:p-5 shadow-2xl space-y-4">
+        <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
+          <span class="text-rose-400">Step 2</span> Paid Ad Platform Simulators
+        </h2>
+
+        <div class="grid grid-cols-3 gap-1.5 p-1 bg-slate-950 rounded-xl border border-slate-800 text-xs font-bold">
+          <button id="tabTikTokAd" class="ad-tab py-2 rounded-lg transition bg-rose-600 text-white shadow">TikTok Ads</button>
+          <button id="tabMetaAd" class="ad-tab py-2 rounded-lg transition text-slate-400 hover:text-white">Meta Reels</button>
+          <button id="tabShortsAd" class="ad-tab py-2 rounded-lg transition text-slate-400 hover:text-white">Shorts Ads</button>
+        </div>
+
+        <div class="pt-3 border-t border-slate-800 space-y-2.5">
+          <button id="copyClipBtn" class="w-full py-2.5 px-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-xs font-bold border border-slate-700 transition flex items-center justify-center gap-2">
+            <span id="copyText">Copy Paid Ad Guide to Clipboard (Ctrl+V)</span>
+          </button>
+          <a href="https://canva.link/1v53ulzrri8xp2u" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-bold rounded-xl text-xs transition flex items-center justify-center gap-2 shadow">
+            <span>🎨 Open Ad Template in Canva</span>
+          </a>
+          <button id="downloadGuideBtn" class="w-full py-2.5 px-4 bg-slate-900 hover:bg-slate-800 text-slate-300 rounded-xl text-xs font-medium border border-slate-800 transition flex items-center justify-center gap-2">
+            Download Paid Ad Safe Zone PNG (1080×1920)
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Simulator Viewport & Video Controls Deck (7 cols) -->
+    <div class="lg:col-span-7 flex flex-col items-center justify-center order-1 lg:order-2 w-full">
+      <div id="phoneFrame" class="relative phone-aspect w-full max-w-[310px] xs:max-w-[335px] sm:max-w-[360px] md:max-w-[380px] bg-black rounded-[42px] sm:rounded-[48px] p-2.5 sm:p-3 shadow-2xl ring-1 ring-slate-800 select-none mx-auto">
+        <div class="relative w-full h-full rounded-[34px] sm:rounded-[38px] overflow-hidden bg-slate-950 flex items-center justify-center">
+          <div id="mediaContainer" class="absolute inset-0 w-full h-full flex items-center justify-center bg-slate-900">
+            <span class="text-xs text-slate-500 font-bold uppercase tracking-wider">Paid Ad Simulator Ready</span>
+          </div>
+
+          <!-- Paid Ad UI Overlay -->
+          <div class="absolute inset-0 pointer-events-none z-20 flex flex-col justify-between p-3 sm:p-3.5">
+            <div class="pt-7 sm:pt-8 flex justify-between items-center text-white px-2">
+              <span id="adSponsoredPill" class="text-[9px] sm:text-[10px] font-bold bg-white/20 backdrop-blur px-2.5 py-0.5 rounded uppercase tracking-wider">Sponsored • Ad</span>
+              <svg class="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </div>
+
+            <div class="absolute right-2 sm:right-2.5 bottom-20 sm:bottom-24 flex flex-col items-center gap-3 sm:gap-4 text-white p-1.5 rounded-xl ring-2 ring-rose-500/80 bg-rose-500/10">
+              <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white bg-slate-700 flex items-center justify-center font-bold text-xs">Brand</div>
+              <span class="text-[9px] sm:text-[10px] font-bold">Like</span>
+              <span class="text-[9px] sm:text-[10px] font-bold">Comment</span>
+              <span class="text-[9px] sm:text-[10px] font-bold">Share</span>
+            </div>
+
+            <div class="w-full pb-3 px-2 space-y-1.5 sm:space-y-2 rounded-xl ring-2 ring-cyan-400 bg-cyan-500/15">
+              <div id="ctaButton" class="bg-cyan-500 text-black text-center py-2 sm:py-2.5 rounded-lg font-black text-xs uppercase tracking-wider shadow-lg">
+                Shop Now ➔
+              </div>
+              <p class="text-[9px] sm:text-[10px] text-white/90 font-medium line-clamp-1">Brand Store • Flash Sale Offer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scrubber Deck -->
+      <div id="videoControlsDeck" class="w-full max-w-[310px] xs:max-w-[335px] sm:max-w-[360px] md:max-w-[380px] mt-4 bg-slate-900 border border-slate-800 rounded-xl p-3 shadow-xl space-y-2 select-none">
+        <div class="flex items-center gap-3">
+          <input type="range" id="videoTimeline" min="0" max="100" value="0" step="0.1" class="w-full accent-rose-500 bg-slate-800 h-1.5 rounded-lg appearance-none cursor-pointer" />
+          <span id="timeDisplay" class="text-[11px] font-mono text-slate-400 whitespace-nowrap">0:00 / 0:00</span>
+        </div>
+        <div class="flex items-center justify-between pt-1 text-xs">
+          <div class="flex items-center gap-1.5">
+            <button id="playPauseBtn" class="p-1.5 bg-slate-800 hover:bg-slate-700 text-rose-400 rounded-lg transition" title="Play/Pause">
+              <svg id="playIcon" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              <svg id="pauseIcon" class="w-4 h-4 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            </button>
+            <button id="stepBackBtn" class="px-2 py-1 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-[11px] font-bold font-mono transition">-0.1s</button>
+            <button id="stepForwardBtn" class="px-2 py-1 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-[11px] font-bold font-mono transition">+0.1s</button>
+          </div>
+          <button id="muteToggleBtn" class="p-1.5 text-slate-400 hover:text-white rounded-lg transition">
+            <svg id="unmutedIcon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/></svg>
+            <svg id="mutedIcon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z m12 0l-6-6m0 6l6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Measurement & Verification Component (Part 2) -->
+      <div class="w-full max-w-[310px] xs:max-w-[335px] sm:max-w-[360px] md:max-w-[380px] mt-4 bg-slate-900/90 border border-slate-800 rounded-xl p-3.5 shadow-xl text-xs select-none">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-2 mb-2.5">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span class="font-bold text-white text-[11px] uppercase tracking-wider">Measurement & Verification</span>
+          </div>
+          <span class="text-[10px] font-mono text-amber-400 bg-amber-950/60 border border-amber-800/50 px-2 py-0.5 rounded font-semibold">Evidence: Mixed</span>
+        </div>
+        <div class="grid grid-cols-2 gap-2 text-[10px] font-mono text-slate-400">
+          <div><span class="text-slate-500 block">Last Reviewed:</span> <span class="text-slate-200 font-bold">September 2026</span></div>
+          <div><span class="text-slate-500 block">Surfaces:</span> <span class="text-slate-200 font-bold">TikTok, Meta & Shorts Ads</span></div>
+          <div><span class="text-slate-500 block">Classification:</span> <span class="text-amber-400 font-semibold">Official + Observed + Recommended</span></div>
+          <div><span class="text-slate-500 block">Methodology:</span> <a href="/methodology.html" class="text-cyan-400 hover:underline">Read Protocol ➔</a></div>
+        </div>
+        <div class="mt-2.5 pt-2 border-t border-slate-800/80 text-[10px] text-slate-400 leading-tight">
+          <strong>Notice:</strong> Platform format requirements may be published officially; the UI and CTA measurements shown here are observed working estimates. Commercial ad overlays vary by advertiser objective, CTA format, and placement, so treat the safe areas as practical recommendations.
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Editorial Section: Truthful & Responsible Framing (Part 1, 3, 4, 5) -->
+  <section class="border-t border-slate-800/80 bg-slate-950 py-16 px-4 md:px-8">
+    <div class="max-w-5xl mx-auto space-y-12 text-slate-300 text-sm leading-relaxed">
+      
+      <!-- H1 & Human-First Purpose (Part 5) -->
+      <div>
+        <h1 class="text-3xl font-extrabold text-white tracking-tight">Vertical Video Ad Safe Zone Checker</h1>
+        <p class="mt-3 text-slate-400 text-base">
+          Preview vertical video ads against TikTok Spark Ads, Meta Reels Ads, and Shorts Ads call-to-action overlays before launching campaigns.
+        </p>
+      </div>
+
+      <!-- Factual Framing (Part 1 & 4) -->
+      <div class="space-y-3">
+        <h2 class="text-xl font-bold text-white tracking-tight">Understanding Paid Video Ad Overlays</h2>
+        <p class="text-slate-400 text-sm leading-relaxed">
+          For performance marketers and media buyers, creative placement directly affects campaign clarity. Commercial vertical ads carry greater screen obstruction than organic videos due to interactive CTA banners ('Shop Now', 'Learn More') and legal disclosure pills occupying the lower third of the viewport.
+        </p>
+      </div>
+
+      <!-- Paid Ad Comparison Table -->
+      <div class="space-y-4">
+        <h2 class="text-xl font-bold text-white tracking-tight">Cross-Platform Paid Video Ad Safe Area Matrix</h2>
+        <div class="overflow-x-auto border border-slate-800 rounded-2xl bg-slate-900/60">
+          <table class="w-full text-left text-xs border-collapse">
+            <thead>
+              <tr class="border-b border-slate-800 bg-slate-900 text-slate-300 font-bold uppercase">
+                <th class="p-4">Paid Ad Format</th>
+                <th class="p-4">Top Clearance</th>
+                <th class="p-4">Right Sidebar</th>
+                <th class="p-4">Bottom CTA Obstruction</th>
+                <th class="p-4">Recommended Safe Area</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800 text-slate-300 font-medium">
+              <tr>
+                <td class="p-4 font-bold text-white">TikTok Spark & In-Feed Ads</td>
+                <td class="p-4">160 – 180 px</td>
+                <td class="p-4">180 – 200 px</td>
+                <td class="p-4 text-rose-400 font-bold">460 – 500 px (CTA Banner)</td>
+                <td class="p-4 font-mono text-emerald-400 font-bold">880 × 1240 px</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-bold text-white">Meta Advantage+ Reels Ads</td>
+                <td class="p-4">150 – 170 px</td>
+                <td class="p-4">160 – 180 px</td>
+                <td class="p-4 text-rose-400 font-bold">420 – 460 px (Learn More Pill)</td>
+                <td class="p-4 font-mono text-emerald-400 font-bold">900 × 1290 px</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-bold text-white">YouTube Shorts Video Action Ads</td>
+                <td class="p-4">140 – 160 px</td>
+                <td class="p-4">150 – 170 px</td>
+                <td class="p-4 text-rose-400 font-bold">400 – 440 px (Site Link Overlay)</td>
+                <td class="p-4 font-mono text-emerald-400 font-bold">910 × 1320 px</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Factual Design Guidelines (Part 3: Removed Fake CTR Stat) -->
+      <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl space-y-4">
+        <h3 class="text-lg font-bold text-white">Recommended Guidelines for Paid Video Ads</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
+          <div class="space-y-2">
+            <span class="text-cyan-400 font-bold text-sm block">1. The Hook Safe Region</span>
+            <p class="text-slate-400 leading-relaxed">
+              Place primary hook statements and product offer callouts between <strong>Y: 220px and Y: 600px</strong>. This sits above the viewer's natural thumb-rest position and clears all top and bottom ad overlays.
+            </p>
+          </div>
+          <div class="space-y-2">
+            <span class="text-rose-400 font-bold text-sm block">2. Avoid Low Captions</span>
+            <p class="text-slate-400 leading-relaxed">
+              Avoid placing subtitles below Y: 1450px. When TikTok or Meta renders an interactive CTA button, low captions create visual overlap that can obscure key product claims and mandatory disclaimers.
+            </p>
+          </div>
+          <div class="space-y-2">
+            <span class="text-emerald-400 font-bold text-sm block">3. Social Proof Placement</span>
+            <p class="text-slate-400 leading-relaxed">
+              Place review star ratings, press badges, and trust icons in the upper-left quadrant (X: 60px to 450px, Y: 180px to 380px) where eye-tracking patterns typically focus first.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="space-y-4 pt-4 border-t border-slate-800">
+        <h3 class="text-xl font-bold text-white tracking-tight">Frequently Asked Questions</h3>
+        <div class="space-y-3 text-xs">
+          <div class="bg-slate-900/60 p-5 rounded-xl border border-slate-800">
+            <h4 class="font-bold text-white text-sm">Will TikTok or Meta reject my ad if text is in the danger zone?</h4>
+            <p class="mt-2 text-slate-400 leading-relaxed">
+              While an ad may technically pass automated review, creative elements that overlap interactive CTA buttons can reduce readability. Keeping text inside the recommended safe box helps keep important visual information clear.
+            </p>
+          </div>
+          <div class="bg-slate-900/60 p-5 rounded-xl border border-slate-800">
+            <h4 class="font-bold text-white text-sm">What resolution should I export for TikTok and Reels ads?</h4>
+            <p class="mt-2 text-slate-400 leading-relaxed">
+              Export at 1080 × 1920 pixels at 30 or 60 frames per second with H.264 / MP4 encoding. Keep file sizes within platform upload limits (typically under 50MB for TikTok and under 250MB for Meta Ads) to maintain visual fidelity.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Official Documentation Links (Part 2) -->
+      <div class="bg-slate-900/60 border border-slate-800 p-5 rounded-xl space-y-2 text-xs">
+        <h4 class="font-bold text-white text-sm">Official Platform Advertising Guides</h4>
+        <p class="text-slate-400">
+          Review official advertising specifications: <a href="https://ads.tiktok.com/help/article/video-specs" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:underline">TikTok for Business Video Specs ↗</a> and <a href="https://www.facebook.com/business/help/223186797682697" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:underline">Meta Business Help Center for Reels Ads ↗</a>.
+        </p>
+      </div>
+
+      <!-- Cluster Links -->
+      <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-2xl space-y-4">
+        <h4 class="text-sm font-bold text-white uppercase tracking-wider">Explore Organic Safe Zone Simulators</h4>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-semibold">
+          <a href="/tiktok-safe-zone.html" class="p-3 bg-slate-950 border border-slate-800 hover:border-rose-400 rounded-xl transition text-center text-slate-300 hover:text-white">TikTok Safe Zone Tool ➔</a>
+          <a href="/instagram-reels-safe-zone.html" class="p-3 bg-slate-950 border border-slate-800 hover:border-rose-400 rounded-xl transition text-center text-slate-300 hover:text-white">Instagram Reels Guide ➔</a>
+          <a href="/youtube-shorts-safe-zone.html" class="p-3 bg-slate-950 border border-slate-800 hover:border-rose-400 rounded-xl transition text-center text-slate-300 hover:text-white">YouTube Shorts Margins ➔</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Universal Footer: Factual Positioning (Part 1) -->
+  <footer class="border-t border-slate-800 bg-[#0B0F19] py-12 px-4 md:px-8 text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <div class="space-y-3">
+        <span class="font-bold text-white text-base tracking-tight">CreatorSafeZone<span class="text-cyan-400">.com</span></span>
+        <p class="text-slate-500 leading-relaxed text-[11px]">
+          CreatorSafeZone is a browser-based safe-zone and pre-publish preview tool for short-form video. Calibrated against observed mobile UI boundaries with 100% client-side privacy.
+        </p>
+      </div>
+      <div>
+        <h5 class="font-bold text-white uppercase tracking-wider mb-3 text-[11px]">Platform Checkers</h5>
+        <ul class="space-y-2 text-[11px]">
+          <li><a href="/tiktok-safe-zone.html" class="hover:text-cyan-400 transition">TikTok Safe Zone</a></li>
+          <li><a href="/instagram-reels-safe-zone.html" class="hover:text-cyan-400 transition">Instagram Reels Guide</a></li>
+          <li><a href="/youtube-shorts-safe-zone.html" class="hover:text-cyan-400 transition">YouTube Shorts Margins</a></li>
+          <li><a href="/instagram-story-safe-zone.html" class="hover:text-cyan-400 transition">Instagram Stories Safe Area</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="font-bold text-white uppercase tracking-wider mb-3 text-[11px]">Specialized Utilities</h5>
+        <ul class="space-y-2 text-[11px]">
+          <li><a href="/capcut-safe-zone-template.html" class="hover:text-cyan-400 transition">CapCut Safe Zone Template</a></li>
+          <li><a href="/instagram-grid-crop-previewer.html" class="hover:text-cyan-400 transition">1:1 Profile Crop Tool</a></li>
+          <li><a href="/vertical-video-ad-specs.html" class="hover:text-cyan-400 transition">Paid Ad Safe Margins</a></li>
+          <li><a href="https://canva.link/1v53ulzrri8xp2u" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition">Canva 9:16 Template</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="font-bold text-white uppercase tracking-wider mb-3 text-[11px]">Trust & Methodology</h5>
+        <ul class="space-y-2 text-[11px] mb-2">
+          <li><a href="/methodology.html" class="text-cyan-400 hover:underline">Measurement Methodology</a></li>
+          <li><a href="/privacy-policy.html" class="hover:text-cyan-400 transition">Privacy Policy & Security</a></li>
+        </ul>
+        <p class="text-slate-500 text-[11px] leading-relaxed">
+          100% client-side HTML5 processing. Zero server uploads.
+        </p>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto pt-6 border-t border-slate-800/80 text-center text-slate-500 text-[11px]">
+      <p>&copy; 2026 CreatorSafeZone.com. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Script Engine with Video Scrubber & Paid Ad Tab Switcher -->
+  <script>
+    const dropZone = document.getElementById('dropZone');
+    const fileInput = document.getElementById('fileInput');
+    const mediaContainer = document.getElementById('mediaContainer');
+    const sampleMediaBtn = document.getElementById('sampleMediaBtn');
+    const ctaButton = document.getElementById('ctaButton');
+    const adSponsoredPill = document.getElementById('adSponsoredPill');
+    const tabTikTokAd = document.getElementById('tabTikTokAd');
+    const tabMetaAd = document.getElementById('tabMetaAd');
+    const tabShortsAd = document.getElementById('tabShortsAd');
+    const downloadGuideBtn = document.getElementById('downloadGuideBtn');
+    const copyClipBtn = document.getElementById('copyClipBtn');
+    const copyText = document.getElementById('copyText');
+
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const playIcon = document.getElementById('playIcon');
+    const pauseIcon = document.getElementById('pauseIcon');
+    const stepBackBtn = document.getElementById('stepBackBtn');
+    const stepForwardBtn = document.getElementById('stepForwardBtn');
+    const videoTimeline = document.getElementById('videoTimeline');
+    const timeDisplay = document.getElementById('timeDisplay');
+    const muteToggleBtn = document.getElementById('muteToggleBtn');
+    const mutedIcon = document.getElementById('mutedIcon');
+    const unmutedIcon = document.getElementById('unmutedIcon');
+
+    let currentVideoEl = null;
+    let isScrubbing = false;
+
+    dropZone.addEventListener('click', () => fileInput.click());
+    fileInput.addEventListener('change', (e) => {
+      if (e.target.files && e.target.files[0]) loadMedia(e.target.files[0]);
+    });
+
+    function formatTime(seconds) {
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+    }
+
+    function setupVideo(videoEl) {
+      currentVideoEl = videoEl;
+      currentVideoEl.muted = true;
+      mutedIcon.classList.remove('hidden');
+      unmutedIcon.classList.add('hidden');
+
+      currentVideoEl.addEventListener('loadedmetadata', () => {
+        videoTimeline.max = currentVideoEl.duration;
+        timeDisplay.textContent = `0:00 / ${formatTime(currentVideoEl.duration)}`;
+      });
+
+      currentVideoEl.addEventListener('timeupdate', () => {
+        if (!isScrubbing) {
+          videoTimeline.value = currentVideoEl.currentTime;
+          timeDisplay.textContent = `${formatTime(currentVideoEl.currentTime)} / ${formatTime(currentVideoEl.duration || 0)}`;
+        }
+      });
+
+      currentVideoEl.addEventListener('play', () => {
+        playIcon.classList.add('hidden'); pauseIcon.classList.remove('hidden');
+      });
+
+      currentVideoEl.addEventListener('pause', () => {
+        playIcon.classList.remove('hidden'); pauseIcon.classList.add('hidden');
+      });
+    }
+
+    function loadMedia(file) {
+      const isVideo = file.type.startsWith('video');
+      const url = URL.createObjectURL(file);
+      mediaContainer.innerHTML = '';
+      if (isVideo) {
+        const video = document.createElement('video');
+        video.src = url; video.autoplay = true; video.loop = true; video.playsInline = true;
+        video.className = 'w-full h-full object-cover';
+        mediaContainer.appendChild(video);
+        setupVideo(video);
+      } else {
+        const img = document.createElement('img');
+        img.src = url; img.className = 'w-full h-full object-cover';
+        mediaContainer.appendChild(img);
+        currentVideoEl = null;
+        timeDisplay.textContent = 'Image Mode';
+        videoTimeline.value = 0;
+      }
+    }
+
+    sampleMediaBtn.addEventListener('click', () => {
+      mediaContainer.innerHTML = '';
+      const video = document.createElement('video');
+      video.src = 'https://assets.mixkit.co/videos/preview/mixkit-girl-in-neon-sign-1232-large.mp4';
+      video.autoplay = true; video.loop = true; video.playsInline = true;
+      video.className = 'w-full h-full object-cover';
+      mediaContainer.appendChild(video);
+      setupVideo(video);
+    });
+
+    playPauseBtn.addEventListener('click', () => {
+      if (!currentVideoEl) return;
+      if (currentVideoEl.paused) currentVideoEl.play(); else currentVideoEl.pause();
+    });
+
+    videoTimeline.addEventListener('input', () => {
+      if (!currentVideoEl) return;
+      isScrubbing = true;
+      currentVideoEl.currentTime = videoTimeline.value;
+      timeDisplay.textContent = `${formatTime(currentVideoEl.currentTime)} / ${formatTime(currentVideoEl.duration || 0)}`;
+    });
+
+    videoTimeline.addEventListener('change', () => { isScrubbing = false; });
+
+    stepBackBtn.addEventListener('click', () => {
+      if (!currentVideoEl) return;
+      currentVideoEl.pause();
+      currentVideoEl.currentTime = Math.max(0, currentVideoEl.currentTime - 0.1);
+    });
+
+    stepForwardBtn.addEventListener('click', () => {
+      if (!currentVideoEl) return;
+      currentVideoEl.pause();
+      currentVideoEl.currentTime = Math.min(currentVideoEl.duration, currentVideoEl.currentTime + 0.1);
+    });
+
+    muteToggleBtn.addEventListener('click', () => {
+      if (!currentVideoEl) return;
+      currentVideoEl.muted = !currentVideoEl.muted;
+      if (currentVideoEl.muted) {
+        mutedIcon.classList.remove('hidden'); unmutedIcon.classList.add('hidden');
+      } else {
+        mutedIcon.classList.add('hidden'); unmutedIcon.classList.remove('hidden');
+      }
+    });
+
+    tabTikTokAd.addEventListener('click', () => {
+      resetTabs();
+      tabTikTokAd.classList.add('bg-rose-600', 'text-white', 'shadow');
+      ctaButton.textContent = 'Shop Now ➔';
+      ctaButton.className = 'bg-cyan-500 text-black text-center py-2 sm:py-2.5 rounded-lg font-black text-xs uppercase tracking-wider shadow-lg';
+      adSponsoredPill.textContent = 'Sponsored • Ad';
+    });
+
+    tabMetaAd.addEventListener('click', () => {
+      resetTabs();
+      tabMetaAd.classList.add('bg-rose-600', 'text-white', 'shadow');
+      ctaButton.textContent = 'Learn More ➔';
+      ctaButton.className = 'bg-blue-600 text-white text-center py-2 sm:py-2.5 rounded-lg font-black text-xs uppercase tracking-wider shadow-lg';
+      adSponsoredPill.textContent = 'Sponsored • Instagram Reel Ad';
+    });
+
+    tabShortsAd.addEventListener('click', () => {
+      resetTabs();
+      tabShortsAd.classList.add('bg-rose-600', 'text-white', 'shadow');
+      ctaButton.textContent = 'Visit Site ➔';
+      ctaButton.className = 'bg-white text-black text-center py-2 sm:py-2.5 rounded-lg font-black text-xs uppercase tracking-wider shadow-lg';
+      adSponsoredPill.textContent = 'Ad • YouTube Shorts';
+    });
+
+    function resetTabs() {
+      [tabTikTokAd, tabMetaAd, tabShortsAd].forEach(tab => {
+        tab.classList.remove('bg-rose-600', 'text-white', 'shadow');
+        tab.classList.add('text-slate-400');
+      });
+    }
+
+    function generateAdOverlayCanvas() {
+      const canvas = document.createElement('canvas');
+      canvas.width = 1080; canvas.height = 1920;
+      const ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, 1080, 1920);
+
+      ctx.fillStyle = 'rgba(244, 63, 94, 0.18)';
+      ctx.fillRect(20, 20, 1040, 160);
+      ctx.strokeStyle = '#F43F5E'; ctx.lineWidth = 5; ctx.strokeRect(20, 20, 1040, 160);
+
+      ctx.fillRect(20, 1440, 1040, 460);
+      ctx.strokeRect(20, 1440, 1040, 460);
+
+      ctx.fillStyle = '#FFFFFF'; ctx.font = 'bold 24px sans-serif';
+      ctx.fillText('⛔ PAID AD TOP DISCLOSURE (160px)', 60, 90);
+      ctx.fillText('⛔ PAID CTA & DISCLAIMER DANGER ZONE (Bottom 480px)', 60, 1500);
+
+      return canvas;
+    }
+
+    copyClipBtn.addEventListener('click', async () => {
+      const canvas = generateAdOverlayCanvas();
+      canvas.toBlob(async (blob) => {
+        try {
+          await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
+          copyText.textContent = '✓ Copied Ad Specs Guide!';
+          setTimeout(() => { copyText.textContent = 'Copy Paid Ad Guide to Clipboard (Ctrl+V)'; }, 3000);
+        } catch (err) { alert('Clipboard copy not supported. Click Download PNG.'); }
+      });
+    });
+
+    downloadGuideBtn.addEventListener('click', () => {
+      const canvas = generateAdOverlayCanvas();
+      const link = document.createElement('a');
+      link.download = 'Paid_Video_Ad_SafeZone_1080x1920.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    });
+  </script>
+</body>
+</html>
