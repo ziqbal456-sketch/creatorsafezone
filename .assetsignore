@@ -1,0 +1,9 @@
+.git
+.github
+.assetsignore
+_headers
+worker.js
+wrangler.jsonc
+package.json
+package-lock.json
+*.md
