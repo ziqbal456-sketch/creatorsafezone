@@ -9,6 +9,7 @@ CreatorSafeZone is hosted as a Cloudflare Worker with static assets. The site do
 ## Files Cloudflare uses
 
 - `wrangler.jsonc` identifies the existing `creatorsafezone` Worker.
+- Versioned preview URLs are explicitly enabled in `wrangler.jsonc` so uploaded versions can be tested before promotion.
 - `worker.js` serves static assets and adds response security headers.
 - `.assetsignore` prevents repository and deployment-control files from being published as public website assets.
 - All HTML, XML, text, and JSON website files in the project root remain static assets.
