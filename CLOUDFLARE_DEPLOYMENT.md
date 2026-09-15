@@ -1,5 +1,7 @@
 # CreatorSafeZone Cloudflare Worker deployment
 
+GitHub integration connected to the existing Cloudflare Worker on September 15, 2026. Initial builds use `wrangler versions upload` so the security-wrapper release can be inspected before production promotion.
+
 ## What the current deployment is
 
 CreatorSafeZone is hosted as a Cloudflare Worker with static assets. The site does not currently have server-side application logic. `worker.js` is a small response wrapper: it asks Cloudflare to serve the existing static file, then adds security headers without changing the page content or browser-based media processing.
