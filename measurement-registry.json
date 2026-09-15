@@ -25,6 +25,7 @@
       "classification": "Recommended Margin",
       "reviewed": "2026-09",
       "testContext": "iPhone 16 Pro and Galaxy S25 Ultra; Instagram v340+",
+      "rangesPx": { "top": "130-150", "right": "140-160", "bottom": "360-400" },
       "limitations": "Observed crop and overlay behavior is not a universal Instagram specification."
     },
     {
