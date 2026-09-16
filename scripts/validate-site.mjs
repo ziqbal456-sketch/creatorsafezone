@@ -1,0 +1,71 @@
+import { readFileSync, readdirSync, existsSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import vm from 'node:vm';
+export const root = fileURLToPath(new URL('../', import.meta.url));
+export const read = name => readFileSync(resolve(root, name), 'utf8');
+export const pages = () => readdirSync(root).filter(n => n.endsWith('.html'));
+export function validate(overrides = {}) {
+  const get = n => overrides[n] ?? read(n);
+  const errors = [];
+  const titles = new Set(), descriptions = new Set(), canonicals = new Set();
+  const fail = (file, message) => errors.push(file + ': ' + message);
+  const attr = (tag, name) => tag.match(new RegExp('\\b' + name + '\\s*=\\s*["\x27]([^"\x27]*)["\x27]', 'i'))?.[1];
+  const sitemap = get('sitemap.xml');
+  const locations = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
+  if (!sitemap.includes('<urlset') || !sitemap.includes('</urlset>')) fail('sitemap.xml', 'missing urlset');
+  if (locations.length !== new Set(locations).size) fail('sitemap.xml', 'duplicate URLs');
+  for (const file of pages()) {
+    const html = get(file);
+    const title = [...html.matchAll(/<title[^>]*>([\s\S]*?)<\/title>/gi)];
+    const metas = [...html.matchAll(/<meta\b[^>]*>/gi)].map(m => m[0]);
+    const desc = metas.filter(t => attr(t, 'name') === 'description').map(t => attr(t, 'content'));
+    const canonical = [...html.matchAll(/<link\b[^>]*>/gi)].map(m => m[0]).filter(t => attr(t, 'rel') === 'canonical').map(t => attr(t, 'href'));
+    const expected = 'https://creatorsafezone.com/' + (file === 'index.html' ? '' : file);
+    for (const [label, values, seen] of [['title', title.map(m => m[1].trim()), titles], ['description', desc, descriptions], ['canonical', canonical, canonicals]]) {
+      if (values.length !== 1 || !values[0]) fail(file, 'requires exactly one nonempty ' + label);
+      else { if (seen.has(values[0])) fail(file, 'duplicate ' + label); seen.add(values[0]); }
+    }
+    if (canonical[0] !== expected) fail(file, 'unexpected canonical');
+    if (!locations.includes(expected)) fail(file, 'absent from sitemap');
+    if ([...html.matchAll(/<h1\b/gi)].length !== 1) fail(file, 'requires one H1');
+    for (const match of html.matchAll(/\b(?:href|src)\s*=\s*["']([^"']+)["']/gi)) {
+      const value = match[1];
+      if (/^(?:https?:|data:|blob:|mailto:|tel:|#|\/\/)/i.test(value)) continue;
+      const path = value.split(/[?#]/)[0].replace(/^\//, '') || 'index.html';
+      if (!existsSync(resolve(root, path))) fail(file, 'missing local target ' + value);
+    }
+    let index = 0;
+    for (const match of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)) {
+      index++;
+      try {
+        if (/application\/ld\+json/i.test(match[1])) JSON.parse(match[2]);
+        else if (!/\bsrc\s*=/i.test(match[1]) && match[2].trim()) new vm.Script(match[2], {filename:file});
+      } catch (e) { fail(file, 'script ' + index + ': ' + e.message); }
+    }
+  }
+  for (const url of locations) if (!canonicals.has(url)) fail('sitemap.xml', 'URL lacks matching page: ' + url);
+  try {
+    const registry = JSON.parse(get('measurement-registry.json'));
+    const home = get('index.html');
+    for (const platform of ['TikTok', 'Instagram Reels', 'YouTube Shorts']) {
+      const record = registry.records.find(r => r.platform === platform);
+      const row = [...home.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)].find(m => m[1].includes(platform))?.[1];
+      const ranges = [...(row || '').matchAll(/(\d+)\s*[–-]\s*(\d+)\s*px/g)].map(m => m[1] + '-' + m[2]);
+      if (!record || ranges.length !== 3 || ['top','right','bottom'].some((k,i) => record.rangesPx?.[k] !== ranges[i])) fail('measurement-registry.json', platform + ' disagrees with homepage');
+    }
+  } catch (e) { fail('measurement-registry.json', e.message); }
+  try {
+    const config = JSON.parse(get('wrangler.jsonc'));
+    if (config.name !== 'creatorsafezone' || config.main !== 'worker.js' || config.assets?.binding !== 'ASSETS' || config.assets?.run_worker_first !== true || config.preview_urls !== true) fail('wrangler.jsonc', 'deployment invariants changed');
+  } catch (e) { fail('wrangler.jsonc', e.message); }
+  const ignored = get('.assetsignore').split(/\r?\n/).map(x => x.trim());
+  for (const item of ['.git','.github','docs','scripts','tests','node_modules','.wrangler','.env*','worker.js','wrangler.jsonc','package.json','*.md']) if (!ignored.includes(item)) fail('.assetsignore', 'missing exclusion: ' + item);
+  return errors;
+}
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  const errors = validate();
+  errors.forEach(e => console.error('FAIL ' + e));
+  console.log(errors.length ? errors.length + ' validation failures' : 'PASS: ' + pages().length + ' pages, scripts, metadata, local targets, sitemap coverage, registry and deployment safeguards');
+  process.exitCode = errors.length ? 1 : 0;
+}
