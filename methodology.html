@@ -4,19 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>How CreatorSafeZone Measures Safe Areas: Measurement & Verification Protocol</title>
-  <meta name="title" content="How CreatorSafeZone Measures Safe Areas: Measurement & Verification Protocol" />
-  <meta name="description" content="Read the official CreatorSafeZone measurement protocol. Learn how we distinguish official specifications from observed mobile UI boundaries and recommended working areas." />
-  <link rel="canonical" href="https://creatorsafezone.com/methodology.html" />
+  <title>CreatorSafeZone Safe Area Measurement Methodology</title>
+  <meta name="title" content="CreatorSafeZone Safe Area Measurement Methodology" />
+  <meta name="description" content="Learn how CreatorSafeZone classifies official specifications, observed interface evidence, planning scenarios and recommended video working areas." />
+  <link rel="canonical" href="https://creatorsafezone.com/methodology" />
 
   <!-- Branded Inline SVG Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2306B6D4'/><text x='50%' y='58%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='44' font-weight='900' fill='%230B0F19'>CSZ</text></svg>" type="image/svg+xml" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://creatorsafezone.com/methodology.html" />
+  <meta property="og:url" content="https://creatorsafezone.com/methodology" />
   <meta property="og:title" content="CreatorSafeZone Measurement Methodology & Verification Protocol" />
   <meta property="og:description" content="How we measure short-form video safe areas, classify evidence, and account for device differences." />
+  <meta property="og:image" content="https://creatorsafezone.com/methodology-article.svg" />
 
   <!-- Fonts & Tailwind CSS CDN -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,16 +46,29 @@
     "author": {
       "@type": "Organization",
       "name": "CreatorSafeZone Editorial Team",
-      "url": "https://creatorsafezone.com/"
+      "url": "https://creatorsafezone.com/",
+      "logo": "https://creatorsafezone.com/brand-logo.svg"
     },
     "publisher": {
       "@type": "Organization",
       "name": "CreatorSafeZone",
-      "url": "https://creatorsafezone.com/"
+      "url": "https://creatorsafezone.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://creatorsafezone.com/brand-logo.svg",
+        "width": 512,
+        "height": 512
+      }
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://creatorsafezone.com/methodology-article.svg",
+      "width": 1200,
+      "height": 675
     },
     "datePublished": "2026-09-13",
-    "dateModified": "2026-09-13",
-    "mainEntityOfPage": "https://creatorsafezone.com/methodology.html"
+    "dateModified": "2026-09-17",
+    "mainEntityOfPage": "https://creatorsafezone.com/methodology"
   }
   </script>
 </head>
@@ -72,13 +86,13 @@
       </a>
       <nav class="hidden md:flex items-center gap-1 text-[11px] lg:text-xs font-semibold text-slate-300">
         <a href="/" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">Hub</a>
-        <a href="/tiktok-safe-zone.html" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">TikTok</a>
-        <a href="/instagram-reels-safe-zone.html" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">Reels</a>
-        <a href="/youtube-shorts-safe-zone.html" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">Shorts</a>
-        <a href="/capcut-safe-zone-template.html" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">CapCut</a>
-        <a href="/instagram-story-safe-zone.html" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">Stories</a>
-        <a href="/instagram-grid-crop-previewer.html" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">1:1 Crop</a>
-        <a href="/vertical-video-ad-specs.html" class="px-2.5 py-1.5 rounded-lg text-rose-400 hover:bg-slate-800 transition">Ad Specs</a>
+        <a href="/tiktok-safe-zone" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">TikTok</a>
+        <a href="/instagram-reels-safe-zone" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">Reels</a>
+        <a href="/youtube-shorts-safe-zone" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">Shorts</a>
+        <a href="/capcut-safe-zone-template" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">CapCut</a>
+        <a href="/instagram-story-safe-zone" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">Stories</a>
+        <a href="/instagram-grid-crop-previewer" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">1:1 Crop</a>
+        <a href="/vertical-video-ad-specs" class="px-2.5 py-1.5 rounded-lg text-rose-400 hover:bg-slate-800 transition">Ad Specs</a>
       </nav>
       <div class="flex items-center gap-2">
         <span class="inline-flex items-center gap-1.5 text-[11px] sm:text-xs text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 px-2.5 sm:px-3 py-1 rounded-full font-semibold">
@@ -273,26 +287,26 @@
       <div>
         <h5 class="font-bold text-white uppercase tracking-wider mb-3 text-[11px]">Platform Simulators</h5>
         <ul class="space-y-2 text-[11px]">
-          <li><a href="/tiktok-safe-zone.html" class="hover:text-cyan-400 transition">TikTok Safe Zone</a></li>
-          <li><a href="/instagram-reels-safe-zone.html" class="hover:text-cyan-400 transition">Instagram Reels Guide</a></li>
-          <li><a href="/youtube-shorts-safe-zone.html" class="hover:text-cyan-400 transition">YouTube Shorts Margins</a></li>
-          <li><a href="/instagram-story-safe-zone.html" class="hover:text-cyan-400 transition">Instagram Stories Safe Area</a></li>
+          <li><a href="/tiktok-safe-zone" class="hover:text-cyan-400 transition">TikTok Safe Zone</a></li>
+          <li><a href="/instagram-reels-safe-zone" class="hover:text-cyan-400 transition">Instagram Reels Guide</a></li>
+          <li><a href="/youtube-shorts-safe-zone" class="hover:text-cyan-400 transition">YouTube Shorts Margins</a></li>
+          <li><a href="/instagram-story-safe-zone" class="hover:text-cyan-400 transition">Instagram Stories Safe Area</a></li>
         </ul>
       </div>
       <div>
         <h5 class="font-bold text-white uppercase tracking-wider mb-3 text-[11px]">Editor Utilities & B2B</h5>
         <ul class="space-y-2 text-[11px]">
-          <li><a href="/capcut-safe-zone-template.html" class="hover:text-cyan-400 transition">CapCut Safe Zone Template</a></li>
-          <li><a href="/instagram-grid-crop-previewer.html" class="hover:text-cyan-400 transition">1:1 Profile Crop Tool</a></li>
-          <li><a href="/vertical-video-ad-specs.html" class="hover:text-cyan-400 transition">Paid Ad Safe Margins</a></li>
+          <li><a href="/capcut-safe-zone-template" class="hover:text-cyan-400 transition">CapCut Safe Zone Template</a></li>
+          <li><a href="/instagram-grid-crop-previewer" class="hover:text-cyan-400 transition">1:1 Profile Crop Tool</a></li>
+          <li><a href="/vertical-video-ad-specs" class="hover:text-cyan-400 transition">Paid Ad Safe Margins</a></li>
           <li><a href="https://canva.link/1v53ulzrri8xp2u" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition">Canva 9:16 Template</a></li>
         </ul>
       </div>
       <div>
         <h5 class="font-bold text-white uppercase tracking-wider mb-3 text-[11px]">Trust & Architecture</h5>
         <ul class="space-y-2 text-[11px] mb-2">
-          <li><a href="/methodology.html" class="text-cyan-400 hover:underline">Measurement Methodology</a></li>
-          <li><a href="/privacy-policy.html" class="hover:text-cyan-400 transition">Privacy Policy & Security</a></li>
+          <li><a href="/methodology" class="text-cyan-400 hover:underline">Measurement Methodology</a></li>
+          <li><a href="/privacy-policy" class="hover:text-cyan-400 transition">Privacy Policy & Security</a></li>
         </ul>
         <p class="text-slate-500 text-[11px] leading-relaxed">
           100% client-side HTML5 processing. Zero server uploads.

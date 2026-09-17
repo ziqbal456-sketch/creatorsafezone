@@ -21,7 +21,8 @@ export function validate(overrides = {}) {
     const metas = [...html.matchAll(/<meta\b[^>]*>/gi)].map(m => m[0]);
     const desc = metas.filter(t => attr(t, 'name') === 'description').map(t => attr(t, 'content'));
     const canonical = [...html.matchAll(/<link\b[^>]*>/gi)].map(m => m[0]).filter(t => attr(t, 'rel') === 'canonical').map(t => attr(t, 'href'));
-    const expected = 'https://creatorsafezone.com/' + (file === 'index.html' ? '' : file);
+    const route = file === 'index.html' ? '' : file.slice(0, -'.html'.length);
+    const expected = 'https://creatorsafezone.com/' + route;
     for (const [label, values, seen] of [['title', title.map(m => m[1].trim()), titles], ['description', desc, descriptions], ['canonical', canonical, canonicals]]) {
       if (values.length !== 1 || !values[0]) fail(file, 'requires exactly one nonempty ' + label);
       else { if (seen.has(values[0])) fail(file, 'duplicate ' + label); seen.add(values[0]); }
@@ -32,8 +33,11 @@ export function validate(overrides = {}) {
     for (const match of html.matchAll(/\b(?:href|src)\s*=\s*["']([^"']+)["']/gi)) {
       const value = match[1];
       if (/^(?:https?:|data:|blob:|mailto:|tel:|#|\/\/)/i.test(value)) continue;
-      const path = value.split(/[?#]/)[0].replace(/^\//, '') || 'index.html';
-      if (!existsSync(resolve(root, path))) fail(file, 'missing local target ' + value);
+      const routePath = value.split(/[?#]/)[0].replace(/^\//, '');
+      const path = routePath || 'index.html';
+      if (value.startsWith('/') && routePath.endsWith('.html')) fail(file, 'internal link must use extensionless route ' + value);
+      const target = existsSync(resolve(root, path)) ? path : path + '.html';
+      if (!existsSync(resolve(root, target))) fail(file, 'missing local target ' + value);
     }
     let index = 0;
     for (const match of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)) {
@@ -44,6 +48,7 @@ export function validate(overrides = {}) {
       } catch (e) { fail(file, 'script ' + index + ': ' + e.message); }
     }
   }
+  if (locations.some(url => url.endsWith('.html'))) fail('sitemap.xml', 'URLs must use extensionless routes');
   for (const url of locations) if (!canonicals.has(url)) fail('sitemap.xml', 'URL lacks matching page: ' + url);
   try {
     const registry = JSON.parse(get('measurement-registry.json'));
