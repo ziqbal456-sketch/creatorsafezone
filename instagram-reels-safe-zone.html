@@ -54,7 +54,7 @@
             "name": "What are the safe zone dimensions for Instagram Reels?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Instagram Reels videos render at 1080x1920 pixels (9:16). The safe zone requires leaving 130 to 150 pixels clear at the top, 140 to 160 pixels along the right edge, and 360 to 400 pixels at the bottom."
+              "text": "For a 1080x1920 (9:16) working canvas, CreatorSafeZone currently recommends leaving 130 to 150 pixels clear at the top, 140 to 160 pixels along the right edge, and 360 to 400 pixels at the bottom. These are working estimates, not official Instagram requirements."
             }
           },
           {
@@ -62,7 +62,7 @@
             "name": "How does Instagram crop Reels on the main profile grid?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "On your profile grid, Reels are cropped from 9:16 down to a centered 1:1 square (1080x1080), slicing 420px from both the top and bottom."
+              "text": "Profile-grid previews can crop a Reel differently from its full-screen presentation. Check the current preview in your own account before publishing; CreatorSafeZone's square preview is a planning scenario, not a universal Instagram rule."
             }
           }
         ]
@@ -193,17 +193,17 @@
             <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
             <span class="font-bold text-white text-[11px] uppercase tracking-wider">Measurement & Verification</span>
           </div>
-          <span class="text-[10px] font-mono text-cyan-400 bg-cyan-950/60 border border-cyan-800/50 px-2 py-0.5 rounded font-semibold">Evidence: Observed UI</span>
+          <span class="text-[10px] font-mono text-amber-400 bg-amber-950/60 border border-amber-800/50 px-2 py-0.5 rounded font-semibold">Evidence: Source capture pending</span>
         </div>
         <div class="grid grid-cols-2 gap-2 text-[10px] font-mono text-slate-400">
-          <div><span class="text-slate-500 block">Last Reviewed:</span> <span class="text-slate-200 font-bold">September 2026</span></div>
+          <div><span class="text-slate-500 block">Published Review:</span> <span class="text-slate-200 font-bold">September 2026</span></div>
           <div><span class="text-slate-500 block">Tested Canvas:</span> <span class="text-slate-200 font-bold">1080 × 1920 (9:16)</span></div>
           <div><span class="text-slate-500 block">Surface:</span> <span class="text-slate-200">Dedicated Reels Feed</span></div>
           <div><span class="text-slate-500 block">Classification:</span> <span class="text-amber-400 font-semibold">Recommended Margin</span></div>
           <div><span class="text-slate-500 block">Methodology:</span> <a href="/methodology.html" class="text-cyan-400 hover:underline">Read Protocol ➔</a></div>
         </div>
         <div class="mt-2 pt-2 border-t border-slate-800/80 text-[10px] text-slate-400 leading-tight">
-          <strong>Notice:</strong> Platform UI and crops can vary by device, app version, placement, account state, and interface updates. Treat these values as practical working recommendations, not permanent guarantees.
+          <strong>Evidence notice:</strong> These margins and crop previews are planning scenarios. Their supporting capture references are not yet attached, so confirm the current preview in your own Instagram account before publishing.
         </div>
       </div>
 
@@ -216,7 +216,7 @@
       <div>
         <h1 class="text-3xl font-extrabold text-white tracking-tight">The 2026 Instagram Reels Safe Zone & Grid Crop Guide</h1>
         <p class="mt-3 text-slate-400 text-base">
-          Instagram Reels renders your single video file in three distinct aspect ratios: the full 9:16 player, the 4:5 home feed, and the 1:1 profile grid.
+          A Reel can appear differently across full-screen viewing, feed placement, and profile previews. The 9:16, 4:5, and 1:1 views below are planning scenarios; Instagram can vary presentation by surface, account, device, and product update.
         </p>
       </div>
 
@@ -224,17 +224,17 @@
         <div class="bg-slate-900/60 border border-slate-800 p-5 rounded-xl space-y-2">
           <span class="text-pink-400 font-bold text-base block">1. Reels Dedicated Feed</span>
           <span class="text-white font-mono text-xs">9:16 (1080 × 1920)</span>
-          <p class="text-slate-400 text-xs">In the September 2026 observed test configuration, Like, Share, and Follow controls occupied roughly the bottom 380px.</p>
+          <p class="text-slate-400 text-xs">This simulator reserves roughly the bottom 380px as a conservative working estimate for controls and supporting text.</p>
         </div>
         <div class="bg-slate-900/60 border border-slate-800 p-5 rounded-xl space-y-2">
           <span class="text-amber-400 font-bold text-base block">2. Main Home Feed Crop</span>
           <span class="text-white font-mono text-xs">4:5 (1080 × 1350)</span>
-          <p class="text-slate-400 text-xs">In the observed test configuration, this crop removes roughly 285px from the top and bottom, so high headlines can be cut off.</p>
+          <p class="text-slate-400 text-xs">This 4:5 planning scenario removes roughly 285px from the top and bottom of a 1080 × 1920 canvas. Confirm the live feed preview before publishing.</p>
         </div>
         <div class="bg-slate-900/60 border border-slate-800 p-5 rounded-xl space-y-2">
           <span class="text-cyan-400 font-bold text-base block">3. Profile Grid Thumbnail</span>
           <span class="text-white font-mono text-xs">1:1 (1080 × 1080)</span>
-          <p class="text-slate-400 text-xs">In the observed test configuration, this crop removes roughly 420px from the top and bottom, leaving the central square visible.</p>
+          <p class="text-slate-400 text-xs">This square planning scenario removes roughly 420px from the top and bottom of a 1080 × 1920 canvas. It is not a universal profile-grid rule.</p>
         </div>
       </div>
     </div>
@@ -246,7 +246,7 @@
       <div class="space-y-3">
         <span class="font-bold text-white text-base tracking-tight">CreatorSafeZone<span class="text-cyan-400">.com</span></span>
         <p class="text-slate-500 leading-relaxed text-[11px]">
-          Free, browser-based pre-publish QA simulator for TikTok, Instagram Reels, and YouTube Shorts. Calibrated against 2026 mobile UI boundaries with 100% client-side privacy.
+          Free browser-based pre-publish planning tool for vertical video, using clearly labeled working estimates with 100% client-side media processing.
         </p>
       </div>
       <div>

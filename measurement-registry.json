@@ -3,15 +3,16 @@
   "publisher": "CreatorSafeZone",
   "methodology": "https://creatorsafezone.com/methodology.html",
   "lastReviewed": "2026-09-13",
-  "notice": "Observed interface measurements are configuration-specific working estimates, not permanent platform specifications.",
+  "notice": "These values are CreatorSafeZone working recommendations. The current records do not include the underlying capture references needed to classify them as independently reviewable observed measurements.",
   "records": [
     {
       "id": "tiktok-in-feed-2026-09",
       "platform": "TikTok",
       "surface": "In-Feed",
       "canvas": "1080x1920",
-      "evidence": "Observed UI",
-      "classification": "Recommended Margin",
+      "evidence": "CreatorSafeZone recommendation",
+      "evidenceStatus": "Source capture pending",
+      "classification": "Working estimate",
       "reviewed": "2026-09",
       "rangesPx": { "top": "140-160", "right": "160-180", "bottom": "380-420" },
       "limitations": "UI can vary by device, app version, account state, captions, placement, and interface updates."
@@ -21,10 +22,10 @@
       "platform": "Instagram Reels",
       "surface": "Dedicated Reels Feed",
       "canvas": "1080x1920",
-      "evidence": "Observed UI",
-      "classification": "Recommended Margin",
+      "evidence": "CreatorSafeZone recommendation",
+      "evidenceStatus": "Source capture pending",
+      "classification": "Working estimate",
       "reviewed": "2026-09",
-      "testContext": "iPhone 16 Pro and Galaxy S25 Ultra; Instagram v340+",
       "rangesPx": { "top": "130-150", "right": "140-160", "bottom": "360-400" },
       "limitations": "Observed crop and overlay behavior is not a universal Instagram specification."
     },
@@ -33,8 +34,9 @@
       "platform": "YouTube Shorts",
       "surface": "Shorts Feed",
       "canvas": "1080x1920",
-      "evidence": "Observed UI",
-      "classification": "Recommended Margin",
+      "evidence": "CreatorSafeZone recommendation",
+      "evidenceStatus": "Source capture pending",
+      "classification": "Working estimate",
       "reviewed": "2026-09",
       "rangesPx": { "top": "120-140", "right": "140-160", "bottom": "340-380" },
       "limitations": "UI can vary by device, app version, placement, account state, and interface updates."
@@ -45,7 +47,8 @@
       "surface": "TikTok, Meta, and YouTube ad placements",
       "canvas": "1080x1920",
       "evidence": "Mixed",
-      "classification": "Official format requirements plus observed UI and recommended working areas",
+      "evidenceStatus": "Official format references and UI source captures pending",
+      "classification": "Working estimate combining platform guidance and CreatorSafeZone recommendations",
       "reviewed": "2026-09",
       "limitations": "CTA and disclosure overlays vary by objective, format, placement, and platform changes."
     }
