@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">CreatorSafeZone measurement methodology</title>
+  <desc id="desc">A vertical video frame with evidence, measurement, and recommendation layers.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B0F19"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="300" y1="130" x2="870" y2="560" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#06B6D4"/>
+      <stop offset="1" stop-color="#F43F5E"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect x="72" y="68" width="1056" height="539" rx="36" fill="#0F172A" stroke="#334155" stroke-width="2"/>
+  <rect x="118" y="116" width="250" height="443" rx="28" fill="#020617" stroke="url(#accent)" stroke-width="8"/>
+  <rect x="148" y="176" width="190" height="264" rx="18" fill="#083344" stroke="#22D3EE" stroke-width="3" stroke-dasharray="12 10"/>
+  <rect x="148" y="458" width="190" height="54" rx="12" fill="#881337" opacity="0.9"/>
+  <circle cx="318" cy="146" r="9" fill="#F43F5E"/>
+  <text x="424" y="206" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#22D3EE">EVIDENCE</text>
+  <text x="424" y="270" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#E2E8F0">MEASUREMENT</text>
+  <text x="424" y="334" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#FB7185">RECOMMENDATION</text>
+  <path d="M424 378H1046" stroke="#334155" stroke-width="2"/>
+  <text x="424" y="442" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="800" fill="#FFFFFF">Safe Area Methodology</text>
+  <text x="424" y="496" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#94A3B8">Transparent classifications for short-form video guidance</text>
+  <text x="424" y="548" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#22D3EE">CreatorSafeZone</text>
+</svg>

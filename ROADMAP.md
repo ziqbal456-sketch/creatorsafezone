@@ -1,10 +1,10 @@
 # Prioritized backlog
-Updated 2026-09-16. Priorities are editorial judgment, not measured keyword demand. Only OPS-01 is authorized for implementation.
+Updated 2026-09-17. Priorities are editorial judgment, not measured keyword demand. TRUST-02 is the active authorized release.
 
 | ID | Priority | Work and acceptance criteria |
 | --- | --- | --- |
-| OPS-01 | Now | Operating instructions, automated checks, branch preview workflow and weekly review; report local and remote verification separately |
-| TRUST-02 | Next | Substantiate existing device/app claims; qualify unsupported statements; visible copy and schema agree |
+| OPS-01 | Complete | Operating instructions, automated checks, branch preview workflow and weekly review; merged as 71ac37b |
+| TRUST-02 | In progress | Unsupported device/app claims removed; unreferenced margins and crop behavior labeled as working estimates or planning scenarios; source captures remain required before any observed classification |
 | CROP-01 | Next | Verify current Instagram crops by surface/account; label scenario previews accurately |
 | DATA-01 | Next | Obtain authorized Search Console export and dated query-to-page baseline |
 | UX-01 | Later | Test image/video selection, playback, overlays, exports and keyboard flow on mobile/desktop |
