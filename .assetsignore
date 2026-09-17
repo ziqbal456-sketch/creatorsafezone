@@ -7,3 +7,12 @@ wrangler.jsonc
 package.json
 package-lock.json
 *.md
+docs
+scripts
+tests
+node_modules
+.wrangler
+.codex
+.agents
+.env*
+.gitignore

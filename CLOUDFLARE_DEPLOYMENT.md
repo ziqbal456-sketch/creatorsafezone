@@ -20,10 +20,12 @@ CreatorSafeZone is hosted as a Cloudflare Worker with static assets. The site do
 Connect the private GitHub repository to the existing Cloudflare Worker and use `main` as the production branch. Configure the deploy command as:
 
 ```text
-npx wrangler deploy
+npx wrangler versions upload
 ```
 
-Use preview deployments or a temporary Worker URL before promoting a change to the custom domain.
+Keep both dashboard deploy and version commands as `npx wrangler versions upload`. Set the build command to `npm run check`; enable non-production branch builds. Inspect the exact branch preview before merging, then inspect the resulting main preview before authorized promotion. Dashboard settings and required GitHub checks must be verified separately; repository files alone do not enforce them.
+
+Use `node scripts/smoke-test.mjs <actual-preview-url>` for HTTP checks and follow docs/RELEASE-CHECKLIST.md for browser verification. Internal docs, scripts, tests, dependencies and credentials must stay excluded by .assetsignore. `wrangler deploy --dry-run` validates packaging without publishing.
 
 ## Pre-deployment checks
 
