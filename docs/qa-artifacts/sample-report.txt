@@ -1,0 +1,22 @@
+CreatorSafeZone — placement planning report
+Canvas: 1080 × 1920; media fitted without cropping.
+Only manually marked regions are checked. This is not automatic text detection or a review of every video frame.
+Safe = inside the working area; Warning = less than 24 px clearance; Covered = overlaps an estimated margin.
+These are recommendations, not verified platform measurements. Confirm in the destination app before publishing.
+
+TikTok: Safe
+Evidence: Source capture pending; registry review label: 2026-09
+Headline sample: Safe. Inside the working area with at least 24 px clearance.
+Subtitle sample: Safe. Inside the working area with at least 24 px clearance.
+
+Instagram Reels: Safe
+Evidence: Source capture pending; registry review label: 2026-09
+Headline sample: Safe. Inside the working area with at least 24 px clearance.
+Subtitle sample: Safe. Inside the working area with at least 24 px clearance.
+
+YouTube Shorts: Safe
+Evidence: Source capture pending; registry review label: 2026-09
+Headline sample: Safe. Inside the working area with at least 24 px clearance.
+Subtitle sample: Safe. Inside the working area with at least 24 px clearance.
+
+Methodology: https://creatorsafezone.com/methodology
