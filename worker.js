@@ -29,6 +29,13 @@ export default {
       headers.set(name, value);
     }
 
+    // Only the URL-enabled checker can request user-selected HTTPS video hosts.
+    const path = new URL(request.url).pathname.replace(/\/$/, '');
+    if (path === '/check-all-platforms' || path === '/check-all-platforms.html') {
+      headers.set('Content-Security-Policy', SECURITY_HEADERS['Content-Security-Policy'].replace("media-src 'self' blob: https://assets.mixkit.co", "media-src 'self' blob: https:"));
+      headers.set('Referrer-Policy', 'no-referrer');
+    }
+
     // Prevent the workers.dev preview hostname from competing with the custom domain.
     const hostname = new URL(request.url).hostname;
     if (hostname.endsWith(".workers.dev")) {

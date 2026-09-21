@@ -1,5 +1,5 @@
 # Prioritized backlog
-Updated 2026-09-20. Priorities are editorial judgment, not measured keyword demand. PRODUCT-02 is the active authorized implementation; production promotion is pending release review.
+Updated 2026-09-21. Priorities are editorial judgment, not measured keyword demand. PRODUCT-02 includes the interactive preview revision in docs/PHASE-2-PREVIEW-REVISION.md; production promotion is pending release review.
 
 | ID | Priority | Work and acceptance criteria |
 | --- | --- | --- |

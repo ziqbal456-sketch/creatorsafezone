@@ -1,1 +1,1 @@
-Passed desktop Edge and 390px mobile viewport checks; see script for assertions.
+Passed desktop Edge and 390px mobile viewport checks, adjustable margins, shared placement, resize, undo, media controls and URL failure/success fixtures. See script for assertions.

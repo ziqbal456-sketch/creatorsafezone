@@ -1,5 +1,7 @@
 # Phase 2 validation — 2026-09-20
 
+Superseded for release review by docs/PHASE-2-PREVIEW-REVISION.md (2026-09-21), which records 26 tests, the revised feature scope and current preview version. The original validation below is retained as release history.
+
 ## Scope
 
 New /check-all-platforms page, qa-engine.js, qa-app.js and qa.css; links from the homepage, TikTok, Reels and Shorts; sitemap and preview smoke coverage. Existing platform tool scripts, measurement registry and Worker configuration are unchanged.

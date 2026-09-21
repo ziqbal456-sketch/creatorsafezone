@@ -1,5 +1,7 @@
 # Phase 2 action plan
 
+Update 2026-09-21: see PHASE-2-PREVIEW-REVISION.md for the implemented user-requested improvements, optional direct-video URL loading, custom margins, composition modes and current review URL. These supersede the original fixed-margin/fit-only acceptance details below.
+
 Prepared 2026-09-20 from the prior “Rate Niche Competition” strategy and “Implement CreatorSafeZone Phase 1” work. Current authorization: implement Phase 2. Release item: PRODUCT-02, cross-platform placement QA.
 
 ## Agreed direction
