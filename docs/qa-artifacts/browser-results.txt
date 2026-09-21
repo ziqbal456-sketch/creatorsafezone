@@ -1,1 +1,1 @@
-Passed desktop Edge and 390px mobile viewport checks, adjustable margins, shared placement, resize, undo, media controls and URL failure/success fixtures. See script for assertions.
+Passed desktop Edge and 390px mobile viewport checks, export dropdown keyboard/outside dismissal, all-platform guide downloads, guide transparency/custom geometry, mocked clipboard success/denial, Canva link, adjustable margins, shared placement, resize, undo, media controls and URL failure/success fixtures. See script for assertions.

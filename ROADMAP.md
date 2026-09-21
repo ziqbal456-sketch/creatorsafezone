@@ -14,3 +14,5 @@ Updated 2026-09-21. Priorities are editorial judgment, not measured keyword dema
 | OPS-02 | Later | Pin Wrangler and browser-test dependencies; enforce required GitHub checks where available |
 
 Weekly review recommends at most three items; implement one approved item per release. Existing observed-UI labels still need supporting empirical evidence; automated agreement checks cannot supply it.
+
+PRODUCT-02 layout/export revision implemented locally; see docs/CHECKER-LAYOUT-EXPORTS.md. Preview upload awaits approval after automatic review rejection.

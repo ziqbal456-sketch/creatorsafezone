@@ -1,7 +1,7 @@
 const base = new URL(process.argv[2] || 'https://creatorsafezone.com');
 if (base.protocol !== 'https:' || !(/^(www\.)?creatorsafezone\.com$/.test(base.hostname) || /^(?:[a-z0-9-]+-)?creatorsafezone\.z-iqbal456\.workers\.dev$/.test(base.hostname))) throw new Error('Use the actual CreatorSafeZone production or preview HTTPS URL');
 const preview = base.hostname.endsWith('.workers.dev');
-const paths = ['/check-all-platforms', '/qa-app.js', '/qa-platform-ui.js', '/qa-engine.js', '/qa.css', '/', '/instagram-reels-safe-zone','/youtube-shorts-safe-zone','/about','/editorial-policy','/robots.txt','/sitemap.xml','/measurement-registry.json'];
+const paths = ['/check-all-platforms', '/qa-app.js', '/qa-exports.js', '/qa-platform-ui.js', '/qa-engine.js', '/qa.css', '/', '/instagram-reels-safe-zone','/youtube-shorts-safe-zone','/about','/editorial-policy','/robots.txt','/sitemap.xml','/measurement-registry.json'];
 let failures = 0;
 for (const path of paths) {
   try {

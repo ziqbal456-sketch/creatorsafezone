@@ -1,4 +1,5 @@
 import {drawPlatformUI} from './qa-platform-ui.js';
+import {guideCanvas,pngBlob} from './qa-exports.js';
 import {CANVAS, buildSurfaces, assess, summarize, validRect, makeReport, sharedSurface, boundsFromMargins, videoUrl} from './qa-engine.js';
 
 const $ = id => document.getElementById(id);
@@ -142,7 +143,8 @@ function installPreviews() {
     form.addEventListener('submit',event=>{event.preventDefault();try{surface.bounds=boundsFromMargins(Object.fromEntries(Object.entries(inputs).map(([s,i])=>[s,i.valueAsNumber])));surface.custom=true;sync();refresh();status(surface.name+' planning margins updated.');}catch(e){feedback.textContent=e.message;}});
     reset.addEventListener('click',()=>{surface.bounds={...original};surface.custom=false;sync();refresh();status(surface.name+' default margins restored.');});
     form.append(fields,apply,reset,feedback);details.append(summary,form);sync();
-    article.append(title,values,canvas,badge,details,evidence);$('previews').append(article);previews.push({surface,canvas,badge});
+    const previewHeader=document.createElement('div');previewHeader.className='preview-header';previewHeader.append(title,badge);details.append(evidence);
+    article.append(previewHeader,canvas,values,details);$('previews').append(article);previews.push({surface,canvas,badge});
     const point = event => { const box = canvas.getBoundingClientRect();return {x:(event.clientX-box.left)/box.width*CANVAS.width,y:(event.clientY-box.top)/box.height*CANVAS.height}; };
     canvas.addEventListener('pointerdown',event => {
       if(!$('showRegions').checked)return;
@@ -150,7 +152,7 @@ function installPreviews() {
       const p = point(event);const handle=55;const active=selectedElement();const resize=active&&Math.abs(p.x-active.x-active.width)<handle&&Math.abs(p.y-active.y-active.height)<handle;
       const element = resize?active:[...elements].reverse().find(e => p.x >= e.x && p.x <= e.x+e.width && p.y >= e.y && p.y <= e.y+e.height);
       if (!element) return;
-      remember();selected = element.id;drag = {id:element.id,resize,dx:p.x-element.x,dy:p.y-element.y,pointer:event.pointerId};canvas.focus({preventScroll:true});canvas.setPointerCapture(event.pointerId);updateEditor();draw();
+      remember();selected = element.id;$('region-controls').open=true;drag = {id:element.id,resize,dx:p.x-element.x,dy:p.y-element.y,pointer:event.pointerId};canvas.focus({preventScroll:true});canvas.setPointerCapture(event.pointerId);updateEditor();draw();
     });
     canvas.addEventListener('pointermove',event => {
       if (!drag || drag.pointer !== event.pointerId) return;
@@ -226,6 +228,7 @@ for (const name of ['dragover','dragleave','drop']) $('dropTarget').addEventList
 });
 $('clearButton').addEventListener('click',() => {cancelLoad();cleanupMedia();sample=false;history=[];elements = [];selected = null;$('mediaInfo').textContent = 'No media selected. Nothing is uploaded.';refresh();status('Media and marked regions cleared.');});
 $('demoButton').addEventListener('click',loadSample);
+$('openRegionsButton').addEventListener('click',()=>{$('region-controls').open=true;$('region-controls').scrollIntoView({block:'start'});$('elementType').focus({preventScroll:true});});
 $('addElement').addEventListener('click',() => {
   if (!media || elements.length >= 20 || !surfaces.length) return;
   remember();
@@ -263,6 +266,21 @@ $('reportButton').addEventListener('click',() => {
 });
 
 function downloadBlob(blob,name){if(!blob){status('Export failed. Try another media file.');return;}const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download=name;link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+const guideSurface=()=>surfaces[Number($('exportPlatform').value)];
+const exportStatus=message=>{$('exportStatus').textContent=message;};
+$('copyGuideButton').addEventListener('click',async()=>{
+  const surface=guideSurface();if(!surface)return;
+  if(!navigator.clipboard?.write||typeof ClipboardItem==='undefined'){exportStatus('Image clipboard is unavailable in this browser. Download the guide PNG and upload it in your editor instead.');return;}
+  try{const promise=pngBlob(guideCanvas(surface));await navigator.clipboard.write([new ClipboardItem({'image/png':promise})]);exportStatus(surface.name+' guide copied. Paste it in your editor or Canva, then remove the guide before the final export.');}
+  catch{exportStatus('Clipboard access was blocked. Use Download guide PNG instead.');}
+});
+$('downloadGuideButton').addEventListener('click',async()=>{const surface=guideSurface();if(!surface)return;try{downloadBlob(await pngBlob(guideCanvas(surface)),'creatorsafezone-'+surface.name.toLowerCase().replaceAll(' ','-')+'-guide.png');exportStatus(surface.name+' transparent guide downloaded (1080 × 1920).');}catch{exportStatus('Could not create the guide. Reload and try again.');}});
+$('exportPlatform').addEventListener('change',()=>exportStatus(''));
+for(const id of ['exportMenu','viewOptions']){
+  $(id).addEventListener('toggle',()=>{if($(id).open)$(id==='exportMenu'?'viewOptions':'exportMenu').open=false;});
+}
+document.addEventListener('click',event=>{for(const id of ['exportMenu','viewOptions'])if(!$(id).contains(event.target))$(id).open=false;});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'){for(const id of ['exportMenu','viewOptions'])if($(id).open){$(id).open=false;$(id).querySelector('summary').focus();}}});
 $('imageReportButton').addEventListener('click',()=>{
   if(!media)return;if(media instanceof HTMLVideoElement)media.pause();draw();
   const output=document.createElement('canvas');output.width=3240;output.height=2180;const ctx=output.getContext('2d');ctx.fillStyle='#0b1220';ctx.fillRect(0,0,3240,2180);
