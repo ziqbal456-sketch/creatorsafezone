@@ -4,3 +4,5 @@
 .preview canvas{touch-action:pan-x pan-y}.touch-edit .preview canvas{touch-action:none}
 
 main{padding-top:24px}.intro{display:grid;grid-template-columns:1fr 1fr;gap:10px 35px;max-width:none;align-items:center}.intro .eyebrow{grid-column:1/-1;margin:0}.intro h1{font-size:2.2rem;margin:0}.intro>p:last-child{margin:0;font-size:.9rem}.notice{padding:8px 12px;margin:12px 0}#appStatus{margin:8px 0 14px}.quick-actions{display:none}#media-controls,#region-controls{scroll-margin-top:75px}@media(max-width:780px){.intro{display:block}.intro h1{font-size:1.8rem;margin:8px 0}.intro>p:last-child{font-size:.82rem}.workspace{display:flex;flex-direction:column}.controls{display:contents}.comparison{order:0;width:100%}.controls>.panel{order:1;width:100%}.quick-actions{display:flex;gap:16px;flex-wrap:wrap;font-size:.83rem;margin:14px 0}.comparison .section-heading{margin-top:0}.comparison>.muted{margin:4px 0 12px}.view-controls{gap:10px;padding:4px 0}}
+
+.view-controls select{width:auto;font-size:.75rem;margin:0 0 0 8px;padding:5px}.ui-notice{border-left:2px solid #58758b;padding-left:10px}.preview canvas{border-radius:28px}

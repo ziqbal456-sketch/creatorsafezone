@@ -1,5 +1,13 @@
 # Interactive preview revision — 2026-09-21
 
+Current review preview (platform UI restored): https://e2b66903-creatorsafezone.z-iqbal456.workers.dev/check-all-platforms — version e2b66903-8667-455c-bdc8-f6781af4d6da. This supersedes the versions listed in the earlier revision history below.
+
+## Restored platform interface
+
+User approved restoring illustrative platform controls. TikTok, Reels and Shorts now display representative navigation, action rails, channel name, title, description and audio. Platform UI is on by default, with separate toggles for platform UI, marked regions and margin shading. Caption length offers 1, 2 or 6 lines; its effect is visual only and is explicitly distinguished from numerical margin checks. The same interface is included in comparison PNG exports. No platform measurement claim or registry value changed.
+
+Validation: 26 unit/Worker tests and structural validation pass; editorial audit retains five existing advisory findings. Full browser regression passes locally and on the uploaded version, including pixel comparisons for UI visibility and caption length, independent region visibility, media/playback, coordinates, dragging, resizing, URL fixtures and exports. Exported comparison image inspected. Dry run and all 13 page/asset smoke checks plus four legacy redirects pass. Production traffic unchanged.
+
 User feedback: margins look the same, no initial sample, improve practical flexibility and add video URL input.
 
 ## Findings and changes

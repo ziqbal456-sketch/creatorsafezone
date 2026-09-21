@@ -28,6 +28,11 @@ try {
   const page = await context.newPage();const errors = [];const remote = [];
   page.on('pageerror',e => errors.push(e.message));page.on('request',r => {if (!r.url().startsWith(base) && !r.url().startsWith('blob:') && !r.url().startsWith('data:')) remote.push(r.url());});
   await page.goto(base + '/check-all-platforms');await page.waitForFunction(() => document.querySelectorAll('.preview').length === 3);
+  const canvasPixels=()=>page.locator('.preview canvas').first().evaluate(c=>c.toDataURL());
+  const withUI=await canvasPixels();await page.locator('#showPlatformUI').uncheck();assert.notEqual(await canvasPixels(),withUI);await page.locator('#showPlatformUI').check();assert.equal(await canvasPixels(),withUI);
+  await page.locator('#captionLines').selectOption('6');assert.notEqual(await canvasPixels(),withUI);assert.deepEqual(await page.locator('.badge').allTextContents(),['Covered','Warning','Safe']);await page.locator('#captionLines').selectOption('2');
+  await page.locator('#showRegions').uncheck();assert.notEqual(await canvasPixels(),withUI);await page.locator('#showRegions').check();assert.equal(await canvasPixels(),withUI);
+  console.log('PASS: default platform UI, independent visibility toggles, caption-length rendering and unchanged margin assessment.');
   assert.deepEqual(await page.locator('.badge').allTextContents(),['Covered','Warning','Safe']);
   await page.getByRole('button',{name:'Try a sample'}).click();assert.equal(await page.locator('.result-row').count(),2);
   assert.deepEqual(await page.locator('.badge').allTextContents(),['Covered','Warning','Safe']);

@@ -1,3 +1,4 @@
+import {drawPlatformUI} from './qa-platform-ui.js';
 import {CANVAS, buildSurfaces, assess, summarize, validRect, makeReport, sharedSurface, boundsFromMargins, videoUrl} from './qa-engine.js';
 
 const $ = id => document.getElementById(id);
@@ -87,21 +88,28 @@ function draw() {
       ctx.fillStyle = '#92a5bc'; ctx.font = '40px system-ui'; ctx.textAlign = 'center';
       ctx.fillText('Your creative here',width/2,height/2); ctx.textAlign = 'left';
     }
+    for (const element of elements) {
+      if(sample){ctx.save();ctx.beginPath();ctx.rect(element.x,element.y,element.width,element.height);ctx.clip();ctx.fillStyle='#ffffff';ctx.font=`bold ${Math.max(12,Math.min(48,element.height*0.55))}px system-ui`;ctx.fillText(element.text || element.label,element.x+12,element.y+element.height*0.72,Math.max(1,element.width-24));ctx.restore();}
+    }
     const b = surface.bounds;
     if ($('showMargins').checked) {
       ctx.fillStyle = `rgba(231,76,108,${Number($('marginOpacity').value)/100})`;
       ctx.fillRect(0,0,width,b.top); ctx.fillRect(b.right,b.top,width-b.right,b.bottom-b.top); ctx.fillRect(0,b.bottom,width,height-b.bottom);ctx.fillRect(0,b.top,b.left,b.bottom-b.top);
       ctx.strokeStyle = '#f993a6'; ctx.lineWidth = 3; ctx.setLineDash([12,10]); ctx.strokeRect(b.left,b.top,b.right-b.left,b.bottom-b.top);ctx.setLineDash([]);
+      if (!$('showPlatformUI').checked) {
       ctx.fillStyle='#ffe0e5';ctx.font='bold 28px system-ui';ctx.textAlign='center';if(b.top>35)ctx.fillText(`TOP ${b.top} px`,width/2,Math.max(32,b.top/2));
       if(height-b.bottom>70){ctx.fillText(`BOTTOM ${height-b.bottom} px`,width/2,b.bottom+60);ctx.font='25px system-ui';ctx.fillText('Caption / description planning margin',width/2,b.bottom+103);}
       ctx.save();ctx.translate(b.right+(width-b.right)/2,(b.top+b.bottom)/2);ctx.rotate(Math.PI/2);if(width-b.right>35)ctx.fillText(`RIGHT ${width-b.right} px · actions`,0,0);ctx.restore();ctx.textAlign='left';
+      }
     }
     if($('showCommon').checked){const common=sharedSurface(surfaces).bounds;ctx.fillStyle='#64edd01c';ctx.fillRect(common.left,common.top,common.right-common.left,common.bottom-common.top);ctx.strokeStyle='#73f7d5';ctx.lineWidth=6;ctx.strokeRect(common.left,common.top,common.right-common.left,common.bottom-common.top);}
+    if ($('showPlatformUI').checked) drawPlatformUI(ctx,surface.name,$('captionLines').value);
     for (const element of elements) {
+      if (!$('showRegions').checked) continue;
       const result = assess(element,surface); const color = colors[result.status];
       ctx.fillStyle = color + '22'; ctx.fillRect(element.x,element.y,element.width,element.height);
       ctx.strokeStyle = color; ctx.lineWidth = element.id === selected ? 8 : 4; ctx.strokeRect(element.x,element.y,element.width,element.height);
-      if(sample){ctx.save();ctx.beginPath();ctx.rect(element.x,element.y,element.width,element.height);ctx.clip();ctx.fillStyle='#ffffff';ctx.font=`bold ${Math.max(12,Math.min(48,element.height*0.55))}px system-ui`;ctx.fillText(element.text || element.label,element.x+12,element.y+element.height*0.72,Math.max(1,element.width-24));ctx.restore();}
+
       if(element.id===selected){ctx.fillStyle=color;ctx.fillRect(element.x+element.width-20,element.y+element.height-20,40,40);}
       ctx.font = 'bold 30px system-ui';
       const labelWidth = Math.min(width,ctx.measureText(element.label).width + 20);
@@ -137,6 +145,7 @@ function installPreviews() {
     article.append(title,values,canvas,badge,details,evidence);$('previews').append(article);previews.push({surface,canvas,badge});
     const point = event => { const box = canvas.getBoundingClientRect();return {x:(event.clientX-box.left)/box.width*CANVAS.width,y:(event.clientY-box.top)/box.height*CANVAS.height}; };
     canvas.addEventListener('pointerdown',event => {
+      if(!$('showRegions').checked)return;
       if(event.pointerType==='touch'&&!$('touchEdit').checked)return;
       const p = point(event);const handle=55;const active=selectedElement();const resize=active&&Math.abs(p.x-active.x-active.width)<handle&&Math.abs(p.y-active.y-active.height)<handle;
       const element = resize?active:[...elements].reverse().find(e => p.x >= e.x && p.x <= e.x+e.width && p.y >= e.y && p.y <= e.y+e.height);
@@ -232,6 +241,9 @@ for (const key of ['x','y','width','height']) $('coord' + key[0].toUpperCase() +
   remember();Object.assign(element,candidate);refresh();status('Placement updated across all three platforms.');
 });
 $('showMargins').addEventListener('change',draw);
+$('showPlatformUI').addEventListener('change',draw);
+$('showRegions').addEventListener('change',draw);
+$('captionLines').addEventListener('change',draw);
 $('touchEdit').addEventListener('change',()=>document.body.classList.toggle('touch-edit',$('touchEdit').checked));
 $('showCommon').addEventListener('change',draw);
 $('marginOpacity').addEventListener('input',draw);
@@ -255,7 +267,7 @@ $('imageReportButton').addEventListener('click',()=>{
   if(!media)return;if(media instanceof HTMLVideoElement)media.pause();draw();
   const output=document.createElement('canvas');output.width=3240;output.height=2180;const ctx=output.getContext('2d');ctx.fillStyle='#0b1220';ctx.fillRect(0,0,3240,2180);
   previews.forEach(({canvas,surface},i)=>{ctx.fillStyle='#ffffff';ctx.font='bold 36px system-ui';ctx.fillText(surface.name+' — '+summarize(elements,surface),i*1080+30,55);ctx.drawImage(canvas,i*1080,100);});
-  ctx.fillStyle='#d0dcea';ctx.font='28px system-ui';ctx.fillText('PLACEMENT PLAN · Working estimates / custom scenarios · Marked regions only · Confirm in the destination app',30,2080);ctx.fillText('CreatorSafeZone · '+(sample?'Interactive sample':media instanceof HTMLVideoElement?'Frame '+media.currentTime.toFixed(2)+'s':'Image')+' · '+(fit==='cover'?'Center crop':'Fit whole media')+' · This is not a final video export.',30,2130);
+  ctx.fillStyle='#d0dcea';ctx.font='28px system-ui';ctx.fillText('PLACEMENT PLAN · Illustrative UI, not an exact platform replica · Working estimates · Confirm in the destination app',30,2080);ctx.fillText('CreatorSafeZone · '+(sample?'Interactive sample':media instanceof HTMLVideoElement?'Frame '+media.currentTime.toFixed(2)+'s':'Image')+' · '+(fit==='cover'?'Center crop':'Fit whole media')+' · This is not a final video export.',30,2130);
   try{output.toBlob(blob=>downloadBlob(blob,'creatorsafezone-comparison.png'),'image/png');status('Comparison image prepared. It includes the displayed media and markers.');}catch{status('This video host does not allow image export. Choose the saved file instead.');}
 });
 
