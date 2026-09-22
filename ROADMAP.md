@@ -1,10 +1,10 @@
 # Prioritized backlog
-Updated 2026-09-21. Priorities are editorial judgment, not measured keyword demand. PRODUCT-02 includes the interactive preview revision in docs/PHASE-2-PREVIEW-REVISION.md; production promotion is pending release review.
+Updated 2026-09-21. Priorities are editorial judgment, not measured keyword demand. PRODUCT-02 includes the interactive preview revision in docs/PHASE-2-PREVIEW-REVISION.md; published on 2026-09-22; see docs/CHECKER-LAYOUT-EXPORTS.md.
 
 | ID | Priority | Work and acceptance criteria |
 | --- | --- | --- |
 | OPS-01 | Complete | Operating instructions, automated checks, branch preview workflow and weekly review; merged as 71ac37b |
-| PRODUCT-02 | Implemented; release review pending | One-media comparison across TikTok/Reels/Shorts, manual element regions, overlap states, placement suggestions and local text report. See docs/PHASE-2-ACTION-PLAN.md and docs/PHASE-2-VALIDATION.md |
+| PRODUCT-02 | Published 2026-09-22 | One-media comparison across TikTok/Reels/Shorts, manual element regions, overlap states, placement suggestions and local text report. See docs/PHASE-2-ACTION-PLAN.md and docs/PHASE-2-VALIDATION.md |
 | TRUST-02 | In progress | Unsupported device/app claims removed; unreferenced margins and crop behavior labeled as working estimates or planning scenarios; source captures remain required before any observed classification |
 | CROP-01 | Next | Verify current Instagram crops by surface/account; label scenario previews accurately |
 | DATA-01 | Next | Obtain authorized Search Console export and dated query-to-page baseline |
@@ -15,4 +15,4 @@ Updated 2026-09-21. Priorities are editorial judgment, not measured keyword dema
 
 Weekly review recommends at most three items; implement one approved item per release. Existing observed-UI labels still need supporting empirical evidence; automated agreement checks cannot supply it.
 
-PRODUCT-02 layout/export revision implemented locally; see docs/CHECKER-LAYOUT-EXPORTS.md. Preview upload awaits approval after automatic review rejection.
+PRODUCT-02 layout/export revision published after functional, desktop/mobile viewport and preview verification; see docs/CHECKER-LAYOUT-EXPORTS.md.

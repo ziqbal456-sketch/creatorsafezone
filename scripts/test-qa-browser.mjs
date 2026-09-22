@@ -25,7 +25,8 @@ let browser;
 try {
   browser = await chromium.launch({channel:process.env.BROWSER_CHANNEL || 'msedge',headless:true});
   const context = await browser.newContext({viewport:{width:1440,height:1050},acceptDownloads:true});
-  const page = await context.newPage();const errors = [];const remote = [];
+  const page = await context.newPage();const errors = [];const remote = [];const blockedByCsp = new Set();
+  page.on('requestfailed',r=>{if(r.failure()?.errorText==='csp')blockedByCsp.add(r.url());});
   page.on('pageerror',e => errors.push(e.message));page.on('request',r => {if (!r.url().startsWith(base) && !r.url().startsWith('blob:') && !r.url().startsWith('data:')) remote.push(r.url());});
   await page.goto(base + '/check-all-platforms');await page.waitForFunction(() => document.querySelectorAll('.preview').length === 3);
   const canvasPixels=()=>page.locator('.preview canvas').first().evaluate(c=>c.toDataURL());
@@ -101,7 +102,7 @@ try {
   await page.locator('#forwardFrame').click();await page.waitForFunction(()=>Math.abs(Number(document.querySelector('#timeline').value)-0.5)<0.08);await page.locator('#muteButton').click();assert.equal(await page.locator('#muteButton').textContent(),'Mute');await page.locator('#muteButton').click();
   await page.locator('#mediaInput').setInputFiles({name:'bad.png',mimeType:'image/png',buffer:Buffer.from('broken')});await page.waitForFunction(()=>document.querySelector('#appStatus').textContent.includes('could not open'));assert.match(await page.locator('#mediaInfo').textContent(),/Video ready/);
   await page.locator('#clearButton').click();assert.equal(await page.locator('#playback').isVisible(),false);
-  assert.deepEqual(errors,[]);assert.deepEqual(remote,[]);
+  assert.deepEqual(errors,[]);assert.deepEqual(remote.filter(url=>!(new URL(url).hostname==='static.cloudflareinsights.com'&&blockedByCsp.has(url))),[]);if(blockedByCsp.size)console.log('PASS: host-injected Cloudflare beacon blocked by CSP before loading.');
   // Deterministic HTTPS media-host fixtures exercise the URL loader, anonymous media requests and canvas export.
   await page.route('https://media.qa.example/**',async route=>{const path=new URL(route.request().url()).pathname;if(path==='/blocked.webm'){await route.abort('accessdenied');return;}const headers={'access-control-allow-origin':'*'};if(path==='/slow.webm'){await new Promise(r=>setTimeout(r,2000));}await route.fulfill({status:path==='/missing.webm'?404:200,contentType:'video/webm',headers,body:Buffer.from(fixtures.video,'base64')}).catch(()=>{});});
   await page.locator('.url-option summary').click();await page.locator('#videoUrl').fill('https://youtu.be/example');await page.locator('#loadUrlButton').click();assert.match(await page.locator('#appStatus').textContent(),/social\/watch page/);
