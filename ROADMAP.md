@@ -16,3 +16,5 @@ Updated 2026-09-21. Priorities are editorial judgment, not measured keyword dema
 Weekly review recommends at most three items; implement one approved item per release. Existing observed-UI labels still need supporting empirical evidence; automated agreement checks cannot supply it.
 
 PRODUCT-02 layout/export revision published after functional, desktop/mobile viewport and preview verification; see docs/CHECKER-LAYOUT-EXPORTS.md.
+
+Phase 2 single tools and mobile rollout published 2026-09-22. All eight tool pages now share media controls, manual regions, guides and export dropdowns; mobile browser verification covers 320–1440px and touch emulation. See docs/SINGLE-TOOLS-MOBILE.md. Physical device testing remains pending.
