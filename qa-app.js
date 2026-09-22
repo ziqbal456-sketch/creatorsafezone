@@ -2,6 +2,8 @@ import {drawPlatformUI} from './qa-platform-ui.js';
 import {guideCanvas,pngBlob} from './qa-exports.js';
 import {CANVAS, buildSurfaces, assess, summarize, validRect, makeReport, sharedSurface, boundsFromMargins, videoUrl} from './qa-engine.js';
 
+const mode=document.body.dataset.tool || 'all';
+let availableSurfaces=[];
 const $ = id => document.getElementById(id);
 let surfaces = [], elements = [], selected = null, nextId = 1;
 let media = null, mediaUrl = null, loadId = 0, animation = 0, drag = null;
@@ -41,7 +43,7 @@ function updateEditor() {
 function renderResults() {
   $('results').replaceChildren();
   const clear = surfaces.filter(s => summarize(elements,s) === 'Safe').length;
-  $('summary').textContent = !media ? 'Choose media and mark a region to begin.' : !elements.length ? 'Media ready. Mark a region to check its placement; no content has been analyzed automatically.' : `${elements.length} marked region${elements.length === 1 ? '' : 's'} checked. All regions are inside the working area on ${clear} of ${surfaces.length} platforms.`;
+  $('summary').textContent = !media ? 'Choose media and mark a region to begin.' : !elements.length ? 'Media ready. Mark a region to check its placement; no content has been analyzed automatically.' : `${elements.length} marked region${elements.length === 1 ? '' : 's'} checked. All regions are inside the working area on ${clear} of ${surfaces.length} preview${surfaces.length === 1 ? '' : 's'}.`;
   for (const {surface,badge} of previews) {
     badge.textContent = summarize(elements,surface);
     badge.dataset.state = badge.textContent;
@@ -60,7 +62,7 @@ function renderResults() {
         button.addEventListener('click', () => {
           remember();
           Object.assign(element,result.target); selected = element.id; refresh();
-          status(sample ? 'Moved the example text. All three results have been updated.' : 'Moved the marker only; your original media is unchanged. Apply this placement in your editor.');
+          status(sample ? 'Moved the example text. Placement results have been updated.' : 'Moved the marker only; your original media is unchanged. Apply this placement in your editor.');
         });
         row.append(button);
       }
@@ -122,6 +124,7 @@ function draw() {
 
 function refresh() { updateEditor(); renderResults(); draw();const e=selectedElement();$('sharedAdvice').textContent=e ? assess(e,sharedSurface(surfaces)).suggestion : ''; }
 
+function mountSurfaces(){if(mode!=='all'){$('imageReportButton').textContent='Download preview PNG';$('captionLines').hidden=['story','crop','ads'].includes(mode);document.querySelector('label[for="captionLines"]').hidden=$('captionLines').hidden;}previews.length=0;$('previews').replaceChildren();$('exportPlatform').replaceChildren(...surfaces.map((s,i)=>new Option(s.name,String(i))));$('showCommon').parentElement.hidden=surfaces.length===1;if(['crop','ads'].includes(mode)){$('showPlatformUI').checked=false;$('showPlatformUI').parentElement.hidden=true;$('captionLines').hidden=true;document.querySelector('label[for="captionLines"]').hidden=true;}installPreviews();}
 function installPreviews() {
   for (const surface of surfaces) {
     const article = document.createElement('article'); article.className = 'preview';article.style.setProperty('--platform-color',['#57ded3','#bc96ff','#ff9296'][previews.length]);
@@ -135,11 +138,11 @@ function installPreviews() {
     const details=document.createElement('details');details.className='margin-editor';
     const summary=document.createElement('summary');summary.textContent='Adjust planning margins';
     const form=document.createElement('form');const fields=document.createElement('div');fields.className='coordinates';
-    const original={...surface.bounds};const inputs={};
+    surface.defaultBounds ??= {...surface.bounds};const original={...surface.defaultBounds};const inputs={};
     for(const side of ['top','right','bottom','left']){const label=document.createElement('label');label.textContent=side[0].toUpperCase()+side.slice(1)+' px';const input=document.createElement('input');input.type='number';input.min=0;input.max=side==='top'||side==='bottom'?1870:1030;input.step=1;input.required=true;input.setAttribute('aria-label',surface.name+' '+side+' margin');label.append(input);fields.append(label);inputs[side]=input;}
     const feedback=document.createElement('p');feedback.className='margin-feedback';feedback.setAttribute('role','status');
     const apply=document.createElement('button');apply.type='submit';apply.textContent='Apply scenario';const reset=document.createElement('button');reset.type='button';reset.textContent='Reset defaults';
-    const sync=()=>{const b=surface.bounds;const margins={top:b.top,right:1080-b.right,bottom:1920-b.bottom,left:b.left};values.replaceChildren(...Object.entries(margins).map(([side,n])=>{inputs[side].value=n;const span=document.createElement('span');span.textContent=`${side[0].toUpperCase()+side.slice(1)} ${n}`;return span;}));feedback.textContent=surface.custom?'Custom scenario · not a platform measurement.':'Registry upper-range recommendation.';};
+    const sync=()=>{const b=surface.bounds;const margins={top:b.top,right:1080-b.right,bottom:1920-b.bottom,left:b.left};values.replaceChildren(...Object.entries(margins).map(([side,n])=>{inputs[side].value=n;const span=document.createElement('span');span.textContent=`${side[0].toUpperCase()+side.slice(1)} ${n}`;return span;}));feedback.textContent=surface.custom?'Custom scenario · not a platform measurement.':surface.scenario?'Planning scenario · not a verified platform specification.':'Registry upper-range recommendation.';};
     form.addEventListener('submit',event=>{event.preventDefault();try{surface.bounds=boundsFromMargins(Object.fromEntries(Object.entries(inputs).map(([s,i])=>[s,i.valueAsNumber])));surface.custom=true;sync();refresh();status(surface.name+' planning margins updated.');}catch(e){feedback.textContent=e.message;}});
     reset.addEventListener('click',()=>{surface.bounds={...original};surface.custom=false;sync();refresh();status(surface.name+' default margins restored.');});
     form.append(fields,apply,reset,feedback);details.append(summary,form);sync();
@@ -208,7 +211,7 @@ function loadSample(){
   elements=[{id:nextId++,label:'Headline sample',text:'A story worth sharing',x:90,y:245,width:730,height:90},{id:nextId++,label:'Subtitle sample',text:'Will this caption stay visible?',x:90,y:1436,width:740,height:78}];selected=elements[1].id;
   $('mediaInfo').textContent='Interactive local sample · 1080 × 1920. Drag the sample caption: the text moves with it.';
   $('compositionInfo').textContent='Try moving the example caption. Its starting position demonstrates the different default margins.';
-  refresh();status('Sample loaded. Compare the caption results, then try a shared placement or use your own media.');
+  refresh();status(mode==='all'?'Sample loaded. Compare the caption results, then try a shared placement or use your own media.':'Sample loaded. Mark or move regions to check your layout, or choose your own media.');
 }
 
 function setupPlayback(video) {
@@ -241,7 +244,7 @@ for (const key of ['x','y','width','height']) $('coord' + key[0].toUpperCase() +
   const value = event.target.valueAsNumber;
   const candidate = {...element,[key]:Math.round(value)};
   if (!validRect(candidate)) {status('Use positive dimensions and keep the whole region within 1080 × 1920.');updateEditor();return;}
-  remember();Object.assign(element,candidate);refresh();status('Placement updated across all three platforms.');
+  remember();Object.assign(element,candidate);refresh();status('Placement updated for the displayed previews.');
 });
 $('showMargins').addEventListener('change',draw);
 $('showPlatformUI').addEventListener('change',draw);
@@ -283,15 +286,24 @@ document.addEventListener('click',event=>{for(const id of ['exportMenu','viewOpt
 document.addEventListener('keydown',event=>{if(event.key==='Escape'){for(const id of ['exportMenu','viewOptions'])if($(id).open){$(id).open=false;$(id).querySelector('summary').focus();}}});
 $('imageReportButton').addEventListener('click',()=>{
   if(!media)return;if(media instanceof HTMLVideoElement)media.pause();draw();
-  const output=document.createElement('canvas');output.width=3240;output.height=2180;const ctx=output.getContext('2d');ctx.fillStyle='#0b1220';ctx.fillRect(0,0,3240,2180);
+  const output=document.createElement('canvas');output.width=1080*previews.length;output.height=2180;const ctx=output.getContext('2d');ctx.fillStyle='#0b1220';ctx.fillRect(0,0,output.width,2180);
   previews.forEach(({canvas,surface},i)=>{ctx.fillStyle='#ffffff';ctx.font='bold 36px system-ui';ctx.fillText(surface.name+' — '+summarize(elements,surface),i*1080+30,55);ctx.drawImage(canvas,i*1080,100);});
-  ctx.fillStyle='#d0dcea';ctx.font='28px system-ui';ctx.fillText('PLACEMENT PLAN · Illustrative UI, not an exact platform replica · Working estimates · Confirm in the destination app',30,2080);ctx.fillText('CreatorSafeZone · '+(sample?'Interactive sample':media instanceof HTMLVideoElement?'Frame '+media.currentTime.toFixed(2)+'s':'Image')+' · '+(fit==='cover'?'Center crop':'Fit whole media')+' · This is not a final video export.',30,2130);
-  try{output.toBlob(blob=>downloadBlob(blob,'creatorsafezone-comparison.png'),'image/png');status('Comparison image prepared. It includes the displayed media and markers.');}catch{status('This video host does not allow image export. Choose the saved file instead.');}
+  ctx.fillStyle='#d0dcea';ctx.font='28px system-ui';ctx.fillText('PLACEMENT PLAN · Illustrative UI, not an exact platform replica · Working estimates · Confirm in the destination app',30,2080,output.width-60);ctx.fillText('CreatorSafeZone · '+(sample?'Interactive sample':media instanceof HTMLVideoElement?'Frame '+media.currentTime.toFixed(2)+'s':'Image')+' · '+(fit==='cover'?'Center crop':'Fit whole media')+' · This is not a final video export.',30,2130,output.width-60);
+  try{output.toBlob(blob=>downloadBlob(blob,mode==='all'?'creatorsafezone-comparison.png':'creatorsafezone-preview.png'),'image/png');status('Comparison image prepared. It includes the displayed media and markers.');}catch{status('This video host does not allow image export. Choose the saved file instead.');}
 });
 
 try {
   const response = await fetch('/measurement-registry.json');if (!response.ok) throw new Error('Registry unavailable');
-  surfaces = buildSurfaces(await response.json());installPreviews();loadSample();
+  availableSurfaces = buildSurfaces(await response.json());
+  const scenario=(name,top,right,bottom,left=0)=>({name,id:mode,bounds:boundsFromMargins({top,right,bottom,left}),evidence:'Planning scenario · source capture pending',reviewed:'Not independently verified',scenario:true});
+  if(mode==='story')availableSurfaces=[scenario('Instagram Stories',250,0,250)];
+  if(mode==='ads')availableSurfaces=[scenario('Paid ad planning',180,0,480)];
+  if(mode==='crop')availableSurfaces=[scenario('1:1 center crop',420,0,420),scenario('4:5 center crop',285,0,285),scenario('9:16 full frame',0,0,0)];
+  const named={tiktok:'TikTok',reels:'Instagram Reels',shorts:'YouTube Shorts'};
+  if(named[mode])availableSurfaces=availableSurfaces.filter(s=>s.name===named[mode]);
+  const choice=$('surfaceChoice');
+  if(choice){choice.replaceChildren(...availableSurfaces.map((s,i)=>new Option(s.name,String(i))));choice.addEventListener('change',()=>{surfaces=[availableSurfaces[Number(choice.value)]];mountSurfaces();refresh();status('Preview changed. Your media and regions are preserved.');});}
+  surfaces=mode==='all'?availableSurfaces:[availableSurfaces[0]];mountSurfaces();loadSample();
 } catch {
   $('demoButton').disabled = true;$('mediaInput').disabled = true;
   status('Working-area data could not load. Reload to try again, or use the existing single-platform preview from the navigation.');

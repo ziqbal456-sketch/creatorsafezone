@@ -50,7 +50,7 @@ export function makeReport(elements, surfaces, options = {}) {
     'Safe = inside the working area; Warning = less than 24 px clearance; Covered = overlaps an estimated margin.',
     'These are recommendations, not verified platform measurements. Confirm in the destination app before publishing.', '',
     ...surfaces.flatMap(s => [s.name + ': ' + summarize(elements, s), 'Evidence: ' + s.evidence + '; registry review label: ' + s.reviewed,
-      `Margins (px): top ${s.bounds.top}, right ${1080-s.bounds.right}, bottom ${1920-s.bounds.bottom}, left ${s.bounds.left}. ${s.custom ? 'User-adjusted scenario.' : 'Registry upper-range recommendation.'}`,
+      `Margins (px): top ${s.bounds.top}, right ${1080-s.bounds.right}, bottom ${1920-s.bounds.bottom}, left ${s.bounds.left}. ${s.custom ? 'User-adjusted scenario.' : s.scenario ? 'Planning scenario, not a verified platform specification.' : 'Registry upper-range recommendation.'}`,
       ...elements.map(e => { const r = assess(e,s); return `${e.label} [x ${e.x}, y ${e.y}, width ${e.width}, height ${e.height}]: ${r.status}. ${r.suggestion}`; }), '']),
     'Methodology: https://creatorsafezone.com/methodology'].join('\n');
 }

@@ -29,9 +29,9 @@ export default {
       headers.set(name, value);
     }
 
-    // Only the URL-enabled checker can request user-selected HTTPS video hosts.
+    // Only the URL-enabled tool pages can request user-selected HTTPS video hosts.
     const path = new URL(request.url).pathname.replace(/\/$/, '');
-    if (path === '/check-all-platforms' || path === '/check-all-platforms.html') {
+    if (['','/index','/check-all-platforms','/tiktok-safe-zone','/instagram-reels-safe-zone','/youtube-shorts-safe-zone','/instagram-story-safe-zone','/instagram-grid-crop-previewer','/capcut-safe-zone-template','/vertical-video-ad-specs'].includes(path.replace(/\.html$/, ''))) {
       headers.set('Content-Security-Policy', SECURITY_HEADERS['Content-Security-Policy'].replace("media-src 'self' blob: https://assets.mixkit.co", "media-src 'self' blob: https:"));
       headers.set('Referrer-Policy', 'no-referrer');
     }

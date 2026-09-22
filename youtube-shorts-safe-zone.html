@@ -25,18 +25,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        screens: { 'xs': '375px', 'sm': '640px', 'md': '768px', 'lg': '1024px', 'xl': '1280px' },
-        extend: {
-          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
-          colors: { brand: { 500: '#06B6D4', 600: '#0891B2' }, danger: '#F43F5E', safe: '#10B981' }
-        }
-      }
-    }
-  </script>
+  
+  
 
   <script type="application/ld+json">
   {
@@ -85,231 +75,93 @@
   }
   </script>
 
-  <style>
-    .phone-aspect { aspect-ratio: 9 / 16; max-height: 75vh; }
-    @media (min-height: 800px) { .phone-aspect { max-height: 78vh; } }
-  </style>
+  
+
+<link rel="stylesheet" href="/qa.css"><script type="module" src="/qa-app.js"></script><meta name="referrer" content="no-referrer">
 </head>
-<body class="bg-[#0B0F19] text-slate-100 font-sans antialiased flex flex-col min-h-screen overflow-x-hidden">
-
-  <!-- Universal Header -->
-  <header class="border-b border-slate-800/80 bg-[#0B0F19]/90 backdrop-blur sticky top-0 z-50 py-3 px-3 sm:px-6 md:px-8">
-    <div class="max-w-7xl mx-auto flex items-center justify-between">
-      <a href="/" class="flex items-center gap-2.5 sm:gap-3">
-        <div class="h-8 w-8 sm:h-9 sm:w-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-rose-500 flex items-center justify-center font-extrabold text-white text-xs sm:text-sm">CSZ</div>
-        <div>
-          <span class="font-extrabold text-base sm:text-lg tracking-tight text-white block leading-none">CreatorSafeZone<span class="text-cyan-400">.com</span></span>
-          <span class="text-[9px] sm:text-[10px] text-red-500 font-semibold tracking-wide">YouTube Shorts Safe Zone</span>
-        </div>
-      </a>
-      <nav class="hidden md:flex items-center gap-1 text-[11px] lg:text-xs font-semibold text-slate-300">
-        <a href="/" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">Hub</a>
-        <a href="/tiktok-safe-zone" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">TikTok</a>
-        <a href="/instagram-reels-safe-zone" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">Reels</a>
-        <a href="/youtube-shorts-safe-zone" class="px-2.5 py-1.5 rounded-lg bg-slate-800 text-red-500">Shorts</a>
-        <a href="/capcut-safe-zone-template" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">CapCut</a>
-        <a href="/instagram-story-safe-zone" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">Stories</a>
-        <a href="/instagram-grid-crop-previewer" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">1:1 Crop</a>
-        <a href="/vertical-video-ad-specs" class="px-2.5 py-1.5 rounded-lg text-rose-400 hover:bg-slate-800 transition">Ad Specs</a>
-      </nav>
-      <div class="flex items-center gap-2">
-        <span class="inline-flex items-center gap-1.5 text-[11px] sm:text-xs text-red-400 bg-red-500/10 border border-red-500/20 px-2.5 sm:px-3 py-1 rounded-full font-semibold">
-          <span class="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse"></span>
-          Shorts QA
-        </span>
-      </div>
-    </div>
-  </header>
-  <div class="max-w-7xl mx-auto px-4 py-3 text-sm text-slate-300"><a href="/check-all-platforms" class="text-cyan-400 font-semibold hover:underline">Check all three platforms →</a> Mark text, logos or CTAs and compare placement from one image or video.</div>
-
-
-  <!-- Main Tool Grid -->
-  <main class="max-w-7xl mx-auto w-full p-3 sm:p-5 md:p-6 lg:p-8 flex-1 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
-    
-    <!-- Controls Column (5 cols) -->
-    <div class="lg:col-span-5 space-y-5 sm:space-y-6 order-2 lg:order-1">
-      <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-4 sm:p-5 shadow-2xl">
-        <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-2">
-          <span class="text-red-500">Step 1</span> Select Shorts Creative
-        </h2>
-        <div id="dropZone" class="border-2 border-dashed border-slate-700 hover:border-red-500 rounded-xl p-5 sm:p-6 text-center cursor-pointer transition bg-slate-950/60 group">
-          <input type="file" id="fileInput" accept="image/*,video/*" class="hidden" />
-          <div class="w-11 h-11 mx-auto rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:text-red-500 group-hover:scale-110 transition">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
-          </div>
-          <p class="text-sm font-semibold text-slate-200 mt-3">Upload YouTube Shorts 9:16 Video</p>
-          <p class="text-xs text-slate-500 mt-1">Tests clearance for Dislike, Subscribe & Titles</p>
-        </div>
-        <button id="demoBtn" class="w-full mt-3 py-2 px-3 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-xs font-semibold transition border border-slate-700 flex items-center justify-center gap-2">
-          <span>⚡ Load Shorts Demo Video</span>
-        </button>
-      </div>
-
-      <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-4 sm:p-5 shadow-2xl space-y-4">
-        <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
-          <span class="text-red-500">Step 2</span> Export Shorts Overlay Guide
-        </h2>
-        <div class="pt-1 space-y-2.5">
-          <button id="copyClipBtn" class="w-full py-2.5 px-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-xs font-bold border border-slate-700 transition flex items-center justify-center gap-2">
-            <span id="copyText">Copy Shorts Guide to Clipboard (Ctrl+V)</span>
-          </button>
-          <a href="https://canva.link/1v53ulzrri8xp2u" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 bg-gradient-to-r from-red-600 to-rose-600 text-white rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 shadow">
-            <span>🎨 Open Template in Canva</span>
-          </a>
-          <button id="downloadGuideBtn" class="w-full py-2.5 px-4 bg-slate-900 hover:bg-slate-800 text-slate-300 rounded-xl text-xs font-medium border border-slate-800 transition flex items-center justify-center gap-2">
-            Download Transparent Shorts PNG (1080×1920)
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Simulator Viewport & Video Controls Deck (7 cols) -->
-    <div class="lg:col-span-7 flex flex-col items-center justify-center order-1 lg:order-2 w-full">
-      <div id="phoneFrame" class="relative phone-aspect w-full max-w-[310px] xs:max-w-[335px] sm:max-w-[360px] md:max-w-[380px] bg-black rounded-[42px] sm:rounded-[48px] p-2.5 sm:p-3 shadow-2xl ring-1 ring-slate-800 select-none mx-auto">
-        <div class="relative w-full h-full rounded-[34px] sm:rounded-[38px] overflow-hidden bg-slate-950 flex items-center justify-center">
-          <div id="mediaContainer" class="absolute inset-0 w-full h-full flex items-center justify-center bg-slate-900">
-            <span class="text-xs text-slate-500 font-bold uppercase tracking-wider">Shorts Simulator Ready</span>
-          </div>
-
-          <!-- YouTube Shorts Native UI Overlay -->
-          <div class="absolute inset-0 pointer-events-none z-20 flex flex-col justify-between p-3 sm:p-3.5">
-            <div class="pt-7 sm:pt-8 flex justify-between items-center text-white px-2">
-              <span class="text-[10px] sm:text-xs font-black tracking-wider text-rose-500 bg-black/50 px-2 py-0.5 rounded">SHORTS</span>
-              <div class="flex items-center gap-3">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-                <span class="text-xs font-bold leading-none">•••</span>
-              </div>
-            </div>
-
-            <!-- Right Social Action Column -->
-            <div class="danger-zone absolute right-2 sm:right-2.5 bottom-16 flex flex-col items-center gap-3 sm:gap-4 text-white p-1.5 rounded-xl ring-2 ring-red-500/80 bg-red-500/10">
-              <div class="flex flex-col items-center"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg><span class="text-[9px] sm:text-xs font-bold mt-0.5">240K</span></div>
-              <div class="flex flex-col items-center"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg><span class="text-[9px] sm:text-xs font-bold mt-0.5">Dislike</span></div>
-              <div class="flex flex-col items-center"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg><span class="text-[9px] sm:text-xs font-bold mt-0.5">3.8K</span></div>
-              <div class="flex flex-col items-center"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg><span class="text-[9px] sm:text-xs font-bold mt-0.5">Share</span></div>
-            </div>
-
-            <!-- Lower Channel & Title Drawer -->
-            <div class="danger-zone w-[74%] pb-3 px-2 text-white space-y-1.5 rounded-xl ring-2 ring-red-500/80 bg-red-500/10">
-              <div class="flex items-center gap-2">
-                <span class="w-5 h-5 rounded-full bg-red-600 text-[9px] font-bold flex items-center justify-center">YT</span>
-                <span class="font-bold text-[11px] truncate">@CreatorChannel</span>
-                <button class="bg-white text-black text-[9px] font-black px-2 py-0.5 rounded-full shadow">Subscribe</button>
-              </div>
-              <p class="text-[10px] sm:text-[11px] leading-tight line-clamp-2">Shorts title area — keep subtitles above this line</p>
-              <div class="flex items-center gap-1.5 text-[9px] text-slate-300 font-mono">
-                <span>♫</span>
-                <span class="truncate">Sound Track Name • Original Audio</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Scrubber & Timeline Deck -->
-      <div id="videoControlsDeck" class="w-full max-w-[310px] xs:max-w-[335px] sm:max-w-[360px] md:max-w-[380px] mt-4 bg-slate-900 border border-slate-800 rounded-xl p-3 shadow-xl space-y-2 select-none">
-        <div class="flex items-center gap-3">
-          <input type="range" id="videoTimeline" min="0" max="100" value="0" step="0.1" class="w-full accent-red-500 bg-slate-800 h-1.5 rounded-lg appearance-none cursor-pointer" />
-          <span id="timeDisplay" class="text-[11px] font-mono text-slate-400 whitespace-nowrap">0:00 / 0:00</span>
-        </div>
-        <div class="flex items-center justify-between pt-1 text-xs">
-          <div class="flex items-center gap-1.5">
-            <button id="playPauseBtn" class="p-1.5 bg-slate-800 hover:bg-slate-700 text-red-400 rounded-lg transition" title="Play/Pause">
-              <svg id="playIcon" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-              <svg id="pauseIcon" class="w-4 h-4 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-            </button>
-            <button id="stepBackBtn" class="px-2 py-1 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-[11px] font-bold font-mono transition">-0.1s</button>
-            <button id="stepForwardBtn" class="px-2 py-1 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-[11px] font-bold font-mono transition">+0.1s</button>
-          </div>
-          <button id="muteToggleBtn" class="p-1.5 text-slate-400 hover:text-white rounded-lg transition">
-            <svg id="unmutedIcon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/></svg>
-            <svg id="mutedIcon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z m12 0l-6-6m0 6l6-6"/></svg>
-          </button>
-        </div>
-      </div>
-
-      <!-- Measurement & Verification Component (Part 2) -->
-      <div class="w-full max-w-[310px] xs:max-w-[335px] sm:max-w-[360px] md:max-w-[380px] mt-4 bg-slate-900/90 border border-slate-800 rounded-xl p-3.5 shadow-xl text-xs select-none">
-        <div class="flex items-center justify-between border-b border-slate-800 pb-2 mb-2.5">
-          <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-            <span class="font-bold text-white text-[11px] uppercase tracking-wider">Measurement & Verification</span>
-          </div>
-          <span class="text-[10px] font-mono text-amber-400 bg-amber-950/60 border border-amber-800/50 px-2 py-0.5 rounded font-semibold">Evidence: Source capture pending</span>
-        </div>
-        <div class="grid grid-cols-2 gap-2 text-[10px] font-mono text-slate-400">
-          <div><span class="text-slate-500 block">Published Review:</span> <span class="text-slate-200 font-bold">September 2026</span></div>
-          <div><span class="text-slate-500 block">Surface:</span> <span class="text-slate-200 font-bold">YouTube Shorts Feed</span></div>
-          <div><span class="text-slate-500 block">Classification:</span> <span class="text-amber-400 font-semibold">Recommended Margin</span></div>
-          <div><span class="text-slate-500 block">Methodology:</span> <a href="/methodology" class="text-cyan-400 hover:underline">Read Protocol ➔</a></div>
-        </div>
-        <div class="mt-2.5 pt-2 border-t border-slate-800/80 text-[10px] text-slate-400 leading-tight">
-          <strong>Evidence notice:</strong> This working estimate does not yet have an attached UI capture reference. Treat it as a CreatorSafeZone recommendation, not a verified YouTube specification.
-        </div>
-      </div>
-
-    </div>
-  </main>
+<body data-tool="shorts" class="single-tool">
+<header><a class="brand" href="/">Creator<span>SafeZone</span></a><nav aria-label="Main"><a href="/check-all-platforms">Compare all</a><details class="tools-nav"><summary>All tools</summary><nav aria-label="Choose a tool"><a href="/">Single preview</a><a href="/check-all-platforms">Compare all</a><a href="/tiktok-safe-zone">TikTok</a><a href="/instagram-reels-safe-zone">Reels</a><a href="/youtube-shorts-safe-zone">Shorts</a><a href="/instagram-story-safe-zone">Stories</a><a href="/instagram-grid-crop-previewer">Crop planner</a><a href="/capcut-safe-zone-template">CapCut</a><a href="/vertical-video-ad-specs">Ad planner</a></nav></details><a href="/methodology">Methodology</a></nav><span class="privacy">Your files stay private</span></header>
+<main>
+<section class="intro"><div><p class="eyebrow">PRE-PUBLISH CREATIVE CHECK</p><h1>YouTube Shorts safe zone checker</h1></div><p>Choose your creative, mark what matters and check placement before publishing.</p></section>
+<div class="tool-toolbar"><nav class="quick-actions" aria-label="Checker shortcuts"><a href="#media-controls">Choose media</a><button type="button" id="openRegionsButton">Mark a region</button></nav><div class="toolbar-actions"><details class="dropdown secondary" id="viewOptions"><summary>Preview settings <span aria-hidden="true">▾</span></summary><div class="dropdown-panel view-controls">
+<label><input id="showPlatformUI" type="checkbox" checked> Platform interface</label><label><input id="showMargins" type="checkbox" checked> Margin shading</label><label><input id="showRegions" type="checkbox" checked> Marked regions</label><label><input id="showCommon" type="checkbox"> Shared working area</label><label><input id="touchEdit" type="checkbox"> Touch dragging (off to scroll)</label>
+<label for="captionLines">Example caption length</label><select id="captionLines"><option value="1">Short · 1 line</option><option value="2" selected>Medium · 2 lines</option><option value="6">Long · 6 lines</option></select><label for="marginOpacity">Margin tint</label><input id="marginOpacity" type="range" min="5" max="65" value="22"><p>Caption length changes the illustration only. Placement results use the margins on each card.</p></div></details><details class="dropdown" id="exportMenu"><summary>Export &amp; use in editor <span aria-hidden="true">▾</span></summary><div class="dropdown-panel">
+<h3>Transparent editing guide</h3><label for="exportPlatform">Platform</label><select id="exportPlatform"><option value="0">TikTok</option><option value="1">Instagram Reels</option><option value="2">YouTube Shorts</option></select>
+<button type="button" id="copyGuideButton">Copy guide to clipboard</button><button type="button" id="downloadGuideButton">Download guide PNG</button><a id="canvaLink" href="https://canva.link/1v53ulzrri8xp2u" target="_blank" rel="noopener noreferrer">Open template in Canva ↗</a><p>Copy or download your guide, then paste or upload it in Canva. No media is sent automatically.</p>
+<h3>Save this comparison</h3><button id="imageReportButton" type="button" disabled>Download comparison PNG</button><button id="reportButton" type="button" disabled>Download placement report</button><p>The comparison PNG includes your displayed media. The transparent guide does not.</p><p id="exportStatus" role="status" aria-live="polite"></p></div></details></div></div>
+<p id="appStatus" role="status" aria-live="polite">Loading your preview…</p>
+<noscript>This local checker needs JavaScript. Read the <a href="/methodology">methodology</a> for guidance.</noscript>
+<div class="workspace"><aside class="controls" aria-label="Media and region controls"><section class="panel" id="media-controls"><h2><span>01</span> Your creative</h2><label class="upload" id="dropTarget" for="mediaInput">Select an image or video<input id="mediaInput" type="file" accept="image/png,image/jpeg,image/webp,video/mp4,video/webm"><small>PNG, JPG, WebP, MP4 or WebM · up to 250 MB</small></label><div class="actions"><button id="demoButton" type="button">Try a sample</button><button id="clearButton" type="button" disabled>Clear media</button></div><p id="mediaInfo">Loading a local example…</p>
+          <details class="url-option"><summary>Or paste a video URL</summary><form id="urlForm"><label for="videoUrl">Direct video URL</label><input id="videoUrl" type="url" placeholder="https://your-host.com/video.mp4" required autocomplete="off"><button type="submit" id="loadUrlButton">Load video URL</button></form><p class="muted">Direct MP4/WebM links only, when the host allows browser access. YouTube, TikTok and Instagram page links and live streams are not supported. Loading a URL contacts that host from your browser; no video passes through our server.</p></details>
+          <button id="cancelLoad" type="button" hidden>Cancel loading</button><details class="subsection" id="compositionOptions"><summary>Fit &amp; crop options</summary><label for="fitMode">Frame composition</label><select id="fitMode"><option value="contain">Fit whole media · no crop</option><option value="cover">Fill 9:16 frame · center crop</option></select><p class="muted" id="compositionInfo">Preview coordinates use a 1080 × 1920 canvas.</p></details><div id="playback" hidden><div class="actions"><button type="button" id="playButton">Play</button><button type="button" id="backFrame">−0.1s</button><button type="button" id="forwardFrame">+0.1s</button><button type="button" id="muteButton">Unmute</button></div><label for="timeline">Video position <output id="timeOutput">0:00</output></label><input id="timeline" type="range" min="0" max="0" step="0.01" value="0"><p class="muted">Pause where you want to check. Boxes stay fixed as the video plays. Review other moments separately.</p></div></section>
+        <details class="panel accordion" id="region-controls"><summary><span>02</span> Mark &amp; adjust regions</summary><div class="disclosure-body"><p>Add a box over text, a face, a logo or a CTA. Drag to position it and pull its corner to resize.</p><label for="elementType">Region type</label><select id="elementType"><option>Headline</option><option>Subtitle</option><option>Logo</option><option>CTA</option><option>Disclaimer</option><option>Face</option><option>Product</option></select><button id="addElement" type="button" class="primary" disabled>Add region</button><p class="muted">Manual placement only. We do not detect or edit the content in your media.</p><button id="undoButton" type="button" disabled>Undo last change</button><div id="elementEditor" hidden><label for="elementSelect">Selected region</label><select id="elementSelect"></select><label for="regionLabel">Region name</label><input id="regionLabel" type="text" maxlength="60"><p class="muted">Drag the box, resize its lower-right corner, or use arrow keys on a focused preview (Shift = 10 px).</p><details class="subsection" id="positionOptions"><summary>Exact position &amp; size</summary><div class="coordinates"><label>X<input id="coordX" type="number" min="0" max="1079" step="1"></label><label>Y<input id="coordY" type="number" min="0" max="1919" step="1"></label><label>Width<input id="coordWidth" type="number" min="1" max="1080" step="1"></label><label>Height<input id="coordHeight" type="number" min="1" max="1920" step="1"></label></div><p class="muted">Coordinates are pixels on the preview canvas. Use these fields for precise or keyboard placement.</p></details><div class="actions"><button id="fitAllButton" type="button">Find a clear placement</button><button id="removeElement" type="button">Remove region</button></div><p id="sharedAdvice" class="muted"></p></div></div></details>
+</aside>
+<section class="comparison" aria-label="Creative placement preview"><div class="section-heading"><h2>Your creative preview</h2><span class="muted">1080 × 1920 canvas</span></div><p class="swipe-hint"></p><div id="previews" class="previews"></div>
+<div class="result-summary"><h2>Placement check</h2><p id="summary" aria-live="polite">Loading sample regions…</p></div><details class="panel accordion" id="resultsDetails"><summary>View issues &amp; placement suggestions</summary><div class="disclosure-body"><div id="results"></div><p class="muted">Moving a marker does not edit your original media. Apply the placement in your editor and check the new export.</p></div></details>
+<details class="evidence-note"><summary>Working estimates · illustrative platform UI</summary><p>Actual interfaces vary. Channel details and icons are examples. Safe means 24+ px inside the selected working area; Warning means near its boundary; Covered means overlapping an estimated margin. Evidence: Source capture pending. <a href="/methodology">Read the methodology</a>.</p></details>
+</section></div>
+<details class="workflow"><summary>How to use this with your video editor</summary><ol><li>Select a file or a supported direct video URL.</li><li>Add regions over important text, logos or CTAs. Review representative video frames.</li><li>Use placement suggestions, then copy or download a guide from the export dropdown.</li><li>Apply changes in your editor, remove the guide before the final export, and confirm the draft in the destination app.</li></ol><nav aria-label="Related guides"><a href="/capcut-safe-zone-template">CapCut workflow</a><a href="/tiktok-safe-zone">TikTok guide</a><a href="/instagram-reels-safe-zone">Reels guide</a><a href="/youtube-shorts-safe-zone">Shorts guide</a></nav></details>
+</main><details class="page-guide"><summary>Read the guide &amp; reference notes</summary><div class="guide-content">
 
   <!-- Technical Editorial Pillar: Truthful & Responsible Framing (Part 1, 3, 4, 5) -->
-  <section class="border-t border-slate-800/80 bg-slate-950 py-16 px-4 md:px-8">
-    <div class="max-w-5xl mx-auto space-y-12 text-slate-300 text-sm leading-relaxed">
+  <section>
+    <div>
       
       <!-- H1 & Human-First Purpose (Part 5) -->
       <div>
-        <h1 class="text-3xl font-extrabold text-white tracking-tight">YouTube Shorts Safe Zone Checker</h1>
-        <p class="mt-3 text-slate-400 text-base">
+        <h2>YouTube Shorts Safe Zone Checker</h2>
+        <p>
           Preview your vertical video against YouTube Shorts mobile UI overlays and check recommended safe areas before publishing.
         </p>
       </div>
 
       <!-- Factual Framing (Part 4) -->
-      <div class="space-y-3">
-        <h2 class="text-xl font-bold text-white tracking-tight">Recommended YouTube Shorts Working Safe Area (1080 × 1920 Base)</h2>
-        <p class="text-slate-400 text-sm leading-relaxed">
+      <div>
+        <h2>Recommended YouTube Shorts Working Safe Area (1080 × 1920 Base)</h2>
+        <p>
           While YouTube Shorts files are exported at standard <strong>1080 × 1920 pixels</strong> (9:16 aspect ratio), the mobile player projects interactive overlays across the screen: the prominent white <strong>Subscribe button</strong>, the <strong>five-button action rail</strong>, and the <strong>lower title drawer</strong>.
         </p>
-        <p class="text-slate-400 text-sm leading-relaxed">
+        <p>
           The values below are conservative CreatorSafeZone working margins designed to reduce overlap risk. The underlying UI capture reference is still pending, so these values should not be presented as independently verified native-app measurements.
         </p>
       </div>
 
       <!-- Verified Specs Cards (Part 4) -->
-      <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-2xl space-y-4">
-        <h3 class="text-lg font-bold text-white flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-red-500"></span> Observed YouTube Shorts Working Margins
+      <div>
+        <h3>
+          <span></span> Observed YouTube Shorts Working Margins
         </h3>
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-xs font-mono">
-          <div class="bg-slate-950 p-4 rounded-xl border border-red-500/30">
-            <span class="text-red-400 font-bold block text-sm">Top Margin</span>
-            <span class="text-white text-base font-bold">120 – 140 px</span>
-            <p class="text-slate-400 mt-1">Observed buffer for search glass, three-dot menu, and camera cutout.</p>
+        <div>
+          <div>
+            <span>Top Margin</span>
+            <span>120 – 140 px</span>
+            <p>Observed buffer for search glass, three-dot menu, and camera cutout.</p>
           </div>
-          <div class="bg-slate-950 p-4 rounded-xl border border-red-500/30">
-            <span class="text-red-400 font-bold block text-sm">Right Action Rail</span>
-            <span class="text-white text-base font-bold">140 – 160 px</span>
-            <p class="text-slate-400 mt-1">Observed buffer for Like, Dislike, Comments, Share, and Remix sound button.</p>
+          <div>
+            <span>Right Action Rail</span>
+            <span>140 – 160 px</span>
+            <p>Observed buffer for Like, Dislike, Comments, Share, and Remix sound button.</p>
           </div>
-          <div class="bg-slate-950 p-4 rounded-xl border border-red-500/30">
-            <span class="text-red-400 font-bold block text-sm">Bottom Channel Zone</span>
-            <span class="text-white text-base font-bold">340 – 380 px</span>
-            <p class="text-slate-400 mt-1">Observed buffer for handle, Subscribe button, 2-line title, and audio track.</p>
+          <div>
+            <span>Bottom Channel Zone</span>
+            <span>340 – 380 px</span>
+            <p>Observed buffer for handle, Subscribe button, 2-line title, and audio track.</p>
           </div>
-          <div class="bg-slate-950 p-4 rounded-xl border border-emerald-500/30">
-            <span class="text-emerald-400 font-bold block text-sm">Recommended Safe Area</span>
-            <span class="text-white text-base font-bold">920 × 1400 px</span>
-            <p class="text-slate-400 mt-1">Recommended working area designed to clear the Subscribe button, title drawer, and right action rail across common mobile layouts.</p>
+          <div>
+            <span>Recommended Safe Area</span>
+            <span>920 × 1400 px</span>
+            <p>Recommended working area designed to clear the Subscribe button, title drawer, and right action rail across common mobile layouts.</p>
           </div>
         </div>
       </div>
 
       <!-- Podcast & Multi-cam Framing -->
-      <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl space-y-4">
-        <h3 class="text-lg font-bold text-white">The Podcast Clipping Trap: Where to Place Split-Screen Speakers</h3>
-        <p class="text-slate-400 text-xs leading-relaxed">
+      <div>
+        <h3>The Podcast Clipping Trap: Where to Place Split-Screen Speakers</h3>
+        <p>
           Many creators repurpose long-form podcast interviews into stacked vertical videos (speaker 1 on top, speaker 2 on the bottom). When editing multi-cam vertical footage:
         </p>
-        <ul class="list-disc list-inside text-xs text-slate-300 space-y-1.5">
+        <ul>
           <li><strong>Top Speaker Framing:</strong> Keep the guest's head below Y: 180px to prevent the search icon or hardware notch from cutting off their forehead.</li>
           <li><strong>Bottom Speaker Framing:</strong> Position the host's chin and chest above Y: 1500px. Otherwise, the solid white Subscribe button will sit directly over their mouth.</li>
           <li><strong>Captions Sweet Spot:</strong> Place all animated captions centered between <strong>Y: 900px and Y: 1200px</strong> (the dividing line between both cameras).</li>
@@ -317,10 +169,10 @@
       </div>
 
       <!-- Editing Suite Setups -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-slate-900/60 border border-slate-800 p-5 rounded-xl space-y-3">
-          <h3 class="text-base font-bold text-red-400">DaVinci Resolve Setup</h3>
-          <ol class="list-decimal list-inside space-y-1.5 text-xs text-slate-300">
+      <div>
+        <div>
+          <h3>DaVinci Resolve Setup</h3>
+          <ol>
             <li>Open Project Settings → Set Timeline Resolution to <strong>1080 × 1920</strong> (Vertical Resolution).</li>
             <li>Click <strong>Download Transparent Shorts PNG</strong> above.</li>
             <li>Drag the PNG into the Media Pool and place it on <strong>Video Track 3</strong>.</li>
@@ -329,9 +181,9 @@
           </ol>
         </div>
 
-        <div class="bg-slate-900/60 border border-slate-800 p-5 rounded-xl space-y-3">
-          <h3 class="text-base font-bold text-red-400">Adobe Premiere Pro Setup</h3>
-          <ol class="list-decimal list-inside space-y-1.5 text-xs text-slate-300">
+        <div>
+          <h3>Adobe Premiere Pro Setup</h3>
+          <ol>
             <li>Click <strong>Copy Shorts Guide to Clipboard</strong> above.</li>
             <li>Switch to Premiere Pro and select your 9:16 Sequence.</li>
             <li>Select the top track and press <strong>Ctrl+V / Cmd+V</strong>.</li>
@@ -342,18 +194,18 @@
       </div>
 
       <!-- FAQ Section -->
-      <div class="space-y-4 pt-4 border-t border-slate-800">
-        <h3 class="text-xl font-bold text-white tracking-tight">Frequently Asked Questions</h3>
-        <div class="space-y-3 text-xs">
-          <div class="bg-slate-900/60 p-5 rounded-xl border border-slate-800">
-            <h4 class="font-bold text-white text-sm">Why does YouTube Shorts cut off the right side of my captions?</h4>
-            <p class="mt-2 text-slate-400 leading-relaxed">
+      <div>
+        <h3>Frequently Asked Questions</h3>
+        <div>
+          <div>
+            <h4>Why does YouTube Shorts cut off the right side of my captions?</h4>
+            <p>
               The interaction rail contains five stacked buttons (Like, Dislike, Comments, Share, and Remix), taking up approximately 140px to 160px from the right boundary. Text extending past X: 920px will be partially or completely obscured.
             </p>
           </div>
-          <div class="bg-slate-900/60 p-5 rounded-xl border border-slate-800">
-            <h4 class="font-bold text-white text-sm">Where should subtitles be placed on YouTube Shorts?</h4>
-            <p class="mt-2 text-slate-400 leading-relaxed">
+          <div>
+            <h4>Where should subtitles be placed on YouTube Shorts?</h4>
+            <p>
               Subtitles are best centered between Y: 950px and Y: 1400px. Avoid placing subtitles in the bottom 360px where YouTube renders the channel handle, Subscribe button, and audio title.
             </p>
           </div>
@@ -361,20 +213,20 @@
       </div>
 
       <!-- Official Platform Documentation Link (Part 2) -->
-      <div class="bg-slate-900/60 border border-slate-800 p-5 rounded-xl space-y-2 text-xs">
-        <h4 class="font-bold text-white text-sm">Official Platform Documentation</h4>
-        <p class="text-slate-400">
-          For official video guidelines, visit the <a href="https://support.google.com/youtube/answer/10059070" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:underline">YouTube Help Center for Shorts Creation ↗</a>. For details on how we measure organic UI, see our <a href="/methodology" class="text-cyan-400 hover:underline">Measurement Methodology</a>.
+      <div>
+        <h4>Official Platform Documentation</h4>
+        <p>
+          For official video guidelines, visit the <a href="https://support.google.com/youtube/answer/10059070" target="_blank" rel="noopener noreferrer">YouTube Help Center for Shorts Creation ↗</a>. For details on how we measure organic UI, see our <a href="/methodology">Measurement Methodology</a>.
         </p>
       </div>
 
       <!-- Cluster Links -->
-      <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-2xl space-y-4">
-        <h4 class="text-sm font-bold text-white uppercase tracking-wider">Explore Related Safe Zone Simulators</h4>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-semibold">
-          <a href="/tiktok-safe-zone" class="p-3 bg-slate-950 border border-slate-800 hover:border-red-500 rounded-xl transition text-center text-slate-300 hover:text-white">TikTok Safe Zone Tool ➔</a>
-          <a href="/instagram-reels-safe-zone" class="p-3 bg-slate-950 border border-slate-800 hover:border-red-500 rounded-xl transition text-center text-slate-300 hover:text-white">Instagram Reels Guide ➔</a>
-          <a href="/vertical-video-ad-specs" class="p-3 bg-slate-950 border border-slate-800 hover:border-red-500 rounded-xl transition text-center text-slate-300 hover:text-white">Paid Video Ad Specs ➔</a>
+      <div>
+        <h4>Explore Related Safe Zone Simulators</h4>
+        <div>
+          <a href="/tiktok-safe-zone">TikTok Safe Zone Tool ➔</a>
+          <a href="/instagram-reels-safe-zone">Instagram Reels Guide ➔</a>
+          <a href="/vertical-video-ad-specs">Paid Video Ad Specs ➔</a>
         </div>
       </div>
 
@@ -382,205 +234,5 @@
   </section>
 
   <!-- Universal Footer: Factual Positioning (Part 1) -->
-  <footer class="border-t border-slate-800 bg-[#0B0F19] py-12 px-4 md:px-8 text-xs text-slate-400">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-      <div class="space-y-3">
-        <span class="font-bold text-white text-base tracking-tight">CreatorSafeZone<span class="text-cyan-400">.com</span></span>
-        <p class="text-slate-500 leading-relaxed text-[11px]">
-          CreatorSafeZone is a browser-based pre-publish planning tool for short-form video, using clearly labeled working-area recommendations with 100% client-side media processing.
-        </p>
-      </div>
-      <div>
-        <h5 class="font-bold text-white uppercase tracking-wider mb-3 text-[11px]">Platform Checkers</h5>
-        <ul class="space-y-2 text-[11px]">
-          <li><a href="/tiktok-safe-zone" class="hover:text-cyan-400 transition">TikTok Safe Zone</a></li>
-          <li><a href="/instagram-reels-safe-zone" class="hover:text-cyan-400 transition">Instagram Reels Guide</a></li>
-          <li><a href="/youtube-shorts-safe-zone" class="hover:text-cyan-400 transition">YouTube Shorts Margins</a></li>
-          <li><a href="/instagram-story-safe-zone" class="hover:text-cyan-400 transition">Instagram Stories Safe Area</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5 class="font-bold text-white uppercase tracking-wider mb-3 text-[11px]">Specialized Utilities</h5>
-        <ul class="space-y-2 text-[11px]">
-          <li><a href="/capcut-safe-zone-template" class="hover:text-cyan-400 transition">CapCut Safe Zone Template</a></li>
-          <li><a href="/instagram-grid-crop-previewer" class="hover:text-cyan-400 transition">1:1 Profile Crop Tool</a></li>
-          <li><a href="/vertical-video-ad-specs" class="hover:text-cyan-400 transition">Paid Ad Safe Margins</a></li>
-          <li><a href="https://canva.link/1v53ulzrri8xp2u" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition">Canva 9:16 Template</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5 class="font-bold text-white uppercase tracking-wider mb-3 text-[11px]">Trust & Methodology</h5>
-        <ul class="space-y-2 text-[11px] mb-2">
-          <li><a href="/methodology" class="text-cyan-400 hover:underline">Measurement Methodology</a></li>
-          <li><a href="/privacy-policy" class="hover:text-cyan-400 transition">Privacy Policy & Security</a></li>
-        </ul>
-        <p class="text-slate-500 text-[11px] leading-relaxed">
-          100% client-side HTML5 processing. Zero server uploads.
-        </p>
-      </div>
-    </div>
-    <div class="max-w-7xl mx-auto pt-6 border-t border-slate-800/80 text-center text-slate-500 text-[11px]">
-      <p>&copy; 2026 CreatorSafeZone.com. YouTube is a trademark of Google LLC.</p>
-    </div>
-  </footer>
-
-  <!-- Script Engine with Video Scrubber Integration -->
-  <script>
-    const dropZone = document.getElementById('dropZone');
-    const fileInput = document.getElementById('fileInput');
-    const mediaContainer = document.getElementById('mediaContainer');
-    const demoBtn = document.getElementById('demoBtn');
-    const downloadGuideBtn = document.getElementById('downloadGuideBtn');
-    const copyClipBtn = document.getElementById('copyClipBtn');
-    const copyText = document.getElementById('copyText');
-
-    const playPauseBtn = document.getElementById('playPauseBtn');
-    const playIcon = document.getElementById('playIcon');
-    const pauseIcon = document.getElementById('pauseIcon');
-    const stepBackBtn = document.getElementById('stepBackBtn');
-    const stepForwardBtn = document.getElementById('stepForwardBtn');
-    const videoTimeline = document.getElementById('videoTimeline');
-    const timeDisplay = document.getElementById('timeDisplay');
-    const muteToggleBtn = document.getElementById('muteToggleBtn');
-    const mutedIcon = document.getElementById('mutedIcon');
-    const unmutedIcon = document.getElementById('unmutedIcon');
-
-    let currentVideoEl = null;
-    let isScrubbing = false;
-
-    dropZone.addEventListener('click', () => fileInput.click());
-    fileInput.addEventListener('change', (e) => {
-      if (e.target.files && e.target.files[0]) loadMedia(e.target.files[0]);
-    });
-
-    function formatTime(seconds) {
-      const mins = Math.floor(seconds / 60);
-      const secs = Math.floor(seconds % 60);
-      return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
-    }
-
-    function setupVideo(videoEl) {
-      currentVideoEl = videoEl;
-      currentVideoEl.muted = true;
-      mutedIcon.classList.remove('hidden');
-      unmutedIcon.classList.add('hidden');
-
-      currentVideoEl.addEventListener('loadedmetadata', () => {
-        videoTimeline.max = currentVideoEl.duration;
-        timeDisplay.textContent = `0:00 / ${formatTime(currentVideoEl.duration)}`;
-      });
-
-      currentVideoEl.addEventListener('timeupdate', () => {
-        if (!isScrubbing) {
-          videoTimeline.value = currentVideoEl.currentTime;
-          timeDisplay.textContent = `${formatTime(currentVideoEl.currentTime)} / ${formatTime(currentVideoEl.duration || 0)}`;
-        }
-      });
-
-      currentVideoEl.addEventListener('play', () => {
-        playIcon.classList.add('hidden'); pauseIcon.classList.remove('hidden');
-      });
-
-      currentVideoEl.addEventListener('pause', () => {
-        playIcon.classList.remove('hidden'); pauseIcon.classList.add('hidden');
-      });
-    }
-
-    function loadMedia(file) {
-      const isVideo = file.type.startsWith('video');
-      const url = URL.createObjectURL(file);
-      mediaContainer.innerHTML = '';
-      if (isVideo) {
-        const video = document.createElement('video');
-        video.src = url; video.autoplay = true; video.loop = true; video.playsInline = true;
-        video.className = 'w-full h-full object-cover';
-        mediaContainer.appendChild(video);
-        setupVideo(video);
-      } else {
-        const img = document.createElement('img');
-        img.src = url; img.className = 'w-full h-full object-cover';
-        mediaContainer.appendChild(img);
-        currentVideoEl = null;
-        timeDisplay.textContent = 'Image Mode';
-      }
-    }
-
-    demoBtn.addEventListener('click', () => {
-      mediaContainer.innerHTML = '';
-      const video = document.createElement('video');
-      video.src = 'https://assets.mixkit.co/videos/preview/mixkit-girl-in-neon-sign-1232-large.mp4';
-      video.autoplay = true; video.loop = true; video.playsInline = true;
-      video.className = 'w-full h-full object-cover';
-      mediaContainer.appendChild(video);
-      setupVideo(video);
-    });
-
-    playPauseBtn.addEventListener('click', () => {
-      if (!currentVideoEl) return;
-      if (currentVideoEl.paused) currentVideoEl.play(); else currentVideoEl.pause();
-    });
-
-    videoTimeline.addEventListener('input', () => {
-      if (!currentVideoEl) return;
-      isScrubbing = true;
-      currentVideoEl.currentTime = videoTimeline.value;
-      timeDisplay.textContent = `${formatTime(currentVideoEl.currentTime)} / ${formatTime(currentVideoEl.duration || 0)}`;
-    });
-
-    videoTimeline.addEventListener('change', () => { isScrubbing = false; });
-
-    stepBackBtn.addEventListener('click', () => {
-      if (!currentVideoEl) return;
-      currentVideoEl.pause();
-      currentVideoEl.currentTime = Math.max(0, currentVideoEl.currentTime - 0.1);
-    });
-
-    stepForwardBtn.addEventListener('click', () => {
-      if (!currentVideoEl) return;
-      currentVideoEl.pause();
-      currentVideoEl.currentTime = Math.min(currentVideoEl.duration, currentVideoEl.currentTime + 0.1);
-    });
-
-    muteToggleBtn.addEventListener('click', () => {
-      if (!currentVideoEl) return;
-      currentVideoEl.muted = !currentVideoEl.muted;
-      if (currentVideoEl.muted) {
-        mutedIcon.classList.remove('hidden'); unmutedIcon.classList.add('hidden');
-      } else {
-        mutedIcon.classList.add('hidden'); unmutedIcon.classList.remove('hidden');
-      }
-    });
-
-    function generateShortsOverlay() {
-      const canvas = document.createElement('canvas');
-      canvas.width = 1080; canvas.height = 1920;
-      const ctx = canvas.getContext('2d');
-      ctx.clearRect(0, 0, 1080, 1920);
-      ctx.fillStyle = 'rgba(239, 68, 68, 0.18)';
-      ctx.fillRect(20, 20, 1040, 130);
-      ctx.strokeStyle = '#EF4444'; ctx.lineWidth = 5;
-      ctx.strokeRect(20, 20, 1040, 130);
-      ctx.fillRect(920, 800, 140, 800); ctx.strokeRect(920, 800, 140, 800);
-      ctx.fillRect(20, 1540, 1040, 360); ctx.strokeRect(20, 1540, 1040, 360);
-      return canvas;
-    }
-
-    copyClipBtn.addEventListener('click', async () => {
-      const canvas = generateShortsOverlay();
-      canvas.toBlob(async (blob) => {
-        try {
-          await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
-          copyText.textContent = '✓ Copied Shorts Guide!';
-          setTimeout(() => { copyText.textContent = 'Copy Shorts Guide to Clipboard (Ctrl+V)'; }, 3000);
-        } catch (err) { alert('Clipboard copy not supported. Click Download PNG.'); }
-      });
-    });
-
-    downloadGuideBtn.addEventListener('click', () => {
-      const canvas = generateShortsOverlay();
-      const link = document.createElement('a'); link.download = 'YouTube_Shorts_SafeZone_1080x1920.png';
-      link.href = canvas.toDataURL('image/png'); link.click();
-    });
-  </script>
-</body>
-</html>
+  </div></details><footer><a href="/about">About</a><a href="/privacy-policy">Privacy</a><a href="/editorial-policy">Editorial policy</a><span>Local processing. No signup.</span></footer>
+</body></html>

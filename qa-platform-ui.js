@@ -21,6 +21,8 @@ function icon(ctx, kind, x, y) {
 }
 
 export function drawPlatformUI(ctx, platform, captionLines=2) {
+  if(platform==='Instagram Stories'){ctx.save();ctx.fillStyle='#0009';ctx.fillRect(0,0,1080,220);ctx.fillRect(0,1710,1080,210);ctx.fillStyle='#fff';ctx.fillRect(40,55,485,7);ctx.fillRect(550,55,485,7);ctx.font='bold 35px system-ui';ctx.fillText('@your_story · 2h',50,140);ctx.fillText('×',995,140);ctx.strokeStyle='#fff';ctx.lineWidth=3;ctx.beginPath();ctx.roundRect(45,1780,810,85,42);ctx.stroke();ctx.font='32px system-ui';ctx.fillText('Send message…',80,1835);ctx.fillText('♡   ↗',900,1835);ctx.restore();return;}
+  if(!['TikTok','Instagram Reels','YouTube Shorts'].includes(platform))return;
   const lines=Math.max(1,Math.min(6,Math.round(Number(captionLines)||2)));
   const tiktok=platform==='TikTok', reels=platform==='Instagram Reels';
   ctx.save();ctx.fillStyle='#fff';ctx.strokeStyle='#fff';ctx.textBaseline='alphabetic';ctx.textAlign='left';
