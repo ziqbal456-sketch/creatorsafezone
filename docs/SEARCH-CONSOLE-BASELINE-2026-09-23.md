@@ -53,3 +53,8 @@ Comparison URL inspection before this release: `/check-all-platforms` is not on 
 References: [Search Console performance report](https://support.google.com/webmasters/answer/7576553?hl=en), [Sitemap guidance](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap).
 
 Indexed examples (detail report last update Sep 17): homepage, last crawled Sep 16; `/instagram-reels-safe-zone.html`, last crawled Sep 16; `/tiktok-safe-zone.html`, last crawled Sep 14. The detail report cutoff differs from the overview and must be retained as shown.
+
+## Post-publication follow-up — September 23, 2026
+- Resubmitted https://creatorsafezone.com/sitemap.xml. Search Console confirmed submission; table showed Success, submitted and last read Sep 23, 13 discovered pages and 0 videos.
+- Requested indexing for https://creatorsafezone.com/check-all-platforms after publication. After Google's live eligibility test, the UI confirmed "Indexing requested" and addition to a priority crawl queue.
+- Discovery and a queued request are not proof of indexing. The original historical baseline above is unchanged; no new traffic or ranking result is claimed.

@@ -1,0 +1,176 @@
+{
+  "base": "https://creatorsafezone.com",
+  "checkedAt": "2026-09-23T03:37:19.077Z",
+  "checks": [
+    {
+      "route": "/",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "oneH1": true,
+      "canonical": true,
+      "imagesLabelled": true,
+      "minReadingFont": 16
+    },
+    {
+      "route": "/check-all-platforms",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "oneH1": true,
+      "canonical": true,
+      "imagesLabelled": true,
+      "minReadingFont": 14.4
+    },
+    {
+      "route": "/tiktok-safe-zone",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "oneH1": true,
+      "canonical": true,
+      "imagesLabelled": true,
+      "minReadingFont": 16
+    },
+    {
+      "route": "/instagram-reels-safe-zone",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "oneH1": true,
+      "canonical": true,
+      "imagesLabelled": true,
+      "minReadingFont": 16
+    },
+    {
+      "route": "/youtube-shorts-safe-zone",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "oneH1": true,
+      "canonical": true,
+      "imagesLabelled": true,
+      "minReadingFont": 16
+    },
+    {
+      "route": "/instagram-story-safe-zone",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "oneH1": true,
+      "canonical": true,
+      "imagesLabelled": true,
+      "minReadingFont": 16
+    },
+    {
+      "route": "/instagram-grid-crop-previewer",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "oneH1": true,
+      "canonical": true,
+      "imagesLabelled": true,
+      "minReadingFont": 16
+    },
+    {
+      "route": "/capcut-safe-zone-template",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "oneH1": true,
+      "canonical": true,
+      "imagesLabelled": true,
+      "minReadingFont": 16
+    },
+    {
+      "route": "/vertical-video-ad-specs",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "oneH1": true,
+      "canonical": true,
+      "imagesLabelled": true,
+      "minReadingFont": 16
+    },
+    {
+      "route": "/methodology",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "oneH1": true,
+      "canonical": true,
+      "imagesLabelled": true,
+      "minReadingFont": null
+    },
+    {
+      "route": "/privacy-policy",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "oneH1": true,
+      "canonical": true,
+      "imagesLabelled": true,
+      "minReadingFont": null
+    },
+    {
+      "route": "/about",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "oneH1": true,
+      "canonical": true,
+      "imagesLabelled": true,
+      "minReadingFont": null
+    },
+    {
+      "route": "/editorial-policy",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "oneH1": true,
+      "canonical": true,
+      "imagesLabelled": true,
+      "minReadingFont": null
+    }
+  ],
+  "limitations": "Browser layout/structure checks, not a full WCAG audit, physical-device test or user study."
+}
