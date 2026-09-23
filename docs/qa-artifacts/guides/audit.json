@@ -1,0 +1,61 @@
+{
+  "checkedAt": "2026-09-23T04:18:09.741Z",
+  "mode": "Local final Worker HTML with simulated release time; not evidence of early live publication",
+  "results": [
+    {
+      "slug": "captions-covered-by-buttons",
+      "words": 611,
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "result": "pass"
+    },
+    {
+      "slug": "reel-cover-text-cut-off",
+      "words": 596,
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "result": "pass"
+    },
+    {
+      "slug": "canva-video-safe-zone-overlay",
+      "words": 593,
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "result": "pass"
+    },
+    {
+      "slug": "organic-video-vs-ad-safe-zones",
+      "words": 553,
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "result": "pass"
+    },
+    {
+      "slug": "vertical-video-black-bars-fit-fill",
+      "words": 574,
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "result": "pass"
+    }
+  ]
+}

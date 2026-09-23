@@ -1,3 +1,4 @@
+import { guideResponse } from './scheduled-guides.js';
 const SECURITY_HEADERS = {
   "Content-Security-Policy": [
     "default-src 'self'",
@@ -22,7 +23,7 @@ const SECURITY_HEADERS = {
 
 export default {
   async fetch(request, env) {
-    const assetResponse = await env.ASSETS.fetch(request);
+    const assetResponse = await guideResponse(request, env) || await env.ASSETS.fetch(request);
     const headers = new Headers(assetResponse.headers);
 
     for (const [name, value] of Object.entries(SECURITY_HEADERS)) {

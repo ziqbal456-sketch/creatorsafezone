@@ -3,6 +3,8 @@
 .assetsignore
 _headers
 worker.js
+scheduled-guides.js
+content
 wrangler.jsonc
 package.json
 package-lock.json
