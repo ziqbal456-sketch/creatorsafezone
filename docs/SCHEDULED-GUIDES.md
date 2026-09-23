@@ -28,3 +28,11 @@ For each extension: run node --test tests/*.test.mjs, structural validation, edi
 - These checks do not constitute a full accessibility certification, physical-device test or traffic forecast.
 
 Publication version and post-deployment results will be appended after verification.
+
+## Deployment — September 23, 2026
+
+Source 1dd8bf7; Cloudflare version 87e0b870-e61f-4d43-8033-b9f6f004d513 deployed at 100%. Previous rollback version 2cf95664-019c-4c86-abb8-66d81382c33e. Direct local-branch release; no GitHub merge/CI result claimed.
+
+Preview checks passed before promotion. The first immediate custom-domain check saw the previous 404 during rollout; subsequent inspected responses served the new hub and no-store policy. The complete custom-domain schedule smoke then passed: hub available, all five future URLs hidden, no future sitemap entries, source files blocked, homepage link and CSS available. Existing route/redirect smoke and all-13-page responsiveness audit also passed. Article publication boundaries are tested with simulated time; actual future-date release remains subject to ongoing live checks.
+
+The active replenishment heartbeat was read back from its saved configuration: daily 08:00 in this task, target five future audited posts. It does not require the user to approve each routine release within the authorized scope, but still requires local runtime and deployment access.
