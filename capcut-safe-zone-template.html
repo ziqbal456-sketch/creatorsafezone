@@ -27,44 +27,20 @@
   
 
   <!-- Schemas -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://creatorsafezone.com/capcut-safe-zone-template#app",
-        "name": "CapCut Safe Zone Simulator",
-        "url": "https://creatorsafezone.com/capcut-safe-zone-template",
-        "applicationCategory": "MultimediaApplication",
-        "operatingSystem": "All",
-        "description": "Interactive safe zone simulator and transparent guide generator for CapCut editors."
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://creatorsafezone.com/capcut-safe-zone-template#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How do I import a safe zone template into CapCut?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Download the transparent 1080x1920 PNG from CreatorSafeZone. In CapCut, click 'Overlay' -> 'Add Overlay', select the PNG file, and set opacity to 60-70%. Position your captions inside the clear zone, then delete the overlay layer before export."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Why do CapCut auto-captions get covered on TikTok?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "CapCut defaults to placing automated subtitles near the bottom edge. On TikTok, this directly collides with usernames, descriptions, and audio tags. Using a safe zone template ensures captions are raised by 80 to 100 pixels."
-            }
-          }
-        ]
-      }
-    ]
-  }
-  </script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://creatorsafezone.com/capcut-safe-zone-template#app",
+      "name": "CapCut Safe Zone Simulator",
+      "url": "https://creatorsafezone.com/capcut-safe-zone-template",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "All",
+      "description": "Interactive safe zone simulator and transparent guide generator for CapCut editors."
+    }
+  ]
+}</script>
 
   
 
@@ -100,7 +76,7 @@
       <div>
         <h2>How to Use the 9:16 Safe Zone Template in CapCut (Mobile & Desktop)</h2>
         <p>
-          CapCut’s automated subtitle generator places captions across the lower third of your video by default. While this looks centered inside CapCut's editing canvas, once published on TikTok, Reels, or Shorts, the platform handle, follow button, and sound title obstruct the copy.
+          Captions placed near the bottom of an edit can overlap platform controls after publishing. Use the guide to plan their placement, then check the exported video in each destination app.
         </p>
       </div>
 

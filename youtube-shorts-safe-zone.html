@@ -28,52 +28,20 @@
   
   
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://creatorsafezone.com/youtube-shorts-safe-zone#app",
-        "name": "YouTube Shorts Safe Zone Checker",
-        "url": "https://creatorsafezone.com/youtube-shorts-safe-zone",
-        "applicationCategory": "MultimediaApplication",
-        "operatingSystem": "All",
-        "description": "Browser-based safe area simulator calibrated for YouTube Shorts 9:16 mobile overlay."
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://creatorsafezone.com/youtube-shorts-safe-zone#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What is the recommended safe zone for YouTube Shorts?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "For standard 1080x1920px vertical video, CreatorSafeZone recommends leaving approximately 120-140px clear at the top, 140-160px clear on the right margin, and 340-380px clear at the bottom for channel handle, Subscribe button, and 2-line video title."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Where does the YouTube Shorts Subscribe button appear?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The solid white Subscribe pill sits on the lower-left side immediately next to the channel handle between Y: 1540px and Y: 1640px. Placing subtitles here results in direct legibility conflict."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Where should subtitles be placed on YouTube Shorts podcast clips?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "For stacked podcast videos, place animated subtitles in the middle third between Y: 950px and Y: 1200px (the dividing line between speakers) to avoid blocking the host's face or colliding with YouTube's bottom metadata drawer."
-            }
-          }
-        ]
-      }
-    ]
-  }
-  </script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://creatorsafezone.com/youtube-shorts-safe-zone#app",
+      "name": "YouTube Shorts Safe Zone Checker",
+      "url": "https://creatorsafezone.com/youtube-shorts-safe-zone",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "All",
+      "description": "Browser-based safe area simulator using estimated working areas for YouTube Shorts 9:16 mobile overlay."
+    }
+  ]
+}</script>
 
   
 
@@ -126,26 +94,26 @@
         </p>
       </div>
 
-      <!-- Verified Specs Cards (Part 4) -->
+      <!-- Working Recommendation Cards (Part 4) -->
       <div>
         <h3>
-          <span></span> Observed YouTube Shorts Working Margins
+          <span></span> Recommended YouTube Shorts Working Margins
         </h3>
         <div>
           <div>
             <span>Top Margin</span>
             <span>120 – 140 px</span>
-            <p>Observed buffer for search glass, three-dot menu, and camera cutout.</p>
+            <p>Recommended buffer for search glass, three-dot menu, and camera cutout.</p>
           </div>
           <div>
             <span>Right Action Rail</span>
             <span>140 – 160 px</span>
-            <p>Observed buffer for Like, Dislike, Comments, Share, and Remix sound button.</p>
+            <p>Recommended buffer for Like, Dislike, Comments, Share, and Remix sound button.</p>
           </div>
           <div>
             <span>Bottom Channel Zone</span>
             <span>340 – 380 px</span>
-            <p>Observed buffer for handle, Subscribe button, 2-line title, and audio track.</p>
+            <p>Recommended buffer for handle, Subscribe button, 2-line title, and audio track.</p>
           </div>
           <div>
             <span>Recommended Safe Area</span>
@@ -163,7 +131,7 @@
         </p>
         <ul>
           <li><strong>Top Speaker Framing:</strong> Keep the guest's head below Y: 180px to prevent the search icon or hardware notch from cutting off their forehead.</li>
-          <li><strong>Bottom Speaker Framing:</strong> Position the host's chin and chest above Y: 1500px. Otherwise, the solid white Subscribe button will sit directly over their mouth.</li>
+          <li><strong>Bottom Speaker Framing:</strong> Mark the full face and caption region, then check it against the selected bottom margin. This illustration cannot predict the exact Subscribe control position on every device.</li>
           <li><strong>Captions Sweet Spot:</strong> Place all animated captions centered between <strong>Y: 900px and Y: 1200px</strong> (the dividing line between both cameras).</li>
         </ul>
       </div>
@@ -216,7 +184,7 @@
       <div>
         <h4>Official Platform Documentation</h4>
         <p>
-          For official video guidelines, visit the <a href="https://support.google.com/youtube/answer/10059070" target="_blank" rel="noopener noreferrer">YouTube Help Center for Shorts Creation ↗</a>. For details on how we measure organic UI, see our <a href="/methodology">Measurement Methodology</a>.
+          For official video guidelines, visit the <a href="https://support.google.com/youtube/answer/10059070" target="_blank" rel="noopener noreferrer">YouTube Help Center for Shorts Creation ↗</a>. For our evidence requirements and planning limitations, see our <a href="/methodology">Measurement Methodology</a>.
         </p>
       </div>
 

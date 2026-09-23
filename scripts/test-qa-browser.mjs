@@ -9,7 +9,7 @@ const require = createRequire(import.meta.url);
 const {chromium} = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
 const root = fileURLToPath(new URL('../',import.meta.url));
 const out = resolve(root,'docs/qa-artifacts');await mkdir(out,{recursive:true});
-const mime = {'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.png':'image/png'};
+const mime = {'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.png':'image/png','.svg':'image/svg+xml'};
 const server = createServer(async(req,res) => {
   try {
     let pathname = decodeURIComponent(new URL(req.url,'http://localhost').pathname);
@@ -29,6 +29,7 @@ try {
   page.on('requestfailed',r=>{if(r.failure()?.errorText==='csp')blockedByCsp.add(r.url());});
   page.on('pageerror',e => errors.push(e.message));page.on('request',r => {if (!r.url().startsWith(base) && !r.url().startsWith('blob:') && !r.url().startsWith('data:')) remote.push(r.url());});
   await page.goto(base + '/check-all-platforms');await page.waitForFunction(() => document.querySelectorAll('.preview').length === 3);
+  assert.equal(await page.locator('#comparison-tutorial').count(),1);await page.locator('#comparison-tutorial img').scrollIntoViewIfNeeded();await page.waitForFunction(()=>document.querySelector('#comparison-tutorial img').naturalWidth>0);
   const canvasPixels=()=>page.locator('.preview canvas').first().evaluate(c=>c.toDataURL());
   assert.equal(await page.locator('#region-controls').getAttribute('open'),null);
   await page.locator('#viewOptions summary').click();
@@ -42,7 +43,7 @@ try {
   assert.deepEqual(await page.locator('.badge').allTextContents(),['Covered','Warning','Safe']);
   assert.deepEqual(await page.locator('.margin-values').allTextContents(),['Top 160Right 180Bottom 420Left 0','Top 150Right 160Bottom 400Left 0','Top 140Right 160Bottom 380Left 0']);
   await page.locator('#openRegionsButton').click();
-  await page.locator('#fitAllButton').click();assert.deepEqual(await page.locator('.badge').allTextContents(),['Safe','Safe','Safe']);
+  await page.locator('#fitAllButton').click();assert.equal(await page.locator('#coordY').inputValue(),'1398');assert.deepEqual(await page.locator('.badge').allTextContents(),['Safe','Safe','Safe']);
   await page.locator('#undoButton').click();assert.deepEqual(await page.locator('.badge').allTextContents(),['Covered','Warning','Safe']);
   const marginEditor=page.locator('.margin-editor').first();await marginEditor.locator('summary').click();await page.getByLabel('TikTok bottom margin',{exact:true}).fill('600');await marginEditor.getByRole('button',{name:'Apply scenario'}).click();assert.match(await page.locator('.margin-values').first().textContent(),/Bottom 600/);
   await marginEditor.getByRole('button',{name:'Reset defaults'}).click();await marginEditor.locator('summary').click();assert.match(await page.locator('.margin-values').first().textContent(),/Bottom 420/);
@@ -139,6 +140,7 @@ try {
   await page.goto(base+'/check-all-platforms');await page.waitForFunction(()=>document.querySelectorAll('.preview').length===3);for(const width of [320,360,390,768,1024,1440]){await page.setViewportSize({width,height:900});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'comparison overflow '+width);}
   const touchContext=await browser.newContext({viewport:{width:320,height:740},isMobile:true,hasTouch:true,deviceScaleFactor:2});const touchPage=await touchContext.newPage();
   await touchPage.goto(base+'/check-all-platforms');await touchPage.waitForFunction(()=>document.querySelectorAll('.preview').length===3);assert.equal(await touchPage.locator('.preview canvas').first().evaluate(e=>getComputedStyle(e).touchAction),'pan-x pan-y');await touchPage.locator('#viewOptions > summary').tap();await touchPage.locator('#touchEdit').check();assert.equal(await touchPage.locator('.preview canvas').first().evaluate(e=>getComputedStyle(e).touchAction),'none');await touchPage.locator('#touchEdit').uncheck();await touchPage.locator('#viewOptions > summary').tap();await touchPage.locator('#exportMenu > summary').tap();let mb=await touchPage.locator('#exportMenu .dropdown-panel').boundingBox();assert.ok(mb.x>=0&&mb.x+mb.width<=320);await touchPage.screenshot({path:resolve(out,'mobile-320-menu.png'),fullPage:true});await touchContext.close();
+  await page.setViewportSize({width:390,height:844});await page.locator('#comparison-tutorial').screenshot({path:resolve(out,'tutorial-mobile.png')});await page.setViewportSize({width:1440,height:1000});await page.locator('#comparison-tutorial').screenshot({path:resolve(out,'tutorial-desktop.png')});
   assert.deepEqual(errors,[]);
   await writeFile(resolve(out,'browser-results.txt'),'Passed desktop Edge and 390px mobile viewport checks, export dropdown keyboard/outside dismissal, all-platform guide downloads, guide transparency/custom geometry, mocked clipboard success/denial, Canva link, adjustable margins, shared placement, resize, undo, media controls and URL failure/success fixtures. See script for assertions.\n');
 } finally {if(browser) await browser.close();await new Promise(r=>server.close(r));}

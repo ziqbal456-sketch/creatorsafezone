@@ -1,13 +1,14 @@
 # Content ownership
 | Page | Primary intent |
 | --- | --- |
-| index.html | Compare platform overlays |
+| index.html | Single-platform preview and platform selection |
+| check-all-platforms.html | Cross-platform comparison and worked editor workflow |
 | tiktok-safe-zone.html | TikTok in-feed margins |
 | instagram-reels-safe-zone.html | Reels placement and crop scenarios |
 | youtube-shorts-safe-zone.html | Shorts placement |
 | instagram-story-safe-zone.html | Stories placement |
 | instagram-grid-crop-previewer.html | Explicitly labelled crop scenarios |
-| vertical-video-ad-specs.html | Official ad requirements versus recommendations |
+| vertical-video-ad-specs.html | Generic ad placement scenario with links to platform requirements |
 | capcut-safe-zone-template.html | Editing workflow |
 | methodology.html | Evidence and limitations |
 | about.html | Publisher and purpose |

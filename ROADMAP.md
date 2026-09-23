@@ -7,10 +7,10 @@ Updated 2026-09-21. Priorities are editorial judgment, not measured keyword dema
 | PRODUCT-02 | Published 2026-09-22 | One-media comparison across TikTok/Reels/Shorts, manual element regions, overlap states, placement suggestions and local text report. See docs/PHASE-2-ACTION-PLAN.md and docs/PHASE-2-VALIDATION.md |
 | TRUST-02 | In progress | Unsupported device/app claims removed; unreferenced margins and crop behavior labeled as working estimates or planning scenarios; source captures remain required before any observed classification |
 | CROP-01 | Next | Verify current Instagram crops by surface/account; label scenario previews accurately |
-| DATA-01 | Next | Obtain authorized Search Console export and dated query-to-page baseline |
+| DATA-01 | Baseline recorded 2026-09-23 | Signed-in Search Console UI baseline: 27 impressions, 0 clicks; queries, pages, devices and indexing stored privately in docs/SEARCH-CONSOLE-BASELINE-2026-09-23.md |
 | UX-01 | Later | Test image/video selection, playback, overlays, exports and keyboard flow on mobile/desktop |
 | PERF-01 | Later | Compile styles and reduce external dependencies with measured visual/performance checks |
-| CONTENT-01 | Later | Publish one distinct, evidenced problem-solving guide selected using demand data |
+| CONTENT-01 | Comparison tutorial implemented locally | Worked example on existing comparison URL; content-accuracy and sitemap release pending publication. See docs/CONTENT-BASELINE-RELEASE.md |
 | OPS-02 | Later | Pin Wrangler and browser-test dependencies; enforce required GitHub checks where available |
 
 Weekly review recommends at most three items; implement one approved item per release. Existing observed-UI labels still need supporting empirical evidence; automated agreement checks cannot supply it.
