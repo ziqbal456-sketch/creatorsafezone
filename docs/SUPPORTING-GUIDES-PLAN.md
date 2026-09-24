@@ -59,3 +59,9 @@ Sources accessed September 23, 2026. Cover arithmetic is derived from stated hyp
 User clarified that publication belongs on Cloudflare, with one post daily even while offline and a reserve of 3–5 ready posts. Five audited articles are queued for September 24–28, 2026 at 10:00 Asia/Karachi (05:00 UTC) in the order above. This is a consistent editorial time, not a claimed ranking advantage.
 
 Server-side timed availability controls article URLs, /guides and the sitemap. All internal article links target already-live tools, avoiding unpublished sibling links. See docs/SCHEDULED-GUIDES.md for release behavior, audits and the local queue-replenishment automation's availability limits.
+
+## Approved expansion — September 24, 2026
+
+After targeted SERP validation, the user approved expanding the September 26 Canva article to “How to Create a Custom Safe-Zone Overlay for Reels, TikTok and Shorts.” Keep slug canva-video-safe-zone-overlay and the existing release timestamp. Added original transparent PNG/SVG teaching assets, exact custom rectangle geometry, Canva creation/import/removal steps, plan-dependent transparency guidance, and an optional HTML/SVG section. No separate overlapping post or measured keyword-volume claim.
+
+Sources checked: https://www.canva.com/help/margins-bleed-crop-marks/ and https://www.canva.com/pro/transparent-images/. The numerical example is explicitly illustrative, not an official platform preset. Browser checks confirm generated PNG dimensions 1080x1920, center alpha 0, translucent bands, and article layout at four widths. 46 tests and structural validation pass; the six previously disclosed editorial advisories remain. Actual Canva account interaction was not tested.

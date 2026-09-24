@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+<title>Custom safe-zone overlay: illustrative planning example</title>
+<desc>Not official platform margins. Transparent center from x120 y180 to x900 y1560. Top 180, right 180, bottom 360, left 120 pixels. Remove before publishing.</desc>
+<g fill="#f43f5e" fill-opacity="0.32"><rect width="1080" height="180"/><rect y="1560" width="1080" height="360"/><rect y="180" width="120" height="1380"/><rect x="900" y="180" width="180" height="1380"/></g>
+<rect x="120" y="180" width="780" height="1380" fill="none" stroke="#0891b2" stroke-width="4"/>
+<g fill="#ffffff" stroke="#111827" stroke-width="1" paint-order="stroke" font-family="Arial,sans-serif" font-size="30" text-anchor="middle"><text x="540" y="74">ILLUSTRATIVE PLANNING GUIDE</text><text x="540" y="122">1080 × 1920 · Top margin: 180 px</text><text x="540" y="1650">Bottom: 360 · Left: 120 · Right: 180 px</text><text x="540" y="1710">Not official platform boundaries</text><text x="540" y="1770">Remove overlay before final export</text><text x="540" y="1840">CreatorSafeZone.com</text></g>
+</svg>
