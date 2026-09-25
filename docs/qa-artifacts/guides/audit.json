@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-24T04:33:51.710Z",
+  "checkedAt": "2026-09-25T04:26:57.389Z",
   "mode": "Local final Worker HTML with simulated release time; not evidence of early live publication",
   "results": [
     {
@@ -49,6 +49,17 @@
     {
       "slug": "vertical-video-black-bars-fit-fill",
       "words": 574,
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "result": "pass"
+    },
+    {
+      "slug": "video-caption-size-contrast-readability",
+      "words": 744,
       "widths": [
         320,
         390,
