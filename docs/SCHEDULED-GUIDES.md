@@ -48,3 +48,11 @@ At verification before 05:00 UTC, the September 24 caption-placement guide was l
 ## Guide navigation — September 25, 2026
 
 Guides now appears in the primary navigation on the homepage and eight tool pages (including comparison). Header navigation wraps at narrow widths with 44px link tap targets. Existing guide collection is reused; no empty categories added. Source 568368a; version 2521ed46-4044-4922-b899-e2b26e3ee048 at 100%; rollback e3ac5806-a86e-44e4-8b84-3d1cff44c1f6. Structural checks, 47 tests, dry run, 13-page/four-width preview layout audit and schedule smoke passed. Mobile navigation click verified on preview and live custom domain. Existing editorial advisories unchanged. Scheduled posts preserved.
+
+## September 28 queue replenishment
+
+Source 1388cb9 on codex/guide-queue-sep28; Cloudflare version a9e58a02-b5fc-4c3a-a9df-b3677e0f3f05 deployed at 100%. Rollback version 2521ed46-4044-4922-b899-e2b26e3ee048. Four added slots: September 30 burned-in vs closed captions, October 1 Premiere margins/social overlays, October 2 video preview troubleshooting, October 3 subtitle timing. September 29 readability slot and all five published records preserved. Five future audited articles now deployed for September 29–October 3, daily 05:00 UTC / 10:00 Asia/Karachi.
+
+Research/source record is in SUPPORTING-GUIDES-PLAN.md. Structural checks and all 51 tests passed; all ten guides passed local four-width layout audit, with the four new mobile screenshots reviewed. Nine unique article links returned 200. Wrangler dry run and both preview smoke suites passed before promotion. After promotion, custom-domain schedule and route smoke passed; all five due article titles and bodies exactly matched local records. Live hub and September 28 article passed four-width overflow and H1 checks in headless Edge. The first one-off live browser audit had a Windows import URL error; corrected file URL rerun passed. These are browser viewport checks, not physical-device or external editor tests. Six existing editorial advisories unchanged.
+
+Scheduled release is server-side and continues from this deployed buffer while the local computer is offline. Future content generation still requires the local automation runtime. Direct local-branch deployment; no GitHub merge or hosted CI claimed.
