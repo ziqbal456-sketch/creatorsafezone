@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-25T04:26:57.389Z",
+  "checkedAt": "2026-09-28T10:29:08.779Z",
   "mode": "Local final Worker HTML with simulated release time; not evidence of early live publication",
   "results": [
     {
@@ -60,6 +60,50 @@
     {
       "slug": "video-caption-size-contrast-readability",
       "words": 744,
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "result": "pass"
+    },
+    {
+      "slug": "burned-in-vs-closed-captions",
+      "words": 576,
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "result": "pass"
+    },
+    {
+      "slug": "premiere-safe-margins-social-overlay",
+      "words": 567,
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "result": "pass"
+    },
+    {
+      "slug": "video-preview-not-playing",
+      "words": 563,
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "result": "pass"
+    },
+    {
+      "slug": "subtitles-out-of-sync",
+      "words": 577,
       "widths": [
         320,
         390,

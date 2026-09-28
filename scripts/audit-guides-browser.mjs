@@ -28,5 +28,5 @@ try{
  }
  await page.setViewportSize({width:1440,height:1000});await page.goto('https://creatorsafezone.com/guides');await page.screenshot({path:'docs/qa-artifacts/guides/index-desktop.png',fullPage:true});
  await writeFile('docs/qa-artifacts/guides/audit.json',JSON.stringify({checkedAt:new Date().toISOString(),mode:'Local final Worker HTML with simulated release time; not evidence of early live publication',results},null,2));
- console.log('PASS: five rendered guides, four viewport widths, navigation anchors, canonicals and reading sizes.');
+ console.log(`PASS: ${posts.length} rendered guides, four viewport widths, navigation anchors, canonicals and reading sizes.`);
 }finally{await browser.close();}
