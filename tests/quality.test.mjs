@@ -19,6 +19,7 @@ test('validator catches missing local links and metadata regressions', () => {
 test('validator catches margin and asset exclusion regressions', () => {
   assert.ok(validate({'index.html':read('index.html').replace('340 – 380 px','341 – 380 px')}).some(e => e.includes('disagrees')));
   assert.ok(validate({'.assetsignore':read('.assetsignore').replace(/^tests\r?\n/m,'')}).some(e => e.includes('missing exclusion: tests')));
+  assert.ok(validate({'wrangler.jsonc':read('wrangler.jsonc').replace(/,\s*"previews":\s*\{\}/,'')}).some(e => e.includes('deployment invariants changed')));
 });
 for (const [host, preview] of [['creatorsafezone.com',false],['b56821fc-creatorsafezone.z-iqbal456.workers.dev',true]]) {
   for (const status of [200,404,302]) test(host + ' preserves response ' + status, async () => {

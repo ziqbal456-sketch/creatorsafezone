@@ -62,7 +62,7 @@ export function validate(overrides = {}) {
   } catch (e) { fail('measurement-registry.json', e.message); }
   try {
     const config = JSON.parse(get('wrangler.jsonc'));
-    if (config.name !== 'creatorsafezone' || config.main !== 'worker.js' || config.assets?.binding !== 'ASSETS' || config.assets?.run_worker_first !== true || config.preview_urls !== true) fail('wrangler.jsonc', 'deployment invariants changed');
+    if (config.name !== 'creatorsafezone' || config.main !== 'worker.js' || config.assets?.binding !== 'ASSETS' || config.assets?.run_worker_first !== true || config.preview_urls !== true || config.previews == null) fail('wrangler.jsonc', 'deployment invariants changed');
   } catch (e) { fail('wrangler.jsonc', e.message); }
   const ignored = get('.assetsignore').split(/\r?\n/).map(x => x.trim());
   for (const item of ['.git','.github','docs','scripts','tests','node_modules','.wrangler','.env*','worker.js','wrangler.jsonc','package.json','*.md']) if (!ignored.includes(item)) fail('.assetsignore', 'missing exclusion: ' + item);
