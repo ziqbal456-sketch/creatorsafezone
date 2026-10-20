@@ -1,0 +1,925 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-10-20T03:09:29.384Z",
+  "scope": {
+    "micro_niche": "Vertical-video composition checks for creators and editors",
+    "mode": "expansion",
+    "market": "Global English site; US English editorial default, SERP location unknown",
+    "language": "en",
+    "business_purpose": "Help readers diagnose edit/export problems and use the free planning checker appropriately",
+    "audience": "Creators and editors preparing short vertical videos",
+    "exclusions": [
+      "Paid services",
+      "Affiliate rankings",
+      "Platform measurement claims",
+      "Outreach",
+      "New analytics",
+      "Universal character/bitrate prescriptions"
+    ],
+    "capacity": "Five researched guides; one daily server-clock release",
+    "new_content_hold": false
+  },
+  "sources": [
+    {
+      "id": "oct20-1-competitor-0",
+      "url": "https://studio.robpinney.com/resources/instagram-reels-safe-zone-template",
+      "source_class": "competitor",
+      "date": "2026-10-20",
+      "access": "read",
+      "coverage": "Relevant answer and workflow sections; publisher claims not independently tested"
+    },
+    {
+      "id": "oct20-1-competitor-1",
+      "url": "https://github.com/stephanteig/Safezone-Davinci",
+      "source_class": "competitor",
+      "date": "2026-10-20",
+      "access": "read",
+      "coverage": "Relevant answer and workflow sections; publisher claims not independently tested"
+    },
+    {
+      "id": "oct20-1-competitor-2",
+      "url": "https://nodexplugins.com/plugins/social-guide",
+      "source_class": "competitor",
+      "date": "2026-10-20",
+      "access": "read",
+      "coverage": "Relevant answer and workflow sections; publisher claims not independently tested"
+    },
+    {
+      "id": "oct20-1-primary",
+      "url": "https://www.blackmagicdesign.com/products/davinciresolve/training",
+      "source_class": "primary_documentation",
+      "date": "2026-10-20",
+      "access": "read",
+      "coverage": "Relevant documented mechanisms only; no signed-in editor testing"
+    },
+    {
+      "id": "oct20-1-search",
+      "source_class": "web_search",
+      "date": "2026-10-20",
+      "access": "read",
+      "coverage": "Search-tool discovery results: how-to, troubleshooting and tool pages; no Google UI rank/autocomplete/PAA claim"
+    },
+    {
+      "id": "oct20-2-competitor-0",
+      "url": "https://videoeffectvibe.com/blog/how-to-add-transparent-overlays",
+      "source_class": "competitor",
+      "date": "2026-10-20",
+      "access": "read",
+      "coverage": "Relevant answer and workflow sections; publisher claims not independently tested"
+    },
+    {
+      "id": "oct20-2-competitor-1",
+      "url": "https://www.how7o.com/tools/image-overlay/",
+      "source_class": "competitor",
+      "date": "2026-10-20",
+      "access": "read",
+      "coverage": "Relevant answer and workflow sections; publisher claims not independently tested"
+    },
+    {
+      "id": "oct20-2-competitor-2",
+      "url": "https://bitofcode.dev/overlayline/",
+      "source_class": "competitor",
+      "date": "2026-10-20",
+      "access": "read",
+      "coverage": "Relevant answer and workflow sections; publisher claims not independently tested"
+    },
+    {
+      "id": "oct20-2-primary",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Image_types#png_portable_network_graphics",
+      "source_class": "primary_documentation",
+      "date": "2026-10-20",
+      "access": "read",
+      "coverage": "Relevant documented mechanisms only; no signed-in editor testing"
+    },
+    {
+      "id": "oct20-2-search",
+      "source_class": "web_search",
+      "date": "2026-10-20",
+      "access": "read",
+      "coverage": "Search-tool discovery results: how-to, troubleshooting and tool pages; no Google UI rank/autocomplete/PAA claim"
+    },
+    {
+      "id": "oct20-3-competitor-0",
+      "url": "https://quickedit.net/2024/06/29/blurry-subtitles-when-exporting-in-premiere/",
+      "source_class": "competitor",
+      "date": "2026-10-20",
+      "access": "read",
+      "coverage": "Relevant answer and workflow sections; publisher claims not independently tested"
+    },
+    {
+      "id": "oct20-3-competitor-1",
+      "url": "https://magictoolbelt.com/blog/subtitle-png-blurry-fix/",
+      "source_class": "competitor",
+      "date": "2026-10-20",
+      "access": "read",
+      "coverage": "Relevant answer and workflow sections; publisher claims not independently tested"
+    },
+    {
+      "id": "oct20-3-competitor-2",
+      "url": "https://videowizardtools.com/capcut-video-blurry-after-export/",
+      "source_class": "competitor",
+      "date": "2026-10-20",
+      "access": "read",
+      "coverage": "Relevant answer and workflow sections; publisher claims not independently tested"
+    },
+    {
+      "id": "oct20-3-primary",
+      "url": "https://www.capcut.com/help/fix-blurry-video",
+      "source_class": "primary_documentation",
+      "date": "2026-10-20",
+      "access": "read",
+      "coverage": "Relevant documented mechanisms only; no signed-in editor testing"
+    },
+    {
+      "id": "oct20-3-search",
+      "source_class": "web_search",
+      "date": "2026-10-20",
+      "access": "read",
+      "coverage": "Search-tool discovery results: how-to, troubleshooting and tool pages; no Google UI rank/autocomplete/PAA claim"
+    },
+    {
+      "id": "oct20-4-competitor-0",
+      "url": "https://velocaption.com/tools/video-rotator/",
+      "source_class": "competitor",
+      "date": "2026-10-20",
+      "access": "read",
+      "coverage": "Relevant answer and workflow sections; publisher claims not independently tested"
+    },
+    {
+      "id": "oct20-4-competitor-1",
+      "url": "https://arraykit.com/rotate-video",
+      "source_class": "competitor",
+      "date": "2026-10-20",
+      "access": "read",
+      "coverage": "Relevant answer and workflow sections; publisher claims not independently tested"
+    },
+    {
+      "id": "oct20-4-competitor-2",
+      "url": "https://gizza.ai/tools/video-bake-rotation/",
+      "source_class": "competitor",
+      "date": "2026-10-20",
+      "access": "read",
+      "coverage": "Relevant answer and workflow sections; publisher claims not independently tested"
+    },
+    {
+      "id": "oct20-4-primary",
+      "url": "https://ffmpeg.org/ffmpeg.html",
+      "source_class": "primary_documentation",
+      "date": "2026-10-20",
+      "access": "read",
+      "coverage": "Relevant documented mechanisms only; no signed-in editor testing"
+    },
+    {
+      "id": "oct20-4-search",
+      "source_class": "web_search",
+      "date": "2026-10-20",
+      "access": "read",
+      "coverage": "Search-tool discovery results: how-to, troubleshooting and tool pages; no Google UI rank/autocomplete/PAA claim"
+    },
+    {
+      "id": "oct20-5-competitor-0",
+      "url": "https://subtitling.net/standards/subtitle-segmentation",
+      "source_class": "competitor",
+      "date": "2026-10-20",
+      "access": "read",
+      "coverage": "Relevant answer and workflow sections; publisher claims not independently tested"
+    },
+    {
+      "id": "oct20-5-competitor-1",
+      "url": "https://www.subtitlewise.com/blog/subtitle-line-break-guide",
+      "source_class": "competitor",
+      "date": "2026-10-20",
+      "access": "read",
+      "coverage": "Relevant answer and workflow sections; publisher claims not independently tested"
+    },
+    {
+      "id": "oct20-5-competitor-2",
+      "url": "https://www.capcut.com/create/automatically-translate-subtitles-without-breaking-timing",
+      "source_class": "competitor",
+      "date": "2026-10-20",
+      "access": "read",
+      "coverage": "Relevant answer and workflow sections; publisher claims not independently tested"
+    },
+    {
+      "id": "oct20-5-primary",
+      "url": "https://partnerhelp.netflixstudios.com/hc/en-us/articles/215758617-Timed-Text-Style-Guide-General-Requirements",
+      "source_class": "primary_documentation",
+      "date": "2026-10-20",
+      "access": "read",
+      "coverage": "Relevant documented mechanisms only; no signed-in editor testing"
+    },
+    {
+      "id": "oct20-5-search",
+      "source_class": "web_search",
+      "date": "2026-10-20",
+      "access": "read",
+      "coverage": "Search-tool discovery results: how-to, troubleshooting and tool pages; no Google UI rank/autocomplete/PAA claim"
+    },
+    {
+      "id": "blocked-pages",
+      "source_class": "research_access_limit",
+      "date": "2026-10-20",
+      "access": "blocked_or_partial",
+      "coverage": "VideoToolDeck, GenMotion, CueCam, subTranslator, GooTranslate and two Reddit pages returned cache/internal errors; none counted as completed reads. Accessible replacements were used."
+    }
+  ],
+  "clusters": [
+    {
+      "id": "oct20-1",
+      "reader_decision": "DaVinci Resolve Safe-Zone Overlay Workflow",
+      "pillar_page_id": "hub",
+      "research_status": "SERP-supported editorial opportunity; metrics unknown",
+      "boundaries": "Resolve implementation only; existing Canva and Premiere URLs retain their editor jobs."
+    },
+    {
+      "id": "oct20-2",
+      "reader_decision": "Transparent PNG Looks Black? Check Alpha and Layers",
+      "pillar_page_id": "hub",
+      "research_status": "SERP-supported editorial opportunity; metrics unknown",
+      "boundaries": "Repair transparency in an existing asset; Canva owner retains asset creation."
+    },
+    {
+      "id": "oct20-3",
+      "reader_decision": "Blurry Captions After Export? Find the Softening Step",
+      "pillar_page_id": "hub",
+      "research_status": "SERP-supported editorial opportunity; metrics unknown",
+      "boundaries": "Rendered detail loss; existing readability guide retains font/contrast and moving-background legibility."
+    },
+    {
+      "id": "oct20-4",
+      "reader_decision": "Video Plays Sideways? Fix Rotation Before Placement",
+      "pillar_page_id": "hub",
+      "research_status": "SERP-supported editorial opportunity; metrics unknown",
+      "boundaries": "Orientation correction; existing fit/fill guide retains framing and bars."
+    },
+    {
+      "id": "oct20-5",
+      "reader_decision": "Translated Subtitles Too Long? Fix the Layout",
+      "pillar_page_id": "hub",
+      "research_status": "SERP-supported editorial opportunity; metrics unknown",
+      "boundaries": "Translation layout; existing timing and readability owners remain linked prerequisites."
+    }
+  ],
+  "pages": [
+    {
+      "id": "hub",
+      "role": "site_hub",
+      "existing_url": "https://creatorsafezone.com/guides",
+      "reader_job": "Choose a guide for a video editing symptom",
+      "status": "published"
+    },
+    {
+      "id": "oct20-1",
+      "cluster_ids": [
+        "oct20-1"
+      ],
+      "role": "supporting_guide",
+      "intent_key": "davinci-resolve-safe-zone-overlay",
+      "reader_job": "DaVinci Resolve Safe-Zone Overlay Workflow",
+      "status": "audited_local",
+      "action": "publish_new",
+      "source_ids": [
+        "oct20-1-competitor-0",
+        "oct20-1-competitor-1",
+        "oct20-1-competitor-2",
+        "oct20-1-primary"
+      ],
+      "serp": {
+        "query": "DaVinci Resolve social safe zone guide overlay PNG tutorial",
+        "observed_at": "2026-10-20T03:09:29.384Z",
+        "market": "Location unknown; English web search",
+        "source_id": "oct20-1-search"
+      },
+      "competitors": [
+        {
+          "url": "https://studio.robpinney.com/resources/instagram-reels-safe-zone-template",
+          "source_id": "oct20-1-competitor-0",
+          "actually_read": true
+        },
+        {
+          "url": "https://github.com/stephanteig/Safezone-Davinci",
+          "source_id": "oct20-1-competitor-1",
+          "actually_read": true
+        },
+        {
+          "url": "https://nodexplugins.com/plugins/social-guide",
+          "source_id": "oct20-1-competitor-2",
+          "actually_read": true
+        }
+      ],
+      "competitor_strengths": "Concrete import/removal instructions, reusable assets and explicit plugin limitations.",
+      "gap": "A no-plugin workflow that distinguishes editing and monitor canvases, checks animation and verifies guide removal.",
+      "original_contribution": "A no-plugin workflow that distinguishes editing and monitor canvases, checks animation and verifies guide removal.",
+      "brief": {
+        "direct_answer": "To check a social-video layout in DaVinci Resolve, place a matching transparent guide on a separate track above your edit, inspect the full sequence, then disable that track before rendering. A guide helps you compose; it does not move captions or promise that every app interface will leave them visible. ",
+        "title": "DaVinci Resolve Safe-Zone Overlay Workflow",
+        "h1": "DaVinci Resolve SAFE-ZONE Overlay Workflow",
+        "description": "Add a temporary guide track in Resolve, check moving captions and disable the overlay before rendering your final vertical video.",
+        "publishAt": "2026-10-20T05:00:00.000Z",
+        "slug": "davinci-resolve-safe-zone-overlay",
+        "exclusions": "Resolve implementation only; existing Canva and Premiere URLs retain their editor jobs."
+      },
+      "completion_gates": [
+        "Exact-commit GitHub checks",
+        "Cloudflare linked branch preview",
+        "Main staged version verification",
+        "Authorized promotion and live smoke"
+      ]
+    },
+    {
+      "id": "oct20-2",
+      "cluster_ids": [
+        "oct20-2"
+      ],
+      "role": "supporting_guide",
+      "intent_key": "transparent-png-overlay-black-background",
+      "reader_job": "Transparent PNG Looks Black? Check Alpha and Layers",
+      "status": "audited_local",
+      "action": "publish_new",
+      "source_ids": [
+        "oct20-2-competitor-0",
+        "oct20-2-competitor-1",
+        "oct20-2-competitor-2",
+        "oct20-2-primary"
+      ],
+      "serp": {
+        "query": "transparent PNG black background overlay video editor alpha",
+        "observed_at": "2026-10-20T03:09:29.384Z",
+        "market": "Location unknown; English web search",
+        "source_id": "oct20-2-search"
+      },
+      "competitors": [
+        {
+          "url": "https://videoeffectvibe.com/blog/how-to-add-transparent-overlays",
+          "source_id": "oct20-2-competitor-0",
+          "actually_read": true
+        },
+        {
+          "url": "https://www.how7o.com/tools/image-overlay/",
+          "source_id": "oct20-2-competitor-1",
+          "actually_read": true
+        },
+        {
+          "url": "https://bitofcode.dev/overlayline/",
+          "source_id": "oct20-2-competitor-2",
+          "actually_read": true
+        }
+      ],
+      "competitor_strengths": "Explains alpha, above-footage compositing and the distinction between transparent and composited outputs.",
+      "gap": "Two-background diagnosis separates an opaque file from an empty black composition; explains guide versus comparison exports.",
+      "original_contribution": "Two-background diagnosis separates an opaque file from an empty black composition; explains guide versus comparison exports.",
+      "brief": {
+        "direct_answer": "A black background behind a PNG does not by itself prove that transparency is missing. The viewer may be showing transparent pixels against black, or the image may contain an actual opaque rectangle. Place it over a bright test background in your editor to tell the difference before changing blend modes. ",
+        "title": "Transparent PNG Looks Black? Check Alpha and Layers",
+        "h1": "TRANSPARENT PNG Looks Black? Check the Overlay",
+        "description": "Diagnose an opaque PNG overlay by testing alpha, layer order and export choice before changing blend modes in your video editor.",
+        "publishAt": "2026-10-21T05:00:00.000Z",
+        "slug": "transparent-png-overlay-black-background",
+        "exclusions": "Repair transparency in an existing asset; Canva owner retains asset creation."
+      },
+      "completion_gates": [
+        "Exact-commit GitHub checks",
+        "Cloudflare linked branch preview",
+        "Main staged version verification",
+        "Authorized promotion and live smoke"
+      ]
+    },
+    {
+      "id": "oct20-3",
+      "cluster_ids": [
+        "oct20-3"
+      ],
+      "role": "supporting_guide",
+      "intent_key": "blurry-captions-after-export",
+      "reader_job": "Blurry Captions After Export? Find the Softening Step",
+      "status": "audited_local",
+      "action": "publish_new",
+      "source_ids": [
+        "oct20-3-competitor-0",
+        "oct20-3-competitor-1",
+        "oct20-3-competitor-2",
+        "oct20-3-primary"
+      ],
+      "serp": {
+        "query": "how fix blurry subtitle text export video resolution captions",
+        "observed_at": "2026-10-20T03:09:29.384Z",
+        "market": "Location unknown; English web search",
+        "source_id": "oct20-3-search"
+      },
+      "competitors": [
+        {
+          "url": "https://quickedit.net/2024/06/29/blurry-subtitles-when-exporting-in-premiere/",
+          "source_id": "oct20-3-competitor-0",
+          "actually_read": true
+        },
+        {
+          "url": "https://magictoolbelt.com/blog/subtitle-png-blurry-fix/",
+          "source_id": "oct20-3-competitor-1",
+          "actually_read": true
+        },
+        {
+          "url": "https://videowizardtools.com/capcut-video-blurry-after-export/",
+          "source_id": "oct20-3-competitor-2",
+          "actually_read": true
+        }
+      ],
+      "competitor_strengths": "Separates upscaling, graphics resolution and upload compression.",
+      "gap": "Locate the first softening stage and compare a controlled short export, avoiding universal quality presets or sharpening claims.",
+      "original_contribution": "Locate the first softening stage and compare a controlled short export, avoiding universal quality presets or sharpening claims.",
+      "brief": {
+        "direct_answer": "Find the first stage where the captions become soft: the editor preview, the saved video or the uploaded playback. Comparing those stages is more useful than repeatedly increasing every quality setting. Keep the original project and make a short test export containing the affected text. ",
+        "title": "Blurry Captions After Export? Find the Softening Step",
+        "h1": "BLURRY CAPTIONS After Export? Check These Steps",
+        "description": "Compare the editor preview, saved export and uploaded playback to find why captions look blurry and choose a focused correction.",
+        "publishAt": "2026-10-22T05:00:00.000Z",
+        "slug": "blurry-captions-after-export",
+        "exclusions": "Rendered detail loss; existing readability guide retains font/contrast and moving-background legibility."
+      },
+      "completion_gates": [
+        "Exact-commit GitHub checks",
+        "Cloudflare linked branch preview",
+        "Main staged version verification",
+        "Authorized promotion and live smoke"
+      ]
+    },
+    {
+      "id": "oct20-4",
+      "cluster_ids": [
+        "oct20-4"
+      ],
+      "role": "supporting_guide",
+      "intent_key": "video-plays-sideways-rotation",
+      "reader_job": "Video Plays Sideways? Fix Rotation Before Placement",
+      "status": "audited_local",
+      "action": "publish_new",
+      "source_ids": [
+        "oct20-4-competitor-0",
+        "oct20-4-competitor-1",
+        "oct20-4-competitor-2",
+        "oct20-4-primary"
+      ],
+      "serp": {
+        "query": "video sideways rotation metadata browser fix",
+        "observed_at": "2026-10-20T03:09:29.384Z",
+        "market": "Location unknown; English web search",
+        "source_id": "oct20-4-search"
+      },
+      "competitors": [
+        {
+          "url": "https://velocaption.com/tools/video-rotator/",
+          "source_id": "oct20-4-competitor-0",
+          "actually_read": true
+        },
+        {
+          "url": "https://arraykit.com/rotate-video",
+          "source_id": "oct20-4-competitor-1",
+          "actually_read": true
+        },
+        {
+          "url": "https://gizza.ai/tools/video-bake-rotation/",
+          "source_id": "oct20-4-competitor-2",
+          "actually_read": true
+        }
+      ],
+      "competitor_strengths": "Explains metadata versus rendered transforms and offers tools.",
+      "gap": "Diagnose orientation versus mirroring/cropping and order rotation before captions, without universal playback promises.",
+      "original_contribution": "Diagnose orientation versus mirroring/cropping and order rotation before captions, without universal playback promises.",
+      "brief": {
+        "direct_answer": "If a clip is upright on your phone but sideways in an editor or preview, investigate orientation before changing the canvas or cropping. The file may contain display-rotation information that different software handles differently. A quarter-turn correction and a portrait crop solve different problems. ",
+        "title": "Video Plays Sideways? Fix Rotation Before Placement",
+        "h1": "VIDEO PLAYS SIDEWAYS? Fix Rotation First",
+        "description": "Separate display rotation from cropping, correct the clip in your editor and test an upright export before positioning captions.",
+        "publishAt": "2026-10-23T05:00:00.000Z",
+        "slug": "video-plays-sideways-rotation",
+        "exclusions": "Orientation correction; existing fit/fill guide retains framing and bars."
+      },
+      "completion_gates": [
+        "Exact-commit GitHub checks",
+        "Cloudflare linked branch preview",
+        "Main staged version verification",
+        "Authorized promotion and live smoke"
+      ]
+    },
+    {
+      "id": "oct20-5",
+      "cluster_ids": [
+        "oct20-5"
+      ],
+      "role": "supporting_guide",
+      "intent_key": "translated-subtitles-layout",
+      "reader_job": "Translated Subtitles Too Long? Fix the Layout",
+      "status": "audited_local",
+      "action": "publish_new",
+      "source_ids": [
+        "oct20-5-competitor-0",
+        "oct20-5-competitor-1",
+        "oct20-5-competitor-2",
+        "oct20-5-primary"
+      ],
+      "serp": {
+        "query": "multilingual subtitles line breaks text expansion video translation",
+        "observed_at": "2026-10-20T03:09:29.384Z",
+        "market": "Location unknown; English web search",
+        "source_id": "oct20-5-search"
+      },
+      "competitors": [
+        {
+          "url": "https://subtitling.net/standards/subtitle-segmentation",
+          "source_id": "oct20-5-competitor-0",
+          "actually_read": true
+        },
+        {
+          "url": "https://www.subtitlewise.com/blog/subtitle-line-break-guide",
+          "source_id": "oct20-5-competitor-1",
+          "actually_read": true
+        },
+        {
+          "url": "https://www.capcut.com/create/automatically-translate-subtitles-without-breaking-timing",
+          "source_id": "oct20-5-competitor-2",
+          "actually_read": true
+        }
+      ],
+      "competitor_strengths": "Explains segmentation, target-language expansion and timing review.",
+      "gap": "Language-specific layout handoff with script rendering and marked-block review; no transplanted broadcast character limit.",
+      "original_contribution": "Language-specific layout handoff with script rendering and marked-block review; no transplanted broadcast character limit.",
+      "brief": {
+        "direct_answer": "A translation can need different line breaks, more screen space or more reading time than the original caption. Review each language as its own timed layout. Reusing the source caption&#39;s rectangle and making the translated font smaller can leave the words technically visible but difficult to follow. ",
+        "title": "Translated Subtitles Too Long? Fix the Layout",
+        "h1": "TRANSLATED SUBTITLES Too Long? Fix the Layout",
+        "description": "Review translated subtitles for meaning, line breaks, timing and script rendering, then test each language version for placement.",
+        "publishAt": "2026-10-24T05:00:00.000Z",
+        "slug": "translated-subtitles-layout",
+        "exclusions": "Translation layout; existing timing and readability owners remain linked prerequisites."
+      },
+      "completion_gates": [
+        "Exact-commit GitHub checks",
+        "Cloudflare linked branch preview",
+        "Main staged version verification",
+        "Authorized promotion and live smoke"
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "id": "oct20-1-q0",
+      "text": "DaVinci Resolve social safe zone guide overlay PNG tutorial",
+      "source_type": "proposed",
+      "owner_page_id": "oct20-1",
+      "source_ids": [
+        "oct20-1-search"
+      ],
+      "note": "Exact research input; search results observed, phrase not claimed as Google suggestion",
+      "metrics": null,
+      "kgr": null
+    },
+    {
+      "id": "oct20-1-q1",
+      "text": "Resolve vertical safe area",
+      "source_type": "proposed",
+      "owner_page_id": "oct20-1",
+      "source_ids": [
+        "oct20-1-search"
+      ],
+      "note": "Editorial variant grouped by job",
+      "metrics": null,
+      "kgr": null
+    },
+    {
+      "id": "oct20-1-q2",
+      "text": "Resolve safe-zone PNG track",
+      "source_type": "proposed",
+      "owner_page_id": "oct20-1",
+      "source_ids": [
+        "oct20-1-search"
+      ],
+      "note": "Editorial variant grouped by job",
+      "metrics": null,
+      "kgr": null
+    },
+    {
+      "id": "oct20-2-q0",
+      "text": "transparent PNG black background overlay video editor alpha",
+      "source_type": "proposed",
+      "owner_page_id": "oct20-2",
+      "source_ids": [
+        "oct20-2-search"
+      ],
+      "note": "Exact research input; search results observed, phrase not claimed as Google suggestion",
+      "metrics": null,
+      "kgr": null
+    },
+    {
+      "id": "oct20-2-q1",
+      "text": "PNG guide opaque rectangle",
+      "source_type": "proposed",
+      "owner_page_id": "oct20-2",
+      "source_ids": [
+        "oct20-2-search"
+      ],
+      "note": "Editorial variant grouped by job",
+      "metrics": null,
+      "kgr": null
+    },
+    {
+      "id": "oct20-2-q2",
+      "text": "overlay alpha not showing",
+      "source_type": "proposed",
+      "owner_page_id": "oct20-2",
+      "source_ids": [
+        "oct20-2-search"
+      ],
+      "note": "Editorial variant grouped by job",
+      "metrics": null,
+      "kgr": null
+    },
+    {
+      "id": "oct20-3-q0",
+      "text": "how fix blurry subtitle text export video resolution captions",
+      "source_type": "proposed",
+      "owner_page_id": "oct20-3",
+      "source_ids": [
+        "oct20-3-search"
+      ],
+      "note": "Exact research input; search results observed, phrase not claimed as Google suggestion",
+      "metrics": null,
+      "kgr": null
+    },
+    {
+      "id": "oct20-3-q1",
+      "text": "caption PNG blurry",
+      "source_type": "proposed",
+      "owner_page_id": "oct20-3",
+      "source_ids": [
+        "oct20-3-search"
+      ],
+      "note": "Editorial variant grouped by job",
+      "metrics": null,
+      "kgr": null
+    },
+    {
+      "id": "oct20-3-q2",
+      "text": "text soft only after export",
+      "source_type": "proposed",
+      "owner_page_id": "oct20-3",
+      "source_ids": [
+        "oct20-3-search"
+      ],
+      "note": "Editorial variant grouped by job",
+      "metrics": null,
+      "kgr": null
+    },
+    {
+      "id": "oct20-4-q0",
+      "text": "video sideways rotation metadata browser fix",
+      "source_type": "proposed",
+      "owner_page_id": "oct20-4",
+      "source_ids": [
+        "oct20-4-search"
+      ],
+      "note": "Exact research input; search results observed, phrase not claimed as Google suggestion",
+      "metrics": null,
+      "kgr": null
+    },
+    {
+      "id": "oct20-4-q1",
+      "text": "phone video upright but sideways editor",
+      "source_type": "proposed",
+      "owner_page_id": "oct20-4",
+      "source_ids": [
+        "oct20-4-search"
+      ],
+      "note": "Editorial variant grouped by job",
+      "metrics": null,
+      "kgr": null
+    },
+    {
+      "id": "oct20-4-q2",
+      "text": "rotate video before vertical crop",
+      "source_type": "proposed",
+      "owner_page_id": "oct20-4",
+      "source_ids": [
+        "oct20-4-search"
+      ],
+      "note": "Editorial variant grouped by job",
+      "metrics": null,
+      "kgr": null
+    },
+    {
+      "id": "oct20-5-q0",
+      "text": "multilingual subtitles line breaks text expansion video translation",
+      "source_type": "proposed",
+      "owner_page_id": "oct20-5",
+      "source_ids": [
+        "oct20-5-search"
+      ],
+      "note": "Exact research input; search results observed, phrase not claimed as Google suggestion",
+      "metrics": null,
+      "kgr": null
+    },
+    {
+      "id": "oct20-5-q1",
+      "text": "translated subtitles too long",
+      "source_type": "proposed",
+      "owner_page_id": "oct20-5",
+      "source_ids": [
+        "oct20-5-search"
+      ],
+      "note": "Editorial variant grouped by job",
+      "metrics": null,
+      "kgr": null
+    },
+    {
+      "id": "oct20-5-q2",
+      "text": "subtitle translation layout review",
+      "source_type": "proposed",
+      "owner_page_id": "oct20-5",
+      "source_ids": [
+        "oct20-5-search"
+      ],
+      "note": "Editorial variant grouped by job",
+      "metrics": null,
+      "kgr": null
+    }
+  ],
+  "entities": [
+    {
+      "id": "png",
+      "label": "PNG alpha transparency",
+      "type": "format_attribute"
+    },
+    {
+      "id": "rotation",
+      "label": "Video display rotation",
+      "type": "media_transform"
+    },
+    {
+      "id": "subtitles",
+      "label": "Timed subtitles",
+      "type": "text_media"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "alpha",
+      "subject_id": "png",
+      "predicate": "supports",
+      "value": "Per-pixel transparency; not every PNG contains transparent pixels",
+      "source_ids": [
+        "oct20-2-primary"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "orientation",
+      "subject_id": "rotation",
+      "predicate": "can_be_represented_as",
+      "value": "Display metadata or a transform applied during transcoding",
+      "source_ids": [
+        "oct20-4-primary"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "language-breaks",
+      "subject_id": "subtitles",
+      "predicate": "requires_context_for",
+      "value": "Line breaks; Netflix-specific requirements must not be presented as social platform dimensions",
+      "source_ids": [
+        "oct20-5-primary"
+      ],
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "id": "oct20-1-hub",
+      "from_page_id": "oct20-1",
+      "to_page_id": "hub",
+      "section": "Breadcrumb and navigation",
+      "natural_anchor": "Guides",
+      "reader_reason": "Choose the next task"
+    },
+    {
+      "id": "oct20-2-hub",
+      "from_page_id": "oct20-2",
+      "to_page_id": "hub",
+      "section": "Breadcrumb and navigation",
+      "natural_anchor": "Guides",
+      "reader_reason": "Choose the next task"
+    },
+    {
+      "id": "oct20-3-hub",
+      "from_page_id": "oct20-3",
+      "to_page_id": "hub",
+      "section": "Breadcrumb and navigation",
+      "natural_anchor": "Guides",
+      "reader_reason": "Choose the next task"
+    },
+    {
+      "id": "oct20-4-hub",
+      "from_page_id": "oct20-4",
+      "to_page_id": "hub",
+      "section": "Breadcrumb and navigation",
+      "natural_anchor": "Guides",
+      "reader_reason": "Choose the next task"
+    },
+    {
+      "id": "oct20-5-hub",
+      "from_page_id": "oct20-5",
+      "to_page_id": "hub",
+      "section": "Breadcrumb and navigation",
+      "natural_anchor": "Guides",
+      "reader_reason": "Choose the next task"
+    }
+  ],
+  "schema_plan": [
+    {
+      "type": "Article",
+      "rationale": "Existing renderer uses supplied author/publisher identities and the actual publication timestamp; no new schema fields or rich-result promise."
+    }
+  ],
+  "growth_plan": [
+    "Preserve the ten published intent owners and their records.",
+    "Restore five future posts on the next unoccupied daily dates; do not backdate missed slots.",
+    "Assess technical/indexing and actual reader evidence before selecting the next adjacent batch; no ranking forecast."
+  ],
+  "coverage": [
+    {
+      "cluster_id": "oct20-1",
+      "competitor_reads": 3,
+      "primary_check": true,
+      "google_autocomplete": "not captured",
+      "paa": "not captured",
+      "location": "unknown",
+      "volume": "unknown",
+      "difficulty": "unknown",
+      "kgr": "not calculated; no authorized metrics or allintitle counts"
+    },
+    {
+      "cluster_id": "oct20-2",
+      "competitor_reads": 3,
+      "primary_check": true,
+      "google_autocomplete": "not captured",
+      "paa": "not captured",
+      "location": "unknown",
+      "volume": "unknown",
+      "difficulty": "unknown",
+      "kgr": "not calculated; no authorized metrics or allintitle counts"
+    },
+    {
+      "cluster_id": "oct20-3",
+      "competitor_reads": 3,
+      "primary_check": true,
+      "google_autocomplete": "not captured",
+      "paa": "not captured",
+      "location": "unknown",
+      "volume": "unknown",
+      "difficulty": "unknown",
+      "kgr": "not calculated; no authorized metrics or allintitle counts"
+    },
+    {
+      "cluster_id": "oct20-4",
+      "competitor_reads": 3,
+      "primary_check": true,
+      "google_autocomplete": "not captured",
+      "paa": "not captured",
+      "location": "unknown",
+      "volume": "unknown",
+      "difficulty": "unknown",
+      "kgr": "not calculated; no authorized metrics or allintitle counts"
+    },
+    {
+      "cluster_id": "oct20-5",
+      "competitor_reads": 3,
+      "primary_check": true,
+      "google_autocomplete": "not captured",
+      "paa": "not captured",
+      "location": "unknown",
+      "volume": "unknown",
+      "difficulty": "unknown",
+      "kgr": "not calculated; no authorized metrics or allintitle counts"
+    }
+  ],
+  "resume": {
+    "first_incomplete_item": "Finish exact-commit preview and GitHub release gates",
+    "completed_actions": [
+      "Research inputs grouped by distinct reader job",
+      "Three accessible publisher pages inspected per topic",
+      "Primary facts checked",
+      "Five original drafts and metadata written",
+      "All 73 tests and four-width layout audit passed"
+    ],
+    "missing_evidence": [
+      "Google autocomplete/PAA UI not captured",
+      "Search metrics and current GSC performance unavailable",
+      "Physical devices and external signed-in editor execution not tested"
+    ],
+    "next_batch": [
+      "Verify branch preview",
+      "Review PR and merge",
+      "Inspect main build preview",
+      "Promote exact main-built version",
+      "Verify live server release protections"
+    ]
+  }
+}

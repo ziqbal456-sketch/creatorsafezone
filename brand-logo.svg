@@ -1,13 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
   <title id="title">CreatorSafeZone logo</title>
-  <desc id="desc">CSZ initials on a cyan and rose rounded-square mark.</desc>
-  <defs>
-    <linearGradient id="g" x1="48" y1="48" x2="464" y2="464" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#06B6D4"/>
-      <stop offset="1" stop-color="#F43F5E"/>
-    </linearGradient>
-  </defs>
-  <rect width="512" height="512" rx="112" fill="#0B0F19"/>
-  <rect x="32" y="32" width="448" height="448" rx="96" fill="url(#g)"/>
-  <text x="256" y="286" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="146" font-weight="800" letter-spacing="-8" fill="#FFFFFF">CSZ</text>
+  <desc id="desc">An electric violet Z inside four volt-lime safe-frame corners on obsidian.</desc>
+  <rect x="8" y="8" width="496" height="496" rx="104" fill="#13131B" stroke="#353541" stroke-width="16"/>
+  <path d="M174 106H106V174M338 106H406V174M406 338V406H338M174 406H106V338" fill="none" stroke="#D5FF5F" stroke-width="24" stroke-linecap="square"/>
+  <path d="M173 181H339L173 331H339" fill="none" stroke="#A796FF" stroke-width="42" stroke-linejoin="bevel"/>
+  <rect x="384" y="384" width="44" height="44" rx="6" fill="#D5FF5F"/>
 </svg>

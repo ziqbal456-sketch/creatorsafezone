@@ -3,9 +3,16 @@
 .assetsignore
 _headers
 worker.js
+brand-ui.js
+scheduled-guides.js
+site-identity.js
+guide-discovery.js
+content
 wrangler.jsonc
 package.json
 package-lock.json
+pnpm-lock.yaml
+pnpm-workspace.yaml
 *.md
 docs
 scripts

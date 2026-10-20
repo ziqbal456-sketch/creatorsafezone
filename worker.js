@@ -1,12 +1,29 @@
+import { guideResponse } from './scheduled-guides.js';
+// Normalize only known page aliases. Unknown paths must retain their 404 status.
+const PAGE_ROUTES = new Set(['/', '/check-all-platforms', '/tiktok-safe-zone', '/instagram-reels-safe-zone', '/youtube-shorts-safe-zone', '/instagram-story-safe-zone', '/instagram-grid-crop-previewer', '/capcut-safe-zone-template', '/vertical-video-ad-specs', '/methodology', '/about', '/privacy-policy', '/editorial-policy']);
+function canonicalRedirect(request) {
+  const url = new URL(request.url);
+  const target = new URL(url);
+  if (['creatorsafezone.com', 'www.creatorsafezone.com'].includes(url.hostname)) {
+    target.protocol = 'https:';
+    target.hostname = 'creatorsafezone.com';
+    target.port = '';
+  }
+  let path = url.pathname.replace(/\/$/, '').replace(/\.html$/, '');
+  if (path === '' || path === '/index') path = '/';
+  if (PAGE_ROUTES.has(path)) target.pathname = path;
+  if (target.href === url.href) return null;
+  return new Response(null, {status:308, headers:{Location:target.href, 'Cache-Control':'public, max-age=3600'}});
+}
 const SECURITY_HEADERS = {
   "Content-Security-Policy": [
     "default-src 'self'",
     "base-uri 'self'",
     "object-src 'none'",
     "frame-ancestors 'none'",
-    "script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com",
-    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-    "font-src 'self' https://fonts.gstatic.com data:",
+    "script-src 'self'",
+    "style-src 'self' 'unsafe-inline'",
+    "font-src 'self' data:",
     "img-src 'self' data: blob:",
     "media-src 'self' blob: https://assets.mixkit.co",
     "connect-src 'self' https://assets.mixkit.co",
@@ -22,11 +39,18 @@ const SECURITY_HEADERS = {
 
 export default {
   async fetch(request, env) {
-    const assetResponse = await env.ASSETS.fetch(request);
+    const assetResponse = canonicalRedirect(request) || await guideResponse(request, env) || await env.ASSETS.fetch(request);
     const headers = new Headers(assetResponse.headers);
 
     for (const [name, value] of Object.entries(SECURITY_HEADERS)) {
       headers.set(name, value);
+    }
+
+    // Only the URL-enabled tool pages can request user-selected HTTPS video hosts.
+    const path = new URL(request.url).pathname.replace(/\/$/, '');
+    if (['','/index','/check-all-platforms','/tiktok-safe-zone','/instagram-reels-safe-zone','/youtube-shorts-safe-zone','/instagram-story-safe-zone','/instagram-grid-crop-previewer','/capcut-safe-zone-template','/vertical-video-ad-specs'].includes(path.replace(/\.html$/, ''))) {
+      headers.set('Content-Security-Policy', SECURITY_HEADERS['Content-Security-Policy'].replace("media-src 'self' blob: https://assets.mixkit.co", "media-src 'self' blob: https:"));
+      headers.set('Referrer-Policy', 'no-referrer');
     }
 
     // Prevent the workers.dev preview hostname from competing with the custom domain.

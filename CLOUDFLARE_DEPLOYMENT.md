@@ -1,6 +1,6 @@
 # CreatorSafeZone Cloudflare Worker deployment
 
-GitHub integration connected to the existing Cloudflare Worker on September 15, 2026. Initial builds use `wrangler versions upload` so the security-wrapper release can be inspected before production promotion.
+GitHub integration connected to the existing Cloudflare Worker on September 15, 2026. Cloudflare's branch-preview workflow changed in September 2026: non-production branches use `wrangler preview` and require a `previews` block in wrangler.jsonc. Production builds upload a version for inspection before promotion.
 
 ## What the current deployment is
 
@@ -17,13 +17,13 @@ CreatorSafeZone is hosted as a Cloudflare Worker with static assets. The site do
 
 ## Recommended deployment path
 
-Connect the private GitHub repository to the existing Cloudflare Worker and use `main` as the production branch. Configure the deploy command as:
+Connect the private GitHub repository to the existing Cloudflare Worker and use `main` as the production branch. Configure the production deploy command as:
 
 ```text
 npx wrangler versions upload
 ```
 
-Keep both dashboard deploy and version commands as `npx wrangler versions upload`. Set the build command to `npm run check`; enable non-production branch builds. Inspect the exact branch preview before merging, then inspect the resulting main preview before authorized promotion. Dashboard settings and required GitHub checks must be verified separately; repository files alone do not enforce them.
+Configure Previews Base with build command `npm run check` and preview command `npx wrangler preview`. Keep `"previews": {}` in wrangler.jsonc because the site has no Preview-specific variables or data bindings. Configure Production with build command `npm run check` and deploy command `npx wrangler versions upload`; this creates an inspectable production version without promoting it. Enable non-production branch builds. Inspect the exact branch preview before merging, then inspect the resulting main version before authorized promotion. Dashboard settings and required GitHub checks must be verified separately; repository files alone do not enforce them.
 
 Use `node scripts/smoke-test.mjs <actual-preview-url>` for HTTP checks and follow docs/RELEASE-CHECKLIST.md for browser verification. Internal docs, scripts, tests, dependencies and credentials must stay excluded by .assetsignore. `wrangler deploy --dry-run` validates packaging without publishing.
 

@@ -1,7 +1,7 @@
 const base = new URL(process.argv[2] || 'https://creatorsafezone.com');
 if (base.protocol !== 'https:' || !(/^(www\.)?creatorsafezone\.com$/.test(base.hostname) || /^(?:[a-z0-9-]+-)?creatorsafezone\.z-iqbal456\.workers\.dev$/.test(base.hostname))) throw new Error('Use the actual CreatorSafeZone production or preview HTTPS URL');
 const preview = base.hostname.endsWith('.workers.dev');
-const paths = ['/', '/instagram-reels-safe-zone','/youtube-shorts-safe-zone','/about','/editorial-policy','/robots.txt','/sitemap.xml','/measurement-registry.json'];
+const paths = ['/check-all-platforms', '/qa-app.js', '/qa-exports.js', '/qa-platform-ui.js', '/qa-engine.js', '/qa.css', '/tutorial-placement.svg', '/', '/tiktok-safe-zone','/instagram-story-safe-zone','/instagram-grid-crop-previewer','/capcut-safe-zone-template','/vertical-video-ad-specs','/instagram-reels-safe-zone','/youtube-shorts-safe-zone','/about','/editorial-policy','/robots.txt','/sitemap.xml','/measurement-registry.json'];
 let failures = 0;
 for (const path of paths) {
   try {
@@ -29,7 +29,7 @@ for (const legacyPath of ['/instagram-reels-safe-zone.html','/youtube-shorts-saf
     const response = await fetch(new URL(legacyPath, base), {redirect:'manual', signal:AbortSignal.timeout(15000)});
     const expected = legacyPath.slice(0, -'.html'.length);
     const location = response.headers.get('location');
-    if (![301,302,307,308].includes(response.status) || new URL(location, base).pathname !== expected) throw new Error('expected redirect to ' + expected);
+    if (![301,308].includes(response.status) || new URL(location, base).pathname !== expected) throw new Error('expected redirect to ' + expected);
     console.log('PASS legacy redirect ' + legacyPath);
   } catch(e) { failures++; console.error('FAIL legacy redirect ' + legacyPath + ': ' + e.message); }
 }

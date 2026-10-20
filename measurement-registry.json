@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "publisher": "CreatorSafeZone",
-  "methodology": "https://creatorsafezone.com/methodology.html",
+  "methodology": "https://creatorsafezone.com/methodology",
   "lastReviewed": "2026-09-13",
   "notice": "These values are CreatorSafeZone working recommendations. The current records do not include the underlying capture references needed to classify them as independently reviewable observed measurements.",
   "records": [
@@ -14,7 +14,11 @@
       "evidenceStatus": "Source capture pending",
       "classification": "Working estimate",
       "reviewed": "2026-09",
-      "rangesPx": { "top": "140-160", "right": "160-180", "bottom": "380-420" },
+      "rangesPx": {
+        "top": "140-160",
+        "right": "160-180",
+        "bottom": "380-420"
+      },
       "limitations": "UI can vary by device, app version, account state, captions, placement, and interface updates."
     },
     {
@@ -26,7 +30,11 @@
       "evidenceStatus": "Source capture pending",
       "classification": "Working estimate",
       "reviewed": "2026-09",
-      "rangesPx": { "top": "130-150", "right": "140-160", "bottom": "360-400" },
+      "rangesPx": {
+        "top": "130-150",
+        "right": "140-160",
+        "bottom": "360-400"
+      },
       "limitations": "Observed crop and overlay behavior is not a universal Instagram specification."
     },
     {
@@ -38,7 +46,11 @@
       "evidenceStatus": "Source capture pending",
       "classification": "Working estimate",
       "reviewed": "2026-09",
-      "rangesPx": { "top": "120-140", "right": "140-160", "bottom": "340-380" },
+      "rangesPx": {
+        "top": "120-140",
+        "right": "140-160",
+        "bottom": "340-380"
+      },
       "limitations": "UI can vary by device, app version, placement, account state, and interface updates."
     },
     {
@@ -46,11 +58,25 @@
       "platform": "Paid Video Ads",
       "surface": "TikTok, Meta, and YouTube ad placements",
       "canvas": "1080x1920",
-      "evidence": "Mixed",
+      "evidence": "CreatorSafeZone planning scenario",
       "evidenceStatus": "Official format references and UI source captures pending",
-      "classification": "Working estimate combining platform guidance and CreatorSafeZone recommendations",
+      "classification": "Planning scenario; not a verified platform specification",
       "reviewed": "2026-09",
       "limitations": "CTA and disclosure overlays vary by objective, format, placement, and platform changes."
     }
-  ]
+  ],
+  "documentationReview": {
+    "date": "2026-10-08",
+    "scope": "Reference review only; no new platform observations or validation of numeric margins.",
+    "references": [
+      {
+        "url": "https://ads.tiktok.com/resources/help/article/tiktok-auction-in-feed-ads",
+        "scope": "TikTok In-Feed ads only; not evidence for organic-video defaults."
+      },
+      {
+        "url": "https://support.google.com/google-ads/answer/13547298?hl=en",
+        "scope": "Google Ads video formats only; not evidence for organic Shorts defaults."
+      }
+    ]
+  }
 }
