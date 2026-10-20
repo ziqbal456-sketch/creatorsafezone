@@ -10,7 +10,12 @@ const related = {
  'burned-in-vs-closed-captions': ['subtitles-out-of-sync', 'video-caption-size-contrast-readability'],
  'premiere-safe-margins-social-overlay': ['canva-video-safe-zone-overlay', 'organic-video-vs-ad-safe-zones'],
  'video-preview-not-playing': ['vertical-video-black-bars-fit-fill', 'subtitles-out-of-sync'],
- 'subtitles-out-of-sync': ['burned-in-vs-closed-captions', 'video-caption-size-contrast-readability']
+ 'subtitles-out-of-sync': ['burned-in-vs-closed-captions', 'video-caption-size-contrast-readability'],
+ 'davinci-resolve-safe-zone-overlay': ['canva-video-safe-zone-overlay', 'premiere-safe-margins-social-overlay'],
+ 'transparent-png-overlay-black-background': ['canva-video-safe-zone-overlay', 'davinci-resolve-safe-zone-overlay'],
+ 'blurry-captions-after-export': ['video-caption-size-contrast-readability', 'burned-in-vs-closed-captions'],
+ 'video-plays-sideways-rotation': ['vertical-video-black-bars-fit-fill', 'video-preview-not-playing'],
+ 'translated-subtitles-layout': ['subtitles-out-of-sync', 'video-caption-size-contrast-readability']
 };
 const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function relatedGuides(slug, available) {

@@ -5,11 +5,12 @@ import {guideResponse} from '../scheduled-guides.js';
 const require=createRequire(import.meta.url);
 const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'C:/Users/DELL/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
 const posts=JSON.parse(await readFile(new URL('../content/guide-posts.json',import.meta.url)));
-const css=await readFile(new URL('../guides.css',import.meta.url),'utf8');
+const staticTypes={'/guides.css':'text/css','/brand.css':'text/css','/brand-navigation.js':'text/javascript','/brand-logo.svg':'image/svg+xml','/og-preview.png':'image/png'};
 const browser=await chromium.launch({channel:'msedge',headless:true});
 const page=await browser.newPage();const results=[];
 await page.route('https://creatorsafezone.com/**',async route=>{
- const r=route.request();if(new URL(r.url()).pathname==='/guides.css')return route.fulfill({body:css,contentType:'text/css'});
+ const r=route.request();const path=new URL(r.url()).pathname;
+ if(staticTypes[path])return route.fulfill({body:await readFile(new URL('..'+path,import.meta.url)),contentType:staticTypes[path]});
  const response=await guideResponse(new Request(r.url()),{},Date.parse(posts.at(-1).publishAt));
  await route.fulfill({status:response?.status||404,body:response?await response.text():'Not found',headers:response?Object.fromEntries(response.headers):{}});
 });

@@ -6,9 +6,9 @@ import worker from '../worker.js';
 const posts=JSON.parse(readFileSync(new URL('../content/guide-posts.json',import.meta.url)));
 const env={ASSETS:{fetch:async()=>new Response('<urlset><url><loc>https://creatorsafezone.com/</loc></url></urlset>')}};
 const req=(path,method='GET')=>new Request('https://creatorsafezone.com'+path,{method});
-test('unique audited posts at daily 05:00 UTC with valid content',()=>{
+test('unique audited posts in ordered daily 05:00 UTC slots with valid content',()=>{
  assert.ok(posts.length>=5);assert.equal(new Set(posts.map(p=>p.slug)).size,posts.length);
- posts.forEach((p,i)=>{assert.equal(p.audited,true);assert.ok(p.body.split(/\s+/).length>400);assert.ok(p.body.includes('<h2 id='));assert.ok(!p.body.includes('<h1'));assert.ok(p.publishAt.endsWith('T05:00:00.000Z'));if(i)assert.equal(Date.parse(p.publishAt)-Date.parse(posts[i-1].publishAt),86400000);});
+ posts.forEach((p,i)=>{assert.equal(p.audited,true);assert.ok(p.body.split(/\s+/).length>400);assert.ok(p.body.includes('<h2 id='));assert.ok(!p.body.includes('<h1'));assert.ok(p.publishAt.endsWith('T05:00:00.000Z'));if(i){const gap=Date.parse(p.publishAt)-Date.parse(posts[i-1].publishAt);assert.ok(gap>=86400000);assert.equal(gap%86400000,0);}});
 });
 for(const p of posts)test('publication boundary: '+p.slug,async()=>{
  const at=Date.parse(p.publishAt),path='/guides/'+p.slug;

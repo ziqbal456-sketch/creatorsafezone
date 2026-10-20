@@ -1,10 +1,10 @@
 {
-  "checkedAt": "2026-09-28T10:29:08.779Z",
+  "checkedAt": "2026-10-20T03:07:34.654Z",
   "mode": "Local final Worker HTML with simulated release time; not evidence of early live publication",
   "results": [
     {
       "slug": "captions-covered-by-buttons",
-      "words": 611,
+      "words": 646,
       "widths": [
         320,
         390,
@@ -15,7 +15,7 @@
     },
     {
       "slug": "reel-cover-text-cut-off",
-      "words": 596,
+      "words": 616,
       "widths": [
         320,
         390,
@@ -59,7 +59,7 @@
     },
     {
       "slug": "video-caption-size-contrast-readability",
-      "words": 744,
+      "words": 768,
       "widths": [
         320,
         390,
@@ -81,7 +81,7 @@
     },
     {
       "slug": "premiere-safe-margins-social-overlay",
-      "words": 567,
+      "words": 580,
       "widths": [
         320,
         390,
@@ -92,7 +92,7 @@
     },
     {
       "slug": "video-preview-not-playing",
-      "words": 563,
+      "words": 581,
       "widths": [
         320,
         390,
@@ -103,7 +103,62 @@
     },
     {
       "slug": "subtitles-out-of-sync",
-      "words": 577,
+      "words": 593,
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "result": "pass"
+    },
+    {
+      "slug": "davinci-resolve-safe-zone-overlay",
+      "words": 531,
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "result": "pass"
+    },
+    {
+      "slug": "transparent-png-overlay-black-background",
+      "words": 542,
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "result": "pass"
+    },
+    {
+      "slug": "blurry-captions-after-export",
+      "words": 541,
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "result": "pass"
+    },
+    {
+      "slug": "video-plays-sideways-rotation",
+      "words": 529,
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "result": "pass"
+    },
+    {
+      "slug": "translated-subtitles-layout",
+      "words": 568,
       "widths": [
         320,
         390,
