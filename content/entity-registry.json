@@ -1,0 +1,467 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-10-20T11:38:19.296Z",
+  "origin": "https://creatorsafezone.com",
+  "scope": "Identity and intent ownership for existing pages and the audited guide queue; private editorial record, not extra public schema.",
+  "runtime_source": "site-identity.js",
+  "identities": [
+    {
+      "key": "author",
+      "schema": {
+        "@type": "Person",
+        "@id": "https://creatorsafezone.com/about#zafar-iqbal",
+        "name": "Zafar Iqbal",
+        "url": "https://creatorsafezone.com/about#zafar-iqbal",
+        "sameAs": [
+          "https://www.linkedin.com/in/meetzafariqbal"
+        ]
+      },
+      "evidence": {
+        "status": "user_confirmed",
+        "source": "docs/CONTENT-TOOLS-2026-10-16.md",
+        "visible_url": "https://creatorsafezone.com/about#zafar-iqbal",
+        "note": "Name and LinkedIn URL supplied by the user. External LinkedIn profile was not independently retrieved; do not infer credentials, employment or expertise from it."
+      }
+    },
+    {
+      "key": "publisher",
+      "schema": {
+        "@type": "Organization",
+        "@id": "https://creatorsafezone.com/#organization",
+        "name": "CreatorSafeZone",
+        "url": "https://creatorsafezone.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://creatorsafezone.com/brand-logo.svg",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "evidence": {
+        "status": "site_declared",
+        "source": "about.html",
+        "visible_url": "https://creatorsafezone.com/about",
+        "note": "CreatorSafeZone is the displayed publisher/site brand. No legal incorporation, address, rating or certification claim."
+      }
+    },
+    {
+      "key": "website",
+      "schema": {
+        "@type": "WebSite",
+        "@id": "https://creatorsafezone.com/#website",
+        "name": "CreatorSafeZone",
+        "url": "https://creatorsafezone.com/",
+        "publisher": {
+          "@id": "https://creatorsafezone.com/#organization"
+        }
+      },
+      "evidence": {
+        "status": "site_declared",
+        "source": "index.html",
+        "visible_url": "https://creatorsafezone.com/",
+        "note": "WebSite is distinct from its Organization publisher and Person author."
+      }
+    }
+  ],
+  "same_as_policy": {
+    "meaning": "Identity-equivalent resource only; never a topical link or competitor citation.",
+    "allowed": [
+      {
+        "entity_id": "https://creatorsafezone.com/about#zafar-iqbal",
+        "url": "https://www.linkedin.com/in/meetzafariqbal",
+        "basis": "user_confirmed",
+        "source": "docs/CONTENT-TOOLS-2026-10-16.md"
+      }
+    ],
+    "new_link_rule": "Record the identity-equivalence evidence before adding a link; retain unverified candidates only in research notes."
+  },
+  "page_owners": [
+    {
+      "path": "/",
+      "intent_key": "checker-general",
+      "reader_job": "Check a vertical video and choose the next editing task",
+      "status": "published",
+      "pillar": "/",
+      "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
+      "publisher_id": "https://creatorsafezone.com/#organization",
+      "website_id": "https://creatorsafezone.com/#website"
+    },
+    {
+      "path": "/check-all-platforms",
+      "intent_key": "comparison-editor-handoff",
+      "reader_job": "Compare placement decisions and prepare an editing brief",
+      "status": "published",
+      "pillar": "/",
+      "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
+      "publisher_id": "https://creatorsafezone.com/#organization",
+      "website_id": "https://creatorsafezone.com/#website"
+    },
+    {
+      "path": "/tiktok-safe-zone",
+      "intent_key": "tiktok-placement",
+      "reader_job": "Inspect TikTok in-feed placement estimates",
+      "status": "published",
+      "pillar": "/",
+      "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
+      "publisher_id": "https://creatorsafezone.com/#organization",
+      "website_id": "https://creatorsafezone.com/#website"
+    },
+    {
+      "path": "/instagram-reels-safe-zone",
+      "intent_key": "reels-placement",
+      "reader_job": "Inspect full-screen Reel text and logo placement",
+      "status": "published",
+      "pillar": "/",
+      "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
+      "publisher_id": "https://creatorsafezone.com/#organization",
+      "website_id": "https://creatorsafezone.com/#website"
+    },
+    {
+      "path": "/youtube-shorts-safe-zone",
+      "intent_key": "shorts-placement",
+      "reader_job": "Inspect Shorts text and logo placement",
+      "status": "published",
+      "pillar": "/",
+      "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
+      "publisher_id": "https://creatorsafezone.com/#organization",
+      "website_id": "https://creatorsafezone.com/#website"
+    },
+    {
+      "path": "/instagram-story-safe-zone",
+      "intent_key": "stories-placement",
+      "reader_job": "Inspect Story text and logo placement",
+      "status": "published",
+      "pillar": "/",
+      "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
+      "publisher_id": "https://creatorsafezone.com/#organization",
+      "website_id": "https://creatorsafezone.com/#website"
+    },
+    {
+      "path": "/instagram-grid-crop-previewer",
+      "intent_key": "crop-scenarios",
+      "reader_job": "Compare explicitly labeled geometric crop scenarios",
+      "status": "published",
+      "pillar": "/",
+      "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
+      "publisher_id": "https://creatorsafezone.com/#organization",
+      "website_id": "https://creatorsafezone.com/#website"
+    },
+    {
+      "path": "/vertical-video-ad-specs",
+      "intent_key": "ad-planning",
+      "reader_job": "Plan an ad placement and find official requirements",
+      "status": "published",
+      "pillar": "/",
+      "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
+      "publisher_id": "https://creatorsafezone.com/#organization",
+      "website_id": "https://creatorsafezone.com/#website"
+    },
+    {
+      "path": "/capcut-safe-zone-template",
+      "intent_key": "capcut-overlay-workflow",
+      "reader_job": "Bring a temporary guide into a CapCut editing workflow",
+      "status": "published",
+      "pillar": "/",
+      "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
+      "publisher_id": "https://creatorsafezone.com/#organization",
+      "website_id": "https://creatorsafezone.com/#website"
+    },
+    {
+      "path": "/about",
+      "intent_key": "site-identity",
+      "reader_job": "Identify the author, publisher and site purpose",
+      "status": "published",
+      "pillar": "/",
+      "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
+      "publisher_id": "https://creatorsafezone.com/#organization",
+      "website_id": "https://creatorsafezone.com/#website"
+    },
+    {
+      "path": "/methodology",
+      "intent_key": "measurement-methodology",
+      "reader_job": "Understand calculations, estimates and evidence limits",
+      "status": "published",
+      "pillar": "/",
+      "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
+      "publisher_id": "https://creatorsafezone.com/#organization",
+      "website_id": "https://creatorsafezone.com/#website"
+    },
+    {
+      "path": "/editorial-policy",
+      "intent_key": "editorial-standards",
+      "reader_job": "Understand source and correction standards",
+      "status": "published",
+      "pillar": "/",
+      "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
+      "publisher_id": "https://creatorsafezone.com/#organization",
+      "website_id": "https://creatorsafezone.com/#website"
+    },
+    {
+      "path": "/privacy-policy",
+      "intent_key": "data-handling",
+      "reader_job": "Understand actual media and data handling",
+      "status": "published",
+      "pillar": "/",
+      "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
+      "publisher_id": "https://creatorsafezone.com/#organization",
+      "website_id": "https://creatorsafezone.com/#website"
+    },
+    {
+      "path": "/guides",
+      "intent_key": "guide-directory",
+      "reader_job": "Find a supporting guide for a video-editing problem",
+      "status": "published",
+      "pillar": "/",
+      "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
+      "publisher_id": "https://creatorsafezone.com/#organization",
+      "website_id": "https://creatorsafezone.com/#website"
+    },
+    {
+      "path": "/guides/captions-covered-by-buttons",
+      "intent_key": "captions-covered-by-buttons",
+      "reader_job": "Captions Covered by Buttons? Fix Text Placement",
+      "status": "published",
+      "publish_at": "2026-09-24T05:00:00.000Z",
+      "pillar": "/guides",
+      "topic_keys": [
+        "caption-placement",
+        "platform-interface"
+      ],
+      "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
+      "publisher_id": "https://creatorsafezone.com/#organization",
+      "website_id": "https://creatorsafezone.com/#website"
+    },
+    {
+      "path": "/guides/reel-cover-text-cut-off",
+      "intent_key": "reel-cover-text-cut-off",
+      "reader_job": "Reel Cover Text Cut Off? Check the Crop",
+      "status": "published",
+      "publish_at": "2026-09-25T05:00:00.000Z",
+      "pillar": "/guides",
+      "topic_keys": [
+        "cover-crop"
+      ],
+      "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
+      "publisher_id": "https://creatorsafezone.com/#organization",
+      "website_id": "https://creatorsafezone.com/#website"
+    },
+    {
+      "path": "/guides/canva-video-safe-zone-overlay",
+      "intent_key": "canva-video-safe-zone-overlay",
+      "reader_job": "Create a Safe Zone Overlay in Canva",
+      "status": "published",
+      "publish_at": "2026-09-26T05:00:00.000Z",
+      "pillar": "/guides",
+      "topic_keys": [
+        "overlay-workflow",
+        "Canva"
+      ],
+      "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
+      "publisher_id": "https://creatorsafezone.com/#organization",
+      "website_id": "https://creatorsafezone.com/#website"
+    },
+    {
+      "path": "/guides/organic-video-vs-ad-safe-zones",
+      "intent_key": "organic-video-vs-ad-safe-zones",
+      "reader_job": "Organic vs Ad Safe Zones: Which Template Fits?",
+      "status": "published",
+      "publish_at": "2026-09-27T05:00:00.000Z",
+      "pillar": "/guides",
+      "topic_keys": [
+        "ad-placement",
+        "organic-placement"
+      ],
+      "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
+      "publisher_id": "https://creatorsafezone.com/#organization",
+      "website_id": "https://creatorsafezone.com/#website"
+    },
+    {
+      "path": "/guides/vertical-video-black-bars-fit-fill",
+      "intent_key": "vertical-video-black-bars-fit-fill",
+      "reader_job": "Black Bars or Cropped Faces? Check Fit and Fill",
+      "status": "published",
+      "publish_at": "2026-09-28T05:00:00.000Z",
+      "pillar": "/guides",
+      "topic_keys": [
+        "fit-fill-scaling"
+      ],
+      "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
+      "publisher_id": "https://creatorsafezone.com/#organization",
+      "website_id": "https://creatorsafezone.com/#website"
+    },
+    {
+      "path": "/guides/video-caption-size-contrast-readability",
+      "intent_key": "video-caption-size-contrast-readability",
+      "reader_job": "Hard-to-Read Captions? Fix Size and Contrast",
+      "status": "published",
+      "publish_at": "2026-09-29T05:00:00.000Z",
+      "pillar": "/guides",
+      "topic_keys": [
+        "caption-legibility"
+      ],
+      "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
+      "publisher_id": "https://creatorsafezone.com/#organization",
+      "website_id": "https://creatorsafezone.com/#website"
+    },
+    {
+      "path": "/guides/burned-in-vs-closed-captions",
+      "intent_key": "burned-in-vs-closed-captions",
+      "reader_job": "Burned-In vs Closed Captions: Avoid Double Subtitles",
+      "status": "published",
+      "publish_at": "2026-09-30T05:00:00.000Z",
+      "pillar": "/guides",
+      "topic_keys": [
+        "caption-delivery"
+      ],
+      "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
+      "publisher_id": "https://creatorsafezone.com/#organization",
+      "website_id": "https://creatorsafezone.com/#website"
+    },
+    {
+      "path": "/guides/premiere-safe-margins-social-overlay",
+      "intent_key": "premiere-safe-margins-social-overlay",
+      "reader_job": "Premiere Pro Safe Margins and Social Overlays",
+      "status": "published",
+      "publish_at": "2026-10-01T05:00:00.000Z",
+      "pillar": "/guides",
+      "topic_keys": [
+        "overlay-workflow",
+        "Adobe Premiere"
+      ],
+      "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
+      "publisher_id": "https://creatorsafezone.com/#organization",
+      "website_id": "https://creatorsafezone.com/#website"
+    },
+    {
+      "path": "/guides/video-preview-not-playing",
+      "intent_key": "video-preview-not-playing",
+      "reader_job": "Video Not Playing? Check the File and Codec",
+      "status": "published",
+      "publish_at": "2026-10-02T05:00:00.000Z",
+      "pillar": "/guides",
+      "topic_keys": [
+        "browser-media-playback"
+      ],
+      "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
+      "publisher_id": "https://creatorsafezone.com/#organization",
+      "website_id": "https://creatorsafezone.com/#website"
+    },
+    {
+      "path": "/guides/subtitles-out-of-sync",
+      "intent_key": "subtitles-out-of-sync",
+      "reader_job": "Subtitles Out of Sync? Fix Delay and Drift",
+      "status": "published",
+      "publish_at": "2026-10-03T05:00:00.000Z",
+      "pillar": "/guides",
+      "topic_keys": [
+        "subtitle-timing"
+      ],
+      "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
+      "publisher_id": "https://creatorsafezone.com/#organization",
+      "website_id": "https://creatorsafezone.com/#website"
+    },
+    {
+      "path": "/guides/davinci-resolve-safe-zone-overlay",
+      "intent_key": "davinci-resolve-safe-zone-overlay",
+      "reader_job": "DaVinci Resolve Safe-Zone Overlay Workflow",
+      "status": "published",
+      "publish_at": "2026-10-20T05:00:00.000Z",
+      "pillar": "/guides",
+      "topic_keys": [
+        "overlay-workflow",
+        "DaVinci Resolve"
+      ],
+      "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
+      "publisher_id": "https://creatorsafezone.com/#organization",
+      "website_id": "https://creatorsafezone.com/#website"
+    },
+    {
+      "path": "/guides/transparent-png-overlay-black-background",
+      "intent_key": "transparent-png-overlay-black-background",
+      "reader_job": "Transparent PNG Looks Black? Check Alpha and Layers",
+      "status": "deployed_scheduled",
+      "publish_at": "2026-10-21T05:00:00.000Z",
+      "pillar": "/guides",
+      "topic_keys": [
+        "PNG-alpha"
+      ],
+      "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
+      "publisher_id": "https://creatorsafezone.com/#organization",
+      "website_id": "https://creatorsafezone.com/#website"
+    },
+    {
+      "path": "/guides/blurry-captions-after-export",
+      "intent_key": "blurry-captions-after-export",
+      "reader_job": "Blurry Captions After Export? Find the Softening Step",
+      "status": "deployed_scheduled",
+      "publish_at": "2026-10-22T05:00:00.000Z",
+      "pillar": "/guides",
+      "topic_keys": [
+        "caption-rendering"
+      ],
+      "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
+      "publisher_id": "https://creatorsafezone.com/#organization",
+      "website_id": "https://creatorsafezone.com/#website"
+    },
+    {
+      "path": "/guides/video-plays-sideways-rotation",
+      "intent_key": "video-plays-sideways-rotation",
+      "reader_job": "Video Plays Sideways? Fix Rotation Before Placement",
+      "status": "deployed_scheduled",
+      "publish_at": "2026-10-23T05:00:00.000Z",
+      "pillar": "/guides",
+      "topic_keys": [
+        "display-rotation"
+      ],
+      "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
+      "publisher_id": "https://creatorsafezone.com/#organization",
+      "website_id": "https://creatorsafezone.com/#website"
+    },
+    {
+      "path": "/guides/translated-subtitles-layout",
+      "intent_key": "translated-subtitles-layout",
+      "reader_job": "Translated Subtitles Too Long? Fix the Layout",
+      "status": "deployed_scheduled",
+      "publish_at": "2026-10-24T05:00:00.000Z",
+      "pillar": "/guides",
+      "topic_keys": [
+        "translated-caption-layout"
+      ],
+      "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
+      "publisher_id": "https://creatorsafezone.com/#organization",
+      "website_id": "https://creatorsafezone.com/#website"
+    }
+  ],
+  "topic_relationships": [
+    {
+      "topic": "PNG-alpha",
+      "relationship": "PNG supports alpha transparency; not every PNG contains transparent pixels",
+      "evidence": "https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Image_types#png_portable_network_graphics",
+      "checked_at": "2026-10-20",
+      "identity_link": false
+    },
+    {
+      "topic": "display-rotation",
+      "relationship": "Display metadata and a rendered rotation transform are distinct",
+      "evidence": "https://ffmpeg.org/ffmpeg.html",
+      "checked_at": "2026-10-20",
+      "identity_link": false
+    },
+    {
+      "topic": "translated-caption-layout",
+      "relationship": "Line-break and rendering review must follow the target language and actual destination; Netflix rules are not social-platform dimensions",
+      "evidence": "https://partnerhelp.netflixstudios.com/hc/en-us/articles/215758617-Timed-Text-Style-Guide-General-Requirements",
+      "checked_at": "2026-10-20",
+      "identity_link": false
+    }
+  ],
+  "change_policy": [
+    "Preserve stable identity IDs and canonical URLs across releases.",
+    "Keep visible bylines, author profiles and schema consistent.",
+    "Use about for the main subject, mentions for incidental references, and sameAs only for identity equivalence.",
+    "Add one intent owner per distinct reader job; group synonyms under it.",
+    "New factual claims require primary evidence; editorial relationships and source dates do not establish platform measurements.",
+    "Update this register, its evidence and ownership row when adding a guide or changing identity facts.",
+    "Check all prepared guides with a local future clock; production remains server-clock gated."
+  ]
+}
