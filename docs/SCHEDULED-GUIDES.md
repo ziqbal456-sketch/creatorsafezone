@@ -68,3 +68,21 @@ Replenishment to five is blocked: both GitHub connector commit-status lookup and
 All ten prepared articles are live and present in the hub and sitemap; no future records remain. October 4's 10:00 Asia/Karachi slot has no prepared article. GitHub remote access still returns HTTP 403 with account-suspended message, preventing the required guide-release workflow. No direct guide upload or backdating attempted. The October 1 release record documents separately authorized homepage/branding production version 08acafd7-9f69-4103-a931-edb1a54c3c64, rollback a9e58a02-b5fc-4c3a-a9df-b3677e0f3f05; that one-off authorization is not treated as permission to bypass the recurring guide workflow.
 
 Live homepage contains valid relative /guides links. Updated the local schedule smoke assertion to resolve relative or canonical links instead of requiring an absolute URL substring. Full live schedule smoke passed after this test-only correction. Existing extensive uncommitted homepage/branding work preserved. No new release or remote synchronization claimed.
+
+## October 20 recovery release — GitHub workflow restored
+
+GitHub access recovered and PR https://github.com/ziqbal456-sketch/creatorsafezone/pull/5 was reviewed and merged. Reconciliation source 7e09d10 preserves the October 16 direct-Worker improvements; all 27 root public assets matched production before the change. Guide head 36c1e7dcb3e997c0075ebd905c57343768fa1ad2 passed GitHub Site quality and linked Cloudflare branch preview eeeeee2a-7b59-4c29-8a0e-27e42397d9c7. Main merge 689fe72a56591db70e375954487bf55ffaec2c08 passed both GitHub and Cloudflare Builds. Its linked main-built version 936a9c12-b20f-480e-88ec-9f35fd1169ef was verified and promoted to 100%; rollback is 001c97c9-c6d5-4f21-8141-c1b0170da9ca. No local version upload or dashboard source edit was used for this release.
+
+Five future audited slots are deployed, all at 10:00 Asia/Karachi / 05:00 UTC:
+
+- October 20: davinci-resolve-safe-zone-overlay.
+- October 21: transparent-png-overlay-black-background.
+- October 22: blurry-captions-after-export.
+- October 23: video-plays-sideways-rotation.
+- October 24: translated-subtitles-layout.
+
+The ten published records and their dates are preserved. Missed October 4–19 dates remain gaps. Research, source limits, original contribution and intent boundaries are in GUIDE-RESEARCH-2026-10-20.json. Metrics and current GSC performance remain unknown; no traffic or indexing outcome is inferred.
+
+Checks actually completed: structural validation, 73 tests, compiled CSS freshness, reviewed editorial audit, dry-run packaging, ten unique article links, 15 local article renders at four widths and five new mobile screenshot reviews. Exact branch preview passed both smoke suites and browser checks on 13 published pages at 320/390/768/1440 widths. The first image assertion encountered the lazy tutorial graphic before it loaded; scrolling it into view and decoding confirmed the image is valid, and the complete audit rerun passed. Main preview passed both smoke suites, published-body comparison, four-width layout and shared placement. Following promotion, both live smoke suites passed; all ten published article bodies match source, five future URLs remain hidden and absent from the sitemap, navigation works, and sample shared placement reaches 3 of 3. Evidence is in docs/qa-artifacts/guides/oct20-* and reconciled-live-assets.json.
+
+Branch-protection settings could not be read because the GitHub integration lacks that permission. Exact-commit checks were manually gated; no account permissions or rules changed. Six prior editorial advisories persist (four missing measurement captures and two negated guarantee matches). Browser viewport checks do not establish physical-device tests or execution in external editing apps. Offline publishing from this deployed buffer is supported; generating the next batch still requires the local automation runtime.

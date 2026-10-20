@@ -1,0 +1,140 @@
+{
+  "checkedAt": "2026-10-20T03:11:02.237Z",
+  "results": [
+    {
+      "file": "about.html",
+      "status": 200,
+      "match": true
+    },
+    {
+      "file": "accessibility.css",
+      "status": 200,
+      "match": true
+    },
+    {
+      "file": "brand-logo.svg",
+      "status": 200,
+      "match": true
+    },
+    {
+      "file": "brand-navigation.js",
+      "status": 200,
+      "match": true
+    },
+    {
+      "file": "brand.css",
+      "status": 200,
+      "match": true
+    },
+    {
+      "file": "capcut-safe-zone-template.html",
+      "status": 200,
+      "match": true
+    },
+    {
+      "file": "check-all-platforms.html",
+      "status": 200,
+      "match": true
+    },
+    {
+      "file": "editorial-policy.html",
+      "status": 200,
+      "match": true
+    },
+    {
+      "file": "guides.css",
+      "status": 200,
+      "match": true
+    },
+    {
+      "file": "index.html",
+      "status": 200,
+      "match": true
+    },
+    {
+      "file": "instagram-grid-crop-previewer.html",
+      "status": 200,
+      "match": true
+    },
+    {
+      "file": "instagram-reels-safe-zone.html",
+      "status": 200,
+      "match": true
+    },
+    {
+      "file": "instagram-story-safe-zone.html",
+      "status": 200,
+      "match": true
+    },
+    {
+      "file": "methodology-article.svg",
+      "status": 200,
+      "match": true
+    },
+    {
+      "file": "methodology.html",
+      "status": 200,
+      "match": true
+    },
+    {
+      "file": "og-preview.png",
+      "status": 200,
+      "match": true
+    },
+    {
+      "file": "privacy-policy.html",
+      "status": 200,
+      "match": true
+    },
+    {
+      "file": "qa-app.js",
+      "status": 200,
+      "match": true
+    },
+    {
+      "file": "qa-engine.js",
+      "status": 200,
+      "match": true
+    },
+    {
+      "file": "qa-exports.js",
+      "status": 200,
+      "match": true
+    },
+    {
+      "file": "qa-platform-ui.js",
+      "status": 200,
+      "match": true
+    },
+    {
+      "file": "qa.css",
+      "status": 200,
+      "match": true
+    },
+    {
+      "file": "support.css",
+      "status": 200,
+      "match": true
+    },
+    {
+      "file": "tiktok-safe-zone.html",
+      "status": 200,
+      "match": true
+    },
+    {
+      "file": "tutorial-placement.svg",
+      "status": 200,
+      "match": true
+    },
+    {
+      "file": "vertical-video-ad-specs.html",
+      "status": 200,
+      "match": true
+    },
+    {
+      "file": "youtube-shorts-safe-zone.html",
+      "status": 200,
+      "match": true
+    }
+  ]
+}

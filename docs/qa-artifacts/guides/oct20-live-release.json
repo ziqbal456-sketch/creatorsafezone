@@ -1,0 +1,29 @@
+{
+  "checkedAt": "2026-10-20T03:15:53.832Z",
+  "source": "689fe72a56591db70e375954487bf55ffaec2c08",
+  "version": "936a9c12-b20f-480e-88ec-9f35fd1169ef",
+  "published": 10,
+  "future": [
+    {
+      "slug": "davinci-resolve-safe-zone-overlay",
+      "publishAt": "2026-10-20T05:00:00.000Z"
+    },
+    {
+      "slug": "transparent-png-overlay-black-background",
+      "publishAt": "2026-10-21T05:00:00.000Z"
+    },
+    {
+      "slug": "blurry-captions-after-export",
+      "publishAt": "2026-10-22T05:00:00.000Z"
+    },
+    {
+      "slug": "video-plays-sideways-rotation",
+      "publishAt": "2026-10-23T05:00:00.000Z"
+    },
+    {
+      "slug": "translated-subtitles-layout",
+      "publishAt": "2026-10-24T05:00:00.000Z"
+    }
+  ],
+  "pass": true
+}

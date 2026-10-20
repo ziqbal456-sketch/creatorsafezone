@@ -2,7 +2,9 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {guideResponse, publishedGuides} from '../scheduled-guides.js';
 import {relatedGuides} from '../guide-discovery.js';
-const now = Date.parse('2026-10-16T05:00:00Z');
+import {readFileSync} from 'node:fs';
+const posts=JSON.parse(readFileSync(new URL('../content/guide-posts.json',import.meta.url)));
+const now=Math.max(...posts.map(post=>Date.parse(post.publishAt)));
 test('related navigation cannot expose scheduled or missing guides', () => {
  assert.equal(relatedGuides('captions-covered-by-buttons', []), '');
  const html=relatedGuides('captions-covered-by-buttons', [{slug:'burned-in-vs-closed-captions',title:'Caption layers',description:'Compare layers.'}]);

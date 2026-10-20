@@ -221,6 +221,14 @@
       "date": "2026-10-20",
       "access": "blocked_or_partial",
       "coverage": "VideoToolDeck, GenMotion, CueCam, subTranslator, GooTranslate and two Reddit pages returned cache/internal errors; none counted as completed reads. Accessible replacements were used."
+    },
+    {
+      "id": "article-schema",
+      "url": "https://developers.google.com/search/docs/appearance/structured-data/article",
+      "source_class": "primary_documentation",
+      "date": "2026-10-20",
+      "access": "read",
+      "coverage": "Accurate author/date/headline and actual page facts; reused existing renderer without a new rich-result claim."
     }
   ],
   "clusters": [
@@ -276,7 +284,7 @@
       "role": "supporting_guide",
       "intent_key": "davinci-resolve-safe-zone-overlay",
       "reader_job": "DaVinci Resolve Safe-Zone Overlay Workflow",
-      "status": "audited_local",
+      "status": "deployed_scheduled",
       "action": "publish_new",
       "source_ids": [
         "oct20-1-competitor-0",
@@ -334,7 +342,7 @@
       "role": "supporting_guide",
       "intent_key": "transparent-png-overlay-black-background",
       "reader_job": "Transparent PNG Looks Black? Check Alpha and Layers",
-      "status": "audited_local",
+      "status": "deployed_scheduled",
       "action": "publish_new",
       "source_ids": [
         "oct20-2-competitor-0",
@@ -392,7 +400,7 @@
       "role": "supporting_guide",
       "intent_key": "blurry-captions-after-export",
       "reader_job": "Blurry Captions After Export? Find the Softening Step",
-      "status": "audited_local",
+      "status": "deployed_scheduled",
       "action": "publish_new",
       "source_ids": [
         "oct20-3-competitor-0",
@@ -450,7 +458,7 @@
       "role": "supporting_guide",
       "intent_key": "video-plays-sideways-rotation",
       "reader_job": "Video Plays Sideways? Fix Rotation Before Placement",
-      "status": "audited_local",
+      "status": "deployed_scheduled",
       "action": "publish_new",
       "source_ids": [
         "oct20-4-competitor-0",
@@ -508,7 +516,7 @@
       "role": "supporting_guide",
       "intent_key": "translated-subtitles-layout",
       "reader_job": "Translated Subtitles Too Long? Fix the Layout",
-      "status": "audited_local",
+      "status": "deployed_scheduled",
       "action": "publish_new",
       "source_ids": [
         "oct20-5-competitor-0",
@@ -901,13 +909,17 @@
     }
   ],
   "resume": {
-    "first_incomplete_item": "Finish exact-commit preview and GitHub release gates",
+    "first_incomplete_item": "Next daily health check and replenishment when fewer than five future slots remain",
     "completed_actions": [
       "Research inputs grouped by distinct reader job",
       "Three accessible publisher pages inspected per topic",
       "Primary facts checked",
       "Five original drafts and metadata written",
-      "All 73 tests and four-width layout audit passed"
+      "All 73 tests and four-width layout audit passed",
+      "PR5 reviewed and merged at 689fe72",
+      "Exact branch and main previews passed HTTP and browser checks",
+      "Main-built version 936a9c12-b20f-480e-88ec-9f35fd1169ef promoted at 100%",
+      "Live checks passed; five future slots October 20–24"
     ],
     "missing_evidence": [
       "Google autocomplete/PAA UI not captured",
@@ -915,11 +927,9 @@
       "Physical devices and external signed-in editor execution not tested"
     ],
     "next_batch": [
-      "Verify branch preview",
-      "Review PR and merge",
-      "Inspect main build preview",
-      "Promote exact main-built version",
-      "Verify live server release protections"
+      "Check due post, sitemap and buffer on next heartbeat",
+      "Research one distinct topic when fewer than five future posts remain",
+      "Append next unoccupied future daily slot through the GitHub workflow"
     ]
   }
 }

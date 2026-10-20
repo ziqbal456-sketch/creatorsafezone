@@ -1,0 +1,137 @@
+{
+  "base": "https://eeeeee2a-creatorsafezone.z-iqbal456.workers.dev",
+  "source": "36c1e7dcb3e997c0075ebd905c57343768fa1ad2",
+  "checkedAt": "2026-10-20T03:13:14.264Z",
+  "results": [
+    {
+      "path": "/",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "pass": true
+    },
+    {
+      "path": "/guides",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "pass": true
+    },
+    {
+      "path": "/check-all-platforms",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "pass": true
+    },
+    {
+      "path": "/guides/captions-covered-by-buttons",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "pass": true
+    },
+    {
+      "path": "/guides/reel-cover-text-cut-off",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "pass": true
+    },
+    {
+      "path": "/guides/canva-video-safe-zone-overlay",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "pass": true
+    },
+    {
+      "path": "/guides/organic-video-vs-ad-safe-zones",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "pass": true
+    },
+    {
+      "path": "/guides/vertical-video-black-bars-fit-fill",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "pass": true
+    },
+    {
+      "path": "/guides/video-caption-size-contrast-readability",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "pass": true
+    },
+    {
+      "path": "/guides/burned-in-vs-closed-captions",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "pass": true
+    },
+    {
+      "path": "/guides/premiere-safe-margins-social-overlay",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "pass": true
+    },
+    {
+      "path": "/guides/video-preview-not-playing",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "pass": true
+    },
+    {
+      "path": "/guides/subtitles-out-of-sync",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "pass": true
+    }
+  ]
+}
