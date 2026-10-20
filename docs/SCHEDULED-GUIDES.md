@@ -56,3 +56,15 @@ Source 1388cb9 on codex/guide-queue-sep28; Cloudflare version a9e58a02-b5fc-4c3a
 Research/source record is in SUPPORTING-GUIDES-PLAN.md. Structural checks and all 51 tests passed; all ten guides passed local four-width layout audit, with the four new mobile screenshots reviewed. Nine unique article links returned 200. Wrangler dry run and both preview smoke suites passed before promotion. After promotion, custom-domain schedule and route smoke passed; all five due article titles and bodies exactly matched local records. Live hub and September 28 article passed four-width overflow and H1 checks in headless Edge. The first one-off live browser audit had a Windows import URL error; corrected file URL rerun passed. These are browser viewport checks, not physical-device or external editor tests. Six existing editorial advisories unchanged.
 
 Scheduled release is server-side and continues from this deployed buffer while the local computer is offline. Future content generation still requires the local automation runtime. Direct local-branch deployment; no GitHub merge or hosted CI claimed.
+
+## September 30 health check — GitHub access blocker
+
+At 07:43 UTC, live schedule smoke passed: seven due posts, hub/sitemap membership, future-route and source protections. September 29 and 30 article bodies exactly matched local records. Cloudflare deployment listing confirms a9e58a02-b5fc-4c3a-a9df-b3677e0f3f05 remains at 100%; its verified bundle retains three future posts for October 1–3 at 05:00 UTC. Rollback remains 2521ed46-4044-4922-b899-e2b26e3ee048.
+
+Replenishment to five is blocked: both GitHub connector commit-status lookup and git ls-remote returned HTTP 403 explicitly stating the account is suspended. No release bypass, push, merge or production mutation attempted. Existing sources and dates preserved. GitHub account access must be restored before the required GitHub checks/build-preview release route can continue. No new content or remote checks claimed complete. Recorded locally; not pushed because of the access blocker.
+
+## October 4 health check — buffer exhausted
+
+All ten prepared articles are live and present in the hub and sitemap; no future records remain. October 4's 10:00 Asia/Karachi slot has no prepared article. GitHub remote access still returns HTTP 403 with account-suspended message, preventing the required guide-release workflow. No direct guide upload or backdating attempted. The October 1 release record documents separately authorized homepage/branding production version 08acafd7-9f69-4103-a931-edb1a54c3c64, rollback a9e58a02-b5fc-4c3a-a9df-b3677e0f3f05; that one-off authorization is not treated as permission to bypass the recurring guide workflow.
+
+Live homepage contains valid relative /guides links. Updated the local schedule smoke assertion to resolve relative or canonical links instead of requiring an absolute URL substring. Full live schedule smoke passed after this test-only correction. Existing extensive uncommitted homepage/branding work preserved. No new release or remote synchronization claimed.

@@ -12,5 +12,7 @@ for(const post of posts){
 }
 for(const path of ['/content/guide-posts.json','/content/drafts/01-captions-covered.md','/scheduled-guides.js'])assert.equal((await fetch(base+path)).status,404,path);
 assert.equal((await fetch(base+'/guides.css')).status,200);
-assert.ok((await(await fetch(base+'/')).text()).includes('creatorsafezone.com/guides'));
+const homeHtml=await(await fetch(base+'/')).text();
+const homeLinks=[...homeHtml.matchAll(/<a\b[^>]*\bhref=["']([^"']+)["']/gi)].map(match=>new URL(match[1],base));
+assert.ok(homeLinks.some(url=>url.pathname==='/guides'&&[new URL(base).origin,'https://creatorsafezone.com'].includes(url.origin)),'Homepage links to guide hub');
 console.log('PASS: guide hub, timed article access, sitemap membership, private-source protection and homepage link: '+base);

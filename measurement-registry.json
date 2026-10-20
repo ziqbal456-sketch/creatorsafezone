@@ -64,5 +64,19 @@
       "reviewed": "2026-09",
       "limitations": "CTA and disclosure overlays vary by objective, format, placement, and platform changes."
     }
-  ]
+  ],
+  "documentationReview": {
+    "date": "2026-10-08",
+    "scope": "Reference review only; no new platform observations or validation of numeric margins.",
+    "references": [
+      {
+        "url": "https://ads.tiktok.com/resources/help/article/tiktok-auction-in-feed-ads",
+        "scope": "TikTok In-Feed ads only; not evidence for organic-video defaults."
+      },
+      {
+        "url": "https://support.google.com/google-ads/answer/13547298?hl=en",
+        "scope": "Google Ads video formats only; not evidence for organic Shorts defaults."
+      }
+    ]
+  }
 }

@@ -1,0 +1,6 @@
+// Shared authored header used by static-page updates and Worker guide rendering.
+export const brandHeader = (path = '') => {
+  const link = (href,label) => `<a href="${href}"${path===href||(href==='/guides'&&path.startsWith('/guides/'))?' aria-current="page"':''}>${label}</a>`;
+  const tools=[['/','Placement studio'],['/check-all-platforms','Compare & learn'],['/tiktok-safe-zone','TikTok'],['/instagram-reels-safe-zone','Reels'],['/youtube-shorts-safe-zone','Shorts'],['/instagram-story-safe-zone','Stories'],['/instagram-grid-crop-previewer','Crop planner'],['/capcut-safe-zone-template','CapCut'],['/vertical-video-ad-specs','Ad planner']];
+  return `<header class="site-header"><a class="brand site-brand" href="/" aria-label="CreatorSafeZone home"><img src="/brand-logo.svg" alt="" width="42" height="42"><span><span class="brand-wordmark">Creator<span class="brand-accent">SafeZone</span></span><span class="brand-tagline">CREATIVE PLACEMENT STUDIO</span></span></a><nav aria-label="Main">${link('/guides','Guides')}${link('/check-all-platforms','Compare & learn')}<details class="tools-nav"><summary>All tools</summary><nav aria-label="Choose a tool">${tools.map(([href,label])=>link(href,label)).join('')}</nav></details>${link('/methodology','Methodology')}</nav><span class="privacy">Files stay on your device</span></header>`;
+};

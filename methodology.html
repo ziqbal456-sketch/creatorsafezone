@@ -3,277 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>CreatorSafeZone Safe Area Measurement Methodology</title>
-  <meta name="title" content="CreatorSafeZone Safe Area Measurement Methodology" />
-  <meta name="description" content="Learn how CreatorSafeZone classifies official specifications, observed interface evidence, planning scenarios and recommended video working areas." />
+
+  <title>How Our Safe Zone Calculations Work | CreatorSafeZone</title>
+  <meta name="title" content="Safe Zone Methodology: Calculations, Sources &amp; Limits | CreatorSafeZone" />
+  <meta name="description" content="Understand the checker’s geometry, planning estimates, official reference scope and evidence still needed to verify platform margins." />
   <link rel="canonical" href="https://creatorsafezone.com/methodology" />
 
   <!-- Branded Inline SVG Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2306B6D4'/><text x='50%' y='58%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='44' font-weight='900' fill='%230B0F19'>CSZ</text></svg>" type="image/svg+xml" />
+  <link rel="icon" href="/brand-logo.svg" type="image/svg+xml">
 
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://creatorsafezone.com/methodology" />
-  <meta property="og:title" content="CreatorSafeZone Measurement Methodology & Verification Protocol" />
-  <meta property="og:description" content="How we measure short-form video safe areas, classify evidence, and account for device differences." />
-  <meta property="og:image" content="https://creatorsafezone.com/methodology-article.svg" />
+  <meta property="og:title" content="How Our Safe Zone Calculations Work" />
+  <meta property="og:description" content="Understand the checker’s geometry, planning estimates, official reference scope and evidence still needed to verify platform margins." />
+  <meta property="og:image" content="https://creatorsafezone.com/og-preview.png" />
 
   <!-- Fonts & Tailwind CSS CDN -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        screens: { 'xs': '375px', 'sm': '640px', 'md': '768px', 'lg': '1024px', 'xl': '1280px' },
-        extend: {
-          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
-          colors: { brand: { 500: '#06B6D4', 600: '#0891B2' }, danger: '#F43F5E', safe: '#10B981' }
-        }
-      }
-    }
-  </script>
+  <link rel="stylesheet" href="/support.css">
+
 
   <!-- Google Structured Data: WebPage & Article -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "How CreatorSafeZone Measures Safe Areas: Measurement & Verification Protocol",
-    "description": "Technical standards and evidence classification framework for short-form vertical video safe areas across TikTok, Instagram Reels, and YouTube Shorts.",
-    "author": {
-      "@type": "Organization",
-      "name": "CreatorSafeZone Editorial Team",
-      "url": "https://creatorsafezone.com/",
-      "logo": "https://creatorsafezone.com/brand-logo.svg"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "CreatorSafeZone",
-      "url": "https://creatorsafezone.com/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://creatorsafezone.com/brand-logo.svg",
-        "width": 512,
-        "height": 512
-      }
-    },
-    "image": {
-      "@type": "ImageObject",
-      "url": "https://creatorsafezone.com/methodology-article.svg",
-      "width": 1200,
-      "height": 675
-    },
-    "datePublished": "2026-09-13",
-    "dateModified": "2026-09-23",
-    "mainEntityOfPage": "https://creatorsafezone.com/methodology"
-  }
-  </script>
+  
+<link rel="stylesheet" href="/accessibility.css">
+<link rel="stylesheet" href="/brand.css"><script type="module" src="/brand-navigation.js"></script>
+
+
+
+
+
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://creatorsafezone.com/about#zafar-iqbal","name":"Zafar Iqbal","url":"https://creatorsafezone.com/about#zafar-iqbal","sameAs":["https://www.linkedin.com/in/meetzafariqbal"]},{"@type":"Organization","@id":"https://creatorsafezone.com/#organization","name":"CreatorSafeZone","url":"https://creatorsafezone.com/","logo":{"@type":"ImageObject","url":"https://creatorsafezone.com/brand-logo.svg","width":512,"height":512}},{"@type":"WebSite","@id":"https://creatorsafezone.com/#website","name":"CreatorSafeZone","url":"https://creatorsafezone.com/","publisher":{"@id":"https://creatorsafezone.com/#organization"}},{"@context":"https://schema.org","@type":"Article","headline":"How Our SAFE ZONE Calculations Work","description":"Technical standards and evidence classification framework for short-form vertical video safe areas across TikTok, Instagram Reels, and YouTube Shorts.","author":{"@id":"https://creatorsafezone.com/about#zafar-iqbal"},"publisher":{"@id":"https://creatorsafezone.com/#organization"},"image":{"@type":"ImageObject","url":"https://creatorsafezone.com/methodology-article.svg","width":1200,"height":675},"datePublished":"2026-09-13","dateModified":"2026-10-08","mainEntityOfPage":{"@id":"https://creatorsafezone.com/methodology#webpage"},"@id":"https://creatorsafezone.com/methodology#article"},{"@type":"WebPage","@id":"https://creatorsafezone.com/methodology#webpage","url":"https://creatorsafezone.com/methodology","name":"How Our Safe Zone Calculations Work","isPartOf":{"@id":"https://creatorsafezone.com/#website"},"author":{"@id":"https://creatorsafezone.com/about#zafar-iqbal"},"publisher":{"@id":"https://creatorsafezone.com/#organization"},"mainEntity":{"@id":"https://creatorsafezone.com/methodology#article"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://creatorsafezone.com/"},{"@type":"ListItem","position":2,"name":"How Our Safe Zone Calculations Work","item":"https://creatorsafezone.com/methodology"}]}]}</script>
 </head>
-<body class="bg-[#0B0F19] text-slate-300 font-sans antialiased min-h-screen flex flex-col selection:bg-cyan-500/30 selection:text-cyan-300">
+<body class="bg-[#0B0F19] text-slate-300 font-sans antialiased min-h-screen flex flex-col selection:bg-cyan-500/30 selection:text-cyan-300 brand-theme support-page">
+<a class="skip-link" href="#main">Skip to content</a>
 
   <!-- Universal Header -->
-  <header class="border-b border-slate-800/80 bg-[#0B0F19]/90 backdrop-blur sticky top-0 z-50 py-3.5 px-4 sm:px-6 md:px-8">
-    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
-      <a href="/" class="flex items-center gap-2.5 sm:gap-3">
-        <div class="h-8 w-8 sm:h-9 sm:w-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-rose-500 flex items-center justify-center font-extrabold text-white text-xs sm:text-sm">CSZ</div>
-        <div>
-          <span class="font-extrabold text-base sm:text-lg tracking-tight text-white block leading-none">CreatorSafeZone<span class="text-cyan-400">.com</span></span>
-          <span class="text-[9px] sm:text-[10px] text-slate-400 font-medium tracking-wide">Verification & Standards</span>
-        </div>
-      </a>
-      <nav class="hidden md:flex flex-wrap items-center gap-1 order-3 w-full xl:order-none xl:w-auto text-[11px] lg:text-xs font-semibold text-slate-300">
-        <a href="/" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">Hub</a>
-        <a href="/tiktok-safe-zone" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">TikTok</a>
-        <a href="/instagram-reels-safe-zone" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">Reels</a>
-        <a href="/youtube-shorts-safe-zone" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">Shorts</a>
-        <a href="/capcut-safe-zone-template" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">CapCut</a>
-        <a href="/instagram-story-safe-zone" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">Stories</a>
-        <a href="/instagram-grid-crop-previewer" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 transition">1:1 Crop</a>
-        <a href="/vertical-video-ad-specs" class="px-2.5 py-1.5 rounded-lg text-rose-400 hover:bg-slate-800 transition">Ad Specs</a>
-      </nav>
-      <div class="flex items-center gap-2">
-        <span class="inline-flex items-center gap-1.5 text-[11px] sm:text-xs text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 px-2.5 sm:px-3 py-1 rounded-full font-semibold">
-          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-          Standards Protocol
-        </span>
-      </div>
-    </div>
-  </header>
+  <header class="site-header"><a class="brand site-brand" href="/" aria-label="CreatorSafeZone home"><img src="/brand-logo.svg" alt="" width="42" height="42"><span><span class="brand-wordmark">Creator<span class="brand-accent">SafeZone</span></span><span class="brand-tagline">CREATIVE PLACEMENT STUDIO</span></span></a><nav aria-label="Main"><a href="/guides">Guides</a><a href="/check-all-platforms">Compare & learn</a><details class="tools-nav"><summary>All tools</summary><nav aria-label="Choose a tool"><a href="/">Placement studio</a><a href="/check-all-platforms">Compare & learn</a><a href="/tiktok-safe-zone">TikTok</a><a href="/instagram-reels-safe-zone">Reels</a><a href="/youtube-shorts-safe-zone">Shorts</a><a href="/instagram-story-safe-zone">Stories</a><a href="/instagram-grid-crop-previewer">Crop planner</a><a href="/capcut-safe-zone-template">CapCut</a><a href="/vertical-video-ad-specs">Ad planner</a></nav></details><a href="/methodology" aria-current="page">Methodology</a></nav><span class="privacy">Files stay on your device</span></header>
 
   <!-- Main Technical Editorial Document -->
-  <main class="max-w-4xl mx-auto w-full p-6 sm:p-8 md:py-16 flex-1 space-y-12 text-sm sm:text-base leading-relaxed">
-    
-    <div class="border-b border-slate-800 pb-8 space-y-3">
-      <div class="inline-flex items-center gap-2 text-xs font-mono text-cyan-400 bg-cyan-950/60 border border-cyan-800/50 px-2.5 py-1 rounded-md">
-        <span>Document ID: CSZ-METH-2026-V1</span>
-        <span>•</span>
-        <span>Published: September 2026</span>
-      </div>
-      <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">How CreatorSafeZone Measures Safe Areas</h1>
-      <p class="text-slate-400 text-base sm:text-lg">
-        The standards, measurement procedures, and evidence classification model used by CreatorSafeZone to evaluate short-form video interface obstructions.
-      </p>
-    </div>
-
-    <!-- Section 1: Definition -->
-    <section class="space-y-4">
-      <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-2">
-        <span class="text-cyan-400 font-mono text-base">01.</span> What a "Safe Zone" Truly Means
-      </h2>
-      <p class="text-slate-300">
-        In the context of 9:16 vertical video (standardized at <strong>1080 × 1920 pixels</strong>), a <em>safe area</em> does not describe a technical limitation of the video container itself. The video file renders edge-to-edge across the entire display. Instead, a safe zone defines the central visual boundary that remains unobstructed by the social media platform's native graphical interface.
-      </p>
-      <p class="text-slate-300">
-        When an application like TikTok, Instagram, or YouTube displays a vertical video, it projects multiple dynamic layers over the content:
-      </p>
-      <ul class="list-disc list-inside space-y-2 text-slate-400 pl-2">
-        <li><strong>Top Navigation Bars:</strong> Search icons, tab selectors (Following / For You), sound badges, and physical smartphone notch/camera cutouts.</li>
-        <li><strong>Right-Hand Social Action Rails:</strong> Avatars, Follow buttons, Likes, Comment counts, Bookmark/Save icons, Share trays, and animated audio discs.</li>
-        <li><strong>Bottom Metadata Drawers:</strong> Account handles, multi-line captions, hashtag collections, audio metadata, automated captions, and call-to-action (CTA) buttons.</li>
-      </ul>
-      <p class="text-slate-300">
-        If a creator burns critical typography (such as headline hooks, closed captions, or key product benefits) into these peripheral zones, viewers experience immediate visual interference.
-      </p>
-    </section>
-
-    <!-- Section 2: Evidence Tiers -->
-    <section class="space-y-4">
-      <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-2">
-        <span class="text-cyan-400 font-mono text-base">02.</span> The Three Tiers of Interface Evidence
-      </h2>
-      <p class="text-slate-300">
-        Because social networks rarely publish unified, pixel-perfect design specifications for organic in-feed interfaces, CreatorSafeZone categorizes all spatial data into three distinct evidence tiers:
-      </p>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
-        <div class="bg-slate-900/90 border border-slate-800 p-5 rounded-xl space-y-2">
-          <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">Tier A</span>
-          <h3 class="font-bold text-white text-base">Official Specifications</h3>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Data explicitly published in official documentation, such as TikTok for Business Ad Specs, Meta Business Help Center, or Google Ads specifications.
-          </p>
-        </div>
-
-        <div class="bg-slate-900/90 border border-slate-800 p-5 rounded-xl space-y-2">
-          <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-cyan-500/20 text-cyan-400 border border-cyan-500/30">Tier B</span>
-          <h3 class="font-bold text-white text-base">Observed Measurements</h3>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Measurements may be classified as observed only when a dated source capture and material test context are retained. Records without those references remain working recommendations.
-          </p>
-        </div>
-
-        <div class="bg-slate-900/90 border border-slate-800 p-5 rounded-xl space-y-2">
-          <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-amber-500/20 text-amber-400 border border-amber-500/30">Tier C</span>
-          <h3 class="font-bold text-white text-base">Recommended Working Areas</h3>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Conservative working rectangles recommended by CreatorSafeZone to give video editors safe margins that accommodate device fragmentation and multi-line captions.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 3: Measurement Protocol -->
-    <section class="space-y-4">
-      <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-2">
-        <span class="text-cyan-400 font-mono text-base">03.</span> Measurement Protocol & Device Testing
-      </h2>
-      <p class="text-slate-300">
-        When CreatorSafeZone publishes an observed measurement, the supporting capture should follow this standardized sampling methodology. Current records without attached capture references are not treated as completed observations:
-      </p>
-      <ol class="list-decimal list-inside space-y-3 text-slate-400 pl-2">
-        <li>
-          <strong class="text-slate-200">Hardware Baseline:</strong> Interface captures are sampled from flagship mobile devices representing the primary viewport ratios in consumer use:
-          <ul class="list-disc list-inside pl-6 mt-1 space-y-1 text-xs text-slate-400">
-            <li><strong>Modern Tall Aspect Ratios (19.5:9 to 20:9):</strong> Record the exact physical device, OS, app build, account state, and capture date.</li>
-            <li><strong>Standard Aspect Ratios (16:9 to 18:9):</strong> Legacy devices and mid-tier Android handsets.</li>
-          </ul>
-        </li>
-        <li>
-          <strong class="text-slate-200">Canvas Normalization:</strong> Captured assets are imported into high-precision raster analysis environments and scaled to the industry-standard 1080 × 1920 base canvas.
-        </li>
-        <li>
-          <strong class="text-slate-200">Bounding Box Mapping:</strong> Interactive touch targets, button vectors, username typography baselines, and permanent background gradients are mapped with pixel-level coordinate vectors $(X, Y, W, H)$.
-        </li>
-      </ol>
-    </section>
-
-    <!-- Section 4: Dynamic Variances -->
-    <section class="space-y-4">
-      <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-2">
-        <span class="text-cyan-400 font-mono text-base">04.</span> Why Platform Safe Zones Are Never Permanent
-      </h2>
-      <p class="text-slate-300">
-        CreatorSafeZone explicitly rejects the premise that any third-party tool can promise a "permanent" or "guaranteed" safe zone. Mobile social interfaces fluctuate continuously due to three structural factors:
-      </p>
-      <div class="space-y-3">
-        <div class="bg-slate-900/60 border border-slate-800 p-4 rounded-xl">
-          <h4 class="font-bold text-white text-sm">A. Dynamic A/B Cohort Testing</h4>
-          <p class="text-xs text-slate-400 mt-1">
-            Platforms like TikTok and Instagram continuously test interface variants. A user in one testing cohort may see a compact 2-line caption drawer, while another user sees a tall 4-line drawer with an expanded search suggestion pill.
-          </p>
-        </div>
-        <div class="bg-slate-900/60 border border-slate-800 p-4 rounded-xl">
-          <h4 class="font-bold text-white text-sm">B. Operating System Accessibility Overrides</h4>
-          <p class="text-xs text-slate-400 mt-1">
-            When a smartphone user enables larger dynamic text sizes or accessibility bolding in iOS or Android system settings, native app UI buttons and caption drawers expand vertically, consuming more screen space.
-          </p>
-        </div>
-        <div class="bg-slate-900/60 border border-slate-800 p-4 rounded-xl">
-          <h4 class="font-bold text-white text-sm">C. Device Hardware Encroachment</h4>
-          <p class="text-xs text-slate-400 mt-1">
-            Physical hardware cutouts (such as Apple's Dynamic Island or Android hole-punch camera modules) occupy varying depths of the top clearance zone depending on the handset.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 5: Responsible Publishing Advice -->
-    <section class="space-y-4">
-      <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-2">
-        <span class="text-cyan-400 font-mono text-base">05.</span> Recommended Publishing Workflow
-      </h2>
-      <p class="text-slate-300">
-        To prevent publishing errors, we recommend treating CreatorSafeZone as an initial pre-publish quality assurance check within your production pipeline:
-      </p>
-      <ol class="list-decimal list-inside space-y-2 text-slate-400 pl-2 text-xs sm:text-sm">
-        <li><strong>Drafting & Composition:</strong> Use CreatorSafeZone's recommended working boxes to set initial guides in your editing software (Premiere Pro, DaVinci Resolve, CapCut, or Canva).</li>
-        <li><strong>Pre-Publish Simulation:</strong> Drop your exported 9:16 video into CreatorSafeZone’s browser simulator to verify that hook titles and subtitles do not visually collide with primary UI elements.</li>
-        <li><strong>Final In-App Device Check:</strong> Before launching high-budget paid ad campaigns or critical organic releases, upload the video to a private or draft account on a physical smartphone to perform a final live check.</li>
-      </ol>
-    </section>
-
-    <!-- Section 6: Official Platform References -->
-    <section class="space-y-4 pt-4 border-t border-slate-800">
-      <h2 class="text-lg font-bold text-white tracking-tight">Official Platform Resource Links</h2>
-      <p class="text-xs text-slate-400">
-        For verified enterprise ad specifications, consult the official platform developer and advertising guidelines directly:
-      </p>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
-        <a href="https://ads.tiktok.com/help/article/video-specs" target="_blank" rel="noopener noreferrer" class="p-3 bg-slate-900 border border-slate-800 hover:border-cyan-400 rounded-xl transition text-slate-300 hover:text-white">
-          <span class="font-bold block text-white">TikTok for Business ↗</span>
-          <span class="text-[10px] text-slate-500">Official Video Ad Specifications</span>
-        </a>
-        <a href="https://www.facebook.com/business/help/223186797682697" target="_blank" rel="noopener noreferrer" class="p-3 bg-slate-900 border border-slate-800 hover:border-cyan-400 rounded-xl transition text-slate-300 hover:text-white">
-          <span class="font-bold block text-white">Meta Business Help ↗</span>
-          <span class="text-[10px] text-slate-500">Reels Aspect Ratio & Safe Areas</span>
-        </a>
-        <a href="https://support.google.com/youtube/answer/10059070" target="_blank" rel="noopener noreferrer" class="p-3 bg-slate-900 border border-slate-800 hover:border-cyan-400 rounded-xl transition text-slate-300 hover:text-white">
-          <span class="font-bold block text-white">YouTube Help Center ↗</span>
-          <span class="text-[10px] text-slate-500">Shorts Creation & Format Guidelines</span>
-        </a>
-      </div>
-    </section>
-
-    <section class="space-y-3 pt-4 border-t border-slate-800">
-      <h2 class="text-lg font-bold text-white tracking-tight">Measurement Registry</h2>
-      <p class="text-xs text-slate-400">CreatorSafeZone maintains a machine-readable registry of working recommendations and their evidence gaps. It supports the visible page cards but does not replace their platform-specific limitations.</p>
-      <a href="/measurement-registry.json" class="text-cyan-400 hover:underline text-xs font-semibold">View the current measurement registry</a>
-    </section>
-
-  </main>
+  <main id="main" tabindex="-1" class="max-w-4xl mx-auto w-full p-6 sm:p-8 md:py-16 flex-1 space-y-12 text-sm sm:text-base leading-relaxed"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span>How Our Safe Zone Calculations Work</span></nav><div><p class="eyebrow">CALCULATIONS, SOURCES &amp; LIMITS</p><h1>How Our SAFE ZONE Calculations Work</h1><p>Use this page to understand what a placement result means, where the working margins come from and what still needs independent verification.</p></div>
+<section><h2>A Safe Zone Is a Planning Boundary</h2><p>A caption can be complete in an exported video and still be covered by app controls during playback. This checker represents potential obstructions with editable margins around a 1080 × 1920 planning canvas. The interface drawings help explain placement; they are not captured replicas of current app screens.</p><p>A cover crop is a separate geometric operation. The <a href="/instagram-grid-crop-previewer">crop planner</a> removes parts of the frame in the selected scenario. It does not establish which crop a particular Instagram account currently uses.</p></section>
+<section><h2>How the Checker Calculates a Result</h2><p>You manually draw a rectangular region around an element. Its right edge is X + width and its bottom edge is Y + height. The checker compares all four edges with the selected working boundaries.</p><ul><li><strong>Safe:</strong> the region is at least 24 px inside every boundary.</li><li><strong>Warning:</strong> it is inside the working area but closer than 24 px to an edge.</li><li><strong>Covered:</strong> part of the region crosses a planning boundary.</li></ul><p>Those labels describe the marked geometry at the moment you are checking. They do not assess unmarked text, caption accuracy, contrast, motion, audio, platform approval or every frame in the video.</p><p>The <a href="/check-all-platforms#comparison-tutorial">comparison walkthrough</a> includes a reproducible example and explains how to hand the result to an editor. A suggested move changes your marker, not your uploaded video. An oversized region may need resizing before it can fit.</p></section>
+<section id="evidence-status" class="reference-section"><p class="eyebrow">EVIDENCE STATUS · CONTENT REVIEW OCTOBER 8, 2026</p><h2>What Is Supported, and What Still Needs Measurement?</h2><p>Separate a reproducible calculation from a claim about an app interface. The 24 px clearance threshold is our tool rule. It is not a platform requirement.</p><div class="table-scroll"><table><caption>Evidence scope for the current checker</caption><thead><tr><th>Claim</th><th>Evidence</th><th>What it supports</th></tr></thead><tbody><tr><td>Marked-box overlap and suggested moves</td><td>Coordinates, calculation rules and the <a href="/check-all-platforms#comparison-tutorial">worked example</a></td><td>A reproducible geometric result for the selected margins</td></tr><tr><td>1:1 and 4:5 center-crop dimensions</td><td>Canvas arithmetic</td><td>A crop scenario, not the current Instagram profile layout</td></tr><tr><td>TikTok, Reels and Shorts default margins</td><td>CreatorSafeZone estimates; supporting device captures pending</td><td>A starting point for planning, not a verified current interface</td></tr><tr><td>Paid-video default margins</td><td>Generic editable scenario</td><td>Composition planning, not an official ad template or approval test</td></tr></tbody></table></div><h3>Official References and Their Limits</h3><ul><li><a href="https://ads.tiktok.com/resources/help/article/tiktok-auction-in-feed-ads">TikTok In-Feed ad guidance</a> supplies safe-zone files for its ad formats. It does not establish our organic TikTok margin numbers.</li><li><a href="https://support.google.com/google-ads/answer/13547298?hl=en">Google Ads video specifications</a> supplies video-ad templates. It does not establish the organic Shorts numbers used here.</li></ul><p>These two documents were reviewed October 8, 2026. No new physical-device measurement is claimed. Meta documentation could not be independently retrieved during this review; no Meta-derived numeric rule was added.</p><h3>How a Working Estimate Becomes an Observation</h3><p>We need a dated capture with the platform, viewing surface, device, OS, app build, account state, caption and CTA state, plus a coordinate method and limitations. Until that record exists, the estimate label stays. A single capture would describe that context, not every user's interface.</p><p>For your own final check, compare the exported video with the destination draft, note the obstruction, adjust your working margins and repeat. <a href="/">Return to the video placement hub</a>.</p></section>
+<section><h2>Why Your Final App Preview Matters</h2><p>Viewing surface, screen shape, caption length, account state and extra controls can change the space available. Check the longest caption, a moving scene and the end card in your actual destination. Keep a note of the context if you change the working margins.</p><p>Do not shrink all text to fit an assumed safe area. Review readability and the subject of the shot; a separate platform edit can be a better choice. Use the <a href="/guides/video-caption-size-contrast-readability">caption readability guide</a> alongside placement checks.</p></section>
+<section><h2>Source Records and Corrections</h2><p>The <a href="/measurement-registry.json">measurement registry</a> retains the existing margin records and their evidence gaps. A new documentation review does not reset a measurement date or convert an estimate into an observation.</p><p>See <a href="/editorial-policy">our editorial policy</a> for source handling and corrections, and <a href="/privacy-policy">our privacy policy</a> for local-media and site-request handling.</p></section><p class="author-credit">By <a href="/about#zafar-iqbal" rel="author">Zafar Iqbal</a> <span>Published by CreatorSafeZone</span></p></main>
 
   <!-- Universal Footer -->
   <footer class="border-t border-slate-800 bg-[#0B0F19] py-12 px-4 md:px-8 text-xs text-slate-400">

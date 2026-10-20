@@ -1,0 +1,9 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Synthetic local video fixture</title></head><body><h1>Synthetic local video fixture</h1><p>Creates a two-second animated color panel. No user media or remote requests.</p><canvas width="640" height="360" id="canvas"></canvas><button id="create">Create test video</button><p id="status" role="status">Ready</p><textarea id="fixture" aria-label="Encoded test video"></textarea><script>
+document.querySelector('#create').addEventListener('click',async()=>{
+  const c=document.querySelector('#canvas'),ctx=c.getContext('2d');ctx.fillStyle='#26a6ac';ctx.fillRect(0,0,640,360);
+  const stream=c.captureStream(10),chunks=[],recorder=new MediaRecorder(stream,{mimeType:'video/webm'});
+  document.querySelector('#status').textContent='Recording synthetic frames';
+  const blob=await new Promise(resolve=>{recorder.ondataavailable=e=>chunks.push(e.data);recorder.onstop=()=>resolve(new Blob(chunks,{type:'video/webm'}));recorder.start();let i=0;const interval=setInterval(()=>{ctx.fillStyle=i++%2?'#ae425c':'#2b8279';ctx.fillRect(0,0,640,360);ctx.fillStyle='white';ctx.font='32px system-ui';ctx.fillText('Synthetic frame '+i,20,100);},100);setTimeout(()=>{clearInterval(interval);recorder.stop();stream.getTracks().forEach(t=>t.stop());},2000);});
+  const reader=new FileReader();reader.onload=()=>{document.querySelector('#fixture').value=reader.result.split(',')[1];document.querySelector('#status').textContent='Fixture ready';};reader.readAsDataURL(blob);
+});
+</script></body></html>

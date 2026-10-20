@@ -29,7 +29,7 @@ for (const legacyPath of ['/instagram-reels-safe-zone.html','/youtube-shorts-saf
     const response = await fetch(new URL(legacyPath, base), {redirect:'manual', signal:AbortSignal.timeout(15000)});
     const expected = legacyPath.slice(0, -'.html'.length);
     const location = response.headers.get('location');
-    if (![301,302,307,308].includes(response.status) || new URL(location, base).pathname !== expected) throw new Error('expected redirect to ' + expected);
+    if (![301,308].includes(response.status) || new URL(location, base).pathname !== expected) throw new Error('expected redirect to ' + expected);
     console.log('PASS legacy redirect ' + legacyPath);
   } catch(e) { failures++; console.error('FAIL legacy redirect ' + legacyPath + ': ' + e.message); }
 }
