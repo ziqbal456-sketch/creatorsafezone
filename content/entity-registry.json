@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "reviewed_at": "2026-10-21T03:07:07.085Z",
+  "reviewed_at": "2026-10-21T03:18:22.502Z",
   "origin": "https://creatorsafezone.com",
   "scope": "Identity and intent ownership for existing pages and the audited guide queue; private editorial record, not extra public schema.",
   "runtime_source": "site-identity.js",
@@ -435,7 +435,7 @@
       "path": "/guides/vertical-screen-recording-readable-text",
       "intent_key": "vertical-screen-recording-readable-text",
       "reader_job": "Keep screen-tutorial interface labels and action results readable in a vertical edit",
-      "status": "audited_local",
+      "status": "deployed_scheduled",
       "publish_at": "2026-10-25T05:00:00.000Z",
       "pillar": "/guides",
       "topic_keys": [

@@ -119,7 +119,7 @@
       "role": "supporting_guide",
       "intent_key": "vertical-screen-recording-readable-text",
       "reader_job": "Keep interface controls and resulting states visible and readable in a vertical tutorial",
-      "status": "audited_local",
+      "status": "deployed_scheduled",
       "action": "publish_new",
       "source_ids": [
         "google-ui",
@@ -381,7 +381,7 @@
     }
   ],
   "resume": {
-    "first_incomplete_item": "GitHub branch checks and hosted preview",
+    "first_incomplete_item": null,
     "completed_actions": [
       "SERP and source reads",
       "Existing-owner and body overlap review",
@@ -389,7 +389,10 @@
       "Private identity owner row with unchanged stable IDs",
       "All 76 tests, structural validation, CSS freshness and dry run passed",
       "Four HTTP links returned 200",
-      "All 16 future-clock guide layouts passed four widths; new mobile screenshot reviewed"
+      "All 16 future-clock guide layouts passed four widths; new mobile screenshot reviewed",
+      "Exact-head GitHub and Cloudflare checks passed; PR7 reviewed and merged",
+      "Exact branch and main previews passed schedule/route smoke and hosted audits",
+      "Main-built cb0b38fd promoted at 100%; live smoke and identity/layout audits passed"
     ],
     "missing_evidence": [
       "Exact UI event timestamps not saved; date and context recorded",
@@ -398,10 +401,22 @@
       "External recorder/editor not executed"
     ],
     "next_batch": [
-      "Push and inspect exact-head checks/preview",
-      "Review merge and main preview",
-      "Promote GitHub-built version",
-      "Record live checks and five future slots"
+      "Recheck newly due article and sitemap on the next heartbeat",
+      "Replenish when fewer than five future posts remain; append only a free future daily slot"
     ]
+  },
+  "release": {
+    "source_head": "a06e4b5f0147185748a95f4dafdf16064046fddf",
+    "main_commit": "7fef25ab5817911db360dc8ee65891ee8210d719",
+    "pull_request": "https://github.com/ziqbal456-sketch/creatorsafezone/pull/7",
+    "branch_preview": "https://02c815d1-creatorsafezone.z-iqbal456.workers.dev",
+    "main_preview": "https://cb0b38fd-creatorsafezone.z-iqbal456.workers.dev",
+    "production_version": "cb0b38fd-6cf7-465f-8a0b-5a00e3692235",
+    "rollback_version": "936a9c12-b20f-480e-88ec-9f35fd1169ef",
+    "promoted_at": "2026-10-21T03:17:17.634402Z",
+    "verified_at": "2026-10-21T03:18:56.406Z",
+    "traffic_percent": 100,
+    "due_count": 11,
+    "future_count": 5
   }
 }

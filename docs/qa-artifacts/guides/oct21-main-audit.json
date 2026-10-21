@@ -1,0 +1,164 @@
+{
+  "checkedAt": "2026-10-21T03:16:56.959Z",
+  "base": "https://cb0b38fd-creatorsafezone.z-iqbal456.workers.dev",
+  "due": [
+    "captions-covered-by-buttons",
+    "reel-cover-text-cut-off",
+    "canva-video-safe-zone-overlay",
+    "organic-video-vs-ad-safe-zones",
+    "vertical-video-black-bars-fit-fill",
+    "video-caption-size-contrast-readability",
+    "burned-in-vs-closed-captions",
+    "premiere-safe-margins-social-overlay",
+    "video-preview-not-playing",
+    "subtitles-out-of-sync",
+    "davinci-resolve-safe-zone-overlay"
+  ],
+  "future": [
+    {
+      "slug": "transparent-png-overlay-black-background",
+      "publishAt": "2026-10-21T05:00:00.000Z"
+    },
+    {
+      "slug": "blurry-captions-after-export",
+      "publishAt": "2026-10-22T05:00:00.000Z"
+    },
+    {
+      "slug": "video-plays-sideways-rotation",
+      "publishAt": "2026-10-23T05:00:00.000Z"
+    },
+    {
+      "slug": "translated-subtitles-layout",
+      "publishAt": "2026-10-24T05:00:00.000Z"
+    },
+    {
+      "slug": "vertical-screen-recording-readable-text",
+      "publishAt": "2026-10-25T05:00:00.000Z"
+    }
+  ],
+  "identities": [
+    {
+      "path": "/",
+      "result": "pass"
+    },
+    {
+      "path": "/check-all-platforms",
+      "result": "pass"
+    },
+    {
+      "path": "/tiktok-safe-zone",
+      "result": "pass"
+    },
+    {
+      "path": "/instagram-reels-safe-zone",
+      "result": "pass"
+    },
+    {
+      "path": "/youtube-shorts-safe-zone",
+      "result": "pass"
+    },
+    {
+      "path": "/instagram-story-safe-zone",
+      "result": "pass"
+    },
+    {
+      "path": "/instagram-grid-crop-previewer",
+      "result": "pass"
+    },
+    {
+      "path": "/vertical-video-ad-specs",
+      "result": "pass"
+    },
+    {
+      "path": "/capcut-safe-zone-template",
+      "result": "pass"
+    },
+    {
+      "path": "/about",
+      "result": "pass"
+    },
+    {
+      "path": "/methodology",
+      "result": "pass"
+    },
+    {
+      "path": "/editorial-policy",
+      "result": "pass"
+    },
+    {
+      "path": "/privacy-policy",
+      "result": "pass"
+    },
+    {
+      "path": "/guides",
+      "result": "pass"
+    },
+    {
+      "path": "/guides/captions-covered-by-buttons",
+      "result": "pass"
+    },
+    {
+      "path": "/guides/reel-cover-text-cut-off",
+      "result": "pass"
+    },
+    {
+      "path": "/guides/canva-video-safe-zone-overlay",
+      "result": "pass"
+    },
+    {
+      "path": "/guides/organic-video-vs-ad-safe-zones",
+      "result": "pass"
+    },
+    {
+      "path": "/guides/vertical-video-black-bars-fit-fill",
+      "result": "pass"
+    },
+    {
+      "path": "/guides/video-caption-size-contrast-readability",
+      "result": "pass"
+    },
+    {
+      "path": "/guides/burned-in-vs-closed-captions",
+      "result": "pass"
+    },
+    {
+      "path": "/guides/premiere-safe-margins-social-overlay",
+      "result": "pass"
+    },
+    {
+      "path": "/guides/video-preview-not-playing",
+      "result": "pass"
+    },
+    {
+      "path": "/guides/subtitles-out-of-sync",
+      "result": "pass"
+    },
+    {
+      "path": "/guides/davinci-resolve-safe-zone-overlay",
+      "result": "pass"
+    }
+  ],
+  "layouts": [
+    {
+      "path": "/guides",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "result": "pass"
+    },
+    {
+      "path": "/guides/davinci-resolve-safe-zone-overlay",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "result": "pass"
+    }
+  ],
+  "scope": "HTTP and headless Edge viewport checks, not physical-device or external-editor execution"
+}
