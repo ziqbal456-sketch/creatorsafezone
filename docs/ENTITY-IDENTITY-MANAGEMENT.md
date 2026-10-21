@@ -34,3 +34,7 @@ Current research evidence and remaining discovery gaps are in `docs/GUIDE-RESEAR
 The complete automated suite passed 75 tests. After adding canonical/profile checks, all seven focused identity/discovery tests passed again. The live audit passed for 25 currently published pages, including the newly due October 20 guide; remaining guides were checked locally at their future publication times. Evidence: docs/qa-artifacts/guides/oct20-live-identity.json. Existing six editorial advisories remain outside this identity change.
 
 The active daily automation was updated and read back on October 20: it explicitly applies the keyword-research skill, maintains the entity register, checks all prepared guides and records evidence for identity relationships. Its 08:00 maintenance and 10:00 article schedule were preserved. This change affects private editorial records and checks; public identity nodes remain the existing values.
+
+## October 21 Prepared Guide Identity Review
+
+Added the vertical-screen-recording-readable-text ownership row for October 25 at 05:00 UTC. The register covers thirty distinct pages; existing URLs, intent owners and core identities are preserved. Capture-surface selection and cropping relationships cite Microsoft documentation as topical evidence, without adding sameAs. All sixteen guide bylines, profile links, canonical URLs and Article headlines/dates passed the local future-clock tests. The new row remains audited_local until the GitHub-built bundle is promoted and the deployed schedule is verified.
