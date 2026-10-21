@@ -1,0 +1,22 @@
+{
+  "checkedAt": "2026-10-21T03:11:48.784Z",
+  "priorRecordsPreserved": 15,
+  "results": [
+    {
+      "url": "https://support.microsoft.com/en-us/clipchamp/create-a-new-screen-recording",
+      "status": 200
+    },
+    {
+      "url": "https://support.microsoft.com/en-us/clipchamp/how-to-crop-videos-or-images-in-clipchamp",
+      "status": 200
+    },
+    {
+      "url": "https://creatorsafezone.com/guides/vertical-video-black-bars-fit-fill",
+      "status": 200
+    },
+    {
+      "url": "https://creatorsafezone.com/check-all-platforms",
+      "status": 200
+    }
+  ]
+}

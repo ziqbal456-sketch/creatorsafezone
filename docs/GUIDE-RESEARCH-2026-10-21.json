@@ -1,0 +1,407 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-10-21T03:08:51.273Z",
+  "scope": {
+    "micro_niche": "Readable short vertical-video composition and editor handoff",
+    "mode": "expansion",
+    "market": "Global English audience; Google UI visibly localized to Pakistan and personalized",
+    "language": "en",
+    "business_purpose": "Help creators prepare readable software tutorials and use manual placement checks appropriately",
+    "audience": "Creators adapting desktop demonstrations for phone viewing",
+    "exclusions": [
+      "Paid software recommendations",
+      "Universal caption sizes or bitrate claims",
+      "New platform margin measurements",
+      "Tracking",
+      "Outreach"
+    ],
+    "capacity": "One guide restores five future slots",
+    "new_content_hold": false
+  },
+  "sources": [
+    {
+      "id": "google-ui",
+      "source_class": "google_ui",
+      "date": "2026-10-21",
+      "url": "https://www.google.com/search?q=vertical+screen+recording&hl=en",
+      "access": "read",
+      "coverage": "Visible first-page search results, root suggestion list and related searches only; signed-in/personalized desktop context, Pakistan country shown; precise location omitted."
+    },
+    {
+      "id": "web-search",
+      "source_class": "web_search",
+      "date": "2026-10-21",
+      "access": "read",
+      "coverage": "Focused source discovery for vertical screen recording readable text; not labeled Google autocomplete."
+    },
+    {
+      "id": "ourscreen",
+      "url": "https://ourscreen.app/blog/record-vertical-tutorial-video-mac/",
+      "source_class": "competitor",
+      "date": "2026-10-21",
+      "access": "read",
+      "coverage": "Relevant answer and workflow sections",
+      "strength": "Focuses the action, plans a vertical edit and checks phone-size viewing; promotes its recorder."
+    },
+    {
+      "id": "sundry",
+      "url": "https://sundrymill.com/blog/vertical-screen-recording-pc-tiktok-reels-shorts",
+      "source_class": "competitor",
+      "date": "2026-10-21",
+      "access": "read",
+      "coverage": "Relevant answer and workflow sections",
+      "strength": "Compares narrow capture, OBS and crop approaches with geometric examples; some platform details are publisher claims not adopted here."
+    },
+    {
+      "id": "rescreen",
+      "url": "https://rescreen.studio/blog/vertical-screen-recording-shorts-reels-tiktok",
+      "source_class": "competitor",
+      "date": "2026-10-21",
+      "access": "read",
+      "coverage": "Relevant answer and workflow sections",
+      "strength": "Explains static-crop limitations and pointer-driven reframing; product behavior was not independently tested."
+    },
+    {
+      "id": "ms-capture",
+      "url": "https://support.microsoft.com/en-us/clipchamp/create-a-new-screen-recording",
+      "source_class": "primary_documentation",
+      "date": "2026-10-21",
+      "access": "read",
+      "coverage": "Work-account capture choices: whole screen, application window or Edge tab; account scope preserved in article."
+    },
+    {
+      "id": "ms-crop",
+      "url": "https://support.microsoft.com/en-us/clipchamp/how-to-crop-videos-or-images-in-clipchamp",
+      "source_class": "primary_documentation",
+      "date": "2026-10-21",
+      "access": "read",
+      "coverage": "Cropping changes the visible area; Fill fits the project frame. Not evidence that a particular tutorial is readable."
+    },
+    {
+      "id": "forum",
+      "url": "https://www.reddit.com/r/finalcutpro/comments/1wacr8i/screen_recording_looks_sharp_before_editing_but/",
+      "source_class": "forum",
+      "date": "2026-10-21",
+      "access": "read",
+      "coverage": "One user describes soft text in a vertical coding video; anecdotal wording signal, not representative evidence or an adopted fix."
+    },
+    {
+      "id": "techsmith",
+      "url": "https://www.techsmith.com/learn/tutorials/camtasia/create-vertical-videos/",
+      "source_class": "primary_vendor",
+      "date": "2026-10-21",
+      "access": "blocked",
+      "coverage": "429 response; not counted as read."
+    }
+  ],
+  "clusters": [
+    {
+      "id": "screen-tutorial",
+      "reader_decision": "How to frame a desktop tutorial so labels and action results remain readable",
+      "pillar_page_id": "hub",
+      "research_status": "researched; qualitative opportunity, metrics unknown",
+      "boundaries": "Capture/framing continuity for screen demonstrations. Generic fit/fill, blurry-caption rendering and platform margin owners remain existing pages."
+    }
+  ],
+  "pages": [
+    {
+      "id": "hub",
+      "role": "site_hub",
+      "existing_url": "https://creatorsafezone.com/guides",
+      "reader_job": "Choose a guide for a specific editing task",
+      "status": "published"
+    },
+    {
+      "id": "screen-tutorial",
+      "cluster_ids": [
+        "screen-tutorial"
+      ],
+      "role": "supporting_guide",
+      "intent_key": "vertical-screen-recording-readable-text",
+      "reader_job": "Keep interface controls and resulting states visible and readable in a vertical tutorial",
+      "status": "audited_local",
+      "action": "publish_new",
+      "source_ids": [
+        "google-ui",
+        "web-search",
+        "ourscreen",
+        "sundry",
+        "rescreen",
+        "ms-capture",
+        "ms-crop",
+        "forum"
+      ],
+      "serp": {
+        "query": "vertical screen recording",
+        "observed_at": "2026-10-21 (date only)",
+        "market": "Pakistan visible; personalized English desktop results",
+        "source_id": "google-ui"
+      },
+      "competitors": [
+        {
+          "url": "https://ourscreen.app/blog/record-vertical-tutorial-video-mac/",
+          "source_id": "ourscreen",
+          "actually_read": true
+        },
+        {
+          "url": "https://sundrymill.com/blog/vertical-screen-recording-pc-tiktok-reels-shorts",
+          "source_id": "sundry",
+          "actually_read": true
+        },
+        {
+          "url": "https://rescreen.studio/blog/vertical-screen-recording-shorts-reels-tiktok",
+          "source_id": "rescreen",
+          "actually_read": true
+        }
+      ],
+      "gap": "A focused action-to-result audit the reader can apply in an existing recorder/editor, with a hypothetical menu/setting/confirmation table and manual-marker handoff.",
+      "original_contribution": "Check before, during and after each interaction; judge control labels and resulting state rather than pointer position alone. No claim of an untapped market.",
+      "brief": {
+        "title": "Vertical Screen Recordings: Keep Tutorial Text Readable",
+        "h1": "VERTICAL SCREEN RECORDING: Keep UI Text Readable",
+        "description": "Plan readable vertical screen tutorials around each control and its result. Check capture area, crop movement, captions and the final export.",
+        "slug": "vertical-screen-recording-readable-text",
+        "publishAt": "2026-10-25T05:00:00.000Z",
+        "direct_answer": "Frame each step around the control and its result, then test the exported sequence at phone size.",
+        "sections": [
+          "Capture area",
+          "Action/result pairing",
+          "Crop continuity",
+          "Captions and final export"
+        ],
+        "cta": "Comparison checker after editing; it cannot read UI text or verify a lesson.",
+        "exclusions": [
+          "No fixed text-size or quality prescription",
+          "No app permission changes",
+          "No automatic reframing claim"
+        ]
+      },
+      "completion_gates": [
+        "76 tests",
+        "Mobile table and heading review",
+        "Exact branch/main builds",
+        "Live publication and identity checks"
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "id": "autocomplete-0",
+      "text": "vertical screen recording",
+      "source_type": "google_autocomplete",
+      "owner_page_id": "screen-tutorial",
+      "source_ids": [
+        "google-ui"
+      ],
+      "capture": {
+        "input": "vertical screen recording",
+        "cursor": "end before ArrowDown; first history entry then selected; relevant non-history predictions recorded separately",
+        "observed_at": "2026-10-21 (date only)",
+        "requested_market": "English; no forced geography",
+        "visible_location": "Pakistan; precise location omitted",
+        "language": "en",
+        "device": "Desktop; Google visible URL reports 1280x720",
+        "personalization": "Signed in and personalized",
+        "completeness": "Root list only; no alphabet sweep or PAA expansion"
+      }
+    },
+    {
+      "id": "autocomplete-1",
+      "text": "vertical screen capture",
+      "source_type": "google_autocomplete",
+      "owner_page_id": "screen-tutorial",
+      "source_ids": [
+        "google-ui"
+      ],
+      "capture": {
+        "input": "vertical screen recording",
+        "cursor": "end before ArrowDown; first history entry then selected; relevant non-history predictions recorded separately",
+        "observed_at": "2026-10-21 (date only)",
+        "requested_market": "English; no forced geography",
+        "visible_location": "Pakistan; precise location omitted",
+        "language": "en",
+        "device": "Desktop; Google visible URL reports 1280x720",
+        "personalization": "Signed in and personalized",
+        "completeness": "Root list only; no alphabet sweep or PAA expansion"
+      }
+    },
+    {
+      "id": "autocomplete-2",
+      "text": "vertical video recording screen",
+      "source_type": "google_autocomplete",
+      "owner_page_id": "screen-tutorial",
+      "source_ids": [
+        "google-ui"
+      ],
+      "capture": {
+        "input": "vertical screen recording",
+        "cursor": "end before ArrowDown; first history entry then selected; relevant non-history predictions recorded separately",
+        "observed_at": "2026-10-21 (date only)",
+        "requested_market": "English; no forced geography",
+        "visible_location": "Pakistan; precise location omitted",
+        "language": "en",
+        "device": "Desktop; Google visible URL reports 1280x720",
+        "personalization": "Signed in and personalized",
+        "completeness": "Root list only; no alphabet sweep or PAA expansion"
+      }
+    },
+    {
+      "id": "rotation-observed",
+      "text": "rotate screen recording",
+      "source_type": "google_autocomplete",
+      "owner_page_id": "existing-rotation-guide",
+      "source_ids": [
+        "google-ui"
+      ],
+      "capture": {
+        "input": "vertical screen recording",
+        "cursor": "end before ArrowDown; first history entry then selected; relevant non-history predictions recorded separately",
+        "observed_at": "2026-10-21 (date only)",
+        "requested_market": "English; no forced geography",
+        "visible_location": "Pakistan; precise location omitted",
+        "language": "en",
+        "device": "Desktop; Google visible URL reports 1280x720",
+        "personalization": "Signed in and personalized",
+        "completeness": "Root list only; no alphabet sweep or PAA expansion"
+      },
+      "note": "Existing video-plays-sideways-rotation owner; no synonym article."
+    },
+    {
+      "id": "related-online",
+      "text": "Vertical screen recording online",
+      "source_type": "google_related_search",
+      "owner_page_id": "screen-tutorial",
+      "source_ids": [
+        "google-ui"
+      ],
+      "capture": {
+        "input": "vertical screen recording",
+        "cursor": "not applicable",
+        "observed_at": "2026-10-21 (date only)",
+        "requested_market": "English; no forced geography",
+        "visible_location": "Pakistan; precise location omitted",
+        "language": "en",
+        "device": "Desktop; Google visible URL reports 1280x720",
+        "personalization": "Signed in and personalized",
+        "completeness": "Root list only; no alphabet sweep or PAA expansion"
+      },
+      "note": "Related search is not PAA or autocomplete."
+    },
+    {
+      "id": "proposed-readability",
+      "text": "vertical screen recording readable text",
+      "source_type": "proposed",
+      "owner_page_id": "screen-tutorial",
+      "source_ids": [
+        "web-search"
+      ],
+      "note": "Research input; its history-selected Google item is not independent demand evidence."
+    }
+  ],
+  "entities": [
+    {
+      "id": "screen-capture-surface",
+      "label": "Screen capture surface",
+      "type": "workflow_concept"
+    },
+    {
+      "id": "crop",
+      "label": "Visible video crop",
+      "type": "media_transform"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "capture-choice",
+      "subject_id": "screen-capture-surface",
+      "predicate": "has_choices_in_documented_workflow",
+      "value": [
+        "Entire screen",
+        "Application window",
+        "Browser tab"
+      ],
+      "context": "Microsoft Clipchamp work-account documentation; not a claim for every recorder",
+      "source_ids": [
+        "ms-capture"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "crop-visible",
+      "subject_id": "crop",
+      "predicate": "sets",
+      "value": "Visible portion of a video frame",
+      "source_ids": [
+        "ms-crop"
+      ],
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "id": "to-fit",
+      "from_page_id": "screen-tutorial",
+      "to_page_id": "existing-fit-fill",
+      "section": "Crop for Understanding",
+      "natural_anchor": "fit and fill guide",
+      "reader_reason": "Generic scaling and border diagnosis without duplicating it."
+    },
+    {
+      "id": "to-checker",
+      "from_page_id": "screen-tutorial",
+      "to_page_id": "existing-comparison",
+      "section": "Actual Export",
+      "natural_anchor": "comparison checker",
+      "reader_reason": "Check manually marked interface/caption regions after editing."
+    }
+  ],
+  "schema_plan": [
+    {
+      "type": "Article",
+      "rationale": "Reuse visible author, publisher and website identities from site-identity.js; no new identity sameAs or unsupported topic schema."
+    }
+  ],
+  "growth_plan": [
+    "Append October 25 at 05:00 UTC; preserve all existing slots and records.",
+    "Review actual reader and performance evidence before the next adjacent topic; no ranking forecast."
+  ],
+  "coverage": [
+    {
+      "cluster_id": "screen-tutorial",
+      "competitor_reads": 3,
+      "primary_checks": 2,
+      "google_ui": "Root autocomplete and first-page results inspected; no complete A-Z sweep",
+      "paa": "No PAA block visible in captured root result state; not claimed as observed questions",
+      "kgr": "Unscreened; monthly volume and allintitle count unavailable",
+      "metrics": {
+        "volume": null,
+        "difficulty": null,
+        "current_gsc": null
+      }
+    }
+  ],
+  "resume": {
+    "first_incomplete_item": "GitHub branch checks and hosted preview",
+    "completed_actions": [
+      "SERP and source reads",
+      "Existing-owner and body overlap review",
+      "Original draft and metadata",
+      "Private identity owner row with unchanged stable IDs",
+      "All 76 tests, structural validation, CSS freshness and dry run passed",
+      "Four HTTP links returned 200",
+      "All 16 future-clock guide layouts passed four widths; new mobile screenshot reviewed"
+    ],
+    "missing_evidence": [
+      "Exact UI event timestamps not saved; date and context recorded",
+      "No non-personalized US SERP claim",
+      "Metrics and KGR unavailable",
+      "External recorder/editor not executed"
+    ],
+    "next_batch": [
+      "Push and inspect exact-head checks/preview",
+      "Review merge and main preview",
+      "Promote GitHub-built version",
+      "Record live checks and five future slots"
+    ]
+  }
+}
