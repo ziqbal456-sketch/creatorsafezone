@@ -38,3 +38,5 @@ The active daily automation was updated and read back on October 20: it explicit
 ## October 21 Prepared Guide Identity Review
 
 Added the vertical-screen-recording-readable-text ownership row for October 25 at 05:00 UTC. The register covers thirty distinct pages; existing URLs, intent owners and core identities are preserved. Capture-surface selection and cropping relationships cite Microsoft documentation as topical evidence, without adding sameAs. All sixteen guide bylines, profile links, canonical URLs and Article headlines/dates passed the local future-clock tests. The new row remains audited_local until the GitHub-built bundle is promoted and the deployed schedule is verified.
+
+October 21 post-release verification: the new owner is now deployed_scheduled, supported by merged main 7fef25a and active version cb0b38fd-6cf7-465f-8a0b-5a00e3692235. All 25 currently published pages passed live identity/canonical/visible-author checks and all eleven live guide bodies matched source. Thirty page owners remain unique; five future posts retain their dates. No stable identity, canonical URL or sameAs relationship changed.

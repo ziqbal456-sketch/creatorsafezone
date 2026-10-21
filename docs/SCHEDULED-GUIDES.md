@@ -86,3 +86,21 @@ The ten published records and their dates are preserved. Missed October 4–19 d
 Checks actually completed: structural validation, 73 tests, compiled CSS freshness, reviewed editorial audit, dry-run packaging, ten unique article links, 15 local article renders at four widths and five new mobile screenshot reviews. Exact branch preview passed both smoke suites and browser checks on 13 published pages at 320/390/768/1440 widths. The first image assertion encountered the lazy tutorial graphic before it loaded; scrolling it into view and decoding confirmed the image is valid, and the complete audit rerun passed. Main preview passed both smoke suites, published-body comparison, four-width layout and shared placement. Following promotion, both live smoke suites passed; all ten published article bodies match source, five future URLs remain hidden and absent from the sitemap, navigation works, and sample shared placement reaches 3 of 3. Evidence is in docs/qa-artifacts/guides/oct20-* and reconciled-live-assets.json.
 
 Branch-protection settings could not be read because the GitHub integration lacks that permission. Exact-commit checks were manually gated; no account permissions or rules changed. Six prior editorial advisories persist (four missing measurement captures and two negated guarantee matches). Browser viewport checks do not establish physical-device tests or execution in external editing apps. Offline publishing from this deployed buffer is supported; generating the next batch still requires the local automation runtime.
+
+## October 21 Queue Replenishment — Verified Live
+
+PR https://github.com/ziqbal456-sketch/creatorsafezone/pull/7 was reviewed and merged after exact-head checks passed for a06e4b5f0147185748a95f4dafdf16064046fddf. Linked branch preview 02c815d1-4a0d-4bc0-94c0-ce54b5760b3d passed the guide schedule smoke, route smoke through its branch alias, 25 published-page identity checks, eleven exact article-body comparisons, guide navigation and two affected published page layouts at 320/390/768/1440 widths. Main merge 7fef25ab5817911db360dc8ee65891ee8210d719 passed Site quality and Cloudflare Builds. Its exact preview cb0b38fd passed both smoke suites and the hosted audit before promotion.
+
+Production version cb0b38fd-6cf7-465f-8a0b-5a00e3692235 was promoted at 100% at 2026-10-21T03:17:17.634402Z. Rollback: 936a9c12-b20f-480e-88ec-9f35fd1169ef. The deployment was a promotion of a GitHub-built main version, with no direct local upload or dashboard source edit.
+
+At final verification before 05:00 UTC, eleven articles were live and five future audited slots were deployed, all at 05:00 UTC / 10:00 Asia/Karachi:
+
+- October 21: transparent-png-overlay-black-background.
+- October 22: blurry-captions-after-export.
+- October 23: video-plays-sideways-rotation.
+- October 24: translated-subtitles-layout.
+- October 25: vertical-screen-recording-readable-text (new).
+
+All fifteen prior records and timestamps were preserved. Existing date gaps were not backfilled. Live route and guide smoke passed: due articles present in the hub and sitemap, future URLs hidden and absent from the sitemap, no-store protections and private sources blocked. The live hosted audit passed 25 page identity checks, eleven exact article bodies, hub navigation and the same four-width checks. Local future-clock tests cover all sixteen prepared articles; the new guide remains unavailable publicly until its release date. Evidence: docs/qa-artifacts/guides/oct21-* and GUIDE-RESEARCH-2026-10-21.json.
+
+The first one-off hosted identity audit expected top-level identity nodes on the hub; its existing CollectionPage embeds the identities. The assertion was corrected to inspect those embedded values, and full branch/main/live reruns passed. No public identity inconsistency was found. The private register status is refreshed from these verified results. Six prior editorial advisories remain unchanged. Required-check enforcement was not reconfigured; successful exact-commit checks were manually gated. Viewport tests are not physical-device or external-editor execution. Prepared releases continue server-side while this computer is offline; new generation still needs the local runtime.
