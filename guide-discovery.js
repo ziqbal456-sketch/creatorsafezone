@@ -16,7 +16,8 @@ const related = {
  'blurry-captions-after-export': ['video-caption-size-contrast-readability', 'burned-in-vs-closed-captions'],
  'video-plays-sideways-rotation': ['vertical-video-black-bars-fit-fill', 'video-preview-not-playing'],
  'translated-subtitles-layout': ['subtitles-out-of-sync', 'video-caption-size-contrast-readability'],
- 'vertical-screen-recording-readable-text': ['vertical-video-black-bars-fit-fill', 'video-caption-size-contrast-readability']
+ 'vertical-screen-recording-readable-text': ['vertical-video-black-bars-fit-fill', 'video-caption-size-contrast-readability'],
+ 'text-backward-video-mirroring': ['video-plays-sideways-rotation', 'burned-in-vs-closed-captions']
 };
 const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function relatedGuides(slug, available) {
