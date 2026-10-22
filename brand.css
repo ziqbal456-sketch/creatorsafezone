@@ -223,3 +223,4 @@ body.brand-theme{font-size:1rem;line-height:1.65}
  .brand-theme.home-tool .media-secondary summary{font-size:.8125rem;line-height:1.5}
  .brand-theme.home-tool .mobile-platforms button{white-space:nowrap;font-size:.8125rem;padding:8px 4px}
 }
+@media(max-width:360px){.brand-theme.home-tool #viewOptions .dropdown-panel{right:-82px}}
