@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "reviewed_at": "2026-10-22T03:21:22.124Z",
+  "reviewed_at": "2026-10-22T04:04:39.906Z",
   "origin": "https://creatorsafezone.com",
   "scope": "Identity and intent ownership for existing pages and the audited guide queue; private editorial record, not extra public schema.",
   "runtime_source": "site-identity.js",
@@ -14,14 +14,19 @@
         "url": "https://creatorsafezone.com/about#zafar-iqbal",
         "sameAs": [
           "https://www.linkedin.com/in/meetzafariqbal"
-        ]
+        ],
+        "description": "Zafar Iqbal is the author of CreatorSafeZone’s video placement guides.",
+        "subjectOf": {
+          "@id": "https://creatorsafezone.com/about#webpage"
+        }
       },
       "evidence": {
         "status": "user_confirmed",
         "source": "docs/CONTENT-TOOLS-2026-10-16.md",
         "visible_url": "https://creatorsafezone.com/about#zafar-iqbal",
         "note": "Name and LinkedIn URL supplied by the user. External LinkedIn profile was not independently retrieved; do not infer credentials, employment or expertise from it."
-      }
+      },
+      "identity_home": "https://creatorsafezone.com/about#zafar-iqbal"
     },
     {
       "key": "publisher",
@@ -35,6 +40,10 @@
           "url": "https://creatorsafezone.com/brand-logo.svg",
           "width": 512,
           "height": 512
+        },
+        "description": "CreatorSafeZone publishes free browser-based video placement tools and guides.",
+        "subjectOf": {
+          "@id": "https://creatorsafezone.com/about#webpage"
         }
       },
       "evidence": {
@@ -42,7 +51,8 @@
         "source": "about.html",
         "visible_url": "https://creatorsafezone.com/about",
         "note": "CreatorSafeZone is the displayed publisher/site brand. No legal incorporation, address, rating or certification claim."
-      }
+      },
+      "identity_home": "https://creatorsafezone.com/about#creatorsafezone"
     },
     {
       "key": "website",
@@ -53,14 +63,16 @@
         "url": "https://creatorsafezone.com/",
         "publisher": {
           "@id": "https://creatorsafezone.com/#organization"
-        }
+        },
+        "description": "Free video placement tools and guides published by CreatorSafeZone."
       },
       "evidence": {
         "status": "site_declared",
         "source": "index.html",
         "visible_url": "https://creatorsafezone.com/",
         "note": "WebSite is distinct from its Organization publisher and Person author."
-      }
+      },
+      "identity_home": "https://creatorsafezone.com/"
     }
   ],
   "same_as_policy": {
@@ -509,5 +521,11 @@
     "New factual claims require primary evidence; editorial relationships and source dates do not establish platform measurements.",
     "Update this register, its evidence and ownership row when adding a guide or changing identity facts.",
     "Check all prepared guides with a local future clock; production remains server-clock gated."
-  ]
+  ],
+  "implementation_review": {
+    "date": "2026-10-22",
+    "scope": "Existing entity-home definitions and connected tool/page/website schema, without changing IDs or adding identities.",
+    "source": "https://developers.google.com/search/docs/appearance/structured-data/organization",
+    "evidence": "Visible About descriptions and tool/app relationships; no credentials, location, founding date, Knowledge Panel or offsite profile claim added."
+  }
 }

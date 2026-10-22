@@ -14,5 +14,5 @@ test('retired unsupported platform claims do not recur in copy or schema',()=>{
  for(const p of ['tiktok-safe-zone','youtube-shorts-safe-zone','instagram-reels-safe-zone','instagram-story-safe-zone','instagram-grid-crop-previewer','vertical-video-ad-specs']){const html=read(p+'.html');assert.doesNotMatch(html,/calibrated for|Observed buffer|global default standard|eye-tracking patterns|Official 2026 Instagram|TikTok recommends leaving approximately 160px/i);}
 });
 test('sitemap dates distinguish content updates from unchanged policy pages',()=>{
- const xml=read('sitemap.xml');const dates=Object.fromEntries([...xml.matchAll(/<loc>([^<]+)<\/loc>\s*<lastmod>([^<]+)<\/lastmod>/g)].map(m=>[new URL(m[1]).pathname,m[2]]));assert.equal(dates['/check-all-platforms'],'2026-10-08');assert.equal(dates['/privacy-policy'],'2026-09-30');assert.equal(dates['/about'],'2026-09-14');assert.equal(dates['/editorial-policy'],'2026-09-14');
+ const xml=read('sitemap.xml');const dates=Object.fromEntries([...xml.matchAll(/<loc>([^<]+)<\/loc>\s*<lastmod>([^<]+)<\/lastmod>/g)].map(m=>[new URL(m[1]).pathname,m[2]]));assert.equal(dates['/check-all-platforms'],'2026-10-22');assert.equal(dates['/privacy-policy'],'2026-09-30');assert.equal(dates['/about'],'2026-10-22');assert.equal(dates['/editorial-policy'],'2026-09-14');
 });

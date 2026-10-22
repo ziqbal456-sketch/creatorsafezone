@@ -1,0 +1,39 @@
+{
+  "checkedAt": "2026-10-22T04:11:09.558Z",
+  "scope": "Official documentation and ad-template inspection, not organic UI measurements",
+  "sources": [
+    {
+      "url": "https://ads.tiktok.com/resources/help/article/tiktok-auction-in-feed-ads",
+      "access": "Official article read; visible June 2026 date",
+      "finding": "Format, caption, LTR/RTL and anchor variants; no verified universal organic inset",
+      "download": "Standard archive click attempted through visible UI; download event timed out. Archive not claimed inspected."
+    },
+    {
+      "url": "https://www.facebook.com/business/ads/facebook-instagram-reels-ads",
+      "access": "Official page read",
+      "finding": "Safe-zone guidance and checker references, without an adopted universal organic numeric rule"
+    },
+    {
+      "url": "https://support.google.com/youtube/answer/16215842?hl=en",
+      "access": "Official visual-guides section read",
+      "finding": "Organic viewer UI guides and non-safe-edge indicators, not fixed universal insets"
+    },
+    {
+      "url": "https://support.google.com/google-ads/answer/13547298?hl=en",
+      "access": "Article, diagram and linked PNG inspected",
+      "finding": "Vertical ad reference 1080x1920, top288/right192/bottom672/left48; source values separate from organic defaults"
+    }
+  ],
+  "assets": [
+    {
+      "file": "google-ads-vertical.svg",
+      "sha256": "689512b5239f84cc5f51185259e9f57c404c48ca8a8f3d4d0099c216f0ba4afd"
+    },
+    {
+      "file": "google-ads-vertical.png",
+      "sha256": "56baf502e131f3fe79a61827363f4e262eaca41f094027896afb8a4c3a120717"
+    }
+  ],
+  "preservedGuideRecords": 17,
+  "preparedSchedule": "Unchanged; user explicitly permits prepared guides to publish and stops generation"
+}

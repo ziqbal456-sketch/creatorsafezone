@@ -1,6 +1,6 @@
 import {drawPlatformUI} from './qa-platform-ui.js';
 import {guideCanvas,pngBlob} from './qa-exports.js';
-import {CANVAS, buildSurfaces, assess, summarize, validRect, makeReport, sharedSurface, boundsFromMargins, videoUrl} from './qa-engine.js';
+import {CANVAS, buildSurfaces, officialAdSurface, assess, summarize, validRect, makeReport, sharedSurface, boundsFromMargins, videoUrl} from './qa-engine.js';
 
 const mode=document.body.dataset.tool || 'all';
 const comparisonMode=mode==='all'||mode==='home';
@@ -164,7 +164,7 @@ function installPreviews() {
     for(const side of ['top','right','bottom','left']){const label=document.createElement('label');label.textContent=side[0].toUpperCase()+side.slice(1)+' px';const input=document.createElement('input');input.type='number';input.min=0;input.max=side==='top'||side==='bottom'?1870:1030;input.step=1;input.required=true;input.setAttribute('aria-label',surface.name+' '+side+' margin');label.append(input);fields.append(label);inputs[side]=input;}
     const feedback=document.createElement('p');feedback.className='margin-feedback';feedback.setAttribute('role','status');
     const apply=document.createElement('button');apply.type='submit';apply.textContent='Apply scenario';const reset=document.createElement('button');reset.type='button';reset.textContent='Reset defaults';
-    const sync=()=>{const b=surface.bounds;const margins={top:b.top,right:1080-b.right,bottom:1920-b.bottom,left:b.left};values.replaceChildren(...Object.entries(margins).map(([side,n])=>{inputs[side].value=n;const span=document.createElement('span');span.textContent=`${side[0].toUpperCase()+side.slice(1)} ${n}`;return span;}));feedback.textContent=surface.custom?'Custom scenario · not a platform measurement.':surface.scenario?'Planning scenario · not a verified platform specification.':'Registry upper-range recommendation.';};
+    const sync=()=>{const b=surface.bounds;const margins={top:b.top,right:1080-b.right,bottom:1920-b.bottom,left:b.left};values.replaceChildren(...Object.entries(margins).map(([side,n])=>{inputs[side].value=n;const span=document.createElement('span');span.textContent=`${side[0].toUpperCase()+side.slice(1)} ${n}`;return span;}));feedback.textContent=surface.custom?'Custom scenario · not a platform measurement.':surface.template?'Official ad-template reference · confirm the campaign preview.':surface.scenario?'Planning scenario · not a verified platform specification.':'Registry upper-range recommendation.';};
     form.addEventListener('submit',event=>{event.preventDefault();try{surface.bounds=boundsFromMargins(Object.fromEntries(Object.entries(inputs).map(([s,i])=>[s,i.valueAsNumber])));surface.custom=true;sync();refresh();status(surface.name+' planning margins updated.');}catch(e){feedback.textContent=e.message;}});
     reset.addEventListener('click',()=>{surface.bounds={...original};surface.custom=false;sync();refresh();status(surface.name+' default margins restored.');});
     form.append(fields,apply,reset,feedback);details.append(summary,form);sync();
@@ -321,10 +321,10 @@ $('imageReportButton').addEventListener('click',async()=>{
 
 try {
   const response = await fetch('/measurement-registry.json',{signal:AbortSignal.timeout(10000)});if (!response.ok) throw new Error('Registry unavailable');
-  availableSurfaces = buildSurfaces(await response.json());
+  const registry=await response.json();availableSurfaces = buildSurfaces(registry);
   const scenario=(name,top,right,bottom,left=0)=>({name,id:mode,bounds:boundsFromMargins({top,right,bottom,left}),evidence:'Planning scenario · source capture pending',reviewed:'Not independently verified',scenario:true});
   if(mode==='story')availableSurfaces=[scenario('Instagram Stories',250,0,250)];
-  if(mode==='ads')availableSurfaces=[scenario('Paid ad planning',180,0,480)];
+  if(mode==='ads')availableSurfaces=[scenario('Paid ad planning',180,0,480),officialAdSurface(registry)];
   if(mode==='crop')availableSurfaces=[scenario('1:1 center crop',420,0,420),scenario('4:5 center crop',285,0,285),scenario('9:16 full frame',0,0,0)];
   const named={tiktok:'TikTok',reels:'Instagram Reels',shorts:'YouTube Shorts'};
   if(named[mode])availableSurfaces=availableSurfaces.filter(s=>s.name===named[mode]);

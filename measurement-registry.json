@@ -19,7 +19,14 @@
         "right": "160-180",
         "bottom": "380-420"
       },
-      "limitations": "UI can vary by device, app version, account state, captions, placement, and interface updates."
+      "limitations": "UI can vary by device, app version, account state, captions, placement, and interface updates.",
+      "documentationCheckedAt": "2026-10-22",
+      "sourceReferences": [
+        {
+          "url": "https://ads.tiktok.com/resources/help/article/tiktok-auction-in-feed-ads",
+          "scope": "TikTok auction in-feed ads. June 2026 page specifies dimension, caption and additional-format variants, LTR/RTL and anchor files; no universal organic-feed pixel bounds verified."
+        }
+      ]
     },
     {
       "id": "instagram-reels-2026-09",
@@ -35,7 +42,14 @@
         "right": "140-160",
         "bottom": "360-400"
       },
-      "limitations": "Observed crop and overlay behavior is not a universal Instagram specification."
+      "limitations": "Observed crop and overlay behavior is not a universal Instagram specification.",
+      "documentationCheckedAt": "2026-10-22",
+      "sourceReferences": [
+        {
+          "url": "https://www.facebook.com/business/ads/facebook-instagram-reels-ads",
+          "scope": "Meta Reels ads. Safe-zone guidance and checker referenced; no universal organic Reels numeric margin established from this page."
+        }
+      ]
     },
     {
       "id": "youtube-shorts-feed-2026-09",
@@ -51,7 +65,14 @@
         "right": "140-160",
         "bottom": "340-380"
       },
-      "limitations": "UI can vary by device, app version, placement, account state, and interface updates."
+      "limitations": "UI can vary by device, app version, placement, account state, and interface updates.",
+      "documentationCheckedAt": "2026-10-22",
+      "sourceReferences": [
+        {
+          "url": "https://support.google.com/youtube/answer/16215842?hl=en",
+          "scope": "Organic Shorts visual guides identify viewer UI and non-safe edges; no fixed universal pixel inset published in the reviewed section."
+        }
+      ]
     },
     {
       "id": "paid-video-mixed-2026-09",
@@ -62,20 +83,65 @@
       "evidenceStatus": "Official format references and UI source captures pending",
       "classification": "Planning scenario; not a verified platform specification",
       "reviewed": "2026-09",
-      "limitations": "CTA and disclosure overlays vary by objective, format, placement, and platform changes."
+      "limitations": "CTA and disclosure overlays vary by objective, format, placement, and platform changes.",
+      "documentationCheckedAt": "2026-10-22",
+      "sourceReferences": [
+        {
+          "url": "https://ads.tiktok.com/resources/help/article/tiktok-auction-in-feed-ads",
+          "scope": "TikTok auction in-feed ads. June 2026 page specifies dimension, caption and additional-format variants, LTR/RTL and anchor files; no universal organic-feed pixel bounds verified."
+        },
+        {
+          "url": "https://www.facebook.com/business/ads/facebook-instagram-reels-ads",
+          "scope": "Meta Reels ads. Safe-zone guidance and checker referenced; no universal organic Reels numeric margin established from this page."
+        },
+        {
+          "url": "https://support.google.com/google-ads/answer/13547298?hl=en",
+          "scope": "YouTube video ads only. Official vertical diagram and template inspected; not evidence for organic Shorts defaults."
+        }
+      ]
+    },
+    {
+      "id": "youtube-vertical-ads-official-2026-10",
+      "platform": "YouTube vertical video ads",
+      "surface": "Official universal vertical-video ad template reference",
+      "canvas": "1080x1920",
+      "evidence": "Google Ads published diagram and linked template",
+      "evidenceStatus": "Official ad-template reference · reviewed 2026-10-22",
+      "classification": "Official ad-template reference",
+      "documentationCheckedAt": "2026-10-22",
+      "source": "https://support.google.com/google-ads/answer/13547298?hl=en",
+      "sourceDiagram": "https://storage.googleapis.com/support-kms-prod/jbb4hOyc2nGdunbKddqpFAEQpHOQvy582jIR",
+      "sourceAsset": "https://services.google.com/fh/files/misc/youtubesafezoneoverlay_vertical_final.png",
+      "marginsPx": {
+        "top": 288,
+        "right": 192,
+        "bottom": 672,
+        "left": 48
+      },
+      "coordinateMethod": "Pixel labels in Google official 1080x1920 vertical-ad diagram; linked PNG also inspected. Not a device screenshot measurement.",
+      "limitations": "Ad-format reference only. Google states overlays vary with format, campaign type and screen. Confirm campaign preview; not organic Shorts margins or an ad-approval guarantee.",
+      "reviewed": "2026-10-22"
     }
   ],
   "documentationReview": {
-    "date": "2026-10-08",
-    "scope": "Reference review only; no new platform observations or validation of numeric margins.",
+    "date": "2026-10-22",
+    "scope": "Current primary documentation reviewed. Organic estimates are not reclassified as measurements. One independently labelled official vertical-ad template added.",
     "references": [
       {
         "url": "https://ads.tiktok.com/resources/help/article/tiktok-auction-in-feed-ads",
-        "scope": "TikTok In-Feed ads only; not evidence for organic-video defaults."
+        "scope": "TikTok auction in-feed ads. June 2026 page specifies dimension, caption and additional-format variants, LTR/RTL and anchor files; no universal organic-feed pixel bounds verified."
+      },
+      {
+        "url": "https://www.facebook.com/business/ads/facebook-instagram-reels-ads",
+        "scope": "Meta Reels ads. Safe-zone guidance and checker referenced; no universal organic Reels numeric margin established from this page."
+      },
+      {
+        "url": "https://support.google.com/youtube/answer/16215842?hl=en",
+        "scope": "Organic Shorts visual guides identify viewer UI and non-safe edges; no fixed universal pixel inset published in the reviewed section."
       },
       {
         "url": "https://support.google.com/google-ads/answer/13547298?hl=en",
-        "scope": "Google Ads video formats only; not evidence for organic Shorts defaults."
+        "scope": "YouTube video ads only. Official vertical diagram and template inspected; not evidence for organic Shorts defaults."
       }
     ]
   }
