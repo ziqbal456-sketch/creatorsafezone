@@ -104,3 +104,21 @@ At final verification before 05:00 UTC, eleven articles were live and five futur
 All fifteen prior records and timestamps were preserved. Existing date gaps were not backfilled. Live route and guide smoke passed: due articles present in the hub and sitemap, future URLs hidden and absent from the sitemap, no-store protections and private sources blocked. The live hosted audit passed 25 page identity checks, eleven exact article bodies, hub navigation and the same four-width checks. Local future-clock tests cover all sixteen prepared articles; the new guide remains unavailable publicly until its release date. Evidence: docs/qa-artifacts/guides/oct21-* and GUIDE-RESEARCH-2026-10-21.json.
 
 The first one-off hosted identity audit expected top-level identity nodes on the hub; its existing CollectionPage embeds the identities. The assertion was corrected to inspect those embedded values, and full branch/main/live reruns passed. No public identity inconsistency was found. The private register status is refreshed from these verified results. Six prior editorial advisories remain unchanged. Required-check enforcement was not reconfigured; successful exact-commit checks were manually gated. Viewport tests are not physical-device or external-editor execution. Prepared releases continue server-side while this computer is offline; new generation still needs the local runtime.
+
+## October 22 Queue Replenishment — Verified Live
+
+PR https://github.com/ziqbal456-sketch/creatorsafezone/pull/9 was reviewed and merged after Site quality and Cloudflare Builds passed for exact head 69f0294df5ef9954fe3134f56e7023f6eb78b88c. Linked branch preview 6bd43895-a398-4d79-afe9-dee12e8a694f passed route and schedule smoke, 26 published-page identities, twelve exact guide bodies, hub navigation and two published pages at 320/390/768/1440 widths. Main merge f50592fc75bee218f1d720cbdacedc8ace625d68 passed both checks, and its exact preview c3e926b4 passed both smoke suites and the same hosted audit before promotion.
+
+Production version c3e926b4-5da2-4e06-96e4-983e7c37cc9d was promoted at 100% at 2026-10-22T03:20:01.031362Z. Rollback: cb0b38fd-6cf7-465f-8a0b-5a00e3692235. This was a promotion of a GitHub-built main version, with no direct local Worker upload or dashboard source edit. Cloudflare's check/preview appeared after a delay; no build setting, account permission or authentication change was made.
+
+Before 05:00 UTC, twelve due articles were live, and five future audited posts were verified in the deployed GitHub-built queue, all at 05:00 UTC / 10:00 Asia/Karachi:
+
+- October 22: blurry-captions-after-export.
+- October 23: video-plays-sideways-rotation.
+- October 24: translated-subtitles-layout.
+- October 25: vertical-screen-recording-readable-text.
+- October 26: text-backward-video-mirroring (new).
+
+All sixteen prior records and dates are preserved, and missed historical dates remain gaps. Live schedule/route smoke passed: due pages are in the hub and sitemap; future URLs are hidden and absent from the sitemap, including attempts to override time; private source and no-store protections pass. All 26 published-page identities and twelve guide bodies matched source. Live hub navigation and two published pages passed the four-width audit; the new guide was separately reviewed locally at its future release clock, among all seventeen prepared articles. Evidence: docs/qa-artifacts/guides/oct22-* and GUIDE-RESEARCH-2026-10-22.json.
+
+All 77 tests, structural/CSS checks and dry run passed. Four article links returned 200. Its rotation-guide link returned expected scheduled 404 now and 200 locally by the new article's release, after the target's October 23 release. The research helper has zero errors and one warning that the broad cluster is not fully validated; this release researches one distinct supporting job. Six prior editorial advisories remain unchanged. No indexing, traffic, national rank, physical-device or external camera/editor test result is inferred. Exact-commit checks were manually gated; account rules/permissions were not changed. Server-side prepared releases continue offline; new content generation needs the local runtime.

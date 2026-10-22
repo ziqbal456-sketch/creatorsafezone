@@ -136,7 +136,7 @@
       "role": "supporting_guide",
       "intent_key": "text-backward-video-mirroring",
       "reader_job": "Locate the stage and layer introducing mirror writing, correct it and verify the export",
-      "status": "audited_local",
+      "status": "deployed_scheduled",
       "action": "publish_new",
       "source_ids": [
         "search",
@@ -487,7 +487,7 @@
     }
   ],
   "resume": {
-    "first_incomplete_item": "Exact-head GitHub checks and linked hosted branch preview",
+    "first_incomplete_item": null,
     "completed_actions": [
       "Current live schedule smoke passed: twelve due, four future",
       "Three competitor and two primary topic-source reads",
@@ -497,7 +497,10 @@
       "All 77 tests, structural checks, CSS freshness, reviewed editorial audit and dry run passed",
       "All 17 local future-clock guides passed four widths; new mobile screenshot reviewed",
       "Four links returned 200; scheduled rotation target returned expected 404 and local release-clock 200",
-      "Initial live audit passed 26 published-page identities and 12 exact guide bodies"
+      "Initial live audit passed 26 published-page identities and 12 exact guide bodies",
+      "Exact-head GitHub Site quality and Cloudflare checks passed; PR9 reviewed and merged",
+      "Exact branch/main previews passed route and schedule smoke plus 26 published-page identities, 12 exact bodies and four-width navigation/layout checks",
+      "Main-built c3e926b4 promoted at 100%; complete live route/schedule and hosted audit passed"
     ],
     "missing_evidence": [
       "No search volume/allintitle/KGR, national ranks or fresh GSC",
@@ -505,9 +508,8 @@
       "No complete A-Z/modifier capture, full PAA traversal, national rank or video-transcript claim"
     ],
     "next_batch": [
-      "Push feature branch, inspect exact checks and linked preview",
-      "Review merge, main preview and promote",
-      "Record live results and verified queue"
+      "Check newly due guide and sitemap at the next heartbeat",
+      "Replenish when fewer than five future slots remain; preserve existing records and append only free future daily dates"
     ]
   },
   "discovery_observations": {
@@ -547,5 +549,19 @@
     ],
     "result_formats": "Mixed playback-reversal tools, mirror-fix videos, creative backward-text tools, Quora and PAA. No video transcript or AI answer used as primary evidence.",
     "completeness": "Root only; no alphabet/modifier sweep or full result pagination"
+  },
+  "release": {
+    "source_head": "69f0294df5ef9954fe3134f56e7023f6eb78b88c",
+    "main_commit": "f50592fc75bee218f1d720cbdacedc8ace625d68",
+    "pull_request": "https://github.com/ziqbal456-sketch/creatorsafezone/pull/9",
+    "branch_preview": "https://6bd43895-creatorsafezone.z-iqbal456.workers.dev",
+    "main_preview": "https://c3e926b4-creatorsafezone.z-iqbal456.workers.dev",
+    "production_version": "c3e926b4-5da2-4e06-96e4-983e7c37cc9d",
+    "rollback_version": "cb0b38fd-6cf7-465f-8a0b-5a00e3692235",
+    "promoted_at": "2026-10-22T03:20:01.031362Z",
+    "verified_at": "2026-10-22T03:21:22.124Z",
+    "traffic_percent": 100,
+    "due_count": 12,
+    "future_count": 5
   }
 }
