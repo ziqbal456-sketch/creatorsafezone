@@ -1,0 +1,35 @@
+{
+  "checkedAt": "2026-10-22T03:08:31.543Z",
+  "results": [
+    {
+      "url": "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0060612",
+      "http_status": 200,
+      "expected_status": 200,
+      "note": "Accessible now"
+    },
+    {
+      "url": "https://creatorsafezone.com/guides/burned-in-vs-closed-captions",
+      "http_status": 200,
+      "expected_status": 200,
+      "note": "Accessible now"
+    },
+    {
+      "url": "https://support.microsoft.com/en-us/clipchamp/how-to-flip-videos-vertically-or-horizontally",
+      "http_status": 200,
+      "expected_status": 200,
+      "note": "Accessible now"
+    },
+    {
+      "url": "https://creatorsafezone.com/guides/video-plays-sideways-rotation",
+      "http_status": 404,
+      "expected_status": 404,
+      "note": "Scheduled target currently hidden; verified available locally by owner publication time"
+    },
+    {
+      "url": "https://creatorsafezone.com/check-all-platforms",
+      "http_status": 200,
+      "expected_status": 200,
+      "note": "Accessible now"
+    }
+  ]
+}

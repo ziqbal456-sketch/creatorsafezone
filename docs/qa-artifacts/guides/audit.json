@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-21T03:07:26.905Z",
+  "checkedAt": "2026-10-22T03:08:40.694Z",
   "mode": "Local final Worker HTML with simulated release time; not evidence of early live publication",
   "results": [
     {
@@ -170,6 +170,17 @@
     {
       "slug": "vertical-screen-recording-readable-text",
       "words": 598,
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "result": "pass"
+    },
+    {
+      "slug": "text-backward-video-mirroring",
+      "words": 659,
       "widths": [
         320,
         390,

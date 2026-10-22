@@ -1,0 +1,551 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-10-22T03:07:08.599Z",
+  "scope": {
+    "micro_niche": "Readable short-video composition and export troubleshooting",
+    "mode": "expansion",
+    "market": "Global English readers; US English editorial convention. Search tool location unknown; no national-rank claim.",
+    "language": "en",
+    "business_purpose": "Help creators correct reversed footage or text before reviewing placement in the checker",
+    "audience": "Creators preparing captioned demonstrations and selfie recordings",
+    "exclusions": [
+      "Paid services",
+      "Platform margin measurement claims",
+      "Camera-wide mirror assumptions",
+      "Tracking",
+      "Outreach"
+    ],
+    "capacity": "One guide for October 26 restores five future slots",
+    "new_content_hold": false
+  },
+  "sources": [
+    {
+      "id": "search",
+      "source_class": "web_search",
+      "date": "2026-10-22",
+      "access": "read",
+      "coverage": "Queries: text backwards mirrored video how to fix front camera recording; mirrored video text backwards flip horizontally tutorial. Source discovery returned how-to tools and rotate/flip explainers. Location/rank/volume unknown."
+    },
+    {
+      "id": "google-ui",
+      "source_class": "google_ui",
+      "url": "https://www.google.com/search?q=text+backwards+in+video&hl=en",
+      "date": "2026-10-22",
+      "access": "read_after_initial_timeout",
+      "coverage": "A later tab binding showed the completed first page. Read root autocomplete at end cursor, visible PAA parents, one expanded relevant parent and newly exposed children, plus related searches. Signed-in/personalized, Pakistan shown; exact local place omitted. AI-generated answer not used as authority.",
+      "recorded_at": "2026-10-22T03:14:01.278Z",
+      "history": "Initial navigation timed out and inventory showed blank; later successful page inspection supersedes the unavailable status."
+    },
+    {
+      "id": "elevate",
+      "url": "https://elevate.io/blog/how-to-flip-and-rotate-a-video-online",
+      "source_class": "competitor",
+      "date": "2026-10-22",
+      "access": "read",
+      "coverage": "Relevant diagnostic and workflow sections opened and read."
+    },
+    {
+      "id": "deus",
+      "url": "https://deus.video/resources/video-editing/rotate-vs-flip-video/",
+      "source_class": "competitor",
+      "date": "2026-10-22",
+      "access": "read",
+      "coverage": "Relevant diagnostic and workflow sections opened and read."
+    },
+    {
+      "id": "cutfast",
+      "url": "https://cutfa.st/en/blog/how-to-flip-mirror-video-online-free/",
+      "source_class": "competitor",
+      "date": "2026-10-22",
+      "access": "read",
+      "coverage": "Relevant diagnostic and workflow sections opened and read."
+    },
+    {
+      "id": "microsoft",
+      "url": "https://support.microsoft.com/en-us/clipchamp/how-to-flip-videos-vertically-or-horizontally",
+      "source_class": "primary_documentation",
+      "date": "2026-10-22",
+      "access": "read",
+      "coverage": "Relevant diagnostic and workflow sections opened and read."
+    },
+    {
+      "id": "zoom",
+      "url": "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0060612",
+      "source_class": "primary_documentation",
+      "date": "2026-10-22",
+      "access": "read",
+      "coverage": "Relevant diagnostic and workflow sections opened and read."
+    },
+    {
+      "id": "forum",
+      "url": "https://www.reddit.com/r/VideoEditing/comments/13y9yin",
+      "source_class": "forum",
+      "date": "2026-10-22",
+      "access": "read",
+      "coverage": "Original question and visible responses; one anecdotal workflow failure, not prevalence or proof of a fix."
+    },
+    {
+      "id": "google",
+      "url": "https://developers.google.com/search/docs/appearance/structured-data/article",
+      "source_class": "primary_documentation",
+      "date": "2026-10-22",
+      "access": "read",
+      "coverage": "Article author type/name/url and headline/date guidance; existing markup reused, no rich-result promise."
+    },
+    {
+      "id": "existing-bodies",
+      "source_class": "site_source",
+      "date": "2026-10-22",
+      "file": "content/guide-posts.json@be4d94d",
+      "access": "read",
+      "coverage": "Rotation, caption-delivery and PNG article bodies read; all sixteen guide jobs inventoried. No existing owner replaced."
+    },
+    {
+      "id": "local-checker-source",
+      "source_class": "site_source",
+      "date": "2026-10-22",
+      "file": "qa-app.js; qa-exports.js@be4d94d",
+      "access": "read",
+      "coverage": "Preview media and manually drawn regions; PNG review/guide exports and reports. No video mirror edit or text-recognition workflow."
+    }
+  ],
+  "clusters": [
+    {
+      "id": "mirror-diagnosis",
+      "reader_decision": "Which file stage or visual layer needs correction when video text is backward?",
+      "pillar_page_id": "hub",
+      "research_status": "researched",
+      "boundaries": "Reflection diagnosis and layer correction. Sideways orientation, generic fit/fill, caption delivery and UI occlusion retain existing owners.",
+      "validation_scope": "One distinct supporting job researched with three competitor reads and two primary topic sources. The broader hub cluster is not claimed fully validated; search metrics and performance remain unknown."
+    }
+  ],
+  "pages": [
+    {
+      "id": "hub",
+      "role": "site_hub",
+      "existing_url": "https://creatorsafezone.com/guides",
+      "reader_job": "Choose a guide for a specific editing problem",
+      "status": "published",
+      "intent_key": "guide-directory"
+    },
+    {
+      "id": "mirror",
+      "cluster_ids": [
+        "mirror-diagnosis"
+      ],
+      "role": "supporting_guide",
+      "intent_key": "text-backward-video-mirroring",
+      "reader_job": "Locate the stage and layer introducing mirror writing, correct it and verify the export",
+      "status": "audited_local",
+      "action": "publish_new",
+      "source_ids": [
+        "search",
+        "elevate",
+        "deus",
+        "cutfast",
+        "microsoft",
+        "zoom",
+        "forum",
+        "google"
+      ],
+      "serp": {
+        "query": "text backwards mirrored video how to fix front camera recording",
+        "observed_at": "2026-10-22",
+        "market": "Location unknown; English search-tool result set, not verified national Google positions",
+        "source_id": "search",
+        "dominant_format": "Video flip tools and instructional rotate-versus-flip pages"
+      },
+      "competitors": [
+        {
+          "url": "https://elevate.io/blog/how-to-flip-and-rotate-a-video-online",
+          "source_id": "elevate",
+          "actually_read": true,
+          "strength": "Explains flip versus rotation and a concrete editor workflow.",
+          "opportunity": "Add a source/project/export trace and choose the affected layer before correcting."
+        },
+        {
+          "url": "https://deus.video/resources/video-editing/rotate-vs-flip-video/",
+          "source_id": "deus",
+          "actually_read": true,
+          "strength": "Detailed geometry distinctions, burned-in caption and directional-gesture warnings.",
+          "opportunity": "Turn those concerns into a compact symptom-to-layer decision table, preserving correctly oriented additions."
+        },
+        {
+          "url": "https://cutfa.st/en/blog/how-to-flip-mirror-video-online-free/",
+          "source_id": "cutfast",
+          "actually_read": true,
+          "strength": "Accessible selfie use cases and horizontal-versus-vertical choices.",
+          "opportunity": "Avoid universal front-camera assumptions, separate preview evidence from a saved file and avoid unsupported lossless claims."
+        }
+      ],
+      "gap": "A reader can choose horizontal flip yet reverse already-correct captions or chase a self-preview. Provide a stage trace followed by layer-scoped correction and exported-file verification.",
+      "original_contribution": "Three-stage source/project/export comparison, a compact layer decision table and a hypothetical whiteboard-plus-caption example leading to a post-flip placement check. Editorial synthesis, not a claim of exclusive novelty.",
+      "brief": {
+        "slug": "text-backward-video-mirroring",
+        "title": "Text Backward in Video? Fix Mirroring at the Right Layer",
+        "h1": "TEXT BACKWARD in Video? Fix the Right Layer",
+        "description": "Find where video text becomes mirrored, distinguish a self-preview from the saved file, and flip the correct clip without reversing captions or labels.",
+        "publishAt": "2026-10-26T05:00:00.000Z",
+        "direct_answer": "Inspect the saved file and affected layer; apply a horizontal flip only where reflection is present.",
+        "sections": [
+          {
+            "heading": "Find Where the Reversal Starts",
+            "evidence": [
+              "zoom"
+            ],
+            "takeaway": "Compare the same known word in source, project and export."
+          },
+          {
+            "heading": "Match the Fix to the Layer",
+            "evidence": [
+              "microsoft",
+              "existing-bodies"
+            ],
+            "takeaway": "Keep correct captions separate; return to the editable project for a flattened mixture."
+          },
+          {
+            "heading": "Apply a Horizontal Flip and Check the Meaning",
+            "evidence": [
+              "microsoft"
+            ],
+            "takeaway": "Select the affected clip, then inspect text, logos, gestures and narration."
+          },
+          {
+            "heading": "Verify the Export Before Checking Placement",
+            "evidence": [
+              "local-checker-source"
+            ],
+            "takeaway": "Inspect a rendered test, then repeat the manual placement check."
+          }
+        ],
+        "conversion_purpose": "Use the checker after correcting content; the checker does not flip, OCR or validate instructions.",
+        "visual_plan": "The two-column decision table carries the diagnostic comparison. No generated camera capture or decorative image needed.",
+        "exclusions": [
+          "Universal camera defaults",
+          "Lossless export claims",
+          "App-specific steps without primary documentation",
+          "New platform margins"
+        ]
+      },
+      "completion_gates": [
+        "Editorial and primary-source audit",
+        "All prepared guides at future-clock boundary",
+        "Identity/discovery and existing tests",
+        "Link checks aware of scheduled internal URLs",
+        "Four-width mobile/readability review",
+        "Exact-head CI and linked branch preview",
+        "Reviewed merge, main preview, exact-version promotion and live verification"
+      ]
+    },
+    {
+      "id": "existing-caption-delivery",
+      "role": "supporting_guide",
+      "intent_key": "burned-in-vs-closed-captions",
+      "existing_url": "https://creatorsafezone.com/guides/burned-in-vs-closed-captions",
+      "reader_job": "Choose caption delivery and diagnose double subtitles",
+      "status": "published",
+      "action": "retain_review"
+    },
+    {
+      "id": "existing-rotation",
+      "role": "supporting_guide",
+      "intent_key": "video-plays-sideways-rotation",
+      "existing_url": "https://creatorsafezone.com/guides/video-plays-sideways-rotation",
+      "reader_job": "Correct sideways orientation before placement",
+      "status": "deployed_scheduled",
+      "action": "retain_review",
+      "publish_at": "2026-10-23T05:00:00.000Z"
+    },
+    {
+      "id": "existing-comparison",
+      "role": "master_pillar",
+      "intent_key": "multi-platform-comparison",
+      "existing_url": "https://creatorsafezone.com/check-all-platforms",
+      "reader_job": "Compare manually marked composition regions across configured platform guides",
+      "status": "published",
+      "action": "retain_review"
+    }
+  ],
+  "queries": [
+    {
+      "id": "mirror-q0",
+      "text": "text backward in video",
+      "source_type": "proposed",
+      "owner_page_id": "mirror",
+      "source_ids": [
+        "search",
+        "forum"
+      ],
+      "note": "Editorial grouping informed by result pages and forum language; not observed Google suggestions or measured keyword demand.",
+      "metrics": {
+        "volume": null,
+        "difficulty": null
+      },
+      "kgr": {
+        "status": "unscreened",
+        "reason": "No traceable monthly volume or allintitle estimate"
+      }
+    },
+    {
+      "id": "mirror-q1",
+      "text": "fix mirrored video text",
+      "source_type": "proposed",
+      "owner_page_id": "mirror",
+      "source_ids": [
+        "search",
+        "forum"
+      ],
+      "note": "Editorial grouping informed by result pages and forum language; not observed Google suggestions or measured keyword demand.",
+      "metrics": {
+        "volume": null,
+        "difficulty": null
+      },
+      "kgr": {
+        "status": "unscreened",
+        "reason": "No traceable monthly volume or allintitle estimate"
+      }
+    },
+    {
+      "id": "mirror-q2",
+      "text": "flip recorded video horizontally",
+      "source_type": "proposed",
+      "owner_page_id": "mirror",
+      "source_ids": [
+        "search",
+        "forum"
+      ],
+      "note": "Editorial grouping informed by result pages and forum language; not observed Google suggestions or measured keyword demand.",
+      "metrics": {
+        "volume": null,
+        "difficulty": null
+      },
+      "kgr": {
+        "status": "unscreened",
+        "reason": "No traceable monthly volume or allintitle estimate"
+      }
+    },
+    {
+      "id": "mirror-q3",
+      "text": "mirrored preview vs saved video",
+      "source_type": "proposed",
+      "owner_page_id": "mirror",
+      "source_ids": [
+        "search",
+        "forum"
+      ],
+      "note": "Editorial grouping informed by result pages and forum language; not observed Google suggestions or measured keyword demand.",
+      "metrics": {
+        "volume": null,
+        "difficulty": null
+      },
+      "kgr": {
+        "status": "unscreened",
+        "reason": "No traceable monthly volume or allintitle estimate"
+      }
+    },
+    {
+      "id": "mirror-paa1",
+      "text": "Why does text appear backwards in video?",
+      "source_type": "google_paa",
+      "owner_page_id": "mirror",
+      "source_ids": [
+        "google-ui"
+      ],
+      "capture": {
+        "input": "text backwards in video",
+        "observed_at": "2026-10-22T03:14:01.278Z",
+        "requested_market": "Language en; country not forced",
+        "visible_location": "Pakistan; precise location omitted",
+        "language": "English; footer help locale en-PK",
+        "device": "Desktop in-app browser; viewport not measured",
+        "personalization": "Signed in; Results are personalised visible",
+        "parent": null,
+        "interaction": "Expanded once",
+        "completeness": "One relevant parent expanded; no complete PAA traversal"
+      },
+      "note": "Question observed directly. Expanded answer was AI Overview; not relied on for factual claims."
+    },
+    {
+      "id": "mirror-paa-child",
+      "text": "How to make words not backwards on camera?",
+      "source_type": "google_paa",
+      "owner_page_id": "mirror",
+      "source_ids": [
+        "google-ui"
+      ],
+      "capture": {
+        "input": "text backwards in video",
+        "observed_at": "2026-10-22T03:14:01.278Z",
+        "requested_market": "Language en; country not forced",
+        "visible_location": "Pakistan",
+        "language": "English",
+        "device": "Desktop in-app browser",
+        "personalization": "Signed in/personalized",
+        "parent": "mirror-paa1",
+        "interaction": "Visible collapsed child after parent expansion",
+        "completeness": "Observed wording only; child not expanded"
+      }
+    }
+  ],
+  "entities": [
+    {
+      "id": "horizontal-flip",
+      "label": "Horizontal video reflection",
+      "type": "editing_operation",
+      "aliases": [
+        "horizontal flip",
+        "mirror"
+      ],
+      "identity_url": null
+    },
+    {
+      "id": "self-preview",
+      "label": "Mirrored self-preview",
+      "type": "display_setting",
+      "identity_url": null
+    },
+    {
+      "id": "text-layer",
+      "label": "Editable text layer",
+      "type": "composition_component",
+      "identity_url": null
+    }
+  ],
+  "relationships": [
+    {
+      "id": "flip-text",
+      "subject_id": "horizontal-flip",
+      "predicate": "corrects_when_reflected",
+      "value": "Backward-facing text in the selected video or image asset",
+      "source_ids": [
+        "microsoft"
+      ],
+      "status": "verified",
+      "context": "Microsoft Clipchamp documentation; selected asset rather than every layer."
+    },
+    {
+      "id": "preview-scope",
+      "subject_id": "self-preview",
+      "predicate": "affects",
+      "value": "How the Zoom user sees their own preview",
+      "source_ids": [
+        "zoom"
+      ],
+      "status": "verified",
+      "context": "Scoped to the documented Zoom preview option; other app/file behavior must be checked."
+    }
+  ],
+  "links": [
+    {
+      "id": "to-delivery",
+      "from_page_id": "mirror",
+      "to_page_id": "existing-caption-delivery",
+      "section": "Match the Fix to the Layer",
+      "natural_anchor": "caption-layer guide",
+      "reader_reason": "Determine permanent versus separately supplied caption text."
+    },
+    {
+      "id": "to-rotation",
+      "from_page_id": "mirror",
+      "to_page_id": "existing-rotation",
+      "section": "Apply a Horizontal Flip",
+      "natural_anchor": "sideways-video guide",
+      "reader_reason": "Handle actual orientation separately. Target scheduled October 23, before this October 26 guide."
+    },
+    {
+      "id": "to-checker",
+      "from_page_id": "mirror",
+      "to_page_id": "existing-comparison",
+      "section": "Verify the Export",
+      "natural_anchor": "comparison checker",
+      "reader_reason": "Reflection moves content across the canvas; repeat manual placement after editing."
+    }
+  ],
+  "schema_plan": [
+    {
+      "type": "Article",
+      "rationale": "Reuse visible author/publisher/site IDs and actual release headline/date. No new sameAs, credentials, ratings or FAQ markup. Official Google guidance reviewed October 22."
+    }
+  ],
+  "growth_plan": [
+    "Append October 26 at 05:00 UTC; preserve all sixteen existing records and dates.",
+    "Research one new distinct job when the deployed buffer falls below five; do not split synonyms to fill a calendar.",
+    "No new GSC or traffic outcome inferred; future review should use actual performance evidence when available."
+  ],
+  "coverage": [
+    {
+      "cluster_id": "mirror-diagnosis",
+      "competitor_reads": 3,
+      "primary_checks": 2,
+      "schema_checks": 1,
+      "forum_reads": 1,
+      "google_ui": "First page read after initial timeout; root suggestions and one PAA expansion",
+      "autocomplete": "Eight visible root predictions, mostly playback reversal; excluded",
+      "paa": "Four initial parents; first relevant parent expanded and two children observed",
+      "metrics": "Volume, difficulty, KGR and fresh GSC unknown",
+      "existing_owners": "Read rotation, burned-in captions and PNG article bodies; inventory all sixteen guide jobs. New job concerns reflection and layer selection, not angle or delivery."
+    }
+  ],
+  "resume": {
+    "first_incomplete_item": "Exact-head GitHub checks and linked hosted branch preview",
+    "completed_actions": [
+      "Current live schedule smoke passed: twelve due, four future",
+      "Three competitor and two primary topic-source reads",
+      "Existing-owner body review and original draft",
+      "Google Article guidance review",
+      "Guarded append preserved sixteen records and timestamps",
+      "All 77 tests, structural checks, CSS freshness, reviewed editorial audit and dry run passed",
+      "All 17 local future-clock guides passed four widths; new mobile screenshot reviewed",
+      "Four links returned 200; scheduled rotation target returned expected 404 and local release-clock 200",
+      "Initial live audit passed 26 published-page identities and 12 exact guide bodies"
+    ],
+    "missing_evidence": [
+      "No search volume/allintitle/KGR, national ranks or fresh GSC",
+      "No camera, Zoom or Clipchamp execution; instructions documentation-verified only",
+      "No complete A-Z/modifier capture, full PAA traversal, national rank or video-transcript claim"
+    ],
+    "next_batch": [
+      "Push feature branch, inspect exact checks and linked preview",
+      "Review merge, main preview and promote",
+      "Record live results and verified queue"
+    ]
+  },
+  "discovery_observations": {
+    "input": "text backwards in video",
+    "cursor": "End after End key",
+    "recorded_at": "2026-10-22T03:14:01.278Z",
+    "root_autocomplete": [
+      "reverse video",
+      "reverse video online",
+      "reverse video online free",
+      "how to reverse a video on android",
+      "video reverse app",
+      "clideo reverse video",
+      "how to reverse a video on capcut",
+      "reverse video editor"
+    ],
+    "autocomplete_disposition": "Playback reversal is a different job and excluded from this article. Observed predictions are not demand metrics.",
+    "paa_initial": [
+      "Why does text appear backwards in video?",
+      "How to make text appear backwards?",
+      "How can I reverse a video backwards?",
+      "How do I put a text behind a video?"
+    ],
+    "children_after_expansion": [
+      "How to fix a backwards video?",
+      "How to make words not backwards on camera?"
+    ],
+    "related_searches": [
+      "Text backwards in video online",
+      "Reverse video",
+      "Text backwards in video free",
+      "Text backwards in video download",
+      "Reverse video online",
+      "Reverse video online free",
+      "How to reverse a video on Android",
+      "Video reverse app"
+    ],
+    "result_formats": "Mixed playback-reversal tools, mirror-fix videos, creative backward-text tools, Quora and PAA. No video transcript or AI answer used as primary evidence.",
+    "completeness": "Root only; no alphabet/modifier sweep or full result pagination"
+  }
+}

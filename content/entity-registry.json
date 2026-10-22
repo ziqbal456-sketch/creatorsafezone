@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "reviewed_at": "2026-10-21T03:18:22.502Z",
+  "reviewed_at": "2026-10-22T03:07:50.587Z",
   "origin": "https://creatorsafezone.com",
   "scope": "Identity and intent ownership for existing pages and the audited guide queue; private editorial record, not extra public schema.",
   "runtime_source": "site-identity.js",
@@ -379,7 +379,7 @@
       "path": "/guides/transparent-png-overlay-black-background",
       "intent_key": "transparent-png-overlay-black-background",
       "reader_job": "Transparent PNG Looks Black? Check Alpha and Layers",
-      "status": "deployed_scheduled",
+      "status": "published",
       "publish_at": "2026-10-21T05:00:00.000Z",
       "pillar": "/guides",
       "topic_keys": [
@@ -445,6 +445,21 @@
       "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
       "publisher_id": "https://creatorsafezone.com/#organization",
       "website_id": "https://creatorsafezone.com/#website"
+    },
+    {
+      "path": "/guides/text-backward-video-mirroring",
+      "intent_key": "text-backward-video-mirroring",
+      "reader_job": "Inspect the saved file and affected layer; apply a horizontal flip only where reflection is present.",
+      "status": "audited_local",
+      "publish_at": "2026-10-26T05:00:00.000Z",
+      "pillar": "/guides",
+      "topic_keys": [
+        "video-reflection",
+        "composition-layer-scope"
+      ],
+      "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
+      "publisher_id": "https://creatorsafezone.com/#organization",
+      "website_id": "https://creatorsafezone.com/#website"
     }
   ],
   "topic_relationships": [
@@ -475,6 +490,14 @@
       "evidence": "https://support.microsoft.com/en-us/clipchamp/create-a-new-screen-recording",
       "supporting_evidence": "https://support.microsoft.com/en-us/clipchamp/how-to-crop-videos-or-images-in-clipchamp",
       "checked_at": "2026-10-21",
+      "identity_link": false
+    },
+    {
+      "topic": "video-reflection",
+      "relationship": "Horizontal flip corrects backward-facing text in a selected asset; a self-preview setting is not proof of the saved file state",
+      "evidence": "https://support.microsoft.com/en-us/clipchamp/how-to-flip-videos-vertically-or-horizontally",
+      "supporting_evidence": "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0060612",
+      "checked_at": "2026-10-22",
       "identity_link": false
     }
   ],
