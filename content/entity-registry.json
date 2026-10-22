@@ -91,7 +91,7 @@
     {
       "path": "/",
       "intent_key": "checker-general",
-      "reader_job": "Check a vertical video and choose the next editing task",
+      "reader_job": "Check a vertical video immediately, compare platform placement and export an editing guide",
       "status": "published",
       "pillar": "/",
       "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
@@ -121,7 +121,7 @@
     {
       "path": "/instagram-reels-safe-zone",
       "intent_key": "reels-placement",
-      "reader_job": "Inspect full-screen Reel text and logo placement",
+      "reader_job": "Inspect full-screen Reel subtitle and logo placement and download a planning overlay",
       "status": "published",
       "pillar": "/",
       "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
