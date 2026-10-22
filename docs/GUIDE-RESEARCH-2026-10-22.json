@@ -31,8 +31,10 @@
       "source_class": "google_ui",
       "url": "https://www.google.com/search?q=text+backwards+in+video&hl=en",
       "date": "2026-10-22",
-      "access": "unavailable",
-      "coverage": "In-app tab navigation timed out; tab inventory still showed about:blank. No search page, autocomplete, PAA or related searches observed; no challenge bypass attempted."
+      "access": "read_after_initial_timeout",
+      "coverage": "A later tab binding showed the completed first page. Read root autocomplete at end cursor, visible PAA parents, one expanded relevant parent and newly exposed children, plus related searches. Signed-in/personalized, Pakistan shown; exact local place omitted. AI-generated answer not used as authority.",
+      "recorded_at": "2026-10-22T03:14:01.278Z",
+      "history": "Initial navigation timed out and inventory showed blank; later successful page inspection supersedes the unavailable status."
     },
     {
       "id": "elevate",
@@ -114,7 +116,7 @@
       "pillar_page_id": "hub",
       "research_status": "researched",
       "boundaries": "Reflection diagnosis and layer correction. Sideways orientation, generic fit/fill, caption delivery and UI occlusion retain existing owners.",
-      "validation_scope": "One distinct supporting job researched with three competitor reads and two primary topic sources. The broader hub cluster is not claimed fully validated; missing Google UI and performance metrics remain explicit."
+      "validation_scope": "One distinct supporting job researched with three competitor reads and two primary topic sources. The broader hub cluster is not claimed fully validated; search metrics and performance remain unknown."
     }
   ],
   "pages": [
@@ -340,6 +342,49 @@
         "status": "unscreened",
         "reason": "No traceable monthly volume or allintitle estimate"
       }
+    },
+    {
+      "id": "mirror-paa1",
+      "text": "Why does text appear backwards in video?",
+      "source_type": "google_paa",
+      "owner_page_id": "mirror",
+      "source_ids": [
+        "google-ui"
+      ],
+      "capture": {
+        "input": "text backwards in video",
+        "observed_at": "2026-10-22T03:14:01.278Z",
+        "requested_market": "Language en; country not forced",
+        "visible_location": "Pakistan; precise location omitted",
+        "language": "English; footer help locale en-PK",
+        "device": "Desktop in-app browser; viewport not measured",
+        "personalization": "Signed in; Results are personalised visible",
+        "parent": null,
+        "interaction": "Expanded once",
+        "completeness": "One relevant parent expanded; no complete PAA traversal"
+      },
+      "note": "Question observed directly. Expanded answer was AI Overview; not relied on for factual claims."
+    },
+    {
+      "id": "mirror-paa-child",
+      "text": "How to make words not backwards on camera?",
+      "source_type": "google_paa",
+      "owner_page_id": "mirror",
+      "source_ids": [
+        "google-ui"
+      ],
+      "capture": {
+        "input": "text backwards in video",
+        "observed_at": "2026-10-22T03:14:01.278Z",
+        "requested_market": "Language en; country not forced",
+        "visible_location": "Pakistan",
+        "language": "English",
+        "device": "Desktop in-app browser",
+        "personalization": "Signed in/personalized",
+        "parent": "mirror-paa1",
+        "interaction": "Visible collapsed child after parent expansion",
+        "completeness": "Observed wording only; child not expanded"
+      }
     }
   ],
   "entities": [
@@ -434,9 +479,9 @@
       "primary_checks": 2,
       "schema_checks": 1,
       "forum_reads": 1,
-      "google_ui": "Navigation timeout; no visible result-page observation",
-      "autocomplete": "Unavailable",
-      "paa": "Unavailable",
+      "google_ui": "First page read after initial timeout; root suggestions and one PAA expansion",
+      "autocomplete": "Eight visible root predictions, mostly playback reversal; excluded",
+      "paa": "Four initial parents; first relevant parent expanded and two children observed",
       "metrics": "Volume, difficulty, KGR and fresh GSC unknown",
       "existing_owners": "Read rotation, burned-in captions and PNG article bodies; inventory all sixteen guide jobs. New job concerns reflection and layer selection, not angle or delivery."
     }
@@ -455,14 +500,52 @@
       "Initial live audit passed 26 published-page identities and 12 exact guide bodies"
     ],
     "missing_evidence": [
-      "Google UI failed to navigate; no autocomplete/PAA evidence",
       "No search volume/allintitle/KGR, national ranks or fresh GSC",
-      "No camera, Zoom or Clipchamp execution; instructions documentation-verified only"
+      "No camera, Zoom or Clipchamp execution; instructions documentation-verified only",
+      "No complete A-Z/modifier capture, full PAA traversal, national rank or video-transcript claim"
     ],
     "next_batch": [
       "Push feature branch, inspect exact checks and linked preview",
       "Review merge, main preview and promote",
       "Record live results and verified queue"
     ]
+  },
+  "discovery_observations": {
+    "input": "text backwards in video",
+    "cursor": "End after End key",
+    "recorded_at": "2026-10-22T03:14:01.278Z",
+    "root_autocomplete": [
+      "reverse video",
+      "reverse video online",
+      "reverse video online free",
+      "how to reverse a video on android",
+      "video reverse app",
+      "clideo reverse video",
+      "how to reverse a video on capcut",
+      "reverse video editor"
+    ],
+    "autocomplete_disposition": "Playback reversal is a different job and excluded from this article. Observed predictions are not demand metrics.",
+    "paa_initial": [
+      "Why does text appear backwards in video?",
+      "How to make text appear backwards?",
+      "How can I reverse a video backwards?",
+      "How do I put a text behind a video?"
+    ],
+    "children_after_expansion": [
+      "How to fix a backwards video?",
+      "How to make words not backwards on camera?"
+    ],
+    "related_searches": [
+      "Text backwards in video online",
+      "Reverse video",
+      "Text backwards in video free",
+      "Text backwards in video download",
+      "Reverse video online",
+      "Reverse video online free",
+      "How to reverse a video on Android",
+      "Video reverse app"
+    ],
+    "result_formats": "Mixed playback-reversal tools, mirror-fix videos, creative backward-text tools, Quora and PAA. No video transcript or AI answer used as primary evidence.",
+    "completeness": "Root only; no alphabet/modifier sweep or full result pagination"
   }
 }
