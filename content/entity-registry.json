@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "reviewed_at": "2026-10-22T03:07:50.587Z",
+  "reviewed_at": "2026-10-22T03:21:22.124Z",
   "origin": "https://creatorsafezone.com",
   "scope": "Identity and intent ownership for existing pages and the audited guide queue; private editorial record, not extra public schema.",
   "runtime_source": "site-identity.js",
@@ -450,7 +450,7 @@
       "path": "/guides/text-backward-video-mirroring",
       "intent_key": "text-backward-video-mirroring",
       "reader_job": "Inspect the saved file and affected layer; apply a horizontal flip only where reflection is present.",
-      "status": "audited_local",
+      "status": "deployed_scheduled",
       "publish_at": "2026-10-26T05:00:00.000Z",
       "pillar": "/guides",
       "topic_keys": [
