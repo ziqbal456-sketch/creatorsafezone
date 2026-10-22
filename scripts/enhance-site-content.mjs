@@ -2,7 +2,7 @@
 import {readFile,writeFile} from 'node:fs/promises';
 import {author,publisher,website,identityNodes,authorCredit,jsonLd,breadcrumb,ORIGIN} from '../site-identity.js';
 const inventory = {
- 'index':['Free VIDEO SAFE ZONE CHECKER<br><span>2026 · TikTok, Reels &amp; Shorts</span>','Free Video Safe Zone Checker 2026'],
+ 'index':['Free VIDEO SAFE ZONE CHECKER','Free Video Safe Zone Checker 2026'],
  'check-all-platforms':['Free SAFE ZONE COMPARISON<br><span>2026 · Build an Editing Brief</span>','Free Safe Zone Comparison Tool 2026'],
  'tiktok-safe-zone':['Free TikTok SAFE ZONE Checker (2026)','Free TikTok Safe Zone Checker 2026'],
  'instagram-reels-safe-zone':['Free Instagram Reels SAFE ZONE Checker (2026)','Free Instagram Reels Safe Zone Checker 2026'],

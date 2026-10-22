@@ -138,6 +138,7 @@ function installPreviews() {
     if(!picker){picker=document.createElement('nav');picker.id='mobilePlatforms';picker.className='mobile-platforms';picker.setAttribute('aria-label','Choose a platform preview');$('previews').before(picker);}
     picker.replaceChildren(...surfaces.map((surface,index)=>{
       const button=document.createElement('button');button.type='button';button.textContent=surface.name;
+      if(mode==='home'){button.textContent=surface.name==='Instagram Reels'?'Reels':surface.name==='YouTube Shorts'?'Shorts':surface.name;button.setAttribute('aria-label',surface.name);}
       button.setAttribute('aria-controls','platform-preview-'+index);button.setAttribute('aria-pressed',String(index===mobileSurface));
       button.addEventListener('click',()=>{
         mobileSurface=index;
@@ -231,7 +232,7 @@ async function loadFile(file) {
 function loadSample(){
   cancelLoad();cleanupMedia();sample=true;media=document.createElement('canvas');media.width=1080;media.height=1920;history=[];
   elements=[{id:nextId++,label:'Headline sample',text:'A story worth sharing',x:90,y:245,width:730,height:90},{id:nextId++,label:'Subtitle sample',text:'Will this caption stay visible?',x:90,y:1436,width:740,height:78}];selected=elements[1].id;
-  $('mediaInfo').textContent='Interactive local sample · 1080 × 1920. Drag the sample caption: the text moves with it.';
+  $('mediaInfo').textContent=mode==='home'?'Demo preview · choose your own file to check it.':'Interactive local sample · 1080 × 1920. Drag the sample caption: the text moves with it.';
   $('compositionInfo').textContent='Try moving the example caption. Its starting position demonstrates the different default margins.';
   refresh();status(comparisonMode?'Sample loaded. Compare the caption results, then try a shared placement or use your own media.':'Sample loaded. Mark or move regions to check your layout, or choose your own media.');
 }
