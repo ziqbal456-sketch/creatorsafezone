@@ -2,15 +2,15 @@
 import {readFile,writeFile} from 'node:fs/promises';
 import {author,publisher,website,identityNodes,authorCredit,jsonLd,breadcrumb,ORIGIN} from '../site-identity.js';
 const inventory = {
- 'index':['VIDEO SAFE ZONE CHECKER<br><span>for TikTok, Reels &amp; Shorts</span>','Video Safe Zone Checker for TikTok, Reels & Shorts'],
- 'check-all-platforms':['COMPARE SAFE ZONES<br><span>and Build an Editing Brief</span>','Compare Safe Zones: Build a Video Editing Brief'],
- 'tiktok-safe-zone':['TikTok SAFE ZONE Checker','TikTok Safe Zone Checker'],
- 'instagram-reels-safe-zone':['Instagram Reels SAFE ZONE Checker','Instagram Reels Safe Zone Checker'],
- 'youtube-shorts-safe-zone':['YouTube Shorts SAFE ZONE Checker','YouTube Shorts Safe Zone Checker'],
- 'capcut-safe-zone-template':['CapCut SAFE ZONE Guide and Overlay','CapCut Safe Zone Guide and Overlay'],
- 'instagram-story-safe-zone':['Instagram Story SAFE ZONE Checker','Instagram Story Safe Zone Checker'],
- 'instagram-grid-crop-previewer':['Instagram CROP Preview and Planner','Instagram Crop Preview and Planner'],
- 'vertical-video-ad-specs':['Vertical Video AD SAFE ZONE Planner','Vertical Video Ad Safe Zone Planner'],
+ 'index':['Free VIDEO SAFE ZONE CHECKER<br><span>2026 · TikTok, Reels &amp; Shorts</span>','Free Video Safe Zone Checker 2026'],
+ 'check-all-platforms':['Free SAFE ZONE COMPARISON<br><span>2026 · Build an Editing Brief</span>','Free Safe Zone Comparison Tool 2026'],
+ 'tiktok-safe-zone':['Free TikTok SAFE ZONE Checker (2026)','Free TikTok Safe Zone Checker 2026'],
+ 'instagram-reels-safe-zone':['Free Instagram Reels SAFE ZONE Checker (2026)','Free Instagram Reels Safe Zone Checker 2026'],
+ 'youtube-shorts-safe-zone':['Free YouTube Shorts SAFE ZONE Checker (2026)','Free YouTube Shorts Safe Zone Checker 2026'],
+ 'capcut-safe-zone-template':['Free CapCut SAFE ZONE Overlay (2026)','Free CapCut Safe Zone Overlay 2026'],
+ 'instagram-story-safe-zone':['Free Instagram Story SAFE ZONE Checker (2026)','Free Instagram Story Safe Zone Checker 2026'],
+ 'instagram-grid-crop-previewer':['Free Instagram CROP Previewer (2026)','Free Instagram Crop Previewer 2026'],
+ 'vertical-video-ad-specs':['Free Video AD SAFE ZONE Planner (2026)','Free Video Ad Safe Zone Planner 2026'],
  'methodology':['How Our SAFE ZONE Calculations Work','How Our Safe Zone Calculations Work'],
  'about':['About CreatorSafeZone and Zafar Iqbal','About CreatorSafeZone and Zafar Iqbal'],
  'privacy-policy':['PRIVACY POLICY: How Your Media Is Handled','Privacy Policy: How Your Media Is Handled'],
@@ -46,17 +46,20 @@ for(const [slug,[h1,title]] of Object.entries(inventory)) {
  html=html.replace('class="tool-note">Choose','class="tool-note">Free to use. Choose');
  html=html.replace(/<title>[\s\S]*?<\/title>/,'<title>'+escape(title)+' | CreatorSafeZone</title>');
  html=html.replace(/(<meta[^>]*property="og:title"[^>]*content=")[^"]*/,(_,open)=>open+escape(title));
+ html=html.replace(/(<meta[^>]*name="twitter:title"[^>]*content=")[^"]*/,(_,open)=>open+escape(title));
+ if(html.includes('id="mediaInput"')&&!html.includes('class="source-review'))html=html.replace('<div class="tool-toolbar">','<details class="source-review panel"><summary>2026 source review · October 22</summary><p>This tool is free to use. Official guidance was reviewed on <time datetime="2026-10-22">October 22, 2026</time>. Organic defaults remain planning estimates; ad templates have separate scopes. A source review is not a new device measurement. <a href="/methodology#official-source-review">Read the source checks and limits</a>.</p></details><div class="tool-toolbar">');
  const old=[...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].flatMap(m=>{const v=JSON.parse(m[1]);return v['@graph']||[v];});
  const app=old.find(n=>n['@type']==='WebApplication');
  const article=old.find(n=>n['@type']==='Article');
  const page={'@type':slug==='about'?'AboutPage':'WebPage','@id':url+'#webpage',url,name:title,isPartOf:{'@id':website['@id']},author:{'@id':author['@id']},publisher:{'@id':publisher['@id']}};
  const nodes=identityNodes();
  if(app){
-  Object.assign(app,{'@id':url+'#app',name:slug==='check-all-platforms'?'Cross-Platform Safe Zone Checker':title,operatingSystem:'Web browser',browserRequirements:'Requires JavaScript and a modern browser with Canvas support.',isAccessibleForFree:true,offers:{'@type':'Offer',price:0,priceCurrency:'USD'},author:{'@id':author['@id']},publisher:{'@id':publisher['@id']}});
+  Object.assign(app,{'@id':url+'#app',url,name:app.name||title,operatingSystem:'Web browser',browserRequirements:'Requires JavaScript and a modern browser with Canvas support.',isAccessibleForFree:true,offers:{'@type':'Offer',price:0,priceCurrency:'USD'},author:{'@id':author['@id']},publisher:{'@id':publisher['@id']},isPartOf:{'@id':website['@id']},mainEntityOfPage:{'@id':page['@id']},dateModified:'2026-10-22'});
+  page.dateModified='2026-10-22';
   page.mainEntity={'@id':app['@id']};nodes.push(app);
  }
  if(article){
-  Object.assign(article,{'@id':url+'#article',headline:plain,author:{'@id':author['@id']},publisher:{'@id':publisher['@id']},dateModified:'2026-10-08',mainEntityOfPage:{'@id':page['@id']}});
+  Object.assign(article,{'@id':url+'#article',headline:plain,author:{'@id':author['@id']},publisher:{'@id':publisher['@id']},dateModified:slug==='methodology'?'2026-10-22':article.dateModified,mainEntityOfPage:{'@id':page['@id']}});
   nodes.push(article);page.mainEntity={'@id':article['@id']};
  }
  if(slug==='about')page.mainEntity=[{'@id':publisher['@id']},{'@id':author['@id']}];

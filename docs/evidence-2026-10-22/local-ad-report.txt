@@ -1,0 +1,15 @@
+CreatorSafeZone — placement planning report
+Canvas: 1080 × 1920; composition: fit (without cropping).
+Static layout review.
+Only manually marked regions are checked. This is not automatic text detection or a review of every video frame.
+Safe = at least 24 px inside every boundary; Warning = inside with less than 24 px clearance; Covered = overlaps an estimated margin.
+These are recommendations, not verified platform measurements. Confirm in the destination app before publishing.
+
+YouTube vertical ads · official template: Covered
+Evidence: Official ad-template reference · reviewed 2026-10-22; registry review label: 2026-10-22
+Margins (px): top 288, right 192, bottom 672, left 48. Official vertical-ad template reference; not organic Shorts margins.
+Reference: https://support.google.com/google-ads/answer/13547298?hl=en
+Headline sample [x 90, y 245, width 730, height 90]: Covered. Move approximately 67 px down.
+Subtitle sample [x 90, y 1436, width 740, height 78]: Covered. Move approximately 290 px up.
+
+Methodology: https://creatorsafezone.com/methodology

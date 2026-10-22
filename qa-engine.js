@@ -22,6 +22,12 @@ export function validRect(rect) {
     rect.x >= 0 && rect.y >= 0 && rect.x + rect.width <= CANVAS.width && rect.y + rect.height <= CANVAS.height;
 }
 
+export function officialAdSurface(registry) {
+  const record=registry.records.find(r=>r.id==='youtube-vertical-ads-official-2026-10');
+  if(!record||record.classification!=='Official ad-template reference')throw new Error('Missing official ad-template record');
+  return {name:'YouTube vertical ads · official template',id:record.id,bounds:boundsFromMargins(record.marginsPx),evidence:record.evidenceStatus,reviewed:record.documentationCheckedAt,template:true,sourceUrl:record.source};
+}
+
 export function assess(rect, surface) {
   if (!validRect(rect)) throw new Error('Element must fit within the 1080 × 1920 canvas.');
   const b = surface.bounds;
@@ -47,10 +53,11 @@ export function makeReport(elements, surfaces, options = {}) {
   return ['CreatorSafeZone — placement planning report', 'Canvas: 1080 × 1920; composition: ' + (options.fit === 'cover' ? 'center fill (cropped).' : 'fit (without cropping).'),
     options.frame == null ? 'Static layout review.' : `Video frame reviewed: ${options.frame.toFixed(2)} seconds. Other moments need separate review.`,
     'Only manually marked regions are checked. This is not automatic text detection or a review of every video frame.',
-    'Safe = at least 24 px inside every boundary; Warning = inside with less than 24 px clearance; Covered = overlaps an estimated margin.',
-    'These are recommendations, not verified platform measurements. Confirm in the destination app before publishing.', '',
+    'Safe = at least 24 px inside every boundary; Warning = inside with less than 24 px clearance; Covered = overlaps a selected boundary.',
+    'Bounds are planning estimates or labelled ad-template references, not verified platform measurements. Confirm in the destination app before publishing.', '',
     ...surfaces.flatMap(s => [s.name + ': ' + summarize(elements, s), 'Evidence: ' + s.evidence + '; registry review label: ' + s.reviewed,
-      `Margins (px): top ${s.bounds.top}, right ${1080-s.bounds.right}, bottom ${1920-s.bounds.bottom}, left ${s.bounds.left}. ${s.custom ? 'User-adjusted scenario.' : s.scenario ? 'Planning scenario, not a verified platform specification.' : 'Registry upper-range recommendation.'}`,
+      `Margins (px): top ${s.bounds.top}, right ${1080-s.bounds.right}, bottom ${1920-s.bounds.bottom}, left ${s.bounds.left}. ${s.custom ? 'User-adjusted scenario; template values overridden.' : s.template ? 'Official vertical-ad template reference; not organic Shorts margins.' : s.scenario ? 'Planning scenario, not a verified platform specification.' : 'Registry upper-range recommendation.'}`,
+      ...(s.sourceUrl?['Reference: '+s.sourceUrl]:[]),
       ...elements.map(e => { const r = assess(e,s); return `${e.label} [x ${e.x}, y ${e.y}, width ${e.width}, height ${e.height}]: ${r.status}. ${r.suggestion}`; }), '']),
     'Methodology: https://creatorsafezone.com/methodology'].join('\n');
 }

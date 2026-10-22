@@ -1,13 +1,17 @@
 export const ORIGIN = 'https://creatorsafezone.com';
 export const author = {
  '@type':'Person', '@id':ORIGIN+'/about#zafar-iqbal', name:'Zafar Iqbal',
- url:ORIGIN+'/about#zafar-iqbal', sameAs:['https://www.linkedin.com/in/meetzafariqbal']
+ url:ORIGIN+'/about#zafar-iqbal', sameAs:['https://www.linkedin.com/in/meetzafariqbal'],
+ description:'Zafar Iqbal is the author of CreatorSafeZone’s video placement guides.',
+ subjectOf:{'@id':ORIGIN+'/about#webpage'}
 };
 export const publisher = {
  '@type':'Organization', '@id':ORIGIN+'/#organization', name:'CreatorSafeZone', url:ORIGIN+'/',
- logo:{'@type':'ImageObject',url:ORIGIN+'/brand-logo.svg',width:512,height:512}
+ logo:{'@type':'ImageObject',url:ORIGIN+'/brand-logo.svg',width:512,height:512},
+ description:'CreatorSafeZone publishes free browser-based video placement tools and guides.',
+ subjectOf:{'@id':ORIGIN+'/about#webpage'}
 };
-export const website = {'@type':'WebSite','@id':ORIGIN+'/#website',name:'CreatorSafeZone',url:ORIGIN+'/',publisher:{'@id':publisher['@id']}};
+export const website = {'@type':'WebSite','@id':ORIGIN+'/#website',name:'CreatorSafeZone',url:ORIGIN+'/',publisher:{'@id':publisher['@id']},description:'Free video placement tools and guides published by CreatorSafeZone.'};
 export const identityNodes = () => [structuredClone(author),structuredClone(publisher),structuredClone(website)];
 export const authorCredit = '<p class="author-credit">By <a href="/about#zafar-iqbal" rel="author">Zafar Iqbal</a> <span>Published by CreatorSafeZone</span></p>';
 export const jsonLd = value => `<script type="application/ld+json">${JSON.stringify(value).replace(/</g,'\\u003c')}</script>`;

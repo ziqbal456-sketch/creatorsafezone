@@ -1,0 +1,153 @@
+{
+  "base": "http://127.0.0.1:4173",
+  "checkedAt": "2026-10-22T04:14:53.928Z",
+  "results": [
+    {
+      "path": "/",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "identity": "pass",
+      "metadata": "pass"
+    },
+    {
+      "path": "/check-all-platforms",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "identity": "pass",
+      "metadata": "pass"
+    },
+    {
+      "path": "/tiktok-safe-zone",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "identity": "pass",
+      "metadata": "pass"
+    },
+    {
+      "path": "/instagram-reels-safe-zone",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "identity": "pass",
+      "metadata": "pass"
+    },
+    {
+      "path": "/youtube-shorts-safe-zone",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "identity": "pass",
+      "metadata": "pass"
+    },
+    {
+      "path": "/instagram-story-safe-zone",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "identity": "pass",
+      "metadata": "pass"
+    },
+    {
+      "path": "/instagram-grid-crop-previewer",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "identity": "pass",
+      "metadata": "pass"
+    },
+    {
+      "path": "/capcut-safe-zone-template",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "identity": "pass",
+      "metadata": "pass"
+    },
+    {
+      "path": "/vertical-video-ad-specs",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "identity": "pass",
+      "metadata": "pass"
+    },
+    {
+      "path": "/about",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "identity": "pass",
+      "metadata": "pass"
+    },
+    {
+      "path": "/methodology",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "identity": "pass",
+      "metadata": "pass"
+    },
+    {
+      "path": "/editorial-policy",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "identity": "pass",
+      "metadata": "pass"
+    },
+    {
+      "path": "/privacy-policy",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "identity": "pass",
+      "metadata": "pass"
+    }
+  ],
+  "adTemplate": "selection/custom override/reset/report/PNG passed",
+  "fixtures": "Synthetic local PNG and WebM selection and playback passed",
+  "comparison": "Unchanged default assessment and shared placement passed",
+  "scope": "Headless Edge viewport checks; not physical-device tests, a Google rich-results certification or external ad approval"
+}
