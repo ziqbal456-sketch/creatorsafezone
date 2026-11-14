@@ -1,0 +1,114 @@
+{
+  "release": "2026-11-14",
+  "canvas": {
+    "width": 1080,
+    "height": 1920
+  },
+  "presets": {
+    "TikTok": {
+      "png": "/downloads/tiktok-safe-zone-estimate-1080x1920.png",
+      "svg": "/downloads/tiktok-safe-zone-estimate-1080x1920.svg",
+      "sha256": "e4e99788e2aa16b664a79cdad3a6027f463a27a65c54d2b567302ab5d04511cf",
+      "marginsPx": {
+        "top": 160,
+        "right": 180,
+        "bottom": 420,
+        "left": 0
+      },
+      "boundsPx": {
+        "left": 0,
+        "top": 160,
+        "right": 900,
+        "bottom": 1500
+      },
+      "clearSizePx": {
+        "width": 900,
+        "height": 1340
+      }
+    },
+    "Instagram Reels": {
+      "png": "/downloads/instagram-reels-safe-zone-estimate-1080x1920.png",
+      "svg": "/downloads/instagram-reels-safe-zone-estimate-1080x1920.svg",
+      "sha256": "e23ec69cb3a5353ddf2ae965a336b2d3345bbe83675d9428cdf7f086970724bc",
+      "marginsPx": {
+        "top": 150,
+        "right": 160,
+        "bottom": 400,
+        "left": 0
+      },
+      "boundsPx": {
+        "left": 0,
+        "top": 150,
+        "right": 920,
+        "bottom": 1520
+      },
+      "clearSizePx": {
+        "width": 920,
+        "height": 1370
+      }
+    },
+    "YouTube Shorts": {
+      "png": "/downloads/youtube-shorts-safe-zone-estimate-1080x1920.png",
+      "svg": "/downloads/youtube-shorts-safe-zone-estimate-1080x1920.svg",
+      "sha256": "724d0e4c2098b8b68ca842c6e2d7b2290f8af1a6b979d174f5a3891c98b37ff4",
+      "marginsPx": {
+        "top": 140,
+        "right": 160,
+        "bottom": 380,
+        "left": 0
+      },
+      "boundsPx": {
+        "left": 0,
+        "top": 140,
+        "right": 920,
+        "bottom": 1540
+      },
+      "clearSizePx": {
+        "width": 920,
+        "height": 1400
+      }
+    },
+    "Instagram Stories": {
+      "png": "/downloads/instagram-story-planning-guide-1080x1920.png",
+      "svg": "/downloads/instagram-story-planning-guide-1080x1920.svg",
+      "sha256": "ceaf1de967818d0ac97b6069db48f50dca5ab07a5cec322b619a8affa925fc77",
+      "marginsPx": {
+        "top": 250,
+        "right": 0,
+        "bottom": 250,
+        "left": 0
+      },
+      "boundsPx": {
+        "left": 0,
+        "top": 250,
+        "right": 1080,
+        "bottom": 1670
+      },
+      "clearSizePx": {
+        "width": 1080,
+        "height": 1420
+      }
+    },
+    "YouTube ads": {
+      "png": "/downloads/youtube-vertical-ad-reference-1080x1920.png",
+      "svg": "/downloads/youtube-vertical-ad-reference-1080x1920.svg",
+      "sha256": "15363c8d1201b6250b9ef0e56ca298e2554a30269331d1baf805a7d750f12447",
+      "marginsPx": {
+        "top": 288,
+        "right": 192,
+        "bottom": 672,
+        "left": 48
+      },
+      "boundsPx": {
+        "left": 48,
+        "top": 288,
+        "right": 888,
+        "bottom": 1248
+      },
+      "clearSizePx": {
+        "width": 840,
+        "height": 960
+      }
+    }
+  }
+}

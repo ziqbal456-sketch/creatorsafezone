@@ -1,0 +1,72 @@
+/* CreatorSafeZone task-focused release, 14 November 2026. */
+[hidden]{display:none!important}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.brand-theme .workflow-switch{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:0 0 22px;padding:0 0 16px;border-bottom:1px solid var(--line,#34343d)}
+.brand-theme .workflow-switch button{min-height:44px;padding:11px 16px;background:transparent;color:#e4def5;border:1px solid #494552;border-radius:9px;font-size:.9375rem}
+.brand-theme .workflow-switch button[aria-pressed=true]{background:#d5ff5f;color:#171916;border-color:#d5ff5f;font-weight:700}
+.brand-theme .workflow-switch p{flex:1 1 260px;margin:0 0 0 10px;font-size:.9375rem;color:#c1b9cf;line-height:1.6}
+.brand-theme .preview-context{margin:0 0 12px;padding:10px 14px;border:1px solid #494052;border-radius:9px;background:#27212e;font-size:.875rem;color:#e4d8fa}
+.brand-theme .quick-download{margin-top:18px;padding-top:16px;border-top:1px solid #3b3743}
+.brand-theme .quick-download button{width:100%;background:#d5ff5f;color:#17200c;font-size:.9375rem;font-weight:700;min-height:48px}
+.brand-theme .quick-download p,.brand-theme .quick-download a{font-size:.875rem;line-height:1.6}
+.brand-theme .quick-download p{margin:10px 0}
+.brand-theme .direct-downloads{margin:30px 0;padding:24px;border:1px solid #494052;border-radius:14px;background:#1a1920;max-width:100%}
+.brand-theme .direct-downloads h2{margin:0 0 10px;font-size:1.25rem}
+.brand-theme .direct-downloads>p{max-width:90ch;color:#c3bbce;font-size:.9375rem;line-height:1.65}
+.brand-theme .download-options{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0}
+.brand-theme .download-option{flex:1 1 220px;min-width:0;padding:16px;border:1px solid #49434f;border-radius:10px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.brand-theme .download-option strong{flex-basis:100%;font-size:1rem;color:#f4f0fa}
+.brand-theme .download-option a{min-height:44px;display:inline-flex;align-items:center;padding:8px 12px;border:1px solid #67604e;border-radius:7px;font-size:.875rem;text-decoration:none;background:#292825;color:#e0ff9d}
+.brand-theme .download-option a:hover{background:#353c27}
+.brand-theme .evidence-link{font-size:.875rem}
+.brand-theme .preset-evidence img{display:block;width:100%;height:auto;border-radius:14px}
+.brand-theme .preset-evidence figure{margin:28px 0}
+.brand-theme .preset-evidence figcaption{font-size:.875rem;color:#c1b9cf;margin-top:10px}
+.brand-theme .preset-evidence th,.brand-theme .preset-evidence td{padding:12px;text-align:left;border:1px solid #44404b;vertical-align:top;font-size:.9375rem;line-height:1.6}
+.brand-theme .preset-evidence table{border-collapse:collapse;min-width:690px;width:100%}
+.brand-theme .preset-evidence caption{text-align:left;padding-bottom:12px;font-size:.875rem;color:#c1b9cf}
+.brand-theme.home-tool[data-workflow=quick] .workspace{grid-template-columns:minmax(280px,360px) minmax(0,1fr);gap:32px;max-width:1000px;margin:0 auto}
+.brand-theme.home-tool[data-workflow=quick] .comparison{width:100%;max-width:480px;margin:auto}
+.brand-theme.home-tool[data-workflow=quick] .previews{display:block!important;overflow:visible!important}
+.brand-theme.home-tool[data-workflow=quick] .preview{width:100%;max-width:330px;margin:0 auto;flex-basis:auto}
+.brand-theme.home-tool[data-workflow=quick] .preview[data-mobile-active=false]{display:none!important}
+.brand-theme.home-tool[data-workflow=quick] .preview canvas{width:100%;max-height:560px;border-radius:18px;cursor:default}
+.brand-theme.home-tool[data-workflow=quick] .mobile-platforms{display:flex!important;gap:7px;justify-content:center;margin:0 0 16px}
+.brand-theme.home-tool[data-workflow=quick] .mobile-platforms button{flex:1 1 0;min-height:44px;padding:10px 8px;font-size:.9375rem;white-space:normal}
+.brand-theme.home-tool[data-workflow=quick] .tool-toolbar,
+.brand-theme.home-tool[data-workflow=quick] #region-controls,
+.brand-theme.home-tool[data-workflow=quick] .margin-values,
+.brand-theme.home-tool[data-workflow=quick] .margin-editor,
+.brand-theme.home-tool[data-workflow=quick] .result-summary,
+.brand-theme.home-tool[data-workflow=quick] #resultsDetails,
+.brand-theme.home-tool[data-workflow=quick] .evidence-note,
+.brand-theme.home-tool[data-workflow=quick] #compositionOptions{display:none!important}
+.brand-theme.home-tool[data-workflow=advanced] .quick-download{display:none}
+.brand-theme.home-tool[data-workflow=quick] .preview .badge{background:#32293f;color:#e5d9fd}
+.brand-theme.home-tool .upload{font-size:1rem!important}
+.brand-theme.home-tool #mediaInfo,.brand-theme.home-tool #appStatus{font-size:.875rem}
+.brand-theme button:focus-visible,.brand-theme a:focus-visible,.brand-theme summary:focus-visible{outline:3px solid #d5ff5f;outline-offset:4px}
+@media(max-width:780px){
+ .brand-theme.home-tool[data-workflow=quick] .workspace{display:flex;flex-direction:column;gap:22px}
+ .brand-theme.home-tool[data-workflow=quick] .controls{display:contents}
+ .brand-theme.home-tool[data-workflow=quick] #media-controls{order:-1;width:100%}
+ .brand-theme.home-tool[data-workflow=quick] .comparison{order:0;max-width:100%}
+ .brand-theme .workflow-switch{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+ .brand-theme .workflow-switch p{grid-column:1/-1;margin:4px 0 0;font-size:.875rem}
+ .brand-theme .workflow-switch button{font-size:.875rem;padding:10px 8px}
+ .brand-theme .direct-downloads{padding:18px;margin:24px 0}
+ .brand-theme .download-option{flex-basis:100%}
+ .brand-theme.home-tool[data-workflow=quick] .preview{max-width:300px}
+ .brand-theme.home-tool[data-workflow=quick] .section-heading>.muted{display:none}
+ .brand-theme.home-tool[data-workflow=quick] .preview-context{line-height:1.6}
+ .brand-theme .site-header{position:relative}
+}
+@media(max-width:420px){
+ .brand-theme.home-tool .site-header .brand-tagline{display:none}
+ .brand-theme.home-tool .site-header nav[aria-label=Main]{display:flex;gap:4px 14px;font-size:.8125rem}
+ .brand-theme.home-tool .site-header nav[aria-label=Main]>a{min-height:40px}
+ .brand-theme.home-tool .site-header .privacy{display:none}
+ .brand-theme.home-tool .tool-first-intro h1{font-size:1.9rem}
+ .brand-theme.home-tool .home-platforms{font-size:.875rem}
+ .brand-theme.home-tool .tool-first-intro .hub-lead{font-size:.9375rem}
+}
