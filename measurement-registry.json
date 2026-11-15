@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.0",
+  "schemaVersion": "1.1",
   "publisher": "CreatorSafeZone",
   "methodology": "https://creatorsafezone.com/methodology",
   "lastReviewed": "2026-09-13",
@@ -26,7 +26,31 @@
           "url": "https://ads.tiktok.com/resources/help/article/tiktok-auction-in-feed-ads",
           "scope": "TikTok auction in-feed ads. June 2026 page specifies dimension, caption and additional-format variants, LTR/RTL and anchor files; no universal organic-feed pixel bounds verified."
         }
-      ]
+      ],
+      "reproducibility": {
+        "method": "Use the upper endpoint of each stored margin range; left margin is 0. right = 1080 − right margin; bottom = 1920 − bottom margin.",
+        "geometryCheckedAt": "2026-11-14",
+        "independentDeviceMeasurement": false,
+        "png": "/downloads/tiktok-safe-zone-estimate-1080x1920.png",
+        "svg": "/downloads/tiktok-safe-zone-estimate-1080x1920.svg",
+        "sha256": "e4e99788e2aa16b664a79cdad3a6027f463a27a65c54d2b567302ab5d04511cf",
+        "marginsPx": {
+          "top": 160,
+          "right": 180,
+          "bottom": 420,
+          "left": 0
+        },
+        "boundsPx": {
+          "left": 0,
+          "top": 160,
+          "right": 900,
+          "bottom": 1500
+        },
+        "clearSizePx": {
+          "width": 900,
+          "height": 1340
+        }
+      }
     },
     {
       "id": "instagram-reels-2026-09",
@@ -49,7 +73,31 @@
           "url": "https://www.facebook.com/business/ads/facebook-instagram-reels-ads",
           "scope": "Meta Reels ads. Safe-zone guidance and checker referenced; no universal organic Reels numeric margin established from this page."
         }
-      ]
+      ],
+      "reproducibility": {
+        "method": "Use the upper endpoint of each stored margin range; left margin is 0. right = 1080 − right margin; bottom = 1920 − bottom margin.",
+        "geometryCheckedAt": "2026-11-14",
+        "independentDeviceMeasurement": false,
+        "png": "/downloads/instagram-reels-safe-zone-estimate-1080x1920.png",
+        "svg": "/downloads/instagram-reels-safe-zone-estimate-1080x1920.svg",
+        "sha256": "e23ec69cb3a5353ddf2ae965a336b2d3345bbe83675d9428cdf7f086970724bc",
+        "marginsPx": {
+          "top": 150,
+          "right": 160,
+          "bottom": 400,
+          "left": 0
+        },
+        "boundsPx": {
+          "left": 0,
+          "top": 150,
+          "right": 920,
+          "bottom": 1520
+        },
+        "clearSizePx": {
+          "width": 920,
+          "height": 1370
+        }
+      }
     },
     {
       "id": "youtube-shorts-feed-2026-09",
@@ -72,7 +120,31 @@
           "url": "https://support.google.com/youtube/answer/16215842?hl=en",
           "scope": "Organic Shorts visual guides identify viewer UI and non-safe edges; no fixed universal pixel inset published in the reviewed section."
         }
-      ]
+      ],
+      "reproducibility": {
+        "method": "Use the upper endpoint of each stored margin range; left margin is 0. right = 1080 − right margin; bottom = 1920 − bottom margin.",
+        "geometryCheckedAt": "2026-11-14",
+        "independentDeviceMeasurement": false,
+        "png": "/downloads/youtube-shorts-safe-zone-estimate-1080x1920.png",
+        "svg": "/downloads/youtube-shorts-safe-zone-estimate-1080x1920.svg",
+        "sha256": "724d0e4c2098b8b68ca842c6e2d7b2290f8af1a6b979d174f5a3891c98b37ff4",
+        "marginsPx": {
+          "top": 140,
+          "right": 160,
+          "bottom": 380,
+          "left": 0
+        },
+        "boundsPx": {
+          "left": 0,
+          "top": 140,
+          "right": 920,
+          "bottom": 1540
+        },
+        "clearSizePx": {
+          "width": 920,
+          "height": 1400
+        }
+      }
     },
     {
       "id": "paid-video-mixed-2026-09",
@@ -120,7 +192,69 @@
       },
       "coordinateMethod": "Pixel labels in Google official 1080x1920 vertical-ad diagram; linked PNG also inspected. Not a device screenshot measurement.",
       "limitations": "Ad-format reference only. Google states overlays vary with format, campaign type and screen. Confirm campaign preview; not organic Shorts margins or an ad-approval guarantee.",
-      "reviewed": "2026-10-22"
+      "reviewed": "2026-10-22",
+      "reproducibility": {
+        "geometryCheckedAt": "2026-11-14",
+        "method": "Published diagram coordinate labels, reproduced on the stated 1080 × 1920 canvas. Not a device observation.",
+        "png": "/downloads/youtube-vertical-ad-reference-1080x1920.png",
+        "svg": "/downloads/youtube-vertical-ad-reference-1080x1920.svg",
+        "sha256": "15363c8d1201b6250b9ef0e56ca298e2554a30269331d1baf805a7d750f12447",
+        "marginsPx": {
+          "top": 288,
+          "right": 192,
+          "bottom": 672,
+          "left": 48
+        },
+        "boundsPx": {
+          "left": 48,
+          "top": 288,
+          "right": 888,
+          "bottom": 1248
+        },
+        "clearSizePx": {
+          "width": 840,
+          "height": 960
+        }
+      }
+    },
+    {
+      "id": "story-planning-scenario",
+      "platform": "Instagram Stories",
+      "surface": "Illustrative Story planning scenario",
+      "canvas": "1080x1920",
+      "classification": "Planning scenario",
+      "evidenceStatus": "Source capture pending",
+      "reviewed": "Not independently verified",
+      "marginsPx": {
+        "top": 250,
+        "right": 0,
+        "bottom": 250,
+        "left": 0
+      },
+      "reproducibility": {
+        "geometryCheckedAt": "2026-11-14",
+        "independentDeviceMeasurement": false,
+        "png": "/downloads/instagram-story-planning-guide-1080x1920.png",
+        "svg": "/downloads/instagram-story-planning-guide-1080x1920.svg",
+        "sha256": "ceaf1de967818d0ac97b6069db48f50dca5ab07a5cec322b619a8affa925fc77",
+        "marginsPx": {
+          "top": 250,
+          "right": 0,
+          "bottom": 250,
+          "left": 0
+        },
+        "boundsPx": {
+          "left": 0,
+          "top": 250,
+          "right": 1080,
+          "bottom": 1670
+        },
+        "clearSizePx": {
+          "width": 1080,
+          "height": 1420
+        }
+      },
+      "limitations": "A symmetric planning scenario, not a measured app interface or official ad template."
     }
   ],
   "documentationReview": {
@@ -144,5 +278,15 @@
         "scope": "YouTube video ads only. Official vertical diagram and template inspected; not evidence for organic Shorts defaults."
       }
     ]
+  },
+  "reproducibilityReview": {
+    "date": "2026-11-14",
+    "scope": "Calculation and downloadable-asset verification; does not establish organic UI measurements.",
+    "sourceDocumentsChecked": [
+      "https://ads.tiktok.com/resources/help/article/tiktok-auction-in-feed-ads?lang=en",
+      "https://support.google.com/google-ads/answer/13547298?hl=en",
+      "https://support.google.com/youtube/answer/16215842?hl=en"
+    ],
+    "organicCaptureStatus": "Pending; no device captures created in this release."
   }
 }

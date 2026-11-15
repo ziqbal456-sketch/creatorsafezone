@@ -1,9 +1,11 @@
 import {drawPlatformUI} from './qa-platform-ui.js';
-import {guideCanvas,pngBlob} from './qa-exports.js';
-import {CANVAS, buildSurfaces, officialAdSurface, assess, summarize, validRect, makeReport, sharedSurface, boundsFromMargins, videoUrl} from './qa-engine.js';
+import {guideCanvas,pngBlob} from './qa-exports.js?v=20261114';
+import {CANVAS, buildSurfaces, officialAdSurface, assess, summarize, validRect, makeReport, sharedSurface, boundsFromMargins, videoUrl} from './qa-engine.js?v=20261114';
 
 const mode=document.body.dataset.tool || 'all';
 const comparisonMode=mode==='all'||mode==='home';
+let workflow=mode==='home'?'quick':'advanced';
+const quickMode=()=>mode==='home'&&workflow==='quick';
 let mobileSurface=0;
 let availableSurfaces=[];
 const $ = id => document.getElementById(id);
@@ -15,7 +17,7 @@ const colors = {Safe:'#d5ff5f', Warning:'#ffe096', Covered:'#ff9ea9'};
 const status = message => { $('appStatus').textContent = message; };
 const time = seconds => `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2,'0')}`;
 const selectedElement = () => elements.find(e => e.id === selected);
-const remember = () => {history.push({elements:structuredClone(elements),selected,fit});if(history.length>30) history.shift();};
+const remember = () => {history.push({elements:structuredClone(elements),selected,fit});if(history.length>30) history.shift();$('undoButton').disabled=false;};
 const loading = value => { $('cancelLoad').hidden = !value; $('loadUrlButton').textContent = value ? 'Replace video URL' : 'Load video URL'; };
 function cancelLoad() {loadId++;if(cancelPending) cancelPending();cancelPending=null;loading(false);}
 
@@ -35,7 +37,7 @@ function updateEditor() {
   const element = selectedElement();
   if (element) for (const key of ['x','y','width','height']) $('coord' + key[0].toUpperCase() + key.slice(1)).value = element[key];
   if(element) $('regionLabel').value=element.label;
-  $('undoButton').disabled=!history.length;
+  $('undoButton').disabled=!history.length;if($('resultUndoButton'))$('resultUndoButton').disabled=!history.length;
   $('imageReportButton').disabled=!media;
   $('addElement').disabled = !media || !surfaces.length || elements.length >= 20;
   $('clearButton').disabled = !media;
@@ -44,6 +46,8 @@ function updateEditor() {
   $('removeElement').disabled = !element;
   $('openRegionsButton').disabled = !media || !surfaces.length;
   document.body.dataset.mediaState = !media ? 'empty' : sample ? 'sample' : 'ready';
+  for(const p of previews)p.canvas.setAttribute('aria-label',quickMode()?p.surface.name+' visual overlay estimate. Choose media and review important text against the shaded edges.':p.surface.name+' preview. Drag marked regions here, or use the position fields.');
+  const context=$('previewContext');if(context)context.textContent=!media?'No media selected · choose a file or try the sample.':sample?'Demo only · this is a sample, not your video.':'Your media · visual overlay estimate, not automatic content detection.';
 }
 
 function renderResults() {
@@ -51,7 +55,7 @@ function renderResults() {
   const clear = surfaces.filter(s => summarize(elements,s) === 'Safe').length;
   $('summary').textContent = !media ? 'Choose media and mark a region to begin.' : !elements.length ? 'Media ready. Mark a region to check its placement; no content has been analyzed automatically.' : `${sample ? 'Sample results: ' : ''}${elements.length} marked region${elements.length === 1 ? '' : 's'} checked. All regions are inside the working area on ${clear} of ${surfaces.length} preview${surfaces.length === 1 ? '' : 's'}.`;
   for (const {surface,badge} of previews) {
-    badge.textContent = summarize(elements,surface);
+    badge.textContent = quickMode() ? (sample?'Demo only':'Estimate') : summarize(elements,surface);
     badge.dataset.state = badge.textContent;
   }
   for (const element of elements) {
@@ -114,7 +118,7 @@ function draw() {
     if($('showCommon').checked){const common=sharedSurface(surfaces).bounds;ctx.fillStyle='#64edd01c';ctx.fillRect(common.left,common.top,common.right-common.left,common.bottom-common.top);ctx.strokeStyle='#73f7d5';ctx.lineWidth=6;ctx.strokeRect(common.left,common.top,common.right-common.left,common.bottom-common.top);}
     if ($('showPlatformUI').checked) drawPlatformUI(ctx,surface.name,$('captionLines').value);
     for (const element of elements) {
-      if (!$('showRegions').checked) continue;
+      if (quickMode() || !$('showRegions').checked) continue;
       const result = assess(element,surface); const color = colors[result.status];
       ctx.fillStyle = color + '22'; ctx.fillRect(element.x,element.y,element.width,element.height);
       ctx.strokeStyle = color; ctx.lineWidth = element.id === selected ? 8 : 4; ctx.strokeRect(element.x,element.y,element.width,element.height);
@@ -130,7 +134,7 @@ function draw() {
 
 function refresh() { updateEditor(); renderResults(); draw();const e=selectedElement();$('sharedAdvice').textContent=e ? assess(e,sharedSurface(surfaces)).suggestion : ''; }
 
-function mountSurfaces(){if(!comparisonMode){$('imageReportButton').textContent='Download preview PNG';$('captionLines').hidden=['story','crop','ads'].includes(mode);document.querySelector('label[for="captionLines"]').hidden=$('captionLines').hidden;}previews.length=0;$('previews').replaceChildren();$('exportPlatform').replaceChildren(...surfaces.map((s,i)=>new Option(s.name,String(i))));$('showCommon').parentElement.hidden=surfaces.length===1;if(['crop','ads'].includes(mode)){$('showPlatformUI').checked=false;$('showPlatformUI').parentElement.hidden=true;$('captionLines').hidden=true;document.querySelector('label[for="captionLines"]').hidden=true;}installPreviews();}
+function mountSurfaces(){if(!comparisonMode){$('imageReportButton').textContent='Download preview PNG with your frame';$('captionLines').hidden=['story','crop','ads'].includes(mode);document.querySelector('label[for="captionLines"]').hidden=$('captionLines').hidden;}previews.length=0;$('previews').replaceChildren();$('exportPlatform').replaceChildren(...surfaces.map((s,i)=>new Option(s.name,String(i))));$('showCommon').parentElement.hidden=surfaces.length===1;if(['crop','ads'].includes(mode)){$('showPlatformUI').checked=false;$('showPlatformUI').parentElement.hidden=true;$('captionLines').hidden=true;document.querySelector('label[for="captionLines"]').hidden=true;}installPreviews();}
 function installPreviews() {
   if(comparisonMode){
     document.body.classList.add('comparison-tool');
@@ -145,6 +149,7 @@ function installPreviews() {
         [...picker.children].forEach((b,i)=>b.setAttribute('aria-pressed',String(i===index)));
         previews.forEach((p,i)=>p.canvas.closest('article').dataset.mobileActive=String(i===index));
       });
+      button.addEventListener('click',()=>{if($('exportPlatform'))$('exportPlatform').value=String(index);});
       return button;
     }));
   }
@@ -173,7 +178,7 @@ function installPreviews() {
     article.append(previewHeader,canvas,values,details);$('previews').append(article);previews.push({surface,canvas,badge});
     const point = event => { const box = canvas.getBoundingClientRect();return {x:(event.clientX-box.left)/box.width*CANVAS.width,y:(event.clientY-box.top)/box.height*CANVAS.height}; };
     canvas.addEventListener('pointerdown',event => {
-      if(!$('showRegions').checked)return;
+      if(quickMode()||!$('showRegions').checked)return;
       if(event.pointerType==='touch'&&!$('touchEdit').checked)return;
       const p = point(event);const handle=55;const active=selectedElement();const resize=active&&Math.abs(p.x-active.x-active.width)<handle&&Math.abs(p.y-active.y-active.height)<handle;
       const element = resize?active:[...elements].reverse().find(e => p.x >= e.x && p.x <= e.x+e.width && p.y >= e.y && p.y <= e.y+e.height);
@@ -190,7 +195,7 @@ function installPreviews() {
     });
     const endDrag = () => { if (drag) {drag = null;refresh();} };
     canvas.addEventListener('pointerup',endDrag);canvas.addEventListener('pointercancel',endDrag);canvas.addEventListener('lostpointercapture',endDrag);
-    canvas.addEventListener('keydown',event=>{const e=selectedElement();if(!e||!['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(event.key))return;event.preventDefault();remember();const step=event.shiftKey?10:1;e.x=Math.max(0,Math.min(1080-e.width,e.x+(event.key==='ArrowRight'?step:event.key==='ArrowLeft'?-step:0)));e.y=Math.max(0,Math.min(1920-e.height,e.y+(event.key==='ArrowDown'?step:event.key==='ArrowUp'?-step:0)));refresh();});
+    canvas.addEventListener('keydown',event=>{const e=selectedElement();if(quickMode()||!e||!['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(event.key))return;event.preventDefault();remember();const step=event.shiftKey?10:1;e.x=Math.max(0,Math.min(1080-e.width,e.x+(event.key==='ArrowRight'?step:event.key==='ArrowLeft'?-step:0)));e.y=Math.max(0,Math.min(1920-e.height,e.y+(event.key==='ArrowDown'?step:event.key==='ArrowUp'?-step:0)));refresh();});
   }
 }
 
@@ -216,7 +221,7 @@ async function loadMedia(source, video, remote = false) {
     $('mediaInfo').textContent=(video?'Video':'Image')+' ready · '+(candidate.videoWidth||candidate.naturalWidth)+' × '+(candidate.videoHeight||candidate.naturalHeight)+(remote?' · URL source (host contacted).':' · local file.');
     $('compositionInfo').textContent='All positions use the 1080 × 1920 preview canvas. Match this composition in your editor.';
     if(video)setupPlayback(candidate);
-    refresh();status('Media ready. Add a region over the content you want to check.');
+    refresh();status(quickMode()?'Media ready. Choose a platform and visually review its overlay.':'Media ready. Add a region over the content you want to check.');
   }catch{
     release();if(requestId===loadId)status(remote?'Could not load this URL. It must point directly to a playable video, and its host must allow cross-origin access. Try choosing the saved file instead.':'This browser could not open the file. Try a PNG/JPG image or a browser-compatible MP4/WebM video.');
   }finally{if(requestId===loadId){cancelPending=null;loading(false);}}
@@ -231,10 +236,10 @@ async function loadFile(file) {
 
 function loadSample(){
   cancelLoad();cleanupMedia();sample=true;media=document.createElement('canvas');media.width=1080;media.height=1920;history=[];
-  elements=[{id:nextId++,label:'Headline sample',text:'A story worth sharing',x:90,y:245,width:730,height:90},{id:nextId++,label:'Subtitle sample',text:'Will this caption stay visible?',x:90,y:1436,width:740,height:78}];selected=elements[1].id;
+  elements=quickMode()?[]:[{id:nextId++,label:'Headline sample',text:'A story worth sharing',x:90,y:245,width:730,height:90},{id:nextId++,label:'Subtitle sample',text:'Will this caption stay visible?',x:90,y:1436,width:740,height:78}];selected=elements[1]?.id??null;
   $('mediaInfo').textContent=mode==='home'?'Demo preview · choose your own file to check it.':'Interactive local sample · 1080 × 1920. Drag the sample caption: the text moves with it.';
   $('compositionInfo').textContent='Try moving the example caption. Its starting position demonstrates the different default margins.';
-  refresh();status(comparisonMode?'Sample loaded. Compare the caption results, then try a shared placement or use your own media.':'Sample loaded. Mark or move regions to check your layout, or choose your own media.');
+  refresh();status(quickMode()?'Demo loaded. Choose a platform or select your own media.':comparisonMode?'Sample loaded. Compare the caption results, then try a shared placement or use your own media.':'Sample loaded. Mark or move regions to check your layout, or choose your own media.');
 }
 
 function setupPlayback(video) {
@@ -278,7 +283,8 @@ $('showCommon').addEventListener('change',draw);
 $('marginOpacity').addEventListener('input',draw);
 $('regionLabel').addEventListener('change',()=>{const e=selectedElement();if(!e)return;remember();e.label=$('regionLabel').value.trim().slice(0,60)||'Region';if(sample)e.text=e.label;refresh();});
 $('fitAllButton').addEventListener('click',()=>{const e=selectedElement();if(!e)return;const result=assess(e,sharedSurface(surfaces));if(!result.target){status(result.suggestion);return;}remember();Object.assign(e,result.target);refresh();status(sample?'Sample moved into the shared working area.':'Marker moved into the shared working area. Apply this position to the original content in your editor.');});
-$('undoButton').addEventListener('click',()=>{const previous=history.pop();if(!previous)return;elements=previous.elements;selected=previous.selected;fit=previous.fit;$('fitMode').value=fit;refresh();status('Last region or composition change undone.');});
+function undoLastChange(){const previous=history.pop();if(!previous)return;elements=previous.elements;selected=previous.selected;fit=previous.fit;$('fitMode').value=fit;refresh();status('Last region or composition change undone.');}
+$('undoButton').addEventListener('click',undoLastChange);if($('resultUndoButton'))$('resultUndoButton').addEventListener('click',undoLastChange);
 $('fitMode').addEventListener('change',()=>{remember();fit=$('fitMode').value;if(!sample){elements=[];selected=null;}refresh();status(sample?'Sample already fills a 9:16 canvas.': 'Composition changed. Mark regions again to match the new view, or Undo to restore them.');});
 $('urlForm').addEventListener('submit',event=>{event.preventDefault();try{const url=videoUrl($('videoUrl').value);loadMedia(url,true,true);}catch(error){status(error.message);}});
 $('cancelLoad').addEventListener('click',()=>{cancelLoad();status('Loading cancelled. Your previous preview is preserved.');});
@@ -307,7 +313,7 @@ for(const id of ['exportMenu','viewOptions']){
 }
 const dismissibleMenus=[...document.querySelectorAll('#exportMenu,#viewOptions,.tools-nav')];
 for(const link of document.querySelectorAll('a[href="#exportMenu"]'))link.addEventListener('click',event=>{
-  event.preventDefault();event.stopPropagation();$('viewOptions').open=false;$('exportMenu').open=true;
+  event.preventDefault();event.stopPropagation();if(quickMode())setWorkflow('advanced');$('viewOptions').open=false;$('exportMenu').open=true;
   $('exportMenu').scrollIntoView({block:'center'});$('exportMenu').querySelector('summary').focus({preventScroll:true});
 });
 document.addEventListener('click',event=>{for(const menu of dismissibleMenus)if(!menu.contains(event.target))menu.open=false;});
@@ -337,3 +343,19 @@ try {
   status('Working-area data could not load. Check your connection and reload this page. All preview tools need this data.');
 }
 window.addEventListener('pagehide',event => {cancelLoad();if(!event.persisted)cleanupMedia();else if(media instanceof HTMLVideoElement)media.pause();});
+
+// Two workflows share the same media, preset data and geometry engine.
+function setWorkflow(value){
+ workflow=value;document.body.dataset.workflow=value;
+ $('quickModeButton').setAttribute('aria-pressed',String(value==='quick'));
+ $('advancedModeButton').setAttribute('aria-pressed',String(value==='advanced'));
+ $('workflowHelp').textContent=value==='quick'?'One platform preview. Visually check your text and logos against the estimate.':'Mark captions or logos, compare all platforms and review coordinate suggestions.';
+ $('previewHeading').textContent=value==='quick'?'Your Platform Preview':'Compare Platform Previews';
+ if(value==='quick'){$('region-controls').open=false;$('viewOptions').open=false;$('exportMenu').open=false;}
+ if(sample&&value==='advanced'&&!elements.length)loadSample();else refresh();
+}
+if(mode==='home'){
+ $('quickModeButton').addEventListener('click',()=>setWorkflow('quick'));
+ $('advancedModeButton').addEventListener('click',()=>setWorkflow('advanced'));
+ $('quickDownloadButton').addEventListener('click',()=>{const target=$('exportPlatform');target.value=String(mobileSurface);$('downloadGuideButton').click();status(surfaces[mobileSurface].name+' blank overlay requested. It contains no media.');});
+}
