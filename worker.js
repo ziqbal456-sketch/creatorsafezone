@@ -1,6 +1,6 @@
 import { guideResponse } from './scheduled-guides.js';
 // Normalize only known page aliases. Unknown paths must retain their 404 status.
-const PAGE_ROUTES = new Set(['/', '/check-all-platforms', '/tiktok-safe-zone', '/instagram-reels-safe-zone', '/youtube-shorts-safe-zone', '/instagram-story-safe-zone', '/instagram-grid-crop-previewer', '/capcut-safe-zone-template', '/vertical-video-ad-specs', '/methodology', '/about', '/privacy-policy', '/editorial-policy']);
+const PAGE_ROUTES = new Set(['/', '/check-all-platforms', '/tiktok-safe-zone', '/instagram-reels-safe-zone', '/youtube-shorts-safe-zone', '/instagram-story-safe-zone', '/instagram-grid-crop-previewer', '/capcut-safe-zone-template', '/vertical-video-ad-specs', '/methodology', '/about', '/privacy-policy', '/editorial-policy', '/video-aspect-ratio-calculator']);
 function canonicalRedirect(request) {
   const url = new URL(request.url);
   const target = new URL(url);
