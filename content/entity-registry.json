@@ -472,6 +472,16 @@
       "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
       "publisher_id": "https://creatorsafezone.com/#organization",
       "website_id": "https://creatorsafezone.com/#website"
+    },
+    {
+      "path": "/video-aspect-ratio-calculator",
+      "intent_key": "calculate-video-crop-and-region-visibility",
+      "reader_job": "Calculate video dimensions and compare crop retention and caption clearance",
+      "status": "published",
+      "pillar": "/",
+      "author_id": "https://creatorsafezone.com/about#zafar-iqbal",
+      "publisher_id": "https://creatorsafezone.com/#organization",
+      "website_id": "https://creatorsafezone.com/#website"
     }
   ],
   "topic_relationships": [

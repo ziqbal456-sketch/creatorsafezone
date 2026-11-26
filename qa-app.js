@@ -1,3 +1,4 @@
+import {track} from './editor-tools/common.js';
 import {drawPlatformUI} from './qa-platform-ui.js';
 import {guideCanvas,pngBlob} from './qa-exports.js?v=20261114';
 import {CANVAS, buildSurfaces, officialAdSurface, assess, summarize, validRect, makeReport, sharedSurface, boundsFromMargins, videoUrl} from './qa-engine.js?v=20261114';
@@ -306,7 +307,7 @@ $('copyGuideButton').addEventListener('click',async()=>{
   try{const promise=pngBlob(guideCanvas(surface));await navigator.clipboard.write([new ClipboardItem({'image/png':promise})]);exportStatus(surface.name+' guide copied. Paste it in your editor or Canva, then remove the guide before the final export.');}
   catch{exportStatus('Clipboard access was blocked. Use Download guide PNG instead.');}
 });
-$('downloadGuideButton').addEventListener('click',async()=>{const surface=guideSurface();if(!surface)return;try{downloadBlob(await pngBlob(guideCanvas(surface)),'creatorsafezone-'+surface.name.toLowerCase().replaceAll(' ','-')+'-guide.png');exportStatus(surface.name+' transparent guide downloaded (1080 × 1920).');}catch{exportStatus('Could not create the guide. Reload and try again.');}});
+$('downloadGuideButton').addEventListener('click',async()=>{const surface=guideSurface();if(!surface)return;try{downloadBlob(await pngBlob(guideCanvas(surface)),'creatorsafezone-'+surface.name.toLowerCase().replaceAll(' ','-')+'-guide.png');track('overlay_png_download',location.pathname==='/capcut-safe-zone-template'?'capcut':'placement_checker');exportStatus(surface.name+' transparent guide downloaded (1080 × 1920).');}catch{exportStatus('Could not create the guide. Reload and try again.');}});
 $('exportPlatform').addEventListener('change',()=>exportStatus(''));
 for(const id of ['exportMenu','viewOptions']){
   $(id).addEventListener('toggle',()=>{if($(id).open)$(id==='exportMenu'?'viewOptions':'exportMenu').open=false;});
